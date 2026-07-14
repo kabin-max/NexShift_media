@@ -71,7 +71,7 @@ export default function ContactSection() {
 
       {/* Contact Content Grid */}
       <div className="relative z-10 w-full max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center mb-auto pb-12">
-        
+
         {/* Left Side: Form (Glassmorphism) */}
         <div className="w-full bg-black/40 backdrop-blur-xl p-8 sm:p-10 border border-zinc-800 rounded-3xl shadow-2xl order-2 md:order-1">
           <form className="flex flex-col space-y-6" onSubmit={handleSubmit}>
@@ -87,7 +87,7 @@ export default function ContactSection() {
                 {errors.email && <span className="text-red-500 text-xs mt-1">{errors.email}</span>}
               </div>
             </div>
-            
+
             <div className="flex flex-col space-y-2">
               <label htmlFor="subject" className="text-[10px] tracking-[0.2em] uppercase font-bold text-zinc-400">Subject</label>
               <input type="text" id="subject" value={formData.subject} onChange={handleChange} className={`bg-zinc-900/60 border ${errors.subject ? 'border-red-500' : 'border-zinc-800'} text-white rounded-xl px-4 py-4 focus:outline-none focus:border-zinc-500 focus:bg-zinc-800/80 transition-all`} placeholder="Project Inquiry" />
@@ -109,9 +109,9 @@ export default function ContactSection() {
         {/* Right Side: Contact Info */}
         <div className="flex flex-col items-center md:items-start space-y-8 text-center md:text-left order-1 md:order-2">
           <p className="text-zinc-300 text-lg leading-relaxed max-w-md">
-            Ready to start your next project? We'd love to hear from you. Fill out the form or reach out directly via email.
+            Ready to start your next project? We&apos;d love to hear from you. Fill out the form or reach out directly via email.
           </p>
-          
+
           <div className="flex flex-col space-y-2">
             <span className="text-xs tracking-[0.2em] uppercase font-bold text-zinc-500">Email Us</span>
             <a

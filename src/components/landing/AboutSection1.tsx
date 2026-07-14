@@ -9,7 +9,7 @@ export default function AboutSection1() {
     target: aboutRef,
     offset: ["start end", "end start"],
   });
-  
+
   const aboutImageScale = useTransform(aboutProgress, [0, 1], [1.1, 1]);
   const aboutImageY = useTransform(aboutProgress, [0, 1], [-40, 40]);
   const badgeScale = useTransform(aboutProgress, [0, 0.5, 1], [0.6, 1, 1]);

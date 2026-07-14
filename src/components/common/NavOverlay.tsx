@@ -3,6 +3,8 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ArrowUpRight } from "lucide-react";
 import { useEffect } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import SocialIcons from "./SocialIcons";
 
 interface NavOverlayProps {
@@ -14,6 +16,7 @@ const primaryLinks = ["Home", "About Us", "Services"];
 const secondaryLinks = ["Clients", "Products", "Contact Us"];
 
 export default function NavOverlay({ isOpen, onClose }: NavOverlayProps) {
+  const pathname = usePathname();
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -46,7 +49,7 @@ export default function NavOverlay({ isOpen, onClose }: NavOverlayProps) {
         >
           {/* Mirrored Header Area */}
           <header className="flex items-center justify-between w-full px-6 py-3 md:px-12 md:py-4">
-            <button 
+            <button
               onClick={onClose}
               className="flex items-center justify-center w-10 h-10 md:w-12 md:h-12 bg-white rounded-full text-red-600 hover:bg-gray-200 transition shadow-md cursor-pointer"
             >
@@ -54,23 +57,29 @@ export default function NavOverlay({ isOpen, onClose }: NavOverlayProps) {
             </button>
 
             {/* Logo */}
-            <div 
+            <div
               className="text-2xl md:text-3xl text-white drop-shadow-xl select-none"
               style={{ fontFamily: "var(--font-permanent-marker), cursive" }}
             >
               XYX!
             </div>
 
-            <button className="px-6 py-3 bg-white text-black text-sm font-bold rounded-full hover:bg-gray-200 transition shadow-md cursor-pointer">
-              Get In Touch
-            </button>
+            {pathname === "/about" ? (
+              <Link href="/" className="px-6 py-3 bg-white text-black text-sm font-bold rounded-full hover:bg-gray-200 transition shadow-md cursor-pointer">
+                Go Back Home
+              </Link>
+            ) : (
+              <Link href="/about" className="px-6 py-3 bg-white text-black text-sm font-bold rounded-full hover:bg-gray-200 transition shadow-md cursor-pointer">
+                About Us
+              </Link>
+            )}
           </header>
 
           {/* Main Content Area */}
           <div className="flex-1 flex flex-col items-center justify-center relative w-full h-full px-8 md:px-16">
-            
+
             {/* Social Icons on right edge (Desktop) */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.4 }}
@@ -82,24 +91,25 @@ export default function NavOverlay({ isOpen, onClose }: NavOverlayProps) {
             {/* Primary Nav Links */}
             <div className="flex flex-col md:flex-row items-center gap-8 md:gap-16 mb-20 md:mb-32">
               {primaryLinks.map((link, idx) => {
-                const isActive = link === "Homepage";
+                const isActive = link === "Homepage" || link === "Home";
+                const href = link === "Home" || link === "Homepage" ? "/" : link === "About Us" ? "/about" : "#";
                 return (
-                  <motion.a
+                  <Link
                     key={link}
-                    href="#"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      onClose(); // In a real app this would trigger navigation
-                    }}
-                    initial={{ opacity: 0, y: 40 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.1 + idx * 0.1, duration: 0.5, ease: "easeOut" }}
-                    className={`text-5xl md:text-6xl lg:text-[5rem] font-bold tracking-tight transition-colors duration-300 ${
-                      isActive ? "text-white hover:text-gray-300" : "text-zinc-600 hover:text-white"
-                    }`}
+                    href={href}
+                    onClick={() => onClose()}
+                    className={`text-5xl md:text-6xl lg:text-[5rem] font-bold tracking-tight transition-colors duration-300 block ${isActive ? "text-white hover:text-gray-300" : "text-zinc-600 hover:text-white"
+                      }`}
                   >
-                    {link}
-                  </motion.a>
+                    <motion.span
+                      initial={{ opacity: 0, y: 40 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.1 + idx * 0.1, duration: 0.5, ease: "easeOut" }}
+                      className="inline-block"
+                    >
+                      {link}
+                    </motion.span>
+                  </Link>
                 );
               })}
             </div>
@@ -122,7 +132,7 @@ export default function NavOverlay({ isOpen, onClose }: NavOverlayProps) {
             </div>
 
             {/* Social Icons (Mobile) */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}

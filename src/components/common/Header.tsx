@@ -2,9 +2,12 @@
 
 import { useState, useEffect } from "react";
 import { Menu } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import NavOverlay from "./NavOverlay";
 
 export default function Header() {
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -22,12 +25,11 @@ export default function Header() {
 
   return (
     <>
-      <header 
-        className={`fixed top-0 left-0 right-0 z-40 flex items-center justify-between w-full px-6 py-3 md:px-12 md:py-4 transition-all duration-300 ${
-          isScrolled ? "bg-black/20 backdrop-blur-sm" : "bg-transparent"
-        }`}
+      <header
+        className={`fixed top-0 left-0 right-0 z-40 flex items-center justify-between w-full px-6 py-3 md:px-12 md:py-4 transition-all duration-300 ${isScrolled ? "bg-black/20 backdrop-blur-sm" : "bg-transparent"
+          }`}
       >
-        <button 
+        <button
           onClick={() => setIsMenuOpen(true)}
           className="flex items-center justify-center w-10 h-10 md:w-12 md:h-12 bg-white rounded-full text-black hover:bg-gray-200 transition shadow-md cursor-pointer"
         >
@@ -37,9 +39,15 @@ export default function Header() {
         {/* The animated XYX! logo will move here on scroll, so this space is left empty initially */}
         <div className="w-12 pointer-events-none" />
 
-        <button className="px-6 py-3 bg-white text-black text-sm font-bold rounded-full hover:bg-gray-200 transition shadow-md cursor-pointer">
-          Get In Touch
-        </button>
+        {pathname === "/about" ? (
+          <Link href="/" className="px-6 py-3 bg-white text-black text-sm font-bold rounded-full hover:bg-gray-200 transition shadow-md cursor-pointer pointer-events-auto">
+            Go Back Home
+          </Link>
+        ) : (
+          <Link href="/about" className="px-6 py-3 bg-white text-black text-sm font-bold rounded-full hover:bg-gray-200 transition shadow-md cursor-pointer pointer-events-auto">
+            About Us
+          </Link>
+        )}
       </header>
 
       <NavOverlay isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />

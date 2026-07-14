@@ -23,7 +23,7 @@ export default function AnimatedLogo() {
           transformOrigin: "center center",
         }}
       >
-        XYX!
+        NexShift
       </motion.h1>
     </motion.div>
   );

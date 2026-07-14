@@ -56,7 +56,7 @@ export default function AboutSection2() {
           Australia.
         </p>
         <p>
-          We've built a practice that sits somewhere between creative director,
+          We&apos;ve built a practice that sits somewhere between creative director,
           DOP and production manager — often all at once. Specialising in
           cinematic commercial production and mini-documentary content, XYX makes
           lean productions look and feel far larger than their budgets suggest.

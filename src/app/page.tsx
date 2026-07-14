@@ -1,15 +1,15 @@
 "use client";
 
-import Background from "../components/Background";
-import Header from "../components/Header";
-import SocialIcons from "../components/SocialIcons";
-import AnimatedLogo from "../components/AnimatedLogo";
-import HeroSection from "../components/HeroSection";
-import AboutSection1 from "../components/AboutSection1";
-import AboutSection2 from "../components/AboutSection2";
-import TrustedPartners from "../components/TrustedPartners";
-import ClientsSection from "../components/ClientsSection";
-import ContactSection from "../components/ContactSection";
+import Background from "../components/common/Background";
+import Header from "../components/common/Header";
+import SocialIcons from "../components/common/SocialIcons";
+import AnimatedLogo from "../components/landing/AnimatedLogo";
+import HeroSection from "../components/landing/HeroSection";
+import AboutSection1 from "../components/landing/AboutSection1";
+import AboutSection2 from "../components/landing/AboutSection2";
+import TrustedPartners from "../components/landing/TrustedPartners";
+import ClientsSection from "../components/landing/ClientsSection";
+import ContactSection from "../components/landing/ContactSection";
 
 export default function Home() {
   return (

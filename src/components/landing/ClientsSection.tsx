@@ -35,7 +35,7 @@ export default function ClientsSection() {
 
       <div className="w-full overflow-hidden">
         <div className="flex w-max marquee-gallery gap-4 md:gap-8">
-          
+
           {[...Array(2)].map((_, i) => (
             <div key={i} className="flex gap-4 md:gap-8 pr-4 md:pr-8">
               {clients.map((client, idx) => (
@@ -59,7 +59,7 @@ export default function ClientsSection() {
                   {/* Content Container */}
                   <div className="absolute inset-0 z-20 flex flex-col justify-between p-6">
                     <div /> {/* Spacer for top */}
-                    
+
                     {/* Center Logo/Text */}
                     <div className="flex justify-center items-center transform transition-transform duration-500 group-hover:-translate-y-2">
                       <h3 className={`text-3xl md:text-4xl font-bold text-white drop-shadow-2xl ${client.logoFont === 'serif' ? 'font-serif' : 'font-sans'}`}>
