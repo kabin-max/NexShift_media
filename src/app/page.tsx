@@ -1,12 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import { Menu } from "lucide-react";
+import Link from "next/link";
+import { Menu, X } from "lucide-react";
 import { FaInstagram, FaFacebookF, FaYoutube, FaVimeoV } from "react-icons/fa";
-import { useRef } from "react";
-import { motion, useScroll, useTransform, useMotionTemplate } from "framer-motion";
+import { useRef, useState } from "react";
+import { motion, useScroll, useTransform, useMotionTemplate, AnimatePresence } from "framer-motion";
 
 export default function Home() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   /* ─── Scroll-linked transforms ───────────────────────── */
   const { scrollY } = useScroll();
 
@@ -61,17 +64,60 @@ export default function Home() {
 
       {/* ── Fixed Header ────────────────────────────────── */}
       <header className="fixed top-0 left-0 right-0 z-40 flex items-center justify-between w-full px-8 py-6 md:px-12 md:py-8 pointer-events-none">
-        <button className="pointer-events-auto flex items-center justify-center w-12 h-12 bg-white rounded-full text-black hover:bg-gray-100 transition shadow-md">
+        <button 
+          onClick={() => setMenuOpen(true)}
+          className="pointer-events-auto flex items-center justify-center w-12 h-12 bg-white rounded-full text-black hover:bg-gray-100 transition shadow-md cursor-pointer"
+          aria-label="Open Navigation Menu"
+        >
           <Menu className="w-5 h-5" strokeWidth={1.5} />
         </button>
 
         {/* The animated XYX! logo will move here on scroll, so this space is left empty initially */}
         <div className="w-12 pointer-events-none" />
 
-        <button className="pointer-events-auto px-6 py-3 bg-white text-black text-sm font-medium rounded-full hover:bg-gray-100 transition shadow-md">
-          Get In touch
-        </button>
+        <Link 
+          href="/about"
+          className="pointer-events-auto px-6 py-3 bg-white text-black text-sm font-medium rounded-full hover:bg-gray-100 transition shadow-md"
+        >
+          About Us
+        </Link>
       </header>
+
+      {/* ── Navigation Menu Overlay ─────────────────────── */}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-55 flex flex-col items-center justify-center bg-black/95 backdrop-blur-lg"
+          >
+            <button 
+              onClick={() => setMenuOpen(false)}
+              className="absolute top-6 left-8 md:left-12 flex items-center justify-center w-12 h-12 bg-white/10 rounded-full text-white hover:bg-white/20 transition cursor-pointer"
+              aria-label="Close Menu"
+            >
+              <X className="w-5 h-5" />
+            </button>
+            <nav className="flex flex-col gap-8 text-center">
+              <Link 
+                href="/" 
+                onClick={() => setMenuOpen(false)}
+                className="text-4xl md:text-5xl font-bold tracking-tight text-amber-500 hover:text-amber-400 transition"
+              >
+                Home
+              </Link>
+              <Link 
+                href="/about" 
+                onClick={() => setMenuOpen(false)}
+                className="text-4xl md:text-5xl font-bold tracking-tight hover:text-amber-400 transition"
+              >
+                About Us
+              </Link>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* ── Fixed Social Icons ──────────────────────────── */}
       <div className="fixed right-6 md:right-10 top-1/2 -translate-y-1/2 flex flex-col gap-5 items-center z-50">
