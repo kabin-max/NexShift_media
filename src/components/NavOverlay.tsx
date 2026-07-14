@@ -1,0 +1,139 @@
+"use client";
+
+import { motion, AnimatePresence } from "framer-motion";
+import { X, ArrowUpRight } from "lucide-react";
+import { useEffect } from "react";
+import SocialIcons from "./SocialIcons";
+
+interface NavOverlayProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+const primaryLinks = ["Home", "About Us", "Services"];
+const secondaryLinks = ["Clients", "Products", "Contact Us"];
+
+export default function NavOverlay({ isOpen, onClose }: NavOverlayProps) {
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isOpen]);
+
+  // Close on Escape key
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", handleEscape);
+    return () => window.removeEventListener("keydown", handleEscape);
+  }, [onClose]);
+
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+          className="fixed inset-0 z-[100] bg-black flex flex-col font-sans"
+        >
+          {/* Mirrored Header Area */}
+          <header className="flex items-center justify-between w-full px-6 py-3 md:px-12 md:py-4">
+            <button 
+              onClick={onClose}
+              className="flex items-center justify-center w-10 h-10 md:w-12 md:h-12 bg-white rounded-full text-red-600 hover:bg-gray-200 transition shadow-md cursor-pointer"
+            >
+              <X className="w-5 h-5 md:w-6 md:h-6" strokeWidth={2.5} />
+            </button>
+
+            {/* Logo */}
+            <div 
+              className="text-2xl md:text-3xl text-white drop-shadow-xl select-none"
+              style={{ fontFamily: "var(--font-permanent-marker), cursive" }}
+            >
+              XYX!
+            </div>
+
+            <button className="px-6 py-3 bg-white text-black text-sm font-bold rounded-full hover:bg-gray-200 transition shadow-md cursor-pointer">
+              Get In Touch
+            </button>
+          </header>
+
+          {/* Main Content Area */}
+          <div className="flex-1 flex flex-col items-center justify-center relative w-full h-full px-8 md:px-16">
+            
+            {/* Social Icons on right edge (Desktop) */}
+            <motion.div 
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.4 }}
+              className="absolute right-8 md:right-12 top-1/2 -translate-y-1/2 hidden md:flex text-white"
+            >
+              <SocialIcons className="flex flex-col gap-6 items-center" />
+            </motion.div>
+
+            {/* Primary Nav Links */}
+            <div className="flex flex-col md:flex-row items-center gap-8 md:gap-16 mb-20 md:mb-32">
+              {primaryLinks.map((link, idx) => {
+                const isActive = link === "Homepage";
+                return (
+                  <motion.a
+                    key={link}
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      onClose(); // In a real app this would trigger navigation
+                    }}
+                    initial={{ opacity: 0, y: 40 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.1 + idx * 0.1, duration: 0.5, ease: "easeOut" }}
+                    className={`text-5xl md:text-6xl lg:text-[5rem] font-bold tracking-tight transition-colors duration-300 ${
+                      isActive ? "text-white hover:text-gray-300" : "text-zinc-600 hover:text-white"
+                    }`}
+                  >
+                    {link}
+                  </motion.a>
+                );
+              })}
+            </div>
+
+            {/* Secondary Links */}
+            <div className="flex flex-wrap justify-center gap-8 md:gap-16">
+              {secondaryLinks.map((link, idx) => (
+                <motion.a
+                  key={link}
+                  href="#"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 + idx * 0.1, duration: 0.5 }}
+                  className="flex items-center gap-2 text-xs md:text-sm tracking-[0.2em] font-medium text-zinc-400 hover:text-white transition-colors"
+                >
+                  {link}
+                  <ArrowUpRight className="w-3 h-3 md:w-4 md:h-4" />
+                </motion.a>
+              ))}
+            </div>
+
+            {/* Social Icons (Mobile) */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+              className="flex md:hidden mt-16 text-white"
+            >
+              <SocialIcons className="flex gap-8 items-center" />
+            </motion.div>
+
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+}
