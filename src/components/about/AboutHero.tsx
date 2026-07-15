@@ -17,6 +17,9 @@ export default function AboutHero() {
         style={{ opacity: heroFade }}
         className="w-full max-w-6xl flex flex-col items-center"
       >
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold uppercase tracking-widest text-center mb-12" style={{ fontFamily: "var(--font-permanent-marker), cursive" }}>
+          ABOUT US
+        </h1>
         <div className="w-full mb-12 flex justify-center overflow-visible">
           <AnimatedPhotoStack onAnimationComplete={() => setFanned(true)} />
         </div>
