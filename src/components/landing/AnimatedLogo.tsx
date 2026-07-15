@@ -7,7 +7,6 @@ export default function AnimatedLogo() {
   const progress = useTransform(scrollY, [0, 400], [0, 1]);
   const logoWrapperY = useMotionTemplate`calc(${progress} * (-50vh + 52px))`;
   const logoScale = useTransform(progress, [0, 1], [1, 0.115]);
-
   return (
     <motion.div
       className="fixed inset-0 z-50 flex items-center justify-center pointer-events-none"

@@ -10,6 +10,7 @@ import AboutSection2 from "../components/landing/AboutSection2";
 import TrustedPartners from "../components/landing/TrustedPartners";
 import ClientsSection from "../components/landing/ClientsSection";
 import ContactSection from "../components/landing/ContactSection";
+import Footer from "../components/common/Footer";
 
 export default function Home() {
   return (
@@ -26,6 +27,7 @@ export default function Home() {
         <TrustedPartners />
         <ClientsSection />
         <ContactSection />
+        <Footer />
       </div>
     </main>
   );

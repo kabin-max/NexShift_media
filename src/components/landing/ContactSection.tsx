@@ -115,10 +115,10 @@ export default function ContactSection() {
           <div className="flex flex-col space-y-2">
             <span className="text-xs tracking-[0.2em] uppercase font-bold text-zinc-500">Email Us</span>
             <a
-              href="mailto:hello@xyx.co"
+              href="mailto:info@nexshift.com"
               className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight hover:text-zinc-300 transition-colors duration-300 decoration-zinc-700 underline-offset-8 hover:underline"
             >
-              hello@xyx.co
+              info@nexshift.com
             </a>
           </div>
 
@@ -127,17 +127,10 @@ export default function ContactSection() {
             className="text-3xl text-white drop-shadow-xl select-none pt-4"
             style={{ fontFamily: "var(--font-permanent-marker), cursive" }}
           >
-            XYX!
+            NexShift!
           </div>
         </div>
 
-      </div>
-
-      {/* Footer */}
-      <div className="relative z-10 w-full flex justify-center text-zinc-500 text-xs tracking-wide">
-        <p>
-          © 2026 XYX <span className="mx-2">/</span> Website by NexShift
-        </p>
       </div>
 
     </section>
