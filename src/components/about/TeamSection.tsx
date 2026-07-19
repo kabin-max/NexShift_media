@@ -16,7 +16,7 @@ export default function TeamSection() {
     <section className="relative w-full py-24 md:py-32 bg-black px-6 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto">
         <div className="mb-20 flex flex-col items-center text-center">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight drop-shadow-xl text-white mb-6">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight drop-shadow-xl text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/40 mb-6">
             Meet The Amazing Team
           </h2>
           <p className="text-zinc-400 text-lg max-w-2xl font-light">

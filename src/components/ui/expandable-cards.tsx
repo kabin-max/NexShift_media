@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, Variants } from 'motion/react';
 import { cn } from '@/lib/utils';
 
@@ -11,19 +11,36 @@ interface ExpandableCard {
 interface ExpandableCardsProps {
   cards: ExpandableCard[];
   defaultExpanded?: number;
+  autoPlay?: boolean;
+  interval?: number;
   className?: string;
 }
 
 export default function ExpandableCards({
   cards,
   defaultExpanded = 1,
+  autoPlay = false,
+  interval = 3000,
   className,
 }: ExpandableCardsProps) {
   const [expandedId, setExpandedId] = useState<number>(defaultExpanded);
+  const [isHovered, setIsHovered] = useState(false);
+
+  useEffect(() => {
+    if (!autoPlay || isHovered) return;
+    const timer = setInterval(() => {
+      setExpandedId((prev) => {
+        const currentIndex = cards.findIndex(c => c.id === prev);
+        const nextIndex = (currentIndex + 1) % cards.length;
+        return cards[nextIndex].id;
+      });
+    }, interval);
+    return () => clearInterval(timer);
+  }, [autoPlay, isHovered, cards, interval]);
 
   const cardVariants: Variants = {
     expanded: {
-      flex: 3,
+      flex: 6,
       transition: { duration: 0.5, ease: [0.4, 0.0, 0.2, 1] },
     },
     collapsed: {
@@ -33,7 +50,11 @@ export default function ExpandableCards({
   };
 
   return (
-    <div className={cn('flex gap-3 sm:gap-4 w-full h-full', className)}>
+    <div 
+      className={cn('flex gap-3 sm:gap-4 w-full h-full', className)}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       {cards.map((card) => {
         const isExpanded = expandedId === card.id;
 

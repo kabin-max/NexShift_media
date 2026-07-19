@@ -25,14 +25,14 @@ export default function AnimatedLogo() {
       }}
     >
       <motion.h1
-        className="text-[7rem] sm:text-[10rem] md:text-[14rem] lg:text-[17rem] text-white font-black italic tracking-tight drop-shadow-2xl whitespace-nowrap leading-none select-none"
+        className="text-[6rem] sm:text-[9rem] md:text-[12rem] lg:text-[15rem] text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/40 font-black italic tracking-tight drop-shadow-2xl whitespace-nowrap leading-none select-none"
         style={{
           scale: logoScale,
           transformOrigin: "center center",
           fontFamily: 'var(--font-geist-sans)',
         }}
       >
-        NexShift
+        NexShift .
       </motion.h1>
     </motion.div>
   );

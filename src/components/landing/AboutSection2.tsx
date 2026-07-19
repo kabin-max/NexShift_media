@@ -77,15 +77,15 @@ export default function AboutSection2() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10 w-full flex flex-col lg:flex-row items-center lg:items-stretch gap-12 lg:gap-20">
-        
+
         {/* Left Side: Expandable Cards */}
         <div className="w-full lg:w-1/2 flex items-center justify-center h-[300px] md:h-[400px] lg:h-[450px] select-none">
-          <ExpandableCards cards={cards} defaultExpanded={3} />
+          <ExpandableCards cards={cards} defaultExpanded={3} autoPlay interval={3000} />
         </div>
 
         {/* Right Side: Text */}
         <div className="w-full lg:w-1/2 flex flex-col justify-center space-y-6 lg:space-y-8 text-zinc-300 text-base md:text-lg leading-relaxed">
-          <h2 className="font-sans font-bold text-white text-4xl md:text-5xl lg:text-6xl tracking-tight drop-shadow-xl mb-4 text-center lg:text-left">
+          <h2 className="font-sans font-bold text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/40 text-4xl md:text-5xl lg:text-6xl tracking-tight drop-shadow-xl mb-4 text-center lg:text-left">
             About Us
           </h2>
           <p>

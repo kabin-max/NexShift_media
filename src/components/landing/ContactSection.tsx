@@ -65,7 +65,7 @@ export default function ContactSection() {
 
       {/* Top Heading */}
       <div className="text-center px-6 mt-12 md:mt-4 mb-8 md:mb-16">
-        <h2 className="font-sans font-bold text-white text-4xl md:text-5xl lg:text-6xl tracking-tight drop-shadow-xl">
+        <h2 className="font-sans font-bold text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/40 text-4xl md:text-5xl lg:text-6xl tracking-tight drop-shadow-xl">
           Get in Touch
         </h2>
       </div>

@@ -43,7 +43,7 @@ export default function ServicesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="font-sans font-bold text-white text-center text-4xl md:text-5xl lg:text-6xl tracking-tight drop-shadow-xl mb-16"
+          className="font-sans font-bold text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/40 text-center text-4xl md:text-5xl lg:text-6xl tracking-tight drop-shadow-xl mb-16"
           style={{ fontFamily: "var(--font-geist-sans), sans-serif" }}
         >
           Our Services

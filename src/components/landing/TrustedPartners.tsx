@@ -22,7 +22,7 @@ export default function TrustedPartners() {
       `}</style>
 
       <div className="text-center px-6">
-        <h2 className="font-sans font-bold text-white text-4xl md:text-5xl lg:text-6xl tracking-tight drop-shadow-xl">
+        <h2 className="font-sans font-bold text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/40 text-4xl md:text-5xl lg:text-6xl tracking-tight drop-shadow-xl">
           Trusted Partners
         </h2>
       </div>

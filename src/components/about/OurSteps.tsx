@@ -234,7 +234,7 @@ export default function OurSteps() {
       <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
 
         <div className="absolute top-12 md:top-24 w-full text-center z-30 pointer-events-none">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight drop-shadow-xl text-white">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight drop-shadow-xl text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/40">
             Our Steps
           </h2>
         </div>

@@ -73,7 +73,7 @@ export default function AboutHero() {
         
         {/* Title */}
         <h1 
-          className="text-5xl md:text-6xl lg:text-8xl font-bold uppercase tracking-widest text-white drop-shadow-xl" 
+          className="text-5xl md:text-6xl lg:text-8xl font-bold uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/40 drop-shadow-xl" 
         >
           ABOUT US
         </h1>

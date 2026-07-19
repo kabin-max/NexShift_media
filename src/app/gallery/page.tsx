@@ -18,7 +18,7 @@ export default function GalleryPage() {
 
       <div className="relative z-10 w-full flex flex-col flex-grow pt-32">
         <div className="w-full max-w-7xl mx-auto px-4 md:px-8 pt-8">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold uppercase tracking-widest text-center mb-4" style={{ fontFamily: "var(--font-permanent-marker), cursive" }}>
+          <h1 className="text-5xl md:text-6xl lg:text-8xl font-bold uppercase tracking-widest text-center mb-4 text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/40">
             GALLERY
           </h1>
         </div>

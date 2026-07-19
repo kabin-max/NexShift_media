@@ -42,7 +42,7 @@ export default function OurStory() {
       <div className="max-w-7xl mx-auto flex flex-col gap-16 items-center">
 
         <div className="w-full text-center">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight drop-shadow-xl text-white">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight drop-shadow-xl text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/40">
             Our Story
           </h2>
         </div>
