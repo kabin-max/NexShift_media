@@ -43,7 +43,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="relative w-full min-h-[90vh] md:min-h-screen bg-black flex flex-col items-center justify-between overflow-hidden pt-20 pb-10 border-t border-zinc-900/50">
+    <section id="contact" className="relative w-full min-h-[90vh] md:min-h-screen bg-black flex flex-col items-center justify-between overflow-hidden pt-20 pb-10 border-t border-zinc-900/50">
 
       {/* Background Image Container */}
       <div className="absolute inset-0 z-0 flex justify-end">
