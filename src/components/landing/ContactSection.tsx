@@ -124,8 +124,8 @@ export default function ContactSection() {
 
           {/* Small Logo */}
           <div
-            className="text-3xl text-white drop-shadow-xl select-none pt-4"
-            style={{ fontFamily: "var(--font-permanent-marker), cursive" }}
+            className="text-3xl text-white font-black italic tracking-tight drop-shadow-xl select-none pt-4"
+            style={{ fontFamily: "var(--font-geist-sans)" }}
           >
             NexShift!
           </div>

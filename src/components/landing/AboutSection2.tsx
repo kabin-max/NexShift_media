@@ -105,14 +105,14 @@ export default function AboutSection2() {
         style={{ y: bioY, opacity: bioOpacity }}
       >
         <p>
-          Company XYX is a commercial director, photographer and visual creator
+          Company NexShift is a commercial director, photographer and visual creator
           based just outside Melbourne, working across the East Coast of
           Australia.
         </p>
         <p>
           We&apos;ve built a practice that sits somewhere between creative director,
           DOP and production manager — often all at once. Specialising in
-          cinematic commercial production and mini-documentary content, XYX makes
+          cinematic commercial production and mini-documentary content, NexShift makes
           lean productions look and feel far larger than their budgets suggest.
         </p>
         <p>

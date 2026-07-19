@@ -41,15 +41,15 @@ export default function Header() {
         ) : (
           <Link href="/" className="pointer-events-auto cursor-pointer flex items-center justify-center">
             <span 
-              className="text-2xl md:text-3xl text-white tracking-tight whitespace-nowrap leading-none select-none"
-              style={{ fontFamily: "var(--font-permanent-marker), cursive" }}
+              className="text-2xl md:text-3xl text-white font-black italic tracking-tight whitespace-nowrap leading-none select-none"
+              style={{ fontFamily: "var(--font-geist-sans)" }}
             >
               NexShift
             </span>
           </Link>
         )}
 
-        {pathname === "/about" ? (
+        {pathname === "/about" || pathname === "/services" ? (
           <Link href="/" className="px-6 py-3 bg-white text-black text-sm font-bold rounded-full hover:bg-gray-200 transition shadow-md cursor-pointer pointer-events-auto">
             Go Back Home
           </Link>

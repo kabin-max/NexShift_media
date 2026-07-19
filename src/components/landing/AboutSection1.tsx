@@ -19,7 +19,7 @@ export default function AboutSection1() {
     <section ref={aboutRef} className="relative w-full h-screen bg-black overflow-hidden">
       <motion.img
         src="/bg-image.png"
-        alt="About XYX"
+        alt="About NexShift"
         className="w-full h-full object-cover object-center opacity-80"
         style={{ scale: aboutImageScale, y: aboutImageY }}
       />
@@ -32,7 +32,7 @@ export default function AboutSection1() {
         <svg viewBox="0 0 100 100" className="w-full h-full animate-[spin_14s_linear_infinite]">
           <path id="circlePath" d="M 50,50 m -32,0 a 32,32 0 1,1 64,0 a 32,32 0 1,1 -64,0" fill="none" />
           <text fill="white" fontSize="9" letterSpacing="3">
-            <textPath href="#circlePath" startOffset="0%">CREATIVE AGENCY • XYX • CREATIVE AGENCY •</textPath>
+            <textPath href="#circlePath" startOffset="0%">CREATIVE AGENCY • NexShift • CREATIVE AGENCY •</textPath>
           </text>
         </svg>
       </motion.div>

@@ -1,25 +1,34 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import ServiceCard, { Project } from "./ServiceCard";
 
-const CATEGORIES = ["All", "Digital Marketing", "Video Editing", "Cameragraphy"];
+const CATEGORIES = ["All", "Digital Marketing", "Event Management", "Photography & Videography"];
 
 // Using /bg-image.png as a placeholder for all images as requested
 const MOCK_PROJECTS: Project[] = [
   { id: "1", title: "Brand Campaign", category: "Digital Marketing", imageUrl: "/bg-image.png", heightClass: "h-[400px]" },
-  { id: "2", title: "Corporate Promo", category: "Video Editing", imageUrl: "/bg-image.png", heightClass: "h-[500px]" },
-  { id: "3", title: "Nature Documentary", category: "Cameragraphy", imageUrl: "/bg-image.png", heightClass: "h-[350px]" },
+  { id: "2", title: "Corporate Promo", category: "Photography & Videography", imageUrl: "/bg-image.png", heightClass: "h-[500px]" },
+  { id: "3", title: "Nature Documentary", category: "Photography & Videography", imageUrl: "/bg-image.png", heightClass: "h-[350px]" },
   { id: "4", title: "Social Media Ads", category: "Digital Marketing", imageUrl: "/bg-image.png", heightClass: "h-[450px]" },
-  { id: "5", title: "Wedding Highlight", category: "Video Editing", imageUrl: "/bg-image.png", heightClass: "h-[400px]" },
-  { id: "6", title: "Product Shoot", category: "Cameragraphy", imageUrl: "/bg-image.png", heightClass: "h-[600px]" },
+  { id: "5", title: "Wedding Highlight", category: "Event Management", imageUrl: "/bg-image.png", heightClass: "h-[400px]" },
+  { id: "6", title: "Product Shoot", category: "Photography & Videography", imageUrl: "/bg-image.png", heightClass: "h-[600px]" },
   { id: "7", title: "SEO Optimization", category: "Digital Marketing", imageUrl: "/bg-image.png", heightClass: "h-[350px]" },
-  { id: "8", title: "Music Video", category: "Video Editing", imageUrl: "/bg-image.png", heightClass: "h-[450px]" },
+  { id: "8", title: "Music Video", category: "Photography & Videography", imageUrl: "/bg-image.png", heightClass: "h-[450px]" },
 ];
 
-export default function ServiceGallery() {
+function ServiceGalleryContent() {
+  const searchParams = useSearchParams();
+  const categoryParam = searchParams.get("category");
   const [activeCategory, setActiveCategory] = useState("All");
+
+  useEffect(() => {
+    if (categoryParam && CATEGORIES.includes(categoryParam)) {
+      setActiveCategory(categoryParam);
+    }
+  }, [categoryParam]);
 
   const filteredProjects = MOCK_PROJECTS.filter(
     (project) => activeCategory === "All" || project.category === activeCategory
@@ -33,7 +42,7 @@ export default function ServiceGallery() {
           <button
             key={category}
             onClick={() => setActiveCategory(category)}
-            className={`relative text-xs md:text-sm font-semibold tracking-[0.2em] uppercase transition-colors duration-300 ${
+            className={`relative text-xs md:text-sm font-semibold tracking-[0.2em] uppercase transition-colors duration-300 cursor-pointer ${
               activeCategory === category ? "text-white" : "text-zinc-500 hover:text-zinc-300"
             }`}
           >
@@ -60,5 +69,17 @@ export default function ServiceGallery() {
         </AnimatePresence>
       </motion.div>
     </div>
+  );
+}
+
+export default function ServiceGallery() {
+  return (
+    <Suspense fallback={
+      <div className="w-full text-center py-24 text-zinc-500 font-sans">
+        Loading gallery...
+      </div>
+    }>
+      <ServiceGalleryContent />
+    </Suspense>
   );
 }

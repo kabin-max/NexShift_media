@@ -58,10 +58,10 @@ export default function NavOverlay({ isOpen, onClose }: NavOverlayProps) {
 
             {/* Logo */}
             <div
-              className="text-2xl md:text-3xl text-white drop-shadow-xl select-none"
-              style={{ fontFamily: "var(--font-permanent-marker), cursive" }}
+              className="text-2xl md:text-3xl text-white font-black italic tracking-tight drop-shadow-xl select-none"
+              style={{ fontFamily: "var(--font-geist-sans)" }}
             >
-              XYX!
+              NexShift
             </div>
 
             {pathname === "/about" ? (

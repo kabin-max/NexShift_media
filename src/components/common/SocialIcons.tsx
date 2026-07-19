@@ -11,7 +11,7 @@ export default function SocialIcons({ className }: SocialIconsProps) {
       <a href="#" aria-label="Instagram" className="opacity-80 hover:opacity-100 hover:scale-110 transition-all"><FaInstagram className="w-4 h-4 md:w-5 md:h-5" /></a>
       <a href="#" aria-label="Facebook" className="opacity-80 hover:opacity-100 hover:scale-110 transition-all"><FaFacebookF className="w-4 h-4 md:w-5 md:h-5" /></a>
       <a href="#" aria-label="YouTube" className="opacity-80 hover:opacity-100 hover:scale-110 transition-all"><FaYoutube className="w-4 h-4 md:w-5 md:h-5" /></a>
-      <a href="mailto:hello@xyx.co" aria-label="Gmail" className="opacity-80 hover:opacity-100 hover:scale-110 transition-all"><SiGmail className="w-4 h-4 md:w-5 md:h-5" /></a>
+      <a href="mailto:info@nexshift.com" aria-label="Gmail" className="opacity-80 hover:opacity-100 hover:scale-110 transition-all"><SiGmail className="w-4 h-4 md:w-5 md:h-5" /></a>
     </div>
   );
 }

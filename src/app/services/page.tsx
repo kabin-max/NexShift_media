@@ -5,7 +5,7 @@ import ServiceGallery from "../../components/services/ServiceGallery";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Services | XYX",
+  title: "Services | NexShift",
   description: "Explore our portfolio of services including digital marketing, video editing, and cameragraphy.",
 };
 

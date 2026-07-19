@@ -2,6 +2,13 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
+// import { Outfit } from "next/font/google";
+
+// const outfit = Outfit({
+//   weight: "900",
+//   subsets: ["latin"],
+//   display: "swap",
+// });
 
 export default function IntroOverlay() {
   const [isVisible, setIsVisible] = useState(true);
@@ -9,7 +16,7 @@ export default function IntroOverlay() {
   useEffect(() => {
     // Lock scroll when the overlay is visible
     document.body.style.overflow = "hidden";
-    
+
     // Hide the overlay after a short delay (e.g., 2 seconds)
     const timer = setTimeout(() => {
       setIsVisible(false);
@@ -37,10 +44,11 @@ export default function IntroOverlay() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 1.1, y: -10 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            className="text-white text-5xl md:text-7xl lg:text-[8rem] tracking-tight drop-shadow-2xl select-none"
-            style={{ fontFamily: "var(--font-permanent-marker), cursive" }}
+            className="text-white text-5xl md:text-7xl lg:text-[8rem] font-black tracking-tight drop-shadow-2xl select-none italic"
+            style={{ fontFamily: 'var(--font-geist-sans)' }}
           >
             NexShift
+            <p className="text-md md:text-xl text-white tracking-tight align-center text-center whitespace-nowrap leading-none select-none italic" >Media & Management</p>
           </motion.div>
         </motion.div>
       )}
