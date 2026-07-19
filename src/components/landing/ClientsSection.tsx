@@ -13,7 +13,7 @@ const clients = [
 
 export default function ClientsSection() {
   return (
-    <section className="w-full bg-black pt-16 pb-24 md:pt-24 md:pb-32 text-white overflow-hidden">
+    <section id="clients" className="w-full bg-black pt-16 pb-24 md:pt-24 md:pb-32 text-white overflow-hidden">
       <style>{`
         @keyframes scroll-gallery { 
           0% { transform: translateX(0); } 
