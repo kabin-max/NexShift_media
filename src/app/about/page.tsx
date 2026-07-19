@@ -13,7 +13,7 @@ import Footer from "../../components/common/Footer";
 
 export default function About() {
   return (
-    <main className="relative flex flex-col w-full text-white font-sans bg-black overflow-x-hidden">
+    <main className="relative flex flex-col w-full text-white font-sans bg-black overflow-clip">
 
       <Background />
 
