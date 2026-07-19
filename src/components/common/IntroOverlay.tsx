@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
+import { Loader2 } from "lucide-react";
 // import { Outfit } from "next/font/google";
 
 // const outfit = Outfit({
@@ -10,10 +11,15 @@ import { useEffect, useState } from "react";
 //   display: "swap",
 // });
 
+let hasShownIntro = false;
+
 export default function IntroOverlay() {
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(!hasShownIntro);
 
   useEffect(() => {
+    if (hasShownIntro) return;
+    hasShownIntro = true;
+
     // Lock scroll when the overlay is visible
     document.body.style.overflow = "hidden";
 
@@ -48,7 +54,15 @@ export default function IntroOverlay() {
             style={{ fontFamily: 'var(--font-geist-sans)' }}
           >
             NexShift
-            <p className="text-md md:text-xl text-white tracking-tight align-center text-center whitespace-nowrap leading-none select-none italic" >Media & Management</p>
+            <p className="text-md md:text-xl text-white tracking-tight align-center text-center whitespace-nowrap leading-none select-none italic" >Media & Event Management</p>
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.6, duration: 0.5 }}
+              className="mt-12 flex justify-center w-full"
+            >
+              <Loader2 className="w-8 h-8 md:w-10 md:h-10 text-white/60 animate-spin" strokeWidth={2} />
+            </motion.div>
           </motion.div>
         </motion.div>
       )}

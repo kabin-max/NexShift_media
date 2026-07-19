@@ -17,11 +17,11 @@ export default function BannerCta() {
       <div className="absolute inset-0 bg-black/50" />
 
       <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center text-center space-y-10">
-        <h3 className="text-4xl sm:text-6xl md:text-8xl font-bold tracking-tight text-white leading-[1.05]">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight drop-shadow-xl text-white leading-[1.05]">
           Find your <br className="hidden md:inline" />
           <span className="italic font-light">Dream Experience</span> <br />
           Faster
-        </h3>
+        </h2>
 
         <motion.div
           whileHover={{ scale: 1.1 }}

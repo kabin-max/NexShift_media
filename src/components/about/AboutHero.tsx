@@ -74,7 +74,6 @@ export default function AboutHero() {
         {/* Title */}
         <h1 
           className="text-5xl md:text-6xl lg:text-8xl font-bold uppercase tracking-widest text-white drop-shadow-xl" 
-          style={{ fontFamily: "var(--font-permanent-marker), cursive" }}
         >
           ABOUT US
         </h1>

@@ -28,7 +28,7 @@ export default function FaqSection() {
   return (
     <section className="relative w-full py-24 bg-zinc-950 px-6 md:px-12 lg:px-24 border-t border-white/5">
       <div className="max-w-4xl mx-auto">
-        <h3 className="text-3xl md:text-5xl font-bold mb-12 text-white text-center">Frequently Asked Questions</h3>
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight drop-shadow-xl text-white mb-12 text-center">Frequently Asked Questions</h2>
         <div className="space-y-4">
           {faqs.map((faq, index) => {
             const isOpen = activeFaq === index;

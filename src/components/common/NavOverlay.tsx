@@ -92,7 +92,7 @@ export default function NavOverlay({ isOpen, onClose }: NavOverlayProps) {
             <div className="flex flex-col md:flex-row items-center gap-8 md:gap-16 mb-20 md:mb-32">
               {primaryLinks.map((link, idx) => {
                 const isActive = link === "Homepage" || link === "Home";
-                const href = link === "Home" || link === "Homepage" ? "/" : link === "About Us" ? "/about" : link === "Gallery" ? "/gallery" : "#";
+                const href = link === "Home" || link === "Homepage" ? "/" : link === "About Us" ? "/about" : link === "Services" ? "/services" : link === "Gallery" ? "/gallery" : "#";
                 return (
                   <Link
                     key={link}

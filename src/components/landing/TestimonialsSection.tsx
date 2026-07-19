@@ -5,7 +5,7 @@ export default function TestimonialsSection() {
     <section className="relative w-full pt-12 pb-24 bg-black overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight drop-shadow-xl text-white">
             What They Say
           </h2>
           <p className="mt-4 text-zinc-400 text-lg">

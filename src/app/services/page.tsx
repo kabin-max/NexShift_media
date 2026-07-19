@@ -19,12 +19,10 @@ export default function ServicesPage() {
 
       <div className="relative z-10 w-full flex flex-col flex-grow pt-32">
         <div className="w-full max-w-7xl mx-auto px-4 md:px-8 pt-8 text-center">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold uppercase tracking-widest mb-6" style={{ fontFamily: "var(--font-permanent-marker), cursive" }}>
-            OUR SERVICES
-          </h1>
-          <h2 className="text-2xl md:text-4xl font-semibold mb-4">
+          
+          <h3 className="text-2xl md:text-4xl font-semibold mb-4">
             Everything You Need to <br className="hidden md:block" /> Dominate Your Market.
-          </h2>
+          </h3>
           <p className="text-zinc-400 text-lg md:text-xl max-w-3xl mx-auto mb-4">
             From digital campaigns to large-scale events and cinematic productions — we deliver end-to-end solutions that drive real results.
           </p>

@@ -234,9 +234,9 @@ export default function OurSteps() {
       <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
 
         <div className="absolute top-12 md:top-24 w-full text-center z-30 pointer-events-none">
-          <h3 className="text-5xl md:text-7xl font-bold tracking-tight text-white">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight drop-shadow-xl text-white">
             Our Steps
-          </h3>
+          </h2>
         </div>
 
         <div ref={svgContainerRef} className="relative w-full max-w-7xl h-[80vh] mx-auto">

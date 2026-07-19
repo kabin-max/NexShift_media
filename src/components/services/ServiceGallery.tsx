@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import { AnimatePresence, motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { 
   CheckCircle2, 
@@ -206,12 +206,8 @@ function TiltCard({ service, index }: { service: ServiceItem; index: number }) {
   );
 }
 
-export default function ServiceGallery() {
-  const [activeCategory, setActiveCategory] = useState("All");
-
-  const filteredProjects = MOCK_PROJECTS.filter(
-    (project) => activeCategory === "All" || project.category === activeCategory
-  );
+function ServiceGalleryContent() {
+  const [activeCategory, setActiveCategory] = useState(CATEGORIES[0]);
 
   return (
     <div className="w-full max-w-7xl mx-auto px-4 md:px-8 py-12">
@@ -221,7 +217,7 @@ export default function ServiceGallery() {
           <button
             key={category}
             onClick={() => setActiveCategory(category)}
-            className={`relative text-xs md:text-sm font-semibold tracking-[0.2em] uppercase transition-colors duration-300 ${
+            className={`relative text-xs md:text-sm font-semibold tracking-[0.2em] uppercase transition-colors duration-300 px-4 py-2 ${
               activeCategory === category ? "text-white" : "text-zinc-500 hover:text-zinc-300"
             }`}
           >

@@ -1,7 +1,7 @@
 import Background from "../../components/common/Background";
 import Header from "../../components/common/Header";
 import SocialIcons from "../../components/common/SocialIcons";
-import ServiceGallery from "../../components/services/ServiceGallery";
+import Gallery from "../../components/gallery/Gallery";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -22,7 +22,7 @@ export default function GalleryPage() {
             GALLERY
           </h1>
         </div>
-        <ServiceGallery />
+        <Gallery />
       </div>
     </main>
   );
