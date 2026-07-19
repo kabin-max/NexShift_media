@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { motion, useScroll, useTransform, useMotionValue, animate, MotionValue } from "framer-motion";
+import { motion, useScroll, useTransform, useMotionValue, animate, MotionValue, useSpring } from "framer-motion";
 import Image from "next/image";
 
 interface CardData {
@@ -40,6 +40,9 @@ interface PhotoCardProps {
 
 function PhotoCard({ card, index, scrollYProgress, isLast, onAnimationComplete }: PhotoCardProps) {
   const entryVal = useMotionValue(0);
+  const hoverScale = useSpring(1, { stiffness: 300, damping: 18 });
+  const hoverY = useSpring(0, { stiffness: 300, damping: 18 });
+  const hoverShadow = useMotionValue("0 10px 15px -3px rgba(0,0,0,0.3), 0 4px 6px -2px rgba(0,0,0,0.2)");
 
   useEffect(() => {
     const delay = 0.8 + index * 0.16;
@@ -102,31 +105,31 @@ function PhotoCard({ card, index, scrollYProgress, isLast, onAnimationComplete }
     <motion.div
       style={{
         x,
-        y,
+        y: hoverY,
         rotate,
+        scale: hoverScale,
         zIndex: 10 + index,
+        boxShadow: hoverShadow,
       }}
-      whileHover={{
-        scale: 1.06,
-        rotate: (typeof window !== "undefined" && window.innerWidth < 768 ? getFanRotate(index, true) : getFanRotate(index, false)) * 0.4,
-        y: -25,
-        zIndex: 100,
-        boxShadow: "0 25px 30px -5px rgba(0, 0, 0, 0.45), 0 12px 12px -5px rgba(0, 0, 0, 0.35)",
-        transition: {
-          type: "spring",
-          stiffness: 300,
-          damping: 18
-        }
+      onHoverStart={() => {
+        hoverScale.set(1.06);
+        hoverY.set(-25);
+        hoverShadow.set("0 25px 30px -5px rgba(0, 0, 0, 0.45), 0 12px 12px -5px rgba(0, 0, 0, 0.35)");
       }}
-      className="absolute w-[140px] h-[190px] md:w-[225px] md:h-[310px] bg-white p-2 md:p-3 border border-zinc-200/90 rounded shadow-xl flex-shrink-0 cursor-pointer origin-bottom transition-shadow duration-300"
+      onHoverEnd={() => {
+        hoverScale.set(1);
+        hoverY.set(0);
+        hoverShadow.set("0 10px 15px -3px rgba(0,0,0,0.3), 0 4px 6px -2px rgba(0,0,0,0.2)");
+      }}
+      className="absolute w-[140px] h-[190px] md:w-[225px] md:h-[310px] bg-white p-2 md:p-3 rounded-2xl shadow-xl flex-shrink-0 cursor-pointer origin-bottom"
     >
-      <div className="relative w-full h-[85%] bg-zinc-100 overflow-hidden rounded-sm">
+      <div className="relative w-full h-[85%] bg-zinc-100 overflow-hidden rounded-xl">
         <Image
           src={card.src}
           alt={card.alt}
           fill
           sizes="(max-width: 768px) 140px, 225px"
-          className="object-cover object-center grayscale contrast-110 group-hover:grayscale-0 transition-all duration-300 pointer-events-none"
+          className="object-cover object-center pointer-events-none"
         />
       </div>
       <div className="h-[15%] w-full flex items-center justify-center">
@@ -143,9 +146,9 @@ export default function AnimatedPhotoStack({ cards, onAnimationComplete }: Anima
 
   const defaultCards: CardData[] = [
     { src: "/bg-image.png", alt: "Workspace Creative Session" },
-    { src: "/download.jpg", alt: "Corporate Presentation" },
+    { src: "/bg-image.png", alt: "Corporate Presentation" },
     { src: "/bg-image.png", alt: "Strategic Planning" },
-    { src: "/download.jpg", alt: "Event Production" },
+    { src: "/bg-image.png", alt: "Event Production" },
     { src: "/bg-image.png", alt: "Branding Design" },
   ];
 

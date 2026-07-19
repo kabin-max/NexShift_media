@@ -40,7 +40,7 @@ export default function TeamSection() {
                     src="/bg-image.png"
                     alt={member.name}
                     fill
-                    className="object-cover object-center grayscale contrast-115 brightness-90 group-hover:grayscale-0 group-hover:scale-102 transition-all duration-500"
+                    className="object-cover object-center group-hover:scale-[1.02] transition-all duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
 

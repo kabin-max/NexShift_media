@@ -37,20 +37,20 @@ export default function OurStory() {
             </p>
           </motion.div>
 
-          <div className="relative pt-12 flex flex-col gap-12 sm:gap-0 sm:block min-h-[300px]">
-            <div className="sm:absolute sm:left-0 sm:top-0">
-              <span className="text-7xl md:text-8xl font-bold tracking-tight text-white font-mono block">150+</span>
-              <span className="text-zinc-500 text-xs uppercase tracking-widest mt-1 block">Projects Completed</span>
+          <div className="pt-12 grid grid-cols-1 sm:grid-cols-3 gap-12 w-full text-center sm:text-left mt-12 border-t border-white/10">
+            <div>
+              <span className="text-6xl md:text-7xl font-bold tracking-tight text-white font-mono block">150+</span>
+              <span className="text-zinc-500 text-xs uppercase tracking-widest mt-2 block">Projects Completed</span>
             </div>
 
-            <div className="sm:absolute sm:left-[35%] sm:top-[70px]">
-              <span className="text-7xl md:text-8xl font-bold tracking-tight text-white font-mono block">50+</span>
-              <span className="text-zinc-500 text-xs uppercase tracking-widest mt-1 block">Happy Clients</span>
+            <div>
+              <span className="text-6xl md:text-7xl font-bold tracking-tight text-white font-mono block">50+</span>
+              <span className="text-zinc-500 text-xs uppercase tracking-widest mt-2 block">Happy Clients</span>
             </div>
 
-            <div className="sm:absolute sm:right-0 sm:top-[140px]">
-              <span className="text-7xl md:text-8xl font-bold tracking-tight text-white font-mono block">5M+</span>
-              <span className="text-zinc-500 text-xs uppercase tracking-widest mt-1 block">Audience Reached</span>
+            <div>
+              <span className="text-6xl md:text-7xl font-bold tracking-tight text-white font-mono block">5M+</span>
+              <span className="text-zinc-500 text-xs uppercase tracking-widest mt-2 block">Audience Reached</span>
             </div>
           </div>
         </div>

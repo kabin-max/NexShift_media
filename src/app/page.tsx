@@ -9,23 +9,27 @@ import AboutSection1 from "../components/landing/AboutSection1";
 import AboutSection2 from "../components/landing/AboutSection2";
 import TrustedPartners from "../components/landing/TrustedPartners";
 import ClientsSection from "../components/landing/ClientsSection";
+import TestimonialsSection from "../components/landing/TestimonialsSection";
 import ContactSection from "../components/landing/ContactSection";
 import Footer from "../components/common/Footer";
+import IntroOverlay from "../components/common/IntroOverlay";
 
 export default function Home() {
   return (
     <main className="relative flex flex-col w-full text-white font-sans bg-black">
+      <IntroOverlay />
       <Background />
       <Header />
       <SocialIcons />
       <AnimatedLogo />
 
-      <div className="relative z-10 w-full flex flex-col">
+      <div className="relative w-full flex flex-col">
         <HeroSection />
         <AboutSection1 />
         <AboutSection2 />
         <TrustedPartners />
         <ClientsSection />
+        <TestimonialsSection />
         <ContactSection />
         <Footer />
       </div>

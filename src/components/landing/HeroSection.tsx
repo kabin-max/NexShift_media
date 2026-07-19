@@ -9,9 +9,11 @@ export default function HeroSection() {
   // ── Spring config for fluid parallax feel ──────────────────────────
   const springCfg = { damping: 30, stiffness: 80, mass: 0.6 };
 
-  // Layer 1 – background drifts slowly downward
+  // Layer 1 – background drifts slowly downward and zooms in
   const rawBgY  = useTransform(scrollY, [0, 1000], [0, 130]);
+  const rawBgScale = useTransform(scrollY, [0, 1000], [1, 1.25]);
   const bgY     = useSpring(rawBgY,  springCfg);
+  const bgScale = useSpring(rawBgScale, springCfg);
 
   // Layer 2 – image card glides gently upward
   const rawMidY = useTransform(scrollY, [0, 1000], [0, -90]);
@@ -38,8 +40,8 @@ export default function HeroSection() {
 
       {/* ── Layer 1: Background sky / hills ──────────────────────────── */}
       <motion.div
-        className="absolute inset-0 z-0 pointer-events-none"
-        style={{ y: bgY }}
+        className="absolute inset-0 z-0 pointer-events-none origin-bottom"
+        style={{ y: bgY, scale: bgScale }}
       >
         {/* Slightly oversized so parallax travel never reveals edges */}
         <div className="absolute -inset-[10%] w-[120%] h-[120%]">
@@ -82,17 +84,13 @@ export default function HeroSection() {
 
       {/* ── Layer 3: Foreground mountain silhouette ───────────────────── */}
       <motion.div
-        className="absolute bottom-0 left-0 right-0 h-[25vh] md:h-[35vh] z-20 pointer-events-none"
-        style={{ y: fgY }}
+        className="absolute inset-0 z-[60] pointer-events-none"
       >
-        <div className="relative w-full h-full">
-          <Image
-            src="https://andyhardy.co/assets/img/landscape_mountain_small.png"
-            alt="Parallax Foreground"
-            fill
-            className="object-cover object-bottom"
-          />
-        </div>
+        <img
+          src="https://andyhardy.co/assets/img/landscape_mountain_small.png"
+          alt="Parallax Foreground"
+          className="w-full h-full object-cover object-[center_70%] md:object-[center_50%] lg:object-[center_40%]"
+        />
       </motion.div>
 
       {/* ── Info overlay (Andy Hardy style) ──────────────────────────── */}

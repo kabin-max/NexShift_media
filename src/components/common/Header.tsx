@@ -13,8 +13,8 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Add blur after scrolling down a bit
-      setIsScrolled(window.scrollY > 50);
+      // Add blur after the NexShift text finishes its animation and reaches the top
+      setIsScrolled(window.scrollY > 400);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -26,7 +26,7 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-40 flex items-center justify-between w-full px-6 py-3 md:px-12 md:py-4 transition-all duration-300 ${isScrolled ? "bg-black/20 backdrop-blur-sm" : "bg-transparent"
+        className={`fixed top-0 left-0 right-0 z-[70] flex items-center justify-between w-full px-6 py-3 md:px-12 md:py-4 transition-all duration-300 ${isScrolled ? "bg-black/20 backdrop-blur-sm" : "bg-transparent"
           }`}
       >
         <button
@@ -36,8 +36,18 @@ export default function Header() {
           <Menu className="w-5 h-5" strokeWidth={1.5} />
         </button>
 
-        {/* The animated XYX! logo will move here on scroll, so this space is left empty initially */}
-        <div className="w-12 pointer-events-none" />
+        {pathname === "/" ? (
+          <div className="w-12 pointer-events-none" />
+        ) : (
+          <Link href="/" className="pointer-events-auto cursor-pointer flex items-center justify-center">
+            <span 
+              className="text-2xl md:text-3xl text-white tracking-tight whitespace-nowrap leading-none select-none"
+              style={{ fontFamily: "var(--font-permanent-marker), cursive" }}
+            >
+              NexShift
+            </span>
+          </Link>
+        )}
 
         {pathname === "/about" ? (
           <Link href="/" className="px-6 py-3 bg-white text-black text-sm font-bold rounded-full hover:bg-gray-200 transition shadow-md cursor-pointer pointer-events-auto">

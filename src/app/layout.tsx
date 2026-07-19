@@ -19,8 +19,8 @@ const permanentMarker = Permanent_Marker({
 });
 
 export const metadata: Metadata = {
-  title: "XYX | Creating amazing experiences",
-  description: "Landing page for XYX company.",
+  title: "NexShift | Creating amazing experiences",
+  description: "Landing page for NexShift company.",
 };
 
 export default function RootLayout({

@@ -143,9 +143,9 @@ export default function AnimatedPhotoStack({ cards, onAnimationComplete }: Anima
 
   const defaultCards: CardData[] = [
     { src: "/bg-image.png", alt: "Workspace Creative Session" },
-    { src: "/download.jpg", alt: "Corporate Presentation" },
+    { src: "/bg-image.png", alt: "Corporate Presentation" },
     { src: "/bg-image.png", alt: "Strategic Planning" },
-    { src: "/download.jpg", alt: "Event Production" },
+    { src: "/bg-image.png", alt: "Event Production" },
     { src: "/bg-image.png", alt: "Branding Design" },
   ];
 

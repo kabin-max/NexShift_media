@@ -4,16 +4,36 @@ import { useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function AboutSection2() {
-  const bioRef = useRef(null);
-  const { scrollYProgress: bioProgress } = useScroll({
-    target: bioRef,
+  const sectionRef = useRef(null);
+  
+  // Track scroll for the bio text
+  const { scrollYProgress: sectionProgress } = useScroll({
+    target: sectionRef,
     offset: ["start end", "end start"],
   });
 
-  const bioY = useTransform(bioProgress, [0, 0.4], [80, 0]);
-  const bioOpacity = useTransform(bioProgress, [0, 0.35], [0, 1]);
+  const bioY = useTransform(sectionProgress, [0, 0.4], [80, 0]);
+  const bioOpacity = useTransform(sectionProgress, [0, 0.35], [0, 1]);
+
+  // Track scroll for the parallax gallery specifically
+  const collageRef = useRef(null);
+  const { scrollYProgress: collageProgress } = useScroll({
+    target: collageRef,
+    offset: ["start end", "end start"],
+  });
 
   const [hoveredId, setHoveredId] = useState<string | null>(null);
+
+  // Parallax transforms for each image
+  const img1Y = useTransform(collageProgress, [0, 1], [150, -200]);
+  const img2Y = useTransform(collageProgress, [0, 1], [80, -120]);
+  const img3Y = useTransform(collageProgress, [0, 1], [-80, 150]);
+  const img4Y = useTransform(collageProgress, [0, 1], [200, -250]);
+
+  const img1X = useTransform(collageProgress, [0, 1], [-40, 40]);
+  const img2X = useTransform(collageProgress, [0, 1], [20, -20]);
+  const img3X = useTransform(collageProgress, [0, 1], [-30, 30]);
+  const img4X = useTransform(collageProgress, [0, 1], [50, -50]);
 
   const images = [
     {
@@ -22,7 +42,9 @@ export default function AboutSection2() {
       alt: "Top Left",
       className: "w-[65%] md:w-[35%] max-w-[320px] aspect-[3/4] top-[5%] left-[5%] md:top-[5%] md:left-[22%] z-20",
       rotation: -6,
-      delay: 0,
+      parallaxY: img1Y,
+      parallaxX: img1X,
+      borderStyle: "2% 4% 2% 3% / 3% 2% 4% 2%"
     },
     {
       id: "img2",
@@ -30,15 +52,19 @@ export default function AboutSection2() {
       alt: "Top Right",
       className: "w-[70%] md:w-[40%] max-w-[380px] aspect-[4/3] top-[15%] right-[5%] md:top-[12%] md:right-[20%] z-10",
       rotation: 8,
-      delay: 0.15,
+      parallaxY: img2Y,
+      parallaxX: img2X,
+      borderStyle: "3% 2% 4% 2% / 2% 4% 3% 4%"
     },
     {
       id: "img3",
-      src: "https://images.unsplash.com/photo-1518014562097-f6c1cb50e503?q=80&w=1000",
+      src: "/bg-image.png",
       alt: "Bottom Left",
       className: "w-[70%] md:w-[35%] max-w-[340px] aspect-[4/3] bottom-[20%] left-[5%] md:bottom-[15%] md:left-[20%] z-30",
       rotation: -4,
-      delay: 0.3,
+      parallaxY: img3Y,
+      parallaxX: img3X,
+      borderStyle: "4% 3% 2% 4% / 3% 4% 2% 3%"
     },
     {
       id: "img4",
@@ -46,13 +72,15 @@ export default function AboutSection2() {
       alt: "Bottom Right",
       className: "w-[65%] md:w-[35%] max-w-[320px] aspect-[3/4] bottom-[5%] right-[10%] md:bottom-[5%] md:right-[25%] z-40",
       rotation: 5,
-      delay: 0.45,
+      parallaxY: img4Y,
+      parallaxX: img4X,
+      borderStyle: "2% 3% 4% 2% / 4% 2% 3% 4%"
     }
   ];
 
   return (
     <section
-      ref={bioRef}
+      ref={sectionRef}
       className="relative w-full min-h-screen bg-black text-white flex flex-col justify-start pt-20 pb-12 overflow-hidden"
     >
       {/* Rotated Background Image */}
@@ -99,8 +127,11 @@ export default function AboutSection2() {
         </p>
       </motion.div>
 
-      {/* ── 4-photo scattered collage with pop-up animation ── */}
-      <div className="relative mt-16 w-full h-[600px] md:h-[800px] flex items-center justify-center pointer-events-auto">
+      {/* ── 4-photo scattered collage with scroll parallax ── */}
+      <div 
+        ref={collageRef}
+        className="relative mt-32 w-full h-[600px] md:h-[800px] flex items-center justify-center pointer-events-auto"
+      >
         
         {/* Particles/Dust on Left & Right */}
         <div className="absolute left-0 top-0 bottom-0 w-32 md:w-64 bg-[url('data:image/svg+xml,%3Csvg viewBox=\'0 0 100 100\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Ccircle cx=\'20\' cy=\'30\' r=\'1\' fill=\'white\' opacity=\'0.3\'/%3E%3Ccircle cx=\'80\' cy=\'70\' r=\'1.5\' fill=\'white\' opacity=\'0.2\'/%3E%3Ccircle cx=\'50\' cy=\'50\' r=\'0.8\' fill=\'white\' opacity=\'0.4\'/%3E%3C/svg%3E')] opacity-30 pointer-events-none z-10" />
@@ -111,17 +142,11 @@ export default function AboutSection2() {
           return (
             <motion.div
               key={img.id}
-              initial={{ scale: 0.9, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ 
-                duration: 0.8, 
-                delay: img.delay,
-                ease: [0.25, 0.1, 0.25, 1] 
-              }}
-              className={`absolute ${img.className} rounded-[12px] cursor-pointer`}
+              className={`absolute ${img.className} cursor-pointer`}
               style={{
-                rotate: img.rotation, // static rotation as requested
+                y: img.parallaxY,
+                x: img.parallaxX,
+                rotate: img.rotation,
                 zIndex: isHovered ? 100 : undefined,
               }}
               onMouseEnter={() => setHoveredId(img.id)}
@@ -135,12 +160,14 @@ export default function AboutSection2() {
                     : "0px 15px 30px rgba(0,0,0,0.5)"
                 }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
-                className="w-full h-full rounded-[12px] overflow-hidden bg-black border border-white/5"
+                className="w-full h-full rounded-[12px] overflow-hidden bg-black shadow-2xl border border-white/10"
               >
-                <img
+                <motion.img
                   src={img.src}
                   alt={img.alt}
                   className="w-full h-full object-cover"
+                  animate={{ scale: isHovered ? 1.1 : 1 }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
                 />
               </motion.div>
             </motion.div>

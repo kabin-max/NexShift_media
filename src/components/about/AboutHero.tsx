@@ -24,7 +24,7 @@ export default function AboutHero() {
           <AnimatedPhotoStack onAnimationComplete={() => setFanned(true)} />
         </div>
 
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={fanned ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -43,16 +43,9 @@ export default function AboutHero() {
               Contact Us
             </Link>
           </div>
-        </motion.div>
+        </motion.div> */}
       </motion.div>
 
-      <motion.footer
-        className="absolute bottom-6 left-6 right-6 flex items-center justify-between z-20 text-xs font-medium tracking-wider opacity-60 text-zinc-400"
-        style={{ opacity: heroFade }}
-      >
-        <span>27.7172° N, 85.3240° E</span>
-        <span className="hidden sm:block">Shifting perspectives from Kathmandu, Nepal</span>
-      </motion.footer>
     </section>
   );
 }
