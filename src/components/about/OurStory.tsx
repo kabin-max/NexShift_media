@@ -1,7 +1,33 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { motion, useScroll, useTransform, useInView, animate, useMotionValue } from "framer-motion";
+
+function AnimatedNumber({ value, suffix }: { value: number; suffix: string }) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-100px" });
+  const [display, setDisplay] = useState("0");
+  const count = useMotionValue(0);
+
+  useEffect(() => {
+    if (inView) {
+      const controls = animate(count, value, {
+        duration: 2.5,
+        ease: "easeOut",
+        onUpdate: (latest) => {
+          setDisplay(Math.floor(latest).toString());
+        }
+      });
+      return () => controls.stop();
+    }
+  }, [inView, count, value]);
+
+  return (
+    <span ref={ref} className="text-6xl md:text-7xl font-bold tracking-tight text-white font-mono block">
+      {display}{suffix}
+    </span>
+  );
+}
 
 export default function OurStory() {
   const storyRef = useRef(null);
@@ -39,17 +65,17 @@ export default function OurStory() {
 
           <div className="pt-12 grid grid-cols-1 sm:grid-cols-3 gap-12 w-full text-center sm:text-left mt-12 border-t border-white/10">
             <div>
-              <span className="text-6xl md:text-7xl font-bold tracking-tight text-white font-mono block">150+</span>
+              <AnimatedNumber value={150} suffix="+" />
               <span className="text-zinc-500 text-xs uppercase tracking-widest mt-2 block">Projects Completed</span>
             </div>
 
             <div>
-              <span className="text-6xl md:text-7xl font-bold tracking-tight text-white font-mono block">50+</span>
+              <AnimatedNumber value={50} suffix="+" />
               <span className="text-zinc-500 text-xs uppercase tracking-widest mt-2 block">Happy Clients</span>
             </div>
 
             <div>
-              <span className="text-6xl md:text-7xl font-bold tracking-tight text-white font-mono block">5M+</span>
+              <AnimatedNumber value={5} suffix="M+" />
               <span className="text-zinc-500 text-xs uppercase tracking-widest mt-2 block">Audience Reached</span>
             </div>
           </div>

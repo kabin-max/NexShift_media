@@ -49,6 +49,7 @@ export default function HeroSection() {
             src="https://andyhardy.co/assets/img/landscape_background_small.jpg"
             alt="Parallax Background"
             fill
+            sizes="100vw"
             priority
             className="object-cover object-center brightness-[0.7]"
           />

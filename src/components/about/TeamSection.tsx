@@ -40,6 +40,7 @@ export default function TeamSection() {
                     src="/bg-image.png"
                     alt={member.name}
                     fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover object-center group-hover:scale-[1.02] transition-all duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
