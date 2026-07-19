@@ -6,7 +6,6 @@ import Header from "../../components/common/Header";
 import SocialIcons from "../../components/common/SocialIcons";
 import AnimatedLogo from "../../components/landing/AnimatedLogo";
 import HeroSection from "../../components/landing/HeroSection";
-import AboutSection1 from "../../components/landing/AboutSection1";
 import AboutSection2 from "../../components/landing/AboutSection2";
 import TrustedPartners from "../../components/landing/TrustedPartners";
 import ClientsSection from "../../components/landing/ClientsSection";
@@ -22,7 +21,6 @@ export default function Home() {
 
             <div className="relative z-10 w-full flex flex-col">
                 <HeroSection />
-                <AboutSection1 />
                 <AboutSection2 />
                 <TrustedPartners />
                 <ClientsSection />

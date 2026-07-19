@@ -87,6 +87,16 @@ export default function HeroSection() {
       <motion.div
         className="absolute inset-0 z-[60] pointer-events-none"
       >
+        <motion.div
+          className="absolute bottom-14 right-12 md:bottom-20 md:right-24 w-32 h-32 md:w-40 md:h-40 bg-black rounded-full flex items-center justify-center shadow-2xl z-40"
+        >
+          <svg viewBox="0 0 100 100" className="w-full h-full animate-[spin_14s_linear_infinite]">
+            <path id="circlePath" d="M 50,50 m -32,0 a 32,32 0 1,1 64,0 a 32,32 0 1,1 -64,0" fill="none" />
+            <text fill="white" fontSize="9" letterSpacing="3">
+              <textPath href="#circlePath" startOffset="0%">CREATIVE AGENCY • NexShift • CREATIVE AGENCY •</textPath>
+            </text>
+          </svg>
+        </motion.div>
         <img
           src="https://andyhardy.co/assets/img/landscape_mountain_small.png"
           alt="Parallax Foreground"
@@ -101,6 +111,8 @@ export default function HeroSection() {
       >
         
       </motion.div>
+
+
 
       {/* ── Bottom fade into next section ────────────────────────────── */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black via-black/80 to-transparent pointer-events-none z-30" />
