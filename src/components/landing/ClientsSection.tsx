@@ -49,6 +49,7 @@ export default function ClientsSection() {
                       src={client.image}
                       alt={client.name}
                       fill
+                      sizes="(max-width: 768px) 300px, 300px"
                       className="object-cover transition-transform duration-700 group-hover:scale-105 group-hover:brightness-110 opacity-70 group-hover:opacity-100"
                     />
                   </div>

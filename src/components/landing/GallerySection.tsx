@@ -100,6 +100,7 @@ export default function GallerySection() {
           src="/bubble.jpg"
           alt="Bubble Background"
           fill
+          sizes="100vw"
           className="object-cover scale-[1.2] -rotate-[15deg] max-w-none"
         />
       </div>

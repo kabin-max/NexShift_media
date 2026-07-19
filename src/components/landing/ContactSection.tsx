@@ -52,6 +52,7 @@ export default function ContactSection() {
             src="/bg-image.png"
             alt="Contact Background"
             fill
+            sizes="100vw"
             className="object-cover opacity-60"
           />
           {/* Horizontal Gradient: fades more gently toward the right side */}

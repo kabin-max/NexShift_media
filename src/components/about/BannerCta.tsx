@@ -11,6 +11,7 @@ export default function BannerCta() {
         src="/bg-image.png"
         alt="Find House Faster Banner"
         fill
+        sizes="100vw"
         className="object-cover object-center opacity-30 select-none pointer-events-none"
       />
       <div className="absolute inset-0 bg-black/50" />
