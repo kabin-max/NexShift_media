@@ -68,12 +68,12 @@ export default function AboutHero() {
   ];
 
   return (
-    <section className="relative w-full min-h-screen bg-black flex flex-col justify-start pt-40 pb-20 overflow-hidden px-6">
+    <section className="relative w-full min-h-screen bg-transparent flex flex-col justify-start pt-40 pb-20 overflow-hidden px-6">
       <div className="max-w-4xl mx-auto w-full flex flex-col items-center text-center gap-2 z-10">
         
         {/* Title */}
         <h1 
-          className="text-5xl md:text-6xl lg:text-8xl font-bold uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/40 drop-shadow-xl" 
+          className="text-5xl md:text-6xl lg:text-8xl font-bold font-sans tracking-tight text-[#154880] drop-shadow-sm" 
         >
           ABOUT US
         </h1>
@@ -85,7 +85,7 @@ export default function AboutHero() {
 
         {/* Bottom Side: Text */}
         <div className="w-full flex flex-col items-center space-y-6 mt-16">
-          <p className="text-zinc-300 text-lg md:text-xl leading-relaxed max-w-2xl">
+          <p className="text-gray-700 font-medium text-lg md:text-xl leading-relaxed max-w-2xl font-sans">
             We are a creative collective of visual storytellers, directors, and photographers. We build cinematic campaigns that stand out, ensuring your brand&apos;s narrative is captured authentically.
           </p>
         </div>

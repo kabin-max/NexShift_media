@@ -6,14 +6,12 @@ import SocialIcons from "../../components/common/SocialIcons";
 import AboutHero from "../../components/about/AboutHero";
 import OurStory from "../../components/about/OurStory";
 import OurSteps from "../../components/about/OurSteps";
-import TeamSection from "../../components/about/TeamSection";
 import FaqSection from "../../components/about/FaqSection";
-import BannerCta from "../../components/about/BannerCta";
 import Footer from "../../components/common/Footer";
 
 export default function About() {
   return (
-    <main className="relative flex flex-col w-full text-white font-sans bg-black overflow-clip">
+    <main className="relative flex flex-col w-full text-gray-700 font-sans bg-[#FAFAFA] overflow-clip">
 
       <Background />
 
@@ -25,9 +23,7 @@ export default function About() {
         <AboutHero />
         <OurStory />
         <OurSteps />
-        <TeamSection />
         <FaqSection />
-        <BannerCta />
         <Footer />
       </div>
     </main>
