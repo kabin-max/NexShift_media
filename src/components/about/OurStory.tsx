@@ -23,7 +23,7 @@ function AnimatedNumber({ value, suffix }: { value: number; suffix: string }) {
   }, [inView, count, value]);
 
   return (
-    <span ref={ref} className="text-6xl md:text-7xl font-bold tracking-tight text-white font-mono block">
+    <span ref={ref} className="text-6xl md:text-7xl font-bold tracking-tight text-[#154880] font-sans block">
       {display}{suffix}
     </span>
   );
@@ -38,11 +38,11 @@ export default function OurStory() {
   const storyY = useTransform(storyProgress, [0, 0.5], [60, 0]);
 
   return (
-    <section id="story" ref={storyRef} className="relative w-full py-24 md:py-32 bg-black px-6 md:px-12 lg:px-24">
+    <section id="story" ref={storyRef} className="relative w-full py-24 md:py-32 bg-transparent px-6 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto flex flex-col gap-16 items-center">
 
         <div className="w-full text-center">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight drop-shadow-xl text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/40">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-sans tracking-tight text-[#154880] drop-shadow-sm">
             Our Story
           </h2>
         </div>
@@ -50,9 +50,9 @@ export default function OurStory() {
         <div className="w-full max-w-4xl space-y-16">
           <motion.div
             style={{ y: storyY }}
-            className="text-zinc-400 space-y-6 text-lg leading-relaxed font-light"
+            className="text-gray-700 font-medium space-y-6 text-lg leading-relaxed font-sans"
           >
-            <p className="text-white text-xl font-medium leading-relaxed">
+            <p className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#0D7A95] via-[#14A9D6] to-[#2E73B8] leading-relaxed">
               Born from a passion for creativity and strategic excellence, NexShift was founded with a clear vision: to bridge the gap between powerful storytelling and measurable business results.
             </p>
             <p>
@@ -63,20 +63,20 @@ export default function OurStory() {
             </p>
           </motion.div>
 
-          <div className="pt-12 grid grid-cols-1 sm:grid-cols-3 gap-12 w-full text-center sm:text-left mt-12 border-t border-white/10">
+          <div className="pt-12 grid grid-cols-1 sm:grid-cols-3 gap-12 w-full text-center sm:text-left mt-12 border-t border-gray-200">
             <div>
               <AnimatedNumber value={150} suffix="+" />
-              <span className="text-zinc-500 text-xs uppercase tracking-widest mt-2 block">Projects Completed</span>
+              <span className="text-gray-500 text-[10px] md:text-xs font-bold uppercase tracking-widest mt-2 block">Projects Completed</span>
             </div>
 
             <div>
               <AnimatedNumber value={50} suffix="+" />
-              <span className="text-zinc-500 text-xs uppercase tracking-widest mt-2 block">Happy Clients</span>
+              <span className="text-gray-500 text-[10px] md:text-xs font-bold uppercase tracking-widest mt-2 block">Happy Clients</span>
             </div>
 
             <div>
               <AnimatedNumber value={5} suffix="M+" />
-              <span className="text-zinc-500 text-xs uppercase tracking-widest mt-2 block">Audience Reached</span>
+              <span className="text-gray-500 text-[10px] md:text-xs font-bold uppercase tracking-widest mt-2 block">Audience Reached</span>
             </div>
           </div>
         </div>

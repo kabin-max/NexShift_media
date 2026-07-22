@@ -109,27 +109,27 @@ function DetailPanel({ step, index, zone, progress, side }: { step: any, index: 
   return (
     <motion.div
       style={{ opacity, y, filter: blur }}
-      className={`absolute ${positionClasses} z-40 hidden md:flex flex-col w-64 md:w-72 bg-zinc-900/50 backdrop-blur-xl border border-white/10 rounded-2xl p-5 shadow-2xl pointer-events-none`}
+      className={`absolute ${positionClasses} z-40 hidden md:flex flex-col w-64 md:w-72 bg-white/80 backdrop-blur-md border border-gray-200 rounded-2xl p-5 shadow-2xl pointer-events-none`}
     >
       <div className="flex items-center justify-between mb-4">
         <span className="text-amber-500 font-mono text-xs font-bold tracking-widest uppercase">
           Step {step.num}
         </span>
-        <span className="flex items-center justify-center p-2 rounded-xl bg-white/5 border border-white/10">
+        <span className="flex items-center justify-center p-2 rounded-xl bg-gray-100 border border-gray-200">
           {step.icon}
         </span>
       </div>
 
       <div className="mb-5">
-        <h5 className="text-white text-xl font-bold mb-1">{step.metric}</h5>
-        <p className="text-zinc-500 text-[10px] uppercase tracking-widest font-semibold">Target Metric</p>
+        <h5 className="text-[#154880] font-sans text-xl font-bold mb-1">{step.metric}</h5>
+        <p className="text-gray-500 text-[10px] md:text-xs uppercase tracking-widest font-bold">Target Metric</p>
       </div>
 
       <div className="space-y-3">
         {step.tags.map((tag: string, idx: number) => (
           <div key={idx} className="flex items-center gap-3">
             <div className="w-1.5 h-1.5 rounded-full bg-amber-500 shadow-[0_0_8px_rgba(245,158,11,0.8)]" />
-            <span className="text-zinc-300 text-sm font-light tracking-wide">{tag}</span>
+            <span className="text-gray-700 text-sm font-medium tracking-wide font-sans">{tag}</span>
           </div>
         ))}
       </div>
@@ -175,15 +175,15 @@ function StepCard({ step, index, progress }: { step: any, index: number, progres
       <div className="relative p-6 md:p-8 mt-12 md:mt-20">
         <motion.span
           style={{ opacity: ghostOpacity }}
-          className="absolute bottom-full translate-y-[45%] left-0 md:-left-4 text-[8rem] md:text-[14rem] font-bold font-mono text-white select-none z-[-1] leading-none tracking-tighter pointer-events-none"
+          className="absolute bottom-full translate-y-[45%] left-0 md:-left-4 text-[8rem] md:text-[14rem] font-bold font-mono text-[#14A9D6] select-none z-[-1] leading-none tracking-tighter pointer-events-none"
         >
           {step.num}
         </motion.span>
 
-        <h4 className="text-3xl md:text-5xl font-bold uppercase tracking-[0.15em] text-white mb-4 md:mb-6 pointer-events-auto">
+        <h4 className="text-3xl md:text-5xl font-bold uppercase tracking-[0.15em] text-[#154880] mb-4 md:mb-6 pointer-events-auto font-sans">
           {step.title}
         </h4>
-        <p className="text-zinc-400 text-sm md:text-base leading-relaxed font-light max-w-[280px] pointer-events-auto">
+        <p className="text-gray-700 text-sm md:text-base leading-relaxed font-medium max-w-[280px] pointer-events-auto font-sans">
           {step.desc}
         </p>
 
@@ -230,11 +230,11 @@ export default function OurSteps() {
   const dynamicPath = getPath(svgSize.w, svgSize.h);
 
   return (
-    <section ref={containerRef} style={{ height: "200vh" }} className="relative w-full bg-zinc-950/80 border-t border-white/5">
+    <section ref={containerRef} style={{ height: "200vh" }} className="relative w-full bg-transparent border-t border-gray-200">
       <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
 
         <div className="absolute top-12 md:top-24 w-full text-center z-30 pointer-events-none">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight drop-shadow-xl text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/40">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-sans tracking-tight text-[#154880] drop-shadow-sm">
             Our Steps
           </h2>
         </div>
@@ -265,7 +265,7 @@ export default function OurSteps() {
               <path
                 d={dynamicPath}
                 fill="none"
-                stroke="rgba(255,255,255,0.15)"
+                stroke="rgba(0,0,0,0.15)"
                 strokeWidth="2"
                 strokeDasharray="4 8"
                 strokeLinecap="round"

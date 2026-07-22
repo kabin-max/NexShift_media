@@ -13,13 +13,13 @@ export default function TeamSection() {
   ];
 
   return (
-    <section className="relative w-full py-24 md:py-32 bg-black px-6 md:px-12 lg:px-24">
+    <section className="relative w-full py-24 md:py-32 bg-transparent px-6 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto">
         <div className="mb-20 flex flex-col items-center text-center">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight drop-shadow-xl text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/40 mb-6">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-sans tracking-tight text-[#154880] drop-shadow-sm mb-6">
             Meet The Amazing Team
           </h2>
-          <p className="text-zinc-400 text-lg max-w-2xl font-light">
+          <p className="text-gray-700 text-lg max-w-2xl font-medium font-sans">
             A passionate team of strategists, creatives, event managers, visualizers, and builders committed to delivering exceptional results.
           </p>
         </div>
@@ -35,7 +35,7 @@ export default function TeamSection() {
                 key={i}
                 className={`group relative flex flex-col overflow-hidden transition-all duration-300 ${offsetClass}`}
               >
-                <div className="relative aspect-[3/4] w-full bg-zinc-900 rounded-xl overflow-hidden">
+                <div className="relative aspect-[3/4] w-full bg-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-[#0D7A95]/10 transition-all duration-300">
                   <Image
                     src="/bg-image.png"
                     alt={member.name}
@@ -46,10 +46,10 @@ export default function TeamSection() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
 
                   <div className="absolute bottom-6 left-6 right-6">
-                    <h4 className="text-xl font-bold text-white group-hover:text-amber-400 transition">
+                    <h4 className="text-xl font-bold text-white group-hover:text-[#39FF14] transition font-sans">
                       {member.name}
                     </h4>
-                    <p className="text-xs text-zinc-400 font-semibold uppercase tracking-widest mt-1">
+                    <p className="text-[10px] md:text-xs text-gray-300 font-bold uppercase tracking-widest mt-1">
                       {member.role}
                     </p>
                   </div>
