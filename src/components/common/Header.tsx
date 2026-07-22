@@ -26,7 +26,7 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-[70] flex items-center justify-between w-full px-6 py-3 md:px-12 md:py-4 transition-all duration-300 ${isScrolled ? "bg-black/20 backdrop-blur-sm" : "bg-transparent"
+        className={`fixed top-0 left-0 right-0 z-[70] flex items-center justify-between w-full px-6 py-3 md:px-12 md:py-4 transition-all duration-300 ${isScrolled ? "bg-white/80" : "bg-transparent"
           }`}
       >
         <button

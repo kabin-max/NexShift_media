@@ -1,6 +1,6 @@
 export default function TrustedPartners() {
   return (
-    <section className="w-full bg-black py-24 md:py-32 overflow-hidden flex flex-col gap-12 border-t border-zinc-900/50">
+    <section className="w-full bg-transparent py-24 md:py-32 overflow-hidden flex flex-col gap-12 border-t border-gray-200">
       <style>{`
         @keyframes scroll-left { 
           0% { transform: translateX(0); } 
@@ -22,22 +22,22 @@ export default function TrustedPartners() {
       `}</style>
 
       <div className="text-center px-6">
-        <h2 className="font-sans font-bold text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/40 text-4xl md:text-5xl lg:text-6xl tracking-tight drop-shadow-xl">
+        <h2 className="font-sans font-bold text-[#154880] text-4xl md:text-5xl lg:text-6xl tracking-tight drop-shadow-sm">
           Trusted Partners
         </h2>
       </div>
 
       <div className="relative w-full flex flex-col gap-10 md:gap-14">
         {/* Left and Right fade gradients for smooth seamless look */}
-        <div className="absolute inset-y-0 left-0 w-16 md:w-48 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
-        <div className="absolute inset-y-0 right-0 w-16 md:w-48 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-y-0 left-0 w-16 md:w-48 bg-gradient-to-r from-[#FAFAFA] to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-16 md:w-48 bg-gradient-to-l from-[#FAFAFA] to-transparent z-10 pointer-events-none" />
 
         {/* Row 1: Left to Right (Scroll Right) */}
         <div className="flex w-max marquee-right items-center">
           {[...Array(2)].map((_, i) => (
             <div key={i} className="flex gap-12 md:gap-24 px-6 md:px-12 items-center">
               {['NIKE', 'APPLE', 'SONY', 'ADIDAS', 'TESLA', 'GOOGLE', 'BMW'].map((brand, idx) => (
-                <span key={`r1-${i}-${idx}`} className="text-4xl md:text-6xl lg:text-8xl font-black tracking-tighter text-zinc-800 hover:text-white transition-colors duration-300 cursor-pointer select-none whitespace-nowrap">
+                <span key={`r1-${i}-${idx}`} className="text-4xl md:text-6xl lg:text-8xl font-black tracking-tighter text-gray-200 hover:text-[#0D7A95] transition-colors duration-300 cursor-pointer select-none whitespace-nowrap">
                   {brand}
                 </span>
               ))}
@@ -50,7 +50,7 @@ export default function TrustedPartners() {
           {[...Array(2)].map((_, i) => (
             <div key={i} className="flex gap-12 md:gap-24 px-6 md:px-12 items-center">
               {['SAMSUNG', 'PORSCHE', 'NETFLIX', 'AMAZON', 'ROLEX', 'META', 'IBM'].map((brand, idx) => (
-                <span key={`r2-${i}-${idx}`} className="text-4xl md:text-6xl lg:text-8xl font-black tracking-tighter text-zinc-800 hover:text-white transition-colors duration-300 cursor-pointer select-none whitespace-nowrap">
+                <span key={`r2-${i}-${idx}`} className="text-4xl md:text-6xl lg:text-8xl font-black tracking-tighter text-gray-200 hover:text-[#0D7A95] transition-colors duration-300 cursor-pointer select-none whitespace-nowrap">
                   {brand}
                 </span>
               ))}

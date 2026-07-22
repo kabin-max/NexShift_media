@@ -13,7 +13,7 @@ const clients = [
 
 export default function ClientsSection() {
   return (
-    <section id="clients" className="w-full bg-black pt-16 pb-24 md:pt-24 md:pb-32 text-white overflow-hidden">
+    <section id="clients" className="w-full bg-transparent pt-16 pb-24 md:pt-24 md:pb-32 text-[#171717] overflow-hidden">
       <style>{`
         @keyframes scroll-gallery { 
           0% { transform: translateX(0); } 
@@ -28,7 +28,7 @@ export default function ClientsSection() {
       `}</style>
 
       <div className="text-center px-6 mb-12">
-        <h2 className="font-sans font-bold text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/40 text-4xl md:text-5xl lg:text-6xl tracking-tight drop-shadow-xl">
+        <h2 className="font-sans font-bold text-[#154880] text-4xl md:text-5xl lg:text-6xl tracking-tight drop-shadow-sm">
           Clients & Projects
         </h2>
       </div>
@@ -44,13 +44,13 @@ export default function ClientsSection() {
                   className="group relative w-[280px] h-[380px] md:w-[300px] md:h-[420px] shrink-0 overflow-hidden cursor-pointer"
                 >
                   {/* Background Image */}
-                  <div className="absolute inset-0 z-0 bg-zinc-900">
+                  <div className="absolute inset-0 z-0 bg-black">
                     <Image
                       src={client.image}
                       alt={client.name}
                       fill
                       sizes="(max-width: 768px) 300px, 300px"
-                      className="object-cover transition-transform duration-700 group-hover:scale-105 group-hover:brightness-110 opacity-70 group-hover:opacity-100"
+                      className="object-cover transition-transform duration-700 group-hover:scale-105 group-hover:brightness-110"
                     />
                   </div>
 

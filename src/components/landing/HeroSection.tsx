@@ -10,21 +10,21 @@ export default function HeroSection() {
   const springCfg = { damping: 30, stiffness: 80, mass: 0.6 };
 
   // Layer 1 – background drifts slowly downward and zooms in
-  const rawBgY  = useTransform(scrollY, [0, 1000], [0, 130]);
+  const rawBgY = useTransform(scrollY, [0, 1000], [0, 130]);
   const rawBgScale = useTransform(scrollY, [0, 1000], [1, 1.25]);
-  const bgY     = useSpring(rawBgY,  springCfg);
+  const bgY = useSpring(rawBgY, springCfg);
   const bgScale = useSpring(rawBgScale, springCfg);
 
   // Layer 2 – image card glides gently upward
   const rawMidY = useTransform(scrollY, [0, 1000], [0, -90]);
-  const midY    = useSpring(rawMidY, springCfg);
+  const midY = useSpring(rawMidY, springCfg);
 
   // Layer 3 – foreground rises fastest
-  const rawFgY  = useTransform(scrollY, [0, 1000], [0, -220]);
-  const fgY     = useSpring(rawFgY,  springCfg);
+  const rawFgY = useTransform(scrollY, [0, 1000], [0, -220]);
+  const fgY = useSpring(rawFgY, springCfg);
 
   // Bottom info bar fades out smoothly
-  const rawOpacity    = useTransform(scrollY, [0, 450], [1, 0]);
+  const rawOpacity = useTransform(scrollY, [0, 450], [1, 0]);
   const contentOpacity = useSpring(rawOpacity, { damping: 20, stiffness: 80 });
 
   // ── Card top positioning ───────────────────────────────────────────
@@ -36,7 +36,7 @@ export default function HeroSection() {
   // card top = 50vh + (text_half × 0.9) gives exactly 5% overlap.
 
   return (
-    <section className="relative w-full h-screen bg-black overflow-hidden flex items-end pb-12 px-6 md:px-12 select-none">
+    <section className="relative w-full h-screen bg-transparent overflow-hidden flex items-end pb-12 px-6 md:px-12 select-none">
 
       {/* ── Layer 1: Background sky / hills ──────────────────────────── */}
       <motion.div
@@ -54,7 +54,7 @@ export default function HeroSection() {
             className="object-cover object-center brightness-[0.7]"
           />
         </div>
-        <div className="absolute inset-0 bg-black/10" />
+        <div className="absolute inset-0 bg-white/10" />
       </motion.div>
 
       {/* ── Layer 2: download.png card ────────────────────────────────
@@ -87,7 +87,7 @@ export default function HeroSection() {
       <motion.div
         className="absolute inset-0 z-[60] pointer-events-none"
       >
-        
+
         <img
           src="https://andyhardy.co/assets/img/landscape_mountain_small.png"
           alt="Parallax Foreground"
@@ -98,27 +98,30 @@ export default function HeroSection() {
 
       {/* ── Info overlay (Andy Hardy style) ──────────────────────────── */}
       <motion.div
-        className="relative z-30 w-full flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-white text-sm"
+        className="relative z-30 w-full flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-gray-800 text-sm"
         style={{ opacity: contentOpacity }}
       >
-        
       </motion.div>
 
 
 
       {/* ── Bottom fade into next section ────────────────────────────── */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black via-black/80 to-transparent pointer-events-none z-30" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#FAFAFA] via-[#FAFAFA]/80 to-transparent pointer-events-none z-30" />
 
       {/* Spinning Badge at the very end */}
       <motion.div
-        className="absolute bottom-4 right-12 md:bottom-5 md:right-24 w-32 h-32 md:w-40 md:h-40 bg-black rounded-full flex items-center justify-center shadow-2xl z-[70]"
+        className="absolute bottom-4 right-12 md:bottom-5 md:right-24 w-32 h-32 md:w-40 md:h-40 bg-white rounded-full flex items-center justify-center shadow-2xl z-[60]"
       >
         <svg viewBox="0 0 100 100" className="w-full h-full animate-[spin_14s_linear_infinite]">
+
           <path id="circlePath" d="M 50,50 m -32,0 a 32,32 0 1,1 64,0 a 32,32 0 1,1 -64,0" fill="none" />
-          <text fill="white" fontSize="9" letterSpacing="3">
+          <text fill="#171717" fontSize="9" letterSpacing="3" fontWeight="bold">
             <textPath href="#circlePath" startOffset="0%">  NexShift - Event  & Media -</textPath>
           </text>
         </svg>
+        {/* Logo in the center of the rotating text */}
+        <img src="/nst-logo.png" alt="NST Logo" className="absolute w-20 h-20 md:w-24 md:h-24 rounded-full object-contain z-10 bg-white shadow-inner p-1" />
+
       </motion.div>
     </section>
   );

@@ -90,7 +90,7 @@ export default function GallerySection() {
 
   return (
     <section 
-      className="relative w-full min-h-screen bg-black overflow-hidden flex items-center justify-center py-20 select-none"
+      className="relative w-full min-h-screen bg-transparent overflow-hidden flex items-center justify-center py-20 select-none"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
@@ -115,21 +115,21 @@ export default function GallerySection() {
       />
 
       {/* Edge Vignette */}
-      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_center,transparent_30%,rgba(0,0,0,0.9)_100%)] z-40" />
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_center,transparent_30%,rgba(250,250,250,0.9)_100%)] z-40" />
 
       {/* Soft spotlight behind the collage */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] md:w-[600px] md:h-[600px] bg-white/5 rounded-full blur-[100px] pointer-events-none z-0" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] md:w-[600px] md:h-[600px] bg-[#4C1D95]/10 rounded-full blur-[100px] pointer-events-none z-0" />
 
       {/* Particles/Dust on Left & Right */}
       <motion.div 
         animate={{ x: [-20, 20, -20], y: [-10, 10, -10] }} 
         transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-        className="absolute left-[5%] md:left-[10%] top-1/4 w-32 h-64 bg-[url('data:image/svg+xml,%3Csvg viewBox=\'0 0 100 100\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Ccircle cx=\'20\' cy=\'30\' r=\'1\' fill=\'white\' opacity=\'0.4\'/%3E%3Ccircle cx=\'80\' cy=\'70\' r=\'1.5\' fill=\'white\' opacity=\'0.3\'/%3E%3Ccircle cx=\'50\' cy=\'50\' r=\'0.8\' fill=\'white\' opacity=\'0.5\'/%3E%3C/svg%3E')] opacity-50 pointer-events-none z-10" 
+        className="absolute left-[5%] md:left-[10%] top-1/4 w-32 h-64 bg-[url('data:image/svg+xml,%3Csvg viewBox=\'0 0 100 100\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Ccircle cx=\'20\' cy=\'30\' r=\'1\' fill=\'%230D7A95\' opacity=\'0.4\'/%3E%3Ccircle cx=\'80\' cy=\'70\' r=\'1.5\' fill=\'%230D7A95\' opacity=\'0.3\'/%3E%3Ccircle cx=\'50\' cy=\'50\' r=\'0.8\' fill=\'%230D7A95\' opacity=\'0.5\'/%3E%3C/svg%3E')] opacity-50 pointer-events-none z-10" 
       />
       <motion.div 
         animate={{ x: [20, -20, 20], y: [10, -10, 10] }} 
         transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
-        className="absolute right-[5%] md:right-[10%] bottom-1/4 w-40 h-80 bg-[url('data:image/svg+xml,%3Csvg viewBox=\'0 0 100 100\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Ccircle cx=\'10\' cy=\'20\' r=\'1.2\' fill=\'white\' opacity=\'0.4\'/%3E%3Ccircle cx=\'90\' cy=\'80\' r=\'0.8\' fill=\'white\' opacity=\'0.6\'/%3E%3Ccircle cx=\'40\' cy=\'60\' r=\'1.5\' fill=\'white\' opacity=\'0.3\'/%3E%3C/svg%3E')] opacity-50 pointer-events-none z-10" 
+        className="absolute right-[5%] md:right-[10%] bottom-1/4 w-40 h-80 bg-[url('data:image/svg+xml,%3Csvg viewBox=\'0 0 100 100\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Ccircle cx=\'10\' cy=\'20\' r=\'1.2\' fill=\'%230D7A95\' opacity=\'0.4\'/%3E%3Ccircle cx=\'90\' cy=\'80\' r=\'0.8\' fill=\'%230D7A95\' opacity=\'0.6\'/%3E%3Ccircle cx=\'40\' cy=\'60\' r=\'1.5\' fill=\'%230D7A95\' opacity=\'0.3\'/%3E%3C/svg%3E')] opacity-50 pointer-events-none z-10" 
       />
 
       {/* Central Collage Container */}
@@ -163,11 +163,11 @@ export default function GallerySection() {
                   rotate: isHovered ? 0 : img.baseRotation,
                   scale: isHovered ? 1.05 : 1,
                   boxShadow: isHovered 
-                    ? "0px 40px 80px rgba(0,0,0,0.8)" 
-                    : "0px 20px 50px rgba(0,0,0,0.5)"
+                    ? "0px 40px 80px rgba(0,0,0,0.15)" 
+                    : "0px 20px 50px rgba(0,0,0,0.1)"
                 }}
                 transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
-                className="w-full h-full rounded-[14px] overflow-hidden backdrop-blur-md bg-white/5 border border-white/10"
+                className="w-full h-full rounded-[14px] overflow-hidden backdrop-blur-md bg-white/40 border border-gray-200"
               >
                 {/* Infinite Float Layer */}
                 <motion.div

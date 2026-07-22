@@ -114,10 +114,10 @@ export const AnimatedTestimonials = ({
               ease: "easeInOut",
             }}
           >
-            <h3 className="text-2xl font-bold dark:text-white text-white">
+            <h3 className="text-2xl font-bold text-white">
               {data[active].name}
             </h3>
-            <p className="text-sm text-zinc-400 dark:text-zinc-500">
+            <p className="text-sm text-gray-200">
               {data[active].handle}
             </p>
             <div className="flex gap-1 mt-6">
@@ -125,7 +125,7 @@ export const AnimatedTestimonials = ({
                 <Star key={i} className="w-5 h-5 fill-yellow-500 text-yellow-500" />
               ))}
             </div>
-            <motion.p className="text-lg text-zinc-300 mt-4 dark:text-zinc-300">
+            <motion.p className="text-lg text-white/90 mt-4 leading-relaxed font-medium">
               {data[active].description.split(" ").map((word, index) => (
                 <motion.span
                   key={index}
@@ -155,15 +155,15 @@ export const AnimatedTestimonials = ({
           <div className="flex gap-4 pt-12 md:pt-0">
             <button
               onClick={handlePrev}
-              className="h-10 w-10 rounded-full bg-white/10 dark:bg-neutral-800 flex items-center justify-center group/button hover:bg-white/20 transition"
+              className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center group/button hover:bg-white/20 transition backdrop-blur-sm"
             >
-              <ArrowLeft className="h-5 w-5 text-white dark:text-neutral-400 group-hover/button:rotate-12 transition-transform duration-300" />
+              <ArrowLeft className="h-5 w-5 text-white group-hover/button:rotate-12 transition-transform duration-300" />
             </button>
             <button
               onClick={handleNext}
-              className="h-10 w-10 rounded-full bg-white/10 dark:bg-neutral-800 flex items-center justify-center group/button hover:bg-white/20 transition"
+              className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center group/button hover:bg-white/20 transition backdrop-blur-sm"
             >
-              <ArrowRight className="h-5 w-5 text-white dark:text-neutral-400 group-hover/button:-rotate-12 transition-transform duration-300" />
+              <ArrowRight className="h-5 w-5 text-white group-hover/button:-rotate-12 transition-transform duration-300" />
             </button>
           </div>
         </div>

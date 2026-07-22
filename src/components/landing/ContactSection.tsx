@@ -43,7 +43,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="relative w-full min-h-[90vh] md:min-h-screen bg-black flex flex-col items-center justify-between overflow-hidden pt-20 pb-10 border-t border-zinc-900/50">
+    <section id="contact" className="relative w-full min-h-[90vh] md:min-h-screen bg-transparent flex flex-col items-center justify-between overflow-hidden pt-20 pb-10 border-t border-gray-200">
 
       {/* Background Image Container */}
       <div className="absolute inset-0 z-0 flex justify-end">
@@ -56,16 +56,16 @@ export default function ContactSection() {
             className="object-cover opacity-60"
           />
           {/* Horizontal Gradient: fades more gently toward the right side */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black from-20% via-black/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#FAFAFA] from-20% via-[#FAFAFA]/60 to-transparent" />
 
           {/* Vertical Gradient: subtle darkening at top and bottom to ensure text pops */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#FAFAFA]/40 via-transparent to-[#FAFAFA]/80" />
         </div>
       </div>
 
       {/* Top Heading */}
       <div className="text-center px-6 mt-12 md:mt-4 mb-8 md:mb-16">
-        <h2 className="font-sans font-bold text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/40 text-4xl md:text-5xl lg:text-6xl tracking-tight drop-shadow-xl">
+        <h2 className="font-sans font-bold text-[#154880] text-4xl md:text-5xl lg:text-6xl tracking-tight drop-shadow-sm">
           Get in Touch
         </h2>
       </div>
@@ -74,34 +74,34 @@ export default function ContactSection() {
       <div className="relative z-10 w-full max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center mb-auto pb-12">
 
         {/* Left Side: Form (Glassmorphism) */}
-        <div className="w-full bg-black/40 backdrop-blur-xl p-8 sm:p-10 border border-zinc-800 rounded-3xl shadow-2xl order-2 md:order-1">
+        <div className="w-full bg-white/60 backdrop-blur-xl p-8 sm:p-10 border border-gray-200 rounded-3xl shadow-xl order-2 md:order-1">
           <form className="flex flex-col space-y-6" onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="flex flex-col space-y-2">
-                <label htmlFor="name" className="text-[10px] tracking-[0.2em] uppercase font-bold text-zinc-400">Name</label>
-                <input type="text" id="name" value={formData.name} onChange={handleChange} className={`bg-zinc-900/60 border ${errors.name ? 'border-red-500' : 'border-zinc-800'} text-white rounded-xl px-4 py-4 focus:outline-none focus:border-zinc-500 focus:bg-zinc-800/80 transition-all`} placeholder="John Doe" />
+                <label htmlFor="name" className="text-[10px] tracking-[0.2em] uppercase font-bold text-gray-500">Name</label>
+                <input type="text" id="name" value={formData.name} onChange={handleChange} className={`bg-gray-50/50 border ${errors.name ? 'border-red-500' : 'border-gray-200'} text-gray-800 rounded-xl px-4 py-4 focus:outline-none focus:border-[#0D7A95] focus:bg-white transition-all`} placeholder="John Doe" />
                 {errors.name && <span className="text-red-500 text-xs mt-1">{errors.name}</span>}
               </div>
               <div className="flex flex-col space-y-2">
-                <label htmlFor="email" className="text-[10px] tracking-[0.2em] uppercase font-bold text-zinc-400">Email</label>
-                <input type="email" id="email" value={formData.email} onChange={handleChange} className={`bg-zinc-900/60 border ${errors.email ? 'border-red-500' : 'border-zinc-800'} text-white rounded-xl px-4 py-4 focus:outline-none focus:border-zinc-500 focus:bg-zinc-800/80 transition-all`} placeholder="john@example.com" />
+                <label htmlFor="email" className="text-[10px] tracking-[0.2em] uppercase font-bold text-gray-500">Email</label>
+                <input type="email" id="email" value={formData.email} onChange={handleChange} className={`bg-gray-50/50 border ${errors.email ? 'border-red-500' : 'border-gray-200'} text-gray-800 rounded-xl px-4 py-4 focus:outline-none focus:border-[#0D7A95] focus:bg-white transition-all`} placeholder="john@example.com" />
                 {errors.email && <span className="text-red-500 text-xs mt-1">{errors.email}</span>}
               </div>
             </div>
 
             <div className="flex flex-col space-y-2">
-              <label htmlFor="subject" className="text-[10px] tracking-[0.2em] uppercase font-bold text-zinc-400">Subject</label>
-              <input type="text" id="subject" value={formData.subject} onChange={handleChange} className={`bg-zinc-900/60 border ${errors.subject ? 'border-red-500' : 'border-zinc-800'} text-white rounded-xl px-4 py-4 focus:outline-none focus:border-zinc-500 focus:bg-zinc-800/80 transition-all`} placeholder="Project Inquiry" />
+              <label htmlFor="subject" className="text-[10px] tracking-[0.2em] uppercase font-bold text-gray-500">Subject</label>
+              <input type="text" id="subject" value={formData.subject} onChange={handleChange} className={`bg-gray-50/50 border ${errors.subject ? 'border-red-500' : 'border-gray-200'} text-gray-800 rounded-xl px-4 py-4 focus:outline-none focus:border-[#0D7A95] focus:bg-white transition-all`} placeholder="Project Inquiry" />
               {errors.subject && <span className="text-red-500 text-xs mt-1">{errors.subject}</span>}
             </div>
 
             <div className="flex flex-col space-y-2">
-              <label htmlFor="message" className="text-[10px] tracking-[0.2em] uppercase font-bold text-zinc-400">Message</label>
-              <textarea id="message" rows={4} value={formData.message} onChange={handleChange} className={`bg-zinc-900/60 border ${errors.message ? 'border-red-500' : 'border-zinc-800'} text-white rounded-xl px-4 py-4 focus:outline-none focus:border-zinc-500 focus:bg-zinc-800/80 transition-all resize-none`} placeholder="Tell us about your project..."></textarea>
+              <label htmlFor="message" className="text-[10px] tracking-[0.2em] uppercase font-bold text-gray-500">Message</label>
+              <textarea id="message" rows={4} value={formData.message} onChange={handleChange} className={`bg-gray-50/50 border ${errors.message ? 'border-red-500' : 'border-gray-200'} text-gray-800 rounded-xl px-4 py-4 focus:outline-none focus:border-[#0D7A95] focus:bg-white transition-all resize-none`} placeholder="Tell us about your project..."></textarea>
               {errors.message && <span className="text-red-500 text-xs mt-1">{errors.message}</span>}
             </div>
 
-            <button type="submit" className={`w-full font-bold text-sm tracking-wide rounded-xl py-5 mt-2 transition-colors cursor-pointer ${isSubmitted ? 'bg-green-500 text-white' : 'bg-white text-black hover:bg-gray-200 shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)]'}`}>
+            <button type="submit" className={`w-full font-bold text-sm tracking-wide rounded-xl py-5 mt-2 transition-colors cursor-pointer ${isSubmitted ? 'bg-green-500 text-white' : 'bg-[#0D7A95] text-white hover:bg-[#14A9D6] shadow-sm hover:shadow-md'}`}>
               {isSubmitted ? 'Message Sent!' : 'Send Message'}
             </button>
           </form>
@@ -109,15 +109,15 @@ export default function ContactSection() {
 
         {/* Right Side: Contact Info */}
         <div className="flex flex-col items-center md:items-start space-y-8 text-center md:text-left order-1 md:order-2">
-          <p className="text-zinc-300 text-lg leading-relaxed max-w-md">
+          <p className="text-gray-600 text-lg leading-relaxed max-w-md">
             Ready to start your next project? We&apos;d love to hear from you. Fill out the form or reach out directly via email.
           </p>
 
           <div className="flex flex-col space-y-2">
-            <span className="text-xs tracking-[0.2em] uppercase font-bold text-zinc-500">Email Us</span>
+            <span className="text-xs tracking-[0.2em] uppercase font-bold text-gray-500">Email Us</span>
             <a
               href="mailto:info@nexshift.com"
-              className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight hover:text-zinc-300 transition-colors duration-300 decoration-zinc-700 underline-offset-8 hover:underline"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#154880] tracking-tight hover:text-[#0D7A95] transition-colors duration-300 decoration-[#14A9D6] underline-offset-8 hover:underline"
             >
               info@nexshift.com
             </a>
@@ -125,7 +125,7 @@ export default function ContactSection() {
 
           {/* Small Logo */}
           <div
-            className="text-3xl text-white font-black italic tracking-tight drop-shadow-xl select-none pt-4"
+            className="text-3xl text-[#00a3d0] font-black italic tracking-tight drop-shadow-sm select-none pt-4"
             style={{ fontFamily: "var(--font-geist-sans)" }}
           >
             NexShift!
