@@ -13,7 +13,19 @@ const clients = [
 
 export default function ClientsSection() {
   return (
-    <section id="clients" className="w-full bg-transparent pt-16 pb-24 md:pt-24 md:pb-32 text-[#171717] overflow-hidden">
+    <section id="clients" className="relative w-full bg-transparent pt-16 pb-24 md:pt-24 md:pb-32 text-[#171717] overflow-hidden border-t border-gray-200">
+      {/* Ambient globs — top-right cyan, bottom-left navy */}
+      <div className="absolute -top-[5%] -right-[5%] w-[45%] h-[55%] bg-[#00a3d0]/10 blur-[140px] rounded-full pointer-events-none z-0" />
+      <div className="absolute -bottom-[5%] -left-[5%] w-[50%] h-[50%] bg-[#00a3d0]/40 blur-[160px] rounded-full pointer-events-none z-0" />
+      {/* Large centered radial glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[60%] bg-[#00a3d0]/8 blur-[180px] rounded-full pointer-events-none z-0" />
+
+      {/* Decorative Floating Circles */}
+      <div className="absolute top-[15%] left-[8%] w-32 h-32 md:w-56 md:h-56 border border-[#00a3d0]/10 rounded-full pointer-events-none z-0" />
+      <div className="absolute top-[20%] left-[4%] w-20 h-20 md:w-32 md:h-32 border-2 border-[#e5e7eb]/20 rounded-full pointer-events-none z-0" />
+      
+      <div className="absolute bottom-[20%] right-[6%] w-24 h-24 md:w-40 md:h-40 bg-[#e5e7eb]/10 rounded-full blur-[2px] pointer-events-none z-0" />
+      <div className="absolute bottom-[10%] right-[10%] w-12 h-12 md:w-20 md:h-20 bg-[#00a3d0]/10 rounded-full pointer-events-none z-0" />
       <style>{`
         @keyframes scroll-gallery { 
           0% { transform: translateX(0); } 

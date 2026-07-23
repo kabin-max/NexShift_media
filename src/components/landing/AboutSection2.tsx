@@ -26,7 +26,7 @@ function AnimatedNumber({ value, suffix }: { value: number; suffix: string }) {
   }, [inView, count, value]);
 
   return (
-    <span ref={ref} className="text-4xl md:text-5xl font-bold tracking-tight text-[#154880] font-sans block">
+    <span ref={ref} className="text-4xl md:text-5xl font-bold tracking-tight text-white font-sans block drop-shadow-md">
       {display}{suffix}
     </span>
   );
@@ -93,9 +93,19 @@ export default function AboutSection2() {
       ref={sectionRef}
       className="relative w-full min-h-screen bg-transparent text-[#171717] flex flex-col justify-center py-24 overflow-hidden border-y border-gray-200"
     >
-      {/* SaaS Style Ambient Glows */}
-      <div className="absolute top-1/4 -left-[20%] w-[50%] h-[50%] bg-[#4C1D95]/10 blur-[120px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-0 right-[-10%] w-[60%] h-[50%] bg-white/40 blur-[150px] rounded-full pointer-events-none" />
+      {/* Ambient globs — top-right cyan, bottom-left navy */}
+      <div className="absolute -top-[5%] -right-[5%] w-[45%] h-[55%] bg-[#00a3d0]/10 blur-[140px] rounded-full pointer-events-none z-0" />
+      <div className="absolute -bottom-[5%] -left-[5%] w-[50%] h-[50%] bg-[#00a3d0]/40 blur-[160px] rounded-full pointer-events-none z-0" />
+      {/* Large centered radial glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[60%] bg-[#00a3d0]/8 blur-[180px] rounded-full pointer-events-none z-0" />
+
+      {/* Decorative Floating Circles */}
+      <div className="absolute top-[15%] left-[8%] w-32 h-32 md:w-56 md:h-56 border border-[#00a3d0]/10 rounded-full pointer-events-none z-0" />
+      <div className="absolute top-[20%] left-[4%] w-20 h-20 md:w-32 md:h-32 border-2 border-[#e5e7eb]/20 rounded-full pointer-events-none z-0" />
+      
+      <div className="absolute bottom-[20%] right-[6%] w-24 h-24 md:w-40 md:h-40 bg-[#e5e7eb]/10 rounded-full blur-[2px] pointer-events-none z-0" />
+      <div className="absolute bottom-[10%] right-[10%] w-12 h-12 md:w-20 md:h-20 bg-[#00a3d0]/10 rounded-full pointer-events-none z-0" />
+
 
       <div className="max-w-7xl mx-auto px-6 relative z-10 w-full flex flex-col lg:flex-row items-center lg:items-stretch gap-12 lg:gap-20">
 
@@ -105,23 +115,47 @@ export default function AboutSection2() {
             <ExpandableCards cards={cards} defaultExpanded={3} autoPlay interval={1500} />
           </div>
 
-          {/* Stats Grid */}
-          <div className="grid grid-cols-3 gap-4 w-full text-center border-t border-gray-200 pt-8 mt-4">
-            <div>
-              <AnimatedNumber value={150} suffix="+" />
-              <span className="text-gray-500 text-[10px] md:text-xs font-bold uppercase tracking-widest mt-2 block">Projects Completed</span>
+          {/* Stats Grid wrapped with the Vector Banner */}
+          <div className="relative w-full mt-10 overflow-hidden rounded-2xl">
+
+            {/* Background SVG Banner */}
+            <div className="absolute inset-0 w-full h-[120%] -top-[10%] pointer-events-none z-0 text-[#03b364] drop-shadow-xl">
+              <svg 
+                viewBox="0 0 800 200" 
+                preserveAspectRatio="none" 
+                className="w-full h-full"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path 
+                  fill="currentColor" 
+                  d="M 0 0 L 800 0 L 800 80 C 800 160 750 200 680 200 C 520 200 480 150 400 150 C 320 150 280 200 120 200 C 50 200 0 160 0 80 Z" 
+                />
+              </svg>
             </div>
 
-            <div>
-              <AnimatedNumber value={50} suffix="+" />
-              <span className="text-gray-500 text-[10px] md:text-xs font-bold uppercase tracking-widest mt-2 block">Happy Clients</span>
-            </div>
+            {/* Decorative corner dots */}
+            <span className="absolute top-3 left-4 w-1.5 h-1.5 rounded-full bg-white/30 z-10" />
+            <span className="absolute top-3 right-4 w-1.5 h-1.5 rounded-full bg-white/30 z-10" />
 
-            <div>
-              <AnimatedNumber value={5} suffix="M+" />
-              <span className="text-gray-500 text-[10px] md:text-xs font-bold uppercase tracking-widest mt-2 block">Audience Reached</span>
+            {/* Grid Content */}
+            <div className="relative grid grid-cols-3 w-full text-center z-10 py-10 px-6">
+              <div className="flex flex-col items-center">
+                <AnimatedNumber value={150} suffix="+" />
+                <span className="text-white/80 text-[10px] md:text-xs font-bold uppercase tracking-widest mt-2 block">Projects Completed</span>
+              </div>
+
+              {/* Dividers */}
+              <div className="flex flex-col items-center border-x border-white/20 px-2">
+                <AnimatedNumber value={50} suffix="+" />
+                <span className="text-white/80 text-[10px] md:text-xs font-bold uppercase tracking-widest mt-2 block">Happy Clients</span>
+              </div>
+
+              <div className="flex flex-col items-center">
+                <AnimatedNumber value={5} suffix="M+" />
+                <span className="text-white/80 text-[10px] md:text-xs font-bold uppercase tracking-widest mt-2 block">Audience Reached</span>
+              </div>
             </div>
-          </div>
+          </div> 
         </div>
 
         {/* Right Side: Text */}
