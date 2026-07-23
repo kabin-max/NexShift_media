@@ -3,8 +3,9 @@
 import { useState, useEffect } from "react";
 import { Menu } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
-import NavOverlay from "./NavOverlay";
+// import NavOverlay from "./NavOverlay";
 
 export default function Header() {
   const pathname = usePathname();
@@ -26,28 +27,23 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-[70] flex items-center justify-between w-full px-6 py-3 md:px-12 md:py-4 transition-all duration-300 ${isScrolled ? "bg-white/80 backdrop-blur-md shadow-sm" : "bg-transparent"
+        className={`fixed top-0 left-0 right-0 z-[70] flex items-center justify-end w-full px-6 py-3 md:px-12 md:py-4 transition-all duration-300 ${isScrolled ? "bg-white/20 backdrop-blur-md shadow-sm" : "bg-transparent"
           }`}
       >
-        <button
-          onClick={() => setIsMenuOpen(true)}
-          className="flex items-center justify-center w-10 h-10 md:w-12 md:h-12 bg-white rounded-full text-gray-600 hover:text-[#0D7A95] hover:bg-gray-50 border border-gray-200 transition-all shadow-sm hover:shadow-md cursor-pointer"
-        >
-          <Menu className="w-5 h-5" strokeWidth={1.5} />
-        </button>
 
-        {pathname === "/" ? (
-          <div className="w-12 pointer-events-none" />
-        ) : (
-          <Link href="/" className="pointer-events-auto cursor-pointer flex items-center justify-center">
-            <span 
-              className="text-2xl md:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-[#0D7A95] via-[#14A9D6] to-[#2E73B8] font-black italic tracking-tight drop-shadow-sm whitespace-nowrap leading-none select-none"
-              style={{ fontFamily: "var(--font-geist-sans)" }}
-            >
-              NexShift
-            </span>
-          </Link>
-        )}
+        <Link
+          href="/"
+          className={`absolute left-1/2 -translate-x-1/2 flex items-center justify-center gap-3 transition-opacity duration-300 ${pathname === "/" && !isScrolled ? 'opacity-0 pointer-events-none' : 'opacity-100 pointer-events-auto'
+            }`}
+        >
+          <Image src="/nst-logo.png" alt="NexShift Logo" width={32} height={32} className="object-contain" />
+          <span
+            className="text-2xl md:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-[#0D7A95] via-[#14A9D6] to-[#2E73B8] font-black italic tracking-tight drop-shadow-sm whitespace-nowrap leading-none select-none"
+            style={{ fontFamily: "var(--font-geist-sans)" }}
+          >
+            NexShift .
+          </span>
+        </Link>
 
         {pathname === "/about" || pathname === "/services" ? (
           <Link href="/" className="px-6 py-3 bg-[#0D7A95] text-white hover:bg-[#14A9D6] text-sm font-bold rounded-full transition-colors shadow-sm hover:shadow-md cursor-pointer pointer-events-auto">
@@ -60,7 +56,6 @@ export default function Header() {
         )}
       </header>
 
-      <NavOverlay isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
     </>
   );
 }

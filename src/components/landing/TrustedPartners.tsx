@@ -1,6 +1,6 @@
 export default function TrustedPartners() {
   return (
-    <section className="w-full bg-transparent py-24 md:py-32 overflow-hidden flex flex-col gap-12 border-t border-gray-200">
+    <section className="w-full bg-transparent py-[5%] overflow-hidden flex flex-col gap-12 border-t border-gray-200">
       <style>{`
         @keyframes scroll-left { 
           0% { transform: translateX(0); } 
@@ -24,6 +24,7 @@ export default function TrustedPartners() {
       <div className="text-center px-6">
         <h2 className="font-sans font-bold text-[#154880] text-4xl md:text-5xl lg:text-6xl tracking-tight drop-shadow-sm">
           Trusted Partners
+          <div className="h-1.5 w-24 bg-[#03b364] shadow-[0_0_10px_rgba(3,179,100,0.5)] mx-auto mt-2 rounded-full pointer-events-none" />
         </h2>
       </div>
 

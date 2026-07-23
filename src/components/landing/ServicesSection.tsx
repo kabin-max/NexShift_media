@@ -33,7 +33,7 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section className="relative w-full bg-transparent py-24 md:py-32 overflow-hidden flex flex-col gap-12 border-t border-gray-200">
+    <section className="relative w-full bg-transparent py-[5%] overflow-hidden flex flex-col gap-12 border-t border-gray-200">
       {/* Ambient globs — top-right cyan, bottom-left navy */}
       <div className="absolute -top-[5%] -right-[5%] w-[45%] h-[55%] bg-[#00a3d0]/10 blur-[140px] rounded-full pointer-events-none z-0" />
       <div className="absolute -bottom-[5%] -left-[5%] w-[50%] h-[50%] bg-[#00a3d0]/40 blur-[160px] rounded-full pointer-events-none z-0" />
@@ -50,7 +50,13 @@ export default function ServicesSection() {
       {/* Massive Vivid Green Diagonal Strip crossing the whole section */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[30vh] md:h-[40vh] bg-gradient-to-r from-transparent via-[#03b364] to-transparent -rotate-[15deg] md:-rotate-[25deg] pointer-events-none opacity-90" />
 
-      <div className="max-w-7xl mx-auto w-full px-6 md:px-12 relative z-10">
+      <motion.div 
+        className="max-w-7xl mx-auto w-full px-6 md:px-12 relative z-10"
+        initial={{ opacity: 0, x: 50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, amount: 0.15 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -60,6 +66,7 @@ export default function ServicesSection() {
           style={{ fontFamily: "var(--font-geist-sans), sans-serif" }}
         >
           Our Services
+          <div className="h-1.5 w-24 bg-[#03b364] shadow-[0_0_10px_rgba(3,179,100,0.5)] mx-auto mt-2 rounded-full pointer-events-none" />
         </motion.h2>
 
         <div className="flex flex-col gap-6">
@@ -75,6 +82,9 @@ export default function ServicesSection() {
                 >
                   {/* Hover background slide */}
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#0D7A95]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                  
+                  {/* Left Edge Glowing Strip */}
+                  <div className="absolute left-0 top-0 w-2 h-full bg-[#03b364] shadow-[0_0_20px_rgba(3,179,100,0.5)] pointer-events-none" />
 
                   {/* 1. Index number */}
                   <div className="col-span-1 flex justify-start items-center">
@@ -137,7 +147,7 @@ export default function ServicesSection() {
             );
           })}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

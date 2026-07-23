@@ -10,22 +10,22 @@ import FaqSection from "../../components/about/FaqSection";
 import Footer from "../../components/common/Footer";
 
 export default function About() {
-  return (
-    <main className="relative flex flex-col w-full text-gray-700 font-sans bg-[#FAFAFA] overflow-clip">
+    return (
+        <main className="relative flex flex-col w-full text-gray-700 font-sans bg-[#FAFAFA] overflow-clip">
 
-      <Background />
+            <Background />
 
-      <Header />
-      <SocialIcons />
+            <Header />
+            <SocialIcons />
 
-      {/* ── Page Content ────────────────────────────────── */}
-      <div className="relative z-10 w-full flex flex-col">
-        <AboutHero />
-        <OurStory />
-        <OurSteps />
-        <FaqSection />
-        <Footer />
-      </div>
-    </main>
-  );
+            {/* ── Page Content ────────────────────────────────── */}
+            <div className="relative z-10 w-full flex flex-col">
+                <AboutHero />
+                <OurStory />
+                <OurSteps />
+                <FaqSection />
+                <Footer />
+            </div>
+        </main>
+    );
 }

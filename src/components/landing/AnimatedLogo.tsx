@@ -15,6 +15,7 @@ export default function AnimatedLogo() {
   const logoWrapperY = useMotionTemplate`calc(${progress} * (-50vh + 52px))`;
   const logoScale = useTransform(progress, [0, 1], [1, 0.115]);
   const dynamicZ = useTransform(scrollY, (y) => (y > 150 ? 80 : 50));
+  const opacity = useTransform(progress, [0.95, 1], [1, 0]);
 
   return (
     <motion.div
@@ -22,6 +23,7 @@ export default function AnimatedLogo() {
       style={{
         y: logoWrapperY,
         zIndex: dynamicZ,
+        opacity,
       }}
     >
       <motion.h1

@@ -110,7 +110,7 @@ export default function HeroSection() {
 
       {/* Spinning Badge at the very end */}
       <motion.div
-        className="absolute bottom-4 right-12 md:bottom-5 md:right-24 w-32 h-32 md:w-40 md:h-40 bg-white rounded-full flex items-center justify-center shadow-2xl z-[60]"
+        className="absolute bottom-4 right-12 md:bottom-5 md:right-24 w-[100px] h-[100px] md:w-32 md:h-32 bg-white rounded-full flex items-center justify-center shadow-2xl z-[60]"
       >
         <svg viewBox="0 0 100 100" className="w-full h-full animate-[spin_14s_linear_infinite]">
 
@@ -120,7 +120,7 @@ export default function HeroSection() {
           </text>
         </svg>
         {/* Logo in the center of the rotating text */}
-        <img src="/nst-logo.png" alt="NST Logo" className="absolute w-20 h-20 md:w-24 md:h-24 rounded-full object-contain z-10 bg-white shadow-inner p-1" />
+        <img src="/nst-logo.png" alt="NST Logo" className="absolute w-16 h-16 md:w-20 md:h-20 rounded-full object-contain z-10 bg-white shadow-inner p-1" />
 
       </motion.div>
     </section>
