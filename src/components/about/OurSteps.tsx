@@ -11,7 +11,7 @@ const steps = [
     desc: "We start by understanding your brand, your goals, and who you're trying to reach.",
     tags: ["Brand Strategy", "Audience Persona", "Market Fit"],
     metric: "100% Alignment",
-    icon: <Lightbulb className="w-6 h-6 text-amber-500 drop-shadow-[0_0_12px_rgba(245,158,11,0.9)]" />
+    icon: <Lightbulb className="w-6 h-6 text-[#14A9D6] drop-shadow-[0_0_12px_rgba(20,169,214,0.9)]" />
   },
   {
     num: "02",
@@ -19,7 +19,7 @@ const steps = [
     desc: "We build a strategic roadmap, mapping out timelines, budgets, and key performance indicators.",
     tags: ["Resource Allocation", "Agile Roadmap", "KPI Setting"],
     metric: "On-Time Delivery",
-    icon: <Map className="w-6 h-6 text-amber-500 drop-shadow-[0_0_12px_rgba(245,158,11,0.9)]" />
+    icon: <Map className="w-6 h-6 text-[#14A9D6] drop-shadow-[0_0_12px_rgba(20,169,214,0.9)]" />
   },
   {
     num: "03",
@@ -27,7 +27,7 @@ const steps = [
     desc: "We bring the plan to life with precise implementation and real-time coordination.",
     tags: ["Agile Sprints", "Quality Assurance", "Live Tracking"],
     metric: "Zero Bottlenecks",
-    icon: <Zap className="w-6 h-6 text-amber-500 drop-shadow-[0_0_12px_rgba(245,158,11,0.9)]" />
+    icon: <Zap className="w-6 h-6 text-[#14A9D6] drop-shadow-[0_0_12px_rgba(20,169,214,0.9)]" />
   },
   {
     num: "04",
@@ -35,7 +35,7 @@ const steps = [
     desc: "We wrap up with full documentation, detailed reporting, and ongoing optimization.",
     tags: ["Data Analytics", "Performance Tuning", "Client Handoff"],
     metric: "Maximized ROI",
-    icon: <LineChart className="w-6 h-6 text-amber-500 drop-shadow-[0_0_12px_rgba(245,158,11,0.9)]" />
+    icon: <LineChart className="w-6 h-6 text-[#14A9D6] drop-shadow-[0_0_12px_rgba(20,169,214,0.9)]" />
   }
 ];
 
@@ -82,7 +82,7 @@ function StepDot({ point, index, progress }: { point: { cx: number, cy: number }
       cy={point.cy}
       r={10}
       style={{ scale, opacity, strokeWidth, transformOrigin: `${point.cx}px ${point.cy}px` }}
-      fill="rgba(245, 158, 11, 1)"
+      fill="rgba(20, 169, 214, 1)"
       stroke="rgba(255,255,255,0.8)"
     />
   );
@@ -112,7 +112,7 @@ function DetailPanel({ step, index, zone, progress, side }: { step: any, index: 
       className={`absolute ${positionClasses} z-40 hidden md:flex flex-col w-64 md:w-72 bg-white/80 backdrop-blur-md border border-gray-200 rounded-2xl p-5 shadow-2xl pointer-events-none`}
     >
       <div className="flex items-center justify-between mb-4">
-        <span className="text-amber-500 font-mono text-xs font-bold tracking-widest uppercase">
+        <span className="text-[#14A9D6] font-mono text-xs font-bold tracking-widest uppercase">
           Step {step.num}
         </span>
         <span className="flex items-center justify-center p-2 rounded-xl bg-gray-100 border border-gray-200">
@@ -128,7 +128,7 @@ function DetailPanel({ step, index, zone, progress, side }: { step: any, index: 
       <div className="space-y-3">
         {step.tags.map((tag: string, idx: number) => (
           <div key={idx} className="flex items-center gap-3">
-            <div className="w-1.5 h-1.5 rounded-full bg-amber-500 shadow-[0_0_8px_rgba(245,158,11,0.8)]" />
+            <div className="w-1.5 h-1.5 rounded-full bg-[#14A9D6] shadow-[0_0_8px_rgba(20,169,214,0.8)]" />
             <span className="text-gray-700 text-sm font-medium tracking-wide font-sans">{tag}</span>
           </div>
         ))}
@@ -158,7 +158,7 @@ function StepCard({ step, index, progress }: { step: any, index: number, progres
   );
 
   const shadowOpacity = useTransform(progress, zone, [isFirst ? 1 : 0, 1, 1, isLast ? 1 : 0]);
-  const shadow = useMotionTemplate`0 0 20px rgba(245,158,11,${shadowOpacity})`;
+  const shadow = useMotionTemplate`0 0 20px rgba(3,179,100,${shadowOpacity})`;
 
   const positions = [
     "left-[5%] top-[10%] md:top-[15%]",
@@ -180,7 +180,7 @@ function StepCard({ step, index, progress }: { step: any, index: number, progres
           {step.num}
         </motion.span>
 
-        <h4 className="text-3xl md:text-5xl font-bold uppercase tracking-[0.15em] text-[#154880] mb-4 md:mb-6 pointer-events-auto font-sans">
+        <h4 className="text-3xl md:text-5xl font-bold uppercase tracking-[0.15em] text-[#14A9D6] mb-4 md:mb-6 pointer-events-auto font-sans">
           {step.title}
         </h4>
         <p className="text-gray-700 text-sm md:text-base leading-relaxed font-medium max-w-[280px] pointer-events-auto font-sans">
@@ -189,7 +189,7 @@ function StepCard({ step, index, progress }: { step: any, index: number, progres
 
         <motion.div
           style={{ opacity: shadowOpacity, boxShadow: shadow }}
-          className="absolute left-0 top-0 w-1 h-full bg-amber-500 pointer-events-none"
+          className="absolute left-0 top-0 w-1 h-full bg-[#03b364] pointer-events-none"
         />
       </div>
     </motion.div>
@@ -233,9 +233,10 @@ export default function OurSteps() {
     <section ref={containerRef} style={{ height: "200vh" }} className="relative w-full bg-transparent border-t border-gray-200">
       <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
 
-        <div className="absolute top-12 md:top-24 w-full text-center z-30 pointer-events-none">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-sans tracking-tight text-[#154880] drop-shadow-sm">
+        <div className="absolute top-12 md:top-24 w-full text-center z-30 pointer-events-none flex flex-col items-center">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-sans tracking-tight text-[#154880] drop-shadow-sm flex flex-col items-center pointer-events-auto">
             Our Steps
+            <div className="h-1.5 w-24 bg-[#03b364] shadow-[0_0_10px_rgba(3,179,100,0.5)] mx-auto mt-2 rounded-full pointer-events-none" />
           </h2>
         </div>
 
@@ -244,7 +245,7 @@ export default function OurSteps() {
           {svgSize.w > 0 && (
             <svg
               viewBox={`0 0 ${svgSize.w} ${svgSize.h}`}
-              className="absolute inset-0 w-full h-full z-10 pointer-events-none overflow-visible"
+              className="absolute inset-0 w-full h-full z-[-10] pointer-events-none overflow-visible"
               style={{ willChange: "transform", transform: "translateZ(0)" }}
             >
               <defs>
@@ -256,9 +257,9 @@ export default function OurSteps() {
                   </feMerge>
                 </filter>
                 <linearGradient id="line-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#fbbf24" />
-                  <stop offset="50%" stopColor="#f59e0b" />
-                  <stop offset="100%" stopColor="#ea580c" />
+                  <stop offset="0%" stopColor="#154880" />
+                  <stop offset="50%" stopColor="#154880" />
+                  <stop offset="100%" stopColor="#154880" />
                 </linearGradient>
               </defs>
 
