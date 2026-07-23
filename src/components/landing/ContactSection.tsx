@@ -1,49 +1,11 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function ContactSection() {
-  const [formData, setFormData] = useState({ name: "", email: "", subject: "", message: "" });
-  const [errors, setErrors] = useState<{ [key: string]: string }>({});
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const validate = () => {
-    const newErrors: { [key: string]: string } = {};
-    if (!formData.name.trim()) newErrors.name = "Name is required";
-    if (!formData.email.trim()) {
-      newErrors.email = "Email is required";
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = "Invalid email format";
-    }
-    if (!formData.subject.trim()) newErrors.subject = "Subject is required";
-    if (!formData.message.trim()) newErrors.message = "Message is required";
-    return newErrors;
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const newErrors = validate();
-    if (Object.keys(newErrors).length > 0) {
-      setErrors(newErrors);
-    } else {
-      setErrors({});
-      setIsSubmitted(true);
-      // In a real app, you would submit the form data here
-      setTimeout(() => setIsSubmitted(false), 5000);
-      setFormData({ name: "", email: "", subject: "", message: "" });
-    }
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.id]: e.target.value });
-    if (errors[e.target.id]) {
-      setErrors({ ...errors, [e.target.id]: "" });
-    }
-  };
-
   return (
-    <section id="contact" className="relative w-full min-h-[90vh] md:min-h-screen bg-transparent flex flex-col items-center justify-between overflow-hidden pt-20 pb-10 border-t border-gray-200">
+    <section id="contact" className="relative w-full min-h-[90vh] md:min-h-screen bg-transparent flex flex-col items-center justify-between overflow-hidden py-[5%] border-t border-gray-200">
       {/* Ambient globs — top-right cyan, bottom-left navy */}
       <div className="absolute -top-[5%] -right-[5%] w-[45%] h-[55%] bg-[#00a3d0]/10 blur-[140px] rounded-full pointer-events-none z-0" />
       <div className="absolute -bottom-[5%] -left-[5%] w-[50%] h-[50%] bg-[#00a3d0]/40 blur-[160px] rounded-full pointer-events-none z-0" />
@@ -53,7 +15,7 @@ export default function ContactSection() {
       {/* Decorative Floating Circles */}
       <div className="absolute top-[15%] left-[8%] w-32 h-32 md:w-56 md:h-56 border border-[#00a3d0]/10 rounded-full pointer-events-none z-0" />
       <div className="absolute top-[20%] left-[4%] w-20 h-20 md:w-32 md:h-32 border-2 border-[#e5e7eb]/20 rounded-full pointer-events-none z-0" />
-      
+
       <div className="absolute bottom-[20%] right-[6%] w-24 h-24 md:w-40 md:h-40 bg-[#e5e7eb]/10 rounded-full blur-[2px] pointer-events-none z-0" />
       <div className="absolute bottom-[10%] right-[10%] w-12 h-12 md:w-20 md:h-20 bg-[#00a3d0]/10 rounded-full pointer-events-none z-0" />
 
@@ -75,77 +37,90 @@ export default function ContactSection() {
         </div>
       </div>
 
-      {/* Top Heading */}
-      <div className="text-center px-6 mt-12 md:mt-4 mb-8 md:mb-16">
-        <h2 className="font-sans font-bold text-[#154880] text-4xl md:text-5xl lg:text-6xl tracking-tight drop-shadow-sm">
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, amount: 0.15 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="w-full flex flex-col items-center flex-1"
+      >
+        {/* Top Heading */}
+        <div className="text-center px-6 mt-12 md:mt-4 mb-8 md:mb-12 z-10 relative flex flex-col items-center">
+        <h2 className="font-sans font-bold text-[#154880] text-4xl md:text-5xl lg:text-6xl tracking-tight drop-shadow-sm mb-4">
           Get in Touch
+          <div className="h-1.5 w-24 bg-[#03b364] shadow-[0_0_10px_rgba(3,179,100,0.5)] mx-auto mt-2 rounded-full pointer-events-none" />
         </h2>
+        <h3 className="text-xl md:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-[#0D7A95] via-[#14A9D6] to-[#2E73B8] font-medium tracking-wide drop-shadow-sm">
+          Ready to start your next project? We&apos;d love to hear from you.<br /> Reach out directly or visit our office.
+        </h3>
       </div>
 
       {/* Contact Content Grid */}
-      <div className="relative z-10 w-full max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center mb-auto pb-12">
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-6 flex flex-col items-center mb-auto pb-12">
 
-        {/* Left Side: Form (Glassmorphism) */}
-        <div className="w-full bg-white/60 backdrop-blur-xl p-8 sm:p-10 border border-gray-200 rounded-3xl shadow-xl order-2 md:order-1">
-          <form className="flex flex-col space-y-6" onSubmit={handleSubmit}>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div className="flex flex-col space-y-2">
-                <label htmlFor="name" className="text-[10px] tracking-[0.2em] uppercase font-bold text-gray-500">Name</label>
-                <input type="text" id="name" value={formData.name} onChange={handleChange} className={`bg-gray-50/50 border ${errors.name ? 'border-red-500' : 'border-gray-200'} text-gray-800 rounded-xl px-4 py-4 focus:outline-none focus:border-[#0D7A95] focus:bg-white transition-all`} placeholder="John Doe" />
-                {errors.name && <span className="text-red-500 text-xs mt-1">{errors.name}</span>}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 bg-white/60 backdrop-blur-xl p-6 sm:p-10 border border-gray-200 rounded-3xl shadow-xl w-full">
+
+          {/* Left Side: Contact Info */}
+          <div className="flex flex-col items-center lg:items-start space-y-8 text-center lg:text-left justify-center">
+
+
+            <div className="flex flex-col items-center lg:items-start space-y-8 pt-2 pb-2 w-full">
+              {/* Email */}
+              <div className="flex flex-col items-center lg:items-start space-y-2">
+                <span className="text-xs md:text-sm tracking-[0.2em] uppercase font-bold text-gray-500">Email Us</span>
+                <a
+                  href="mailto:info@nexshift.com"
+                  className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#154880] tracking-tight hover:text-[#0D7A95] transition-colors duration-300 decoration-[#14A9D6] underline-offset-8 hover:underline"
+                >
+                  info@nexshift.com
+                </a>
               </div>
-              <div className="flex flex-col space-y-2">
-                <label htmlFor="email" className="text-[10px] tracking-[0.2em] uppercase font-bold text-gray-500">Email</label>
-                <input type="email" id="email" value={formData.email} onChange={handleChange} className={`bg-gray-50/50 border ${errors.email ? 'border-red-500' : 'border-gray-200'} text-gray-800 rounded-xl px-4 py-4 focus:outline-none focus:border-[#0D7A95] focus:bg-white transition-all`} placeholder="john@example.com" />
-                {errors.email && <span className="text-red-500 text-xs mt-1">{errors.email}</span>}
+
+              {/* Phone */}
+              <div className="flex flex-col items-center lg:items-start space-y-2">
+                <span className="text-xs md:text-sm tracking-[0.2em] uppercase font-bold text-gray-500">Call Us</span>
+                <a
+                  href="tel:+9779801129221"
+                  className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#154880] tracking-tight hover:text-[#0D7A95] transition-colors duration-300 decoration-[#14A9D6] underline-offset-8 hover:underline"
+                >
+                  +977-9801129221
+                </a>
+              </div>
+
+              {/* Address */}
+              <div className="flex flex-col items-center lg:items-start space-y-2">
+                <span className="text-xs md:text-sm tracking-[0.2em] uppercase font-bold text-gray-500">Visit Us</span>
+                <p className="text-lg sm:text-xl lg:text-2xl font-bold text-[#154880] tracking-tight text-center lg:text-left">
+                  Naya Baneshwor, Kathmandu, Nepal
+                </p>
               </div>
             </div>
 
-            <div className="flex flex-col space-y-2">
-              <label htmlFor="subject" className="text-[10px] tracking-[0.2em] uppercase font-bold text-gray-500">Subject</label>
-              <input type="text" id="subject" value={formData.subject} onChange={handleChange} className={`bg-gray-50/50 border ${errors.subject ? 'border-red-500' : 'border-gray-200'} text-gray-800 rounded-xl px-4 py-4 focus:outline-none focus:border-[#0D7A95] focus:bg-white transition-all`} placeholder="Project Inquiry" />
-              {errors.subject && <span className="text-red-500 text-xs mt-1">{errors.subject}</span>}
-            </div>
-
-            <div className="flex flex-col space-y-2">
-              <label htmlFor="message" className="text-[10px] tracking-[0.2em] uppercase font-bold text-gray-500">Message</label>
-              <textarea id="message" rows={4} value={formData.message} onChange={handleChange} className={`bg-gray-50/50 border ${errors.message ? 'border-red-500' : 'border-gray-200'} text-gray-800 rounded-xl px-4 py-4 focus:outline-none focus:border-[#0D7A95] focus:bg-white transition-all resize-none`} placeholder="Tell us about your project..."></textarea>
-              {errors.message && <span className="text-red-500 text-xs mt-1">{errors.message}</span>}
-            </div>
-
-            <button type="submit" className={`w-full font-bold text-sm tracking-wide rounded-xl py-5 mt-2 transition-colors cursor-pointer ${isSubmitted ? 'bg-green-500 text-white' : 'bg-[#0D7A95] text-white hover:bg-[#14A9D6] shadow-sm hover:shadow-md'}`}>
-              {isSubmitted ? 'Message Sent!' : 'Send Message'}
-            </button>
-          </form>
-        </div>
-
-        {/* Right Side: Contact Info */}
-        <div className="flex flex-col items-center md:items-start space-y-8 text-center md:text-left order-1 md:order-2">
-          <p className="text-gray-600 text-lg leading-relaxed max-w-md">
-            Ready to start your next project? We&apos;d love to hear from you. Fill out the form or reach out directly via email.
-          </p>
-
-          <div className="flex flex-col space-y-2">
-            <span className="text-xs tracking-[0.2em] uppercase font-bold text-gray-500">Email Us</span>
-            <a
-              href="mailto:info@nexshift.com"
-              className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#154880] tracking-tight hover:text-[#0D7A95] transition-colors duration-300 decoration-[#14A9D6] underline-offset-8 hover:underline"
+            {/* Small Logo */}
+            <div
+              className="text-3xl text-[#00a3d0] font-black italic tracking-tight drop-shadow-sm select-none pt-4"
+              style={{ fontFamily: "var(--font-geist-sans)" }}
             >
-              info@nexshift.com
-            </a>
+              NexShift!
+            </div>
           </div>
 
-          {/* Small Logo */}
-          <div
-            className="text-3xl text-[#00a3d0] font-black italic tracking-tight drop-shadow-sm select-none pt-4"
-            style={{ fontFamily: "var(--font-geist-sans)" }}
-          >
-            NexShift!
+          {/* Right Side: Map */}
+          <div className="w-full min-h-[350px] sm:min-h-[400px] h-full bg-gray-100 rounded-2xl overflow-hidden border border-gray-200 shadow-inner relative">
+            <iframe
+              src="https://maps.google.com/maps?q=27.6856276,85.3377242&t=&z=16&ie=UTF8&iwloc=&output=embed"
+              className="absolute inset-0 w-full h-full"
+              style={{ border: 0 }}
+              allowFullScreen={false}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
+
         </div>
 
       </div>
-
+      </motion.div>
     </section>
   );
 }

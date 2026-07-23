@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className="relative w-full pt-20 pb-12 bg-[#FAFAFA] px-8 md:px-16 lg:px-24 border-t border-gray-200 overflow-hidden">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12 pb-16">
         <div className="space-y-4 w-full md:w-auto">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "100px" }}
@@ -18,6 +18,9 @@ export default function Footer() {
             <h2 className="text-[10vw] italic leading-none font-black tracking-tighter uppercase pointer-events-none drop-shadow-sm font-sans text-transparent bg-clip-text bg-gradient-to-r from-[#0D7A95] via-[#14A9D6] to-[#2E73B8]">
               NEXSHIFT .
             </h2>
+            <p className="text-gray-500 text-lg md:text-xl font-medium tracking-wide mt-4 uppercase">
+              where idea meet market
+            </p>
           </motion.div>
         </div>
 

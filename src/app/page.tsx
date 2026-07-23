@@ -25,13 +25,15 @@ export default function Home() {
 
       <div className="relative w-full flex flex-col">
         <HeroSection />
-        <AboutSection2 />
-        <ServicesSection />
-        <TrustedPartners />
-        <ClientsSection />
-        <TestimonialsSection />
-        <ContactSection />
-        <Footer />
+        <div className="w-full flex flex-col md:pl-[72px]">
+          <AboutSection2 />
+          <ServicesSection />
+          <TrustedPartners />
+          <ClientsSection />
+          <TestimonialsSection />
+          <ContactSection />
+          <Footer />
+        </div>
       </div>
     </main>
   );

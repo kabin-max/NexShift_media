@@ -38,7 +38,7 @@ export default function IntroOverlay() {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
-          className="fixed inset-0 z-[100] w-screen h-screen bg-black flex items-center justify-center pointer-events-auto"
+          className="fixed inset-0 z-[100] w-screen h-screen bg-[#FAFAFA] flex items-center justify-center pointer-events-auto"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.9, y: 10 }}
@@ -48,11 +48,15 @@ export default function IntroOverlay() {
             className="flex flex-col items-center select-none"
             style={{ fontFamily: 'var(--font-geist-sans)' }}
           >
-            <h1 className="text-5xl md:text-7xl lg:text-[8rem] font-black tracking-tight drop-shadow-2xl italic text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/40 leading-none">
+            <h1 className="text-5xl md:text-7xl lg:text-[8rem] font-black tracking-tight drop-shadow-sm italic text-transparent bg-clip-text bg-gradient-to-r from-[#0D7A95] via-[#14A9D6] to-[#2E73B8] leading-none">
               NexShift .
             </h1>
-            <p className="mt-4 text-sm md:text-xl text-zinc-400 tracking-widest text-center whitespace-nowrap uppercase font-semibold">
+            <h2 className="mt-4 text-xl md:text-2xl lg:text-4xl font-black tracking-tight drop-shadow-sm italic text-transparent bg-clip-text bg-gradient-to-r from-[#0D7A95] via-[#14A9D6] to-[#2E73B8] leading-none">
               Media & Event Management
+            </h2>
+
+            <p className="mt-4 text-sm md:text-xl text-gray-500 tracking-widest text-center whitespace-nowrap uppercase font-medium">
+              Where Idea Meet Market
             </p>
             <motion.div
               initial={{ opacity: 0 }}
@@ -60,7 +64,7 @@ export default function IntroOverlay() {
               transition={{ delay: 0.6, duration: 0.5 }}
               className="mt-12 flex justify-center w-full"
             >
-              <Loader2 className="w-8 h-8 md:w-10 md:h-10 text-white/40 animate-spin" strokeWidth={2} />
+              <Loader2 className="w-8 h-8 md:w-10 md:h-10 text-[#0D7A95]/50 animate-spin" strokeWidth={2} />
             </motion.div>
           </motion.div>
         </motion.div>

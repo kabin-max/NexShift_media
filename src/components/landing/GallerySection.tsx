@@ -144,70 +144,78 @@ export default function GallerySection() {
         className="absolute right-[5%] md:right-[10%] bottom-1/4 w-40 h-80 bg-[url('data:image/svg+xml,%3Csvg viewBox=\'0 0 100 100\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Ccircle cx=\'10\' cy=\'20\' r=\'1.2\' fill=\'%230D7A95\' opacity=\'0.4\'/%3E%3Ccircle cx=\'90\' cy=\'80\' r=\'0.8\' fill=\'%230D7A95\' opacity=\'0.6\'/%3E%3Ccircle cx=\'40\' cy=\'60\' r=\'1.5\' fill=\'%230D7A95\' opacity=\'0.3\'/%3E%3C/svg%3E')] opacity-50 pointer-events-none z-10" 
       />
 
-      {/* Central Collage Container */}
-      <div className="relative w-[250px] h-[350px] sm:w-[350px] sm:h-[450px] md:w-[450px] md:h-[550px] z-20 flex items-center justify-center">
-        {images.map((img, index) => {
-          const isHovered = hoveredId === img.id;
-          
-          return (
-            <motion.div
-              key={img.id}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ 
-                duration: 0.8, 
-                delay: index * 0.15,
-                ease: [0.25, 0.1, 0.25, 1]
-              }}
-              className={`absolute ${img.className} rounded-[14px] cursor-pointer`}
-              style={{
-                x: img.parallaxX,
-                y: img.parallaxY,
-                zIndex: isHovered ? 50 : undefined,
-              }}
-              onMouseEnter={() => setHoveredId(img.id)}
-              onMouseLeave={() => setHoveredId(null)}
-            >
-              {/* Hover Rotation & Scale Layer */}
+      <motion.div
+        initial={{ opacity: 0, x: 50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, amount: 0.15 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="w-full flex items-center justify-center pointer-events-none z-20"
+      >
+        {/* Central Collage Container */}
+        <div className="relative w-[250px] h-[350px] sm:w-[350px] sm:h-[450px] md:w-[450px] md:h-[550px] flex items-center justify-center pointer-events-auto">
+          {images.map((img, index) => {
+            const isHovered = hoveredId === img.id;
+            
+            return (
               <motion.div
-                animate={{
-                  rotate: isHovered ? 0 : img.baseRotation,
-                  scale: isHovered ? 1.05 : 1,
-                  boxShadow: isHovered 
-                    ? "0px 40px 80px rgba(0,0,0,0.15)" 
-                    : "0px 20px 50px rgba(0,0,0,0.1)"
+                key={img.id}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ 
+                  duration: 0.8, 
+                  delay: index * 0.15,
+                  ease: [0.25, 0.1, 0.25, 1]
                 }}
-                transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
-                className="w-full h-full rounded-[14px] overflow-hidden backdrop-blur-md bg-white/40 border border-gray-200"
+                className={`absolute ${img.className} rounded-[14px] cursor-pointer`}
+                style={{
+                  x: img.parallaxX,
+                  y: img.parallaxY,
+                  zIndex: isHovered ? 50 : undefined,
+                }}
+                onMouseEnter={() => setHoveredId(img.id)}
+                onMouseLeave={() => setHoveredId(null)}
               >
-                {/* Infinite Float Layer */}
+                {/* Hover Rotation & Scale Layer */}
                 <motion.div
                   animate={{
-                    y: [-6, 6, -6],
-                    rotate: [-1, 1, -1]
+                    rotate: isHovered ? 0 : img.baseRotation,
+                    scale: isHovered ? 1.05 : 1,
+                    boxShadow: isHovered 
+                      ? "0px 40px 80px rgba(0,0,0,0.15)" 
+                      : "0px 20px 50px rgba(0,0,0,0.1)"
                   }}
-                  transition={{
-                    duration: 8 + index,
-                    delay: img.floatDelay,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                  className="relative w-full h-full"
+                  transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+                  className="w-full h-full rounded-[14px] overflow-hidden backdrop-blur-md bg-white/40 border border-gray-200"
                 >
-                  <Image
-                    src={img.src}
-                    alt={img.alt}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 300px, 450px"
-                  />
+                  {/* Infinite Float Layer */}
+                  <motion.div
+                    animate={{
+                      y: [-6, 6, -6],
+                      rotate: [-1, 1, -1]
+                    }}
+                    transition={{
+                      duration: 8 + index,
+                      delay: img.floatDelay,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                    className="relative w-full h-full"
+                  >
+                    <Image
+                      src={img.src}
+                      alt={img.alt}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 300px, 450px"
+                    />
+                  </motion.div>
                 </motion.div>
               </motion.div>
-            </motion.div>
-          );
-        })}
-      </div>
+            );
+          })}
+        </div>
+      </motion.div>
     </section>
   );
 }

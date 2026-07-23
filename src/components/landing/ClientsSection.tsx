@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 const clients = [
   { name: "SMITH", image: "/bg-image.png", logoFont: "sans" },
@@ -13,7 +14,7 @@ const clients = [
 
 export default function ClientsSection() {
   return (
-    <section id="clients" className="relative w-full bg-transparent pt-16 pb-24 md:pt-24 md:pb-32 text-[#171717] overflow-hidden border-t border-gray-200">
+    <section id="clients" className="relative w-full bg-transparent py-[5%] text-[#171717] overflow-hidden border-t border-gray-200">
       {/* Ambient globs — top-right cyan, bottom-left navy */}
       <div className="absolute -top-[5%] -right-[5%] w-[45%] h-[55%] bg-[#00a3d0]/10 blur-[140px] rounded-full pointer-events-none z-0" />
       <div className="absolute -bottom-[5%] -left-[5%] w-[50%] h-[50%] bg-[#00a3d0]/40 blur-[160px] rounded-full pointer-events-none z-0" />
@@ -39,11 +40,19 @@ export default function ClientsSection() {
         }
       `}</style>
 
-      <div className="text-center px-6 mb-12">
-        <h2 className="font-sans font-bold text-[#154880] text-4xl md:text-5xl lg:text-6xl tracking-tight drop-shadow-sm">
-          Clients & Projects
-        </h2>
-      </div>
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, amount: 0.15 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="w-full"
+      >
+        <div className="text-center px-6 mb-12">
+          <h2 className="font-sans font-bold text-[#154880] text-4xl md:text-5xl lg:text-6xl tracking-tight drop-shadow-sm">
+            Clients & Projects
+            <div className="h-1.5 w-24 bg-[#03b364] shadow-[0_0_10px_rgba(3,179,100,0.5)] mx-auto mt-2 rounded-full pointer-events-none" />
+          </h2>
+        </div>
 
       <div className="w-full overflow-hidden">
         <div className="flex w-max marquee-gallery gap-4 md:gap-8">
@@ -95,6 +104,7 @@ export default function ClientsSection() {
 
         </div>
       </div>
+      </motion.div>
     </section>
   );
 }

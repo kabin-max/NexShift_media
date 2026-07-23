@@ -4,7 +4,7 @@
 import { useEffect, useRef, useState } from "react";
 import ExpandableCards from "@/components/ui/expandable-cards";
 import Image from "next/image";
-import { useInView, animate, useMotionValue } from "framer-motion";
+import { useInView, animate, useMotionValue, motion } from "framer-motion";
 
 function AnimatedNumber({ value, suffix }: { value: number; suffix: string }) {
   const ref = useRef<HTMLSpanElement>(null);
@@ -91,7 +91,7 @@ export default function AboutSection2() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full min-h-screen bg-transparent text-[#171717] flex flex-col justify-center py-24 overflow-hidden border-y border-gray-200"
+      className="relative w-full bg-transparent text-[#171717] flex flex-col justify-center py-[5%] overflow-hidden border-y border-gray-200"
     >
       {/* Ambient globs — top-right cyan, bottom-left navy */}
       <div className="absolute -top-[5%] -right-[5%] w-[45%] h-[55%] bg-[#00a3d0]/10 blur-[140px] rounded-full pointer-events-none z-0" />
@@ -102,12 +102,18 @@ export default function AboutSection2() {
       {/* Decorative Floating Circles */}
       <div className="absolute top-[15%] left-[8%] w-32 h-32 md:w-56 md:h-56 border border-[#00a3d0]/10 rounded-full pointer-events-none z-0" />
       <div className="absolute top-[20%] left-[4%] w-20 h-20 md:w-32 md:h-32 border-2 border-[#e5e7eb]/20 rounded-full pointer-events-none z-0" />
-      
+
       <div className="absolute bottom-[20%] right-[6%] w-24 h-24 md:w-40 md:h-40 bg-[#e5e7eb]/10 rounded-full blur-[2px] pointer-events-none z-0" />
       <div className="absolute bottom-[10%] right-[10%] w-12 h-12 md:w-20 md:h-20 bg-[#00a3d0]/10 rounded-full pointer-events-none z-0" />
 
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10 w-full flex flex-col lg:flex-row items-center lg:items-stretch gap-12 lg:gap-20">
+      <motion.div
+        className="max-w-7xl mx-auto px-6 relative z-10 w-full flex flex-col lg:flex-row items-center lg:items-stretch gap-12 lg:gap-20"
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, amount: 0.15 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
 
         {/* Left Side: Expandable Cards and Stats */}
         <div className="w-full lg:w-1/2 flex flex-col items-center justify-center gap-8 select-none">
@@ -115,23 +121,8 @@ export default function AboutSection2() {
             <ExpandableCards cards={cards} defaultExpanded={3} autoPlay interval={1500} />
           </div>
 
-          {/* Stats Grid wrapped with the Vector Banner */}
-          <div className="relative w-full mt-10 overflow-hidden rounded-2xl">
-
-            {/* Background SVG Banner */}
-            <div className="absolute inset-0 w-full h-[120%] -top-[10%] pointer-events-none z-0 text-[#03b364] drop-shadow-xl">
-              <svg 
-                viewBox="0 0 800 200" 
-                preserveAspectRatio="none" 
-                className="w-full h-full"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path 
-                  fill="currentColor" 
-                  d="M 0 0 L 800 0 L 800 80 C 800 160 750 200 680 200 C 520 200 480 150 400 150 C 320 150 280 200 120 200 C 50 200 0 160 0 80 Z" 
-                />
-              </svg>
-            </div>
+          {/* Stats Grid wrapped with the Leaf Shape Banner */}
+          <div className="relative w-full mt-10 bg-[#03b364] text-white overflow-hidden rounded-tl-[80px] rounded-br-[80px] shadow-[0_10px_30px_rgba(3,179,100,0.3)]">
 
             {/* Decorative corner dots */}
             <span className="absolute top-3 left-4 w-1.5 h-1.5 rounded-full bg-white/30 z-10" />
@@ -155,14 +146,15 @@ export default function AboutSection2() {
                 <span className="text-white/80 text-[10px] md:text-xs font-bold uppercase tracking-widest mt-2 block">Audience Reached</span>
               </div>
             </div>
-          </div> 
+          </div>
         </div>
 
         {/* Right Side: Text */}
         <div className="w-full lg:w-1/2 flex flex-col justify-center space-y-6 lg:space-y-8">
           <div className="space-y-4 text-center lg:text-left">
-            <h2 className="font-sans font-bold text-[#154880] text-4xl md:text-5xl lg:text-6xl tracking-tight">
+            <h2 className="font-sans font-bold text-[#154880] text-4xl md:text-5xl lg:text-6xl tracking-tight w-max mx-auto flex flex-col items-center">
               About Us
+              <div className="h-1.5 w-24 bg-[#03b364] shadow-[0_0_10px_rgba(3,179,100,0.5)] mt-2 rounded-full pointer-events-none" />
             </h2>
             <h3 className="text-xl md:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-[#0D7A95] via-[#14A9D6] to-[#2E73B8] font-medium tracking-wide drop-shadow-sm">
               A Creative & Strategic Agency Based in Nepal
@@ -206,7 +198,7 @@ export default function AboutSection2() {
           </div>
 
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
