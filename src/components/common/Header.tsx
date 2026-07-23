@@ -44,7 +44,7 @@ export default function Header() {
               className="text-2xl md:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-[#0D7A95] via-[#14A9D6] to-[#2E73B8] font-black italic tracking-tight drop-shadow-sm whitespace-nowrap leading-none select-none"
               style={{ fontFamily: "var(--font-geist-sans)" }}
             >
-              NexShift
+              NexShift.
             </span>
           </Link>
         )}
