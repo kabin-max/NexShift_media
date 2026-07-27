@@ -38,7 +38,7 @@ export default function OurStory() {
   const storyY = useTransform(storyProgress, [0, 0.5], [60, 0]);
 
   return (
-    <section id="story" ref={storyRef} className="relative w-full pt-20 pb-24 md:pt-28 md:pb-32 bg-transparent px-6 md:px-12 lg:px-24">
+    <section id="story" ref={storyRef} className="relative w-full pt-20 pb-24 md:pt-28 md:pb-32 bg-transparent px-[5%]">
       {/* Wavy Green Top Strip */}
       <div className="absolute top-0 left-0 w-full overflow-hidden leading-none z-0">
         <svg
