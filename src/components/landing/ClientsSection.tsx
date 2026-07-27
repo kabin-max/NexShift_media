@@ -5,22 +5,22 @@ import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 const clients = [
-  { name: "Cafe O2", link: "#", image: "/bg-image.png", logoFont: "sans" },
-  { name: "Eg Bag", link: "https://www.tiktok.com/@eg.bags", image: "/bg-image.png", logoFont: "sans" },
-  { name: "Ritz College", link: "https://www.tiktok.com/@ritz_college_official", image: "/bg-image.png", logoFont: "sans" },
-  { name: "Milestone College", link: "https://www.tiktok.com/@infomilestone", image: "/bg-image.png", logoFont: "sans" },
-  { name: "Tulsi Veg Restro", link: "https://www.instagram.com/tulsitandoorihouse/", image: "/bg-image.png", logoFont: "sans" },
-  { name: "Smile by Dr.Kareen", link: "https://www.instagram.com/smilebydrkareen_dentalclinic/", image: "/bg-image.png", logoFont: "sans" },
-  { name: "Praise Consulting", link: "https://www.instagram.com/praise.consulting/", image: "/bg-image.png", logoFont: "sans" },
-  { name: "New York Cargo", link: "https://www.instagram.com/newyorkcargopvtlt/", image: "/bg-image.png", logoFont: "sans" },
-  { name: "Nisarga Batika", link: "https://www.nisarga.edu.np/", image: "/bg-image.png", logoFont: "sans" },
-  { name: "ZENO", link: "https://www.zenoenterprise.tech/", image: "/bg-image.png", logoFont: "sans" },
-  { name: "Queens Palace", link: "https://www.instagram.com/queenspalaceevents/", image: "/bg-image.png", logoFont: "sans" },
-  { name: "Palmos Couture", link: "https://www.instagram.com/palmos_couture/", image: "/bg-image.png", logoFont: "sans" },
+  { name: "Cafe O2", link: "https://www.instagram.com/cafe___o2/", image: "/bg-image.png", logoFont: "sans", logo: "Cafe_O2.png" },
+  { name: "Eg Bag", link: "https://www.tiktok.com/@eg.bags", image: "/bg-image.png", logoFont: "sans", logo: "eg_bag.jpg" },
+  { name: "Ritz College", link: "https://www.tiktok.com/@ritz_college_official", image: "/bg-image.png", logoFont: "sans", logo: "ritz.png" },
+  { name: "Milestone College", link: "https://www.tiktok.com/@infomilestone", image: "/bg-image.png", logoFont: "sans", logo: "Milestone logoo.png" },
+  { name: "Tulsi Veg Restro", link: "https://www.instagram.com/tulsitandoorihouse/", image: "/bg-image.png", logoFont: "sans", logo: "Tulsi.png" },
+  { name: "Smile by Dr.Kareen", link: "https://www.instagram.com/smilebydrkareen_dentalclinic/", image: "/bg-image.png", logoFont: "sans", logo: "smile_dental.png" },
+  { name: "Praise Consulting", link: "https://www.instagram.com/praise.consulting/", image: "/bg-image.png", logoFont: "sans", logo: "praise consultancy.jpg" },
+  { name: "New York Cargo", link: "https://www.instagram.com/newyorkcargopvtlt/", image: "/bg-image.png", logoFont: "sans", logo: "new york cargo.png" },
+  { name: "Nisarga Batika", link: "https://www.nisarga.edu.np/", image: "/bg-image.png", logoFont: "sans", logo: "nisarga batika.svg" },
+  { name: "ZENO", link: "https://www.zenoenterprise.tech/", image: "/bg-image.png", logoFont: "sans", logo: "zeno.PNG" },
+  { name: "Queens Palace", link: "https://www.instagram.com/queenspalaceevents/", image: "/bg-image.png", logoFont: "sans", logo: "Queens.png" },
+  { name: "Palmos Couture", link: "https://www.instagram.com/palmos_couture/", image: "/bg-image.png", logoFont: "sans", logo: "palmos logo.jpeg" },
   { name: "GrabNews", link: "https://www.instagram.com/grabnewsofficial/", image: "/bg-image.png", logoFont: "sans" },
-  { name: "Mega Lights", link: "https://www.tiktok.com/@megalights", image: "/bg-image.png", logoFont: "sans" },
-  { name: "Guru Pashmina", link: "https://www.gurupashmina.com/", image: "/bg-image.png", logoFont: "sans" },
-  { name: "Hotel Royal Airport", link: "https://www.tiktok.com/@hotelroyalairpotnepal", image: "/bg-image.png", logoFont: "sans" },
+  { name: "Mega Lights", link: "https://www.tiktok.com/@megalights", image: "/bg-image.png", logoFont: "sans", logo: "Meg-Lights.jpg" },
+  { name: "Guru Pashmina", link: "https://www.gurupashmina.com/", image: "/bg-image.png", logoFont: "sans", logo: "guru pashmina.jpg" },
+  { name: "Hotel Royal Airport", link: "https://www.tiktok.com/@hotelroyalairpotnepal", image: "/bg-image.png", logoFont: "sans", logo: "hotel royal.jpg" },
   { name: "Hotel Readers Inn", link: "https://www.tiktok.com/@airporthotelreaders", image: "/bg-image.png", logoFont: "sans" },
 ];
 
@@ -36,7 +36,7 @@ export default function ClientsSection() {
       {/* Decorative Floating Circles */}
       <div className="absolute top-[15%] left-[8%] w-32 h-32 md:w-56 md:h-56 border border-[#00a3d0]/10 rounded-full pointer-events-none z-0" />
       <div className="absolute top-[20%] left-[4%] w-20 h-20 md:w-32 md:h-32 border-2 border-[#e5e7eb]/20 rounded-full pointer-events-none z-0" />
-      
+
       <div className="absolute bottom-[20%] right-[6%] w-24 h-24 md:w-40 md:h-40 bg-[#e5e7eb]/10 rounded-full blur-[2px] pointer-events-none z-0" />
       <div className="absolute bottom-[10%] right-[10%] w-12 h-12 md:w-20 md:h-20 bg-[#00a3d0]/10 rounded-full pointer-events-none z-0" />
       <style>{`
@@ -66,59 +66,68 @@ export default function ClientsSection() {
           </h2>
         </div>
 
-      <div className="w-full overflow-hidden">
-        <div className="flex w-max marquee-gallery gap-4 md:gap-8">
+        <div className="w-full overflow-hidden">
+          <div className="flex w-max marquee-gallery gap-4 md:gap-8">
 
-          {[...Array(2)].map((_, i) => (
-            <div key={i} className="flex gap-4 md:gap-8 pr-4 md:pr-8">
-              {clients.map((client, idx) => (
-                <a
-                  href={client.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  key={`client-${i}-${idx}`}
-                  className="group relative block w-[280px] h-[380px] md:w-[300px] md:h-[420px] shrink-0 overflow-hidden cursor-pointer"
-                >
-                  {/* Background Image */}
-                  <div className="absolute inset-0 z-0 bg-black">
-                    <Image
-                      src={client.image}
-                      alt={client.name}
-                      fill
-                      sizes="(max-width: 768px) 300px, 300px"
-                      className="object-cover transition-transform duration-700 group-hover:scale-105 group-hover:brightness-110"
-                    />
-                  </div>
-
-                  {/* Bottom Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 z-10 transition-opacity duration-500 group-hover:opacity-60" />
-
-                  {/* Content Container */}
-                  <div className="absolute inset-0 z-20 flex flex-col justify-between p-6">
-                    <div /> {/* Spacer for top */}
-
-                    {/* Center Logo/Text */}
-                    <div className="flex justify-center items-center transform transition-transform duration-500 group-hover:-translate-y-2">
-                      <h3 className={`text-3xl md:text-4xl font-bold text-white drop-shadow-2xl ${client.logoFont === 'serif' ? 'font-serif' : 'font-sans'}`}>
-                        {client.name}
-                      </h3>
+            {[...Array(2)].map((_, i) => (
+              <div key={i} className="flex gap-4 md:gap-8 pr-4 md:pr-8">
+                {clients.map((client, idx) => (
+                  <a
+                    href={client.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    key={`client-${i}-${idx}`}
+                    className="group relative block w-[280px] h-[380px] md:w-[300px] md:h-[420px] shrink-0 overflow-hidden cursor-pointer"
+                  >
+                    {/* Background Image */}
+                    <div className="absolute inset-0 z-0 bg-black">
+                      <Image
+                        src={client.image}
+                        alt={client.name}
+                        fill
+                        sizes="(max-width: 768px) 300px, 300px"
+                        className="object-cover transition-transform duration-700 group-hover:scale-105 group-hover:brightness-110"
+                      />
                     </div>
 
-                    {/* Bottom Bar */}
-                    <div className="flex justify-between items-end w-full transform transition-all duration-500 translate-y-4 opacity-70 group-hover:translate-y-0 group-hover:opacity-100">
-                      <span className="text-[10px] tracking-[0.2em] uppercase font-bold text-white">
-                        View Work
-                      </span>
-                      <ArrowUpRight className="w-4 h-4 text-white" />
-                    </div>
-                  </div>
-                </a>
-              ))}
-            </div>
-          ))}
+                    {/* Bottom Gradient Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 z-10 transition-opacity duration-500 group-hover:opacity-60" />
 
+                    {/* Content Container */}
+                    <div className="absolute inset-0 z-20 flex flex-col justify-between p-6">
+                      <div /> {/* Spacer for top */}
+
+                      {/* Center Logo/Text */}
+                      <div className="relative flex justify-center items-center min-h-[160px] w-full">
+                        <h3 className={`absolute text-center px-4 text-3xl md:text-4xl font-bold text-white drop-shadow-2xl transition-all duration-500 group-hover:translate-y-[60px] group-hover:scale-90 ${client.logoFont === 'serif' ? 'font-serif' : 'font-sans'}`}>
+                          {client.name}
+                        </h3>
+                        {client.logo && (
+                          <div className="absolute flex justify-center items-center opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:-translate-y-4 scale-75 group-hover:scale-100">
+                            <img
+                              src={encodeURI(`/trusted partner/${client.logo}`)}
+                              alt={`${client.name} logo`}
+                              className="max-h-[90px] max-w-[180px] object-contain drop-shadow-2xl"
+                            />
+                          </div>
+                        )}
+                      </div>
+
+                      {/* Bottom Bar */}
+                      <div className="flex justify-between items-end w-full transform transition-all duration-500 translate-y-4 opacity-70 group-hover:translate-y-0 group-hover:opacity-100">
+                        <span className="text-[10px] tracking-[0.2em] uppercase font-bold text-white">
+                          View Work
+                        </span>
+                        <ArrowUpRight className="w-4 h-4 text-white" />
+                      </div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            ))}
+
+          </div>
         </div>
-      </div>
       </motion.div>
     </section>
   );
