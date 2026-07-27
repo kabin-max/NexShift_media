@@ -5,11 +5,23 @@ import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 const clients = [
-  { name: "SMITH", image: "/bg-image.png", logoFont: "sans" },
-  { name: "Hard Yakka", image: "/bg-image.png", logoFont: "sans" },
-  { name: "BYD", image: "/bg-image.png", logoFont: "serif" },
-  { name: "Rexona", image: "/bg-image.png", logoFont: "sans" },
-  { name: "flybuys", image: "/bg-image.png", logoFont: "sans" },
+  { name: "Cafe O2", link: "#", image: "/bg-image.png", logoFont: "sans" },
+  { name: "Eg Bag", link: "https://www.tiktok.com/@eg.bags", image: "/bg-image.png", logoFont: "sans" },
+  { name: "Ritz College", link: "https://www.tiktok.com/@ritz_college_official", image: "/bg-image.png", logoFont: "sans" },
+  { name: "Milestone College", link: "https://www.tiktok.com/@infomilestone", image: "/bg-image.png", logoFont: "sans" },
+  { name: "Tulsi Veg Restro", link: "https://www.instagram.com/tulsitandoorihouse/", image: "/bg-image.png", logoFont: "sans" },
+  { name: "Smile by Dr.Kareen", link: "https://www.instagram.com/smilebydrkareen_dentalclinic/", image: "/bg-image.png", logoFont: "sans" },
+  { name: "Praise Consulting", link: "https://www.instagram.com/praise.consulting/", image: "/bg-image.png", logoFont: "sans" },
+  { name: "New York Cargo", link: "https://www.instagram.com/newyorkcargopvtlt/", image: "/bg-image.png", logoFont: "sans" },
+  { name: "Nisarga Batika", link: "https://www.nisarga.edu.np/", image: "/bg-image.png", logoFont: "sans" },
+  { name: "ZENO", link: "https://www.zenoenterprise.tech/", image: "/bg-image.png", logoFont: "sans" },
+  { name: "Queens Palace", link: "https://www.instagram.com/queenspalaceevents/", image: "/bg-image.png", logoFont: "sans" },
+  { name: "Palmos Couture", link: "https://www.instagram.com/palmos_couture/", image: "/bg-image.png", logoFont: "sans" },
+  { name: "GrabNews", link: "https://www.instagram.com/grabnewsofficial/", image: "/bg-image.png", logoFont: "sans" },
+  { name: "Mega Lights", link: "https://www.tiktok.com/@megalights", image: "/bg-image.png", logoFont: "sans" },
+  { name: "Guru Pashmina", link: "https://www.gurupashmina.com/", image: "/bg-image.png", logoFont: "sans" },
+  { name: "Hotel Royal Airport", link: "https://www.tiktok.com/@hotelroyalairpotnepal", image: "/bg-image.png", logoFont: "sans" },
+  { name: "Hotel Readers Inn", link: "https://www.tiktok.com/@airporthotelreaders", image: "/bg-image.png", logoFont: "sans" },
 ];
 
 export default function ClientsSection() {
@@ -60,9 +72,12 @@ export default function ClientsSection() {
           {[...Array(2)].map((_, i) => (
             <div key={i} className="flex gap-4 md:gap-8 pr-4 md:pr-8">
               {clients.map((client, idx) => (
-                <div
+                <a
+                  href={client.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   key={`client-${i}-${idx}`}
-                  className="group relative w-[280px] h-[380px] md:w-[300px] md:h-[420px] shrink-0 overflow-hidden cursor-pointer"
+                  className="group relative block w-[280px] h-[380px] md:w-[300px] md:h-[420px] shrink-0 overflow-hidden cursor-pointer"
                 >
                   {/* Background Image */}
                   <div className="absolute inset-0 z-0 bg-black">
@@ -97,7 +112,7 @@ export default function ClientsSection() {
                       <ArrowUpRight className="w-4 h-4 text-white" />
                     </div>
                   </div>
-                </div>
+                </a>
               ))}
             </div>
           ))}
