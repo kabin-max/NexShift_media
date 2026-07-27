@@ -26,7 +26,7 @@ export default function FaqSection() {
   ];
 
   return (
-    <section className="relative w-full py-24 bg-transparent px-6 md:px-12 lg:px-24 border-t border-gray-200 overflow-hidden">
+    <section className="relative w-full py-24 bg-transparent px-[5%] border-t border-gray-200 overflow-hidden">
       {/* Ambient globs — top-right cyan, bottom-left navy */}
       <div className="absolute -top-[5%] -right-[5%] w-[45%] h-[55%] bg-[#00a3d0]/10 blur-[140px] rounded-full pointer-events-none z-0" />
       <div className="absolute -bottom-[5%] -left-[5%] w-[50%] h-[50%] bg-[#00a3d0]/40 blur-[160px] rounded-full pointer-events-none z-0" />

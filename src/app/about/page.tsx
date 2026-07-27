@@ -21,10 +21,12 @@ export default function About() {
             {/* ── Page Content ────────────────────────────────── */}
             <div className="relative z-10 w-full flex flex-col">
                 <AboutHero />
-                <OurStory />
-                <OurSteps />
-                <FaqSection />
-                <Footer />
+                <div className="w-full flex flex-col md:pl-[72px]">
+                    <OurStory />
+                    <OurSteps />
+                    <FaqSection />
+                    <Footer />
+                </div>
             </div>
         </main>
     );

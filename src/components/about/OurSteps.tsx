@@ -230,7 +230,7 @@ export default function OurSteps() {
   const dynamicPath = getPath(svgSize.w, svgSize.h);
 
   return (
-    <section ref={containerRef} style={{ height: "200vh" }} className="relative w-full bg-transparent border-t border-gray-200">
+    <section ref={containerRef} style={{ height: "200vh" }} className="relative w-full bg-transparent border-t border-gray-200 px-[5%]">
       <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
 
         <div className="absolute top-12 md:top-24 w-full text-center z-30 pointer-events-none flex flex-col items-center">
