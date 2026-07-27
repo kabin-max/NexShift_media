@@ -1,3 +1,30 @@
+const rawPartners = [
+  { name: "Guru Pashmina", filename: "guru pashmina.jpg" },
+  { name: "Nisarga Batika", filename: "nisarga batika.svg" },
+  { name: "Palmos", filename: "palmos logo.jpeg" },
+  { name: "Milestone Logo", filename: "Milestone logoo.png" },
+  { name: "New York Cargo", filename: "new york cargo.png" },
+  { name: "Cafe O2", filename: "Cafe_O2.png", scale: 1.2 },
+  { name: "Queens Logo", filename: "Queens.png", scale: 1.2 },
+  { name: "Tulsi Portrait", filename: "Tulsi.png" },
+  { name: "Praise Consultancy", filename: "praise consultancy.jpg" },
+  { name: "Mega Lights", filename: "Meg-Lights.jpg", scale: 1.2 },
+  { name: "Hotel Royal Airport", filename: "hotel royal.jpg" },
+  { name: "EG Bag", filename: "eg_bag.jpg" },
+  { name: "Ritz College", filename: "ritz.png", scale: 1.2 },
+  { name: "Zeno", filename: "zeno.PNG" },
+  { name: "Smile Dental Clinic", filename: "smile_dental.png", scale: 1.2 },
+];
+
+const partners = rawPartners.map(p => ({
+  name: p.name,
+  src: `/trusted partner/${p.filename}`,
+  scale: p.scale || null
+}));
+
+const row1 = partners.slice(0, 8);
+const row2 = partners.slice(8);
+
 export default function TrustedPartners() {
   return (
     <section className="w-full bg-transparent py-[5%] overflow-hidden flex flex-col gap-12 border-t border-gray-200">
@@ -37,10 +64,18 @@ export default function TrustedPartners() {
         <div className="flex w-max marquee-right items-center">
           {[...Array(2)].map((_, i) => (
             <div key={i} className="flex gap-12 md:gap-24 px-6 md:px-12 items-center">
-              {['NIKE', 'APPLE', 'SONY', 'ADIDAS', 'TESLA', 'GOOGLE', 'BMW'].map((brand, idx) => (
-                <span key={`r1-${i}-${idx}`} className="text-4xl md:text-6xl lg:text-8xl font-black tracking-tighter text-gray-200 hover:text-[#0D7A95] transition-colors duration-300 cursor-pointer select-none whitespace-nowrap">
-                  {brand}
-                </span>
+              {row1.map((partner, idx) => (
+                <div 
+                  key={`r1-${i}-${idx}`} 
+                  className="relative h-16 md:h-20 w-32 md:w-40 flex items-center justify-center transition-all duration-300 ease-in-out cursor-pointer hover:scale-105"
+                >
+                  <img
+                    src={encodeURI(partner.src)}
+                    alt={partner.name}
+                    className="max-h-full max-w-full object-contain pointer-events-none"
+                    style={partner.scale ? { transform: `scale(${partner.scale})` } : undefined}
+                  />
+                </div>
               ))}
             </div>
           ))}
@@ -50,10 +85,18 @@ export default function TrustedPartners() {
         <div className="flex w-max marquee-left items-center">
           {[...Array(2)].map((_, i) => (
             <div key={i} className="flex gap-12 md:gap-24 px-6 md:px-12 items-center">
-              {['SAMSUNG', 'PORSCHE', 'NETFLIX', 'AMAZON', 'ROLEX', 'META', 'IBM'].map((brand, idx) => (
-                <span key={`r2-${i}-${idx}`} className="text-4xl md:text-6xl lg:text-8xl font-black tracking-tighter text-gray-200 hover:text-[#0D7A95] transition-colors duration-300 cursor-pointer select-none whitespace-nowrap">
-                  {brand}
-                </span>
+              {row2.map((partner, idx) => (
+                <div 
+                  key={`r2-${i}-${idx}`} 
+                  className="relative h-16 md:h-20 w-32 md:w-40 flex items-center justify-center transition-all duration-300 ease-in-out cursor-pointer hover:scale-105"
+                >
+                  <img
+                    src={encodeURI(partner.src)}
+                    alt={partner.name}
+                    className="max-h-full max-w-full object-contain pointer-events-none"
+                    style={partner.scale ? { transform: `scale(${partner.scale})` } : undefined}
+                  />
+                </div>
               ))}
             </div>
           ))}
@@ -62,3 +105,4 @@ export default function TrustedPartners() {
     </section>
   );
 }
+
