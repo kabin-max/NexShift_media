@@ -19,8 +19,8 @@ const permanentMarker = Permanent_Marker({
 });
 
 export const metadata: Metadata = {
-  title: "XYX | Creating amazing experiences",
-  description: "Landing page for XYX company.",
+  title: "NexShift | Creating amazing experiences",
+  description: "Landing page for NexShift company.",
 };
 
 export default function RootLayout({
@@ -33,7 +33,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${permanentMarker.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col overflow-x-hidden">{children}</body>
     </html>
   );
 }

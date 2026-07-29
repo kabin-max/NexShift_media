@@ -1,0 +1,61 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import { Menu } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+// import NavOverlay from "./NavOverlay";
+
+export default function Header() {
+  const pathname = usePathname();
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Add blur after the NexShift text finishes its animation and reaches the top
+      setIsScrolled(window.scrollY > 400);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Check immediately on mount
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <>
+      <header
+        className={`fixed top-0 left-0 right-0 z-[70] flex items-center justify-end w-full px-6 py-3 md:px-12 md:py-4 transition-all duration-300 ${isScrolled ? "bg-white/20 backdrop-blur-md shadow-sm" : "bg-transparent"
+          }`}
+      >
+
+        <Link
+          href="/"
+          className={`absolute left-1/2 -translate-x-1/2 flex items-center justify-center gap-3 transition-opacity duration-300 ${pathname === "/" && !isScrolled ? 'opacity-0 pointer-events-none' : 'opacity-100 pointer-events-auto'
+            }`}
+        >
+          <Image src="/nst-logo.png" alt="NexShift Logo" width={32} height={32} className="object-contain" />
+          <span
+            className="text-2xl md:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-[#0D7A95] via-[#14A9D6] to-[#2E73B8] font-black italic tracking-tight drop-shadow-sm whitespace-nowrap leading-none select-none"
+            style={{ fontFamily: "var(--font-geist-sans)" }}
+          >
+            NexShift .
+          </span>
+        </Link>
+
+        {pathname === "/about" || pathname === "/services" ? (
+          <Link href="/" className="px-6 py-3 bg-[#0D7A95] text-white hover:bg-[#14A9D6] text-sm font-bold rounded-full transition-colors shadow-sm hover:shadow-md cursor-pointer pointer-events-auto">
+            Go Back Home
+          </Link>
+        ) : (
+          <Link href="/about" className="px-6 py-3 bg-[#0D7A95] text-white hover:bg-[#14A9D6] text-sm font-bold rounded-full transition-colors shadow-sm hover:shadow-md cursor-pointer pointer-events-auto">
+            About Us
+          </Link>
+        )}
+      </header>
+
+    </>
+  );
+}
