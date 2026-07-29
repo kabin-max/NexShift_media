@@ -37,7 +37,7 @@ export default function TestimonialsSection() {
         </div>
 
         {/* Wrapper around testimonial component */}
-        <div className="bg-[#154880] rounded-3xl p-6 md:p-8 border border-[#154880]/50 shadow-xl">
+        <div className="bg-[#154880] rounded-3xl p-4 sm:p-6 md:p-8 border border-[#154880]/50 shadow-xl">
           <AnimatedTestimonials
             autoplay={true}
             data={[

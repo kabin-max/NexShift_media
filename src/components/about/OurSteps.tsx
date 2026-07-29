@@ -172,10 +172,10 @@ function StepCard({ step, index, progress }: { step: any, index: number, progres
       style={{ opacity, scale, y, x, filter: blur }}
       className={`absolute w-[80%] md:w-full max-w-sm ${positions[index]} z-20 origin-left pointer-events-none`}
     >
-      <div className="relative p-6 md:p-8 mt-12 md:mt-20">
+      <div className="relative p-5 sm:p-6 md:p-8 mt-12 md:mt-20">
         <motion.span
           style={{ opacity: ghostOpacity }}
-          className="absolute bottom-full translate-y-[45%] left-0 md:-left-4 text-[8rem] md:text-[14rem] font-bold font-mono text-[#14A9D6] select-none z-[-1] leading-none tracking-tighter pointer-events-none"
+          className="absolute bottom-full translate-y-[45%] left-0 md:-left-4 text-[6rem] sm:text-[8rem] md:text-[14rem] font-bold font-mono text-[#14A9D6] select-none z-[-1] leading-none tracking-tighter pointer-events-none"
         >
           {step.num}
         </motion.span>
@@ -230,81 +230,83 @@ export default function OurSteps() {
   const dynamicPath = getPath(svgSize.w, svgSize.h);
 
   return (
-    <section ref={containerRef} style={{ height: "200vh" }} className="relative w-full bg-transparent border-t border-gray-200 px-[5%]">
-      <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
+    <>
+      <section ref={containerRef} style={{ height: "200vh" }} className="relative w-full bg-transparent border-t border-gray-200 px-[5%]">
+        <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
 
-        <div className="absolute top-12 md:top-24 w-full text-center z-30 pointer-events-none flex flex-col items-center">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-sans tracking-tight text-[#154880] drop-shadow-sm flex flex-col items-center pointer-events-auto">
-            Our Steps
-            <div className="h-1.5 w-24 bg-[#03b364] shadow-[0_0_10px_rgba(3,179,100,0.5)] mx-auto mt-2 rounded-full pointer-events-none" />
-          </h2>
+          <div className="absolute top-12 md:top-24 w-full text-center z-30 pointer-events-none flex flex-col items-center">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-sans tracking-tight text-[#154880] drop-shadow-sm flex flex-col items-center pointer-events-auto">
+              Our Steps
+              <div className="h-1.5 w-24 bg-[#03b364] shadow-[0_0_10px_rgba(3,179,100,0.5)] mx-auto mt-2 rounded-full pointer-events-none" />
+            </h2>
+          </div>
+
+          <div ref={svgContainerRef} className="relative w-full max-w-7xl h-[80vh] mx-auto">
+
+            {svgSize.w > 0 && (
+              <svg
+                viewBox={`0 0 ${svgSize.w} ${svgSize.h}`}
+                className="absolute inset-0 w-full h-full z-[-10] pointer-events-none overflow-visible"
+                style={{ willChange: "transform", transform: "translateZ(0)" }}
+              >
+                <defs>
+                  <filter id="neon-glow" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur stdDeviation="4" result="coloredBlur" />
+                    <feMerge>
+                      <feMergeNode in="coloredBlur" />
+                      <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                  </filter>
+                  <linearGradient id="line-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#154880" />
+                    <stop offset="50%" stopColor="#154880" />
+                    <stop offset="100%" stopColor="#154880" />
+                  </linearGradient>
+                </defs>
+
+                <path
+                  d={dynamicPath}
+                  fill="none"
+                  stroke="rgba(0,0,0,0.15)"
+                  strokeWidth="2"
+                  strokeDasharray="4 8"
+                  strokeLinecap="round"
+                />
+
+                {getPoints(svgSize.w, svgSize.h).map((pt, i) => (
+                  <StepDot key={`dot-${i}`} point={pt} index={i} progress={smoothProgress} />
+                ))}
+
+                <motion.path
+                  d={dynamicPath}
+                  fill="none"
+                  stroke="url(#line-gradient)"
+                  strokeWidth="5"
+                  strokeLinecap="round"
+                  filter="url(#neon-glow)"
+                  style={{ pathLength: smoothProgress }}
+                />
+              </svg>
+            )}
+
+            {/* Step Cards */}
+            {steps.map((step, i) => (
+              <StepCard key={i} step={step} index={i} progress={smoothProgress} />
+            ))}
+
+            {/* Detail Panels: Top-Right (Steps 1 & 2) */}
+            {[0, 1].map(i => (
+              <DetailPanel key={`tr-${i}`} index={i} step={steps[i]} zone={activeZones[i]} progress={smoothProgress} side="top-right" />
+            ))}
+
+            {/* Detail Panels: Bottom-Left (Steps 3 & 4) */}
+            {[2, 3].map(i => (
+              <DetailPanel key={`bl-${i}`} index={i} step={steps[i]} zone={activeZones[i]} progress={smoothProgress} side="bottom-left" />
+            ))}
+
+          </div>
         </div>
-
-        <div ref={svgContainerRef} className="relative w-full max-w-7xl h-[80vh] mx-auto">
-
-          {svgSize.w > 0 && (
-            <svg
-              viewBox={`0 0 ${svgSize.w} ${svgSize.h}`}
-              className="absolute inset-0 w-full h-full z-[-10] pointer-events-none overflow-visible"
-              style={{ willChange: "transform", transform: "translateZ(0)" }}
-            >
-              <defs>
-                <filter id="neon-glow" x="-50%" y="-50%" width="200%" height="200%">
-                  <feGaussianBlur stdDeviation="4" result="coloredBlur" />
-                  <feMerge>
-                    <feMergeNode in="coloredBlur" />
-                    <feMergeNode in="SourceGraphic" />
-                  </feMerge>
-                </filter>
-                <linearGradient id="line-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#154880" />
-                  <stop offset="50%" stopColor="#154880" />
-                  <stop offset="100%" stopColor="#154880" />
-                </linearGradient>
-              </defs>
-
-              <path
-                d={dynamicPath}
-                fill="none"
-                stroke="rgba(0,0,0,0.15)"
-                strokeWidth="2"
-                strokeDasharray="4 8"
-                strokeLinecap="round"
-              />
-
-              {getPoints(svgSize.w, svgSize.h).map((pt, i) => (
-                <StepDot key={`dot-${i}`} point={pt} index={i} progress={smoothProgress} />
-              ))}
-
-              <motion.path
-                d={dynamicPath}
-                fill="none"
-                stroke="url(#line-gradient)"
-                strokeWidth="5"
-                strokeLinecap="round"
-                filter="url(#neon-glow)"
-                style={{ pathLength: smoothProgress }}
-              />
-            </svg>
-          )}
-
-          {/* Step Cards */}
-          {steps.map((step, i) => (
-            <StepCard key={i} step={step} index={i} progress={smoothProgress} />
-          ))}
-
-          {/* Detail Panels: Top-Right (Steps 1 & 2) */}
-          {[0, 1].map(i => (
-            <DetailPanel key={`tr-${i}`} index={i} step={steps[i]} zone={activeZones[i]} progress={smoothProgress} side="top-right" />
-          ))}
-
-          {/* Detail Panels: Bottom-Left (Steps 3 & 4) */}
-          {[2, 3].map(i => (
-            <DetailPanel key={`bl-${i}`} index={i} step={steps[i]} zone={activeZones[i]} progress={smoothProgress} side="bottom-left" />
-          ))}
-
-        </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

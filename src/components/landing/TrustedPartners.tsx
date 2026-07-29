@@ -1,29 +1,36 @@
 const rawPartners = [
-  { name: "Guru Pashmina", filename: "guru pashmina.jpg" },
-  { name: "Nisarga Batika", filename: "nisarga batika.svg" },
-  { name: "Palmos", filename: "palmos logo.jpeg" },
-  { name: "Milestone Logo", filename: "Milestone logoo.png" },
-  { name: "New York Cargo", filename: "new york cargo.png" },
-  { name: "Cafe O2", filename: "Cafe_O2.png", scale: 1.2 },
-  { name: "Queens Logo", filename: "Queens.png", scale: 1.2 },
-  { name: "Tulsi Portrait", filename: "Tulsi.png" },
-  { name: "Praise Consultancy", filename: "praise consultancy.jpg" },
-  { name: "Mega Lights", filename: "Meg-Lights.jpg", scale: 1.2 },
-  { name: "Hotel Royal Airport", filename: "hotel royal.jpg" },
-  { name: "EG Bag", filename: "eg_bag.jpg" },
-  { name: "Ritz College", filename: "ritz.png", scale: 1.2 },
-  { name: "Zeno", filename: "zeno.PNG" },
-  { name: "Smile Dental Clinic", filename: "smile_dental.png", scale: 1.2 },
+  // Simple logos (Row 1)
+  { name: "Nisarga Batika", filename: "nisarga batika.svg", type: "simple" },
+  { name: "Milestone Logo", filename: "Milestone logoo.png", type: "simple" },
+  { name: "New York Cargo", filename: "new york cargo.png", type: "simple" },
+  { name: "Cafe O2", filename: "Cafe_O2.png", type: "simple", scale: 1.2 },
+  { name: "Queens Logo", filename: "Queens.png", type: "simple", scale: 1.2 },
+  { name: "Tulsi Portrait", filename: "Tulsi.png", type: "simple" },
+  { name: "Praise Consultancy", filename: "praise consultancy.jpg", type: "simple" },
+  { name: "Ritz College", filename: "ritz.png", type: "simple", scale: 1.2 },
+  { name: "Smile Dental Clinic", filename: "smile_dental.png", type: "simple", scale: 1.2 },
+
+  // Box / Rectangular logos (Row 2)
+  { name: "Guru Pashmina", filename: "guru pashmina.jpg", type: "box" },
+  { name: "Palmos", filename: "palmos logo.jpeg", type: "box" },
+  { name: "EG Bag", filename: "eg_bag.jpg", type: "box" },
+  { name: "Hotel Royal Airport", filename: "hotel royal.jpg", type: "box" },
+  { name: "Mega Lights", filename: "Meg-Lights.jpg", type: "box", scale: 1.2 },
+  { name: "Zeno", filename: "zeno.PNG", type: "box" },
 ];
 
 const partners = rawPartners.map(p => ({
   name: p.name,
   src: `/trusted partner/${p.filename}`,
-  scale: p.scale || null
+  scale: p.scale || null,
+  type: p.type
 }));
 
-const row1 = partners.slice(0, 8);
-const row2 = partners.slice(8);
+const row1 = partners.filter(p => p.type === "simple");
+const row2 = [
+  ...partners.filter(p => p.type === "box"),
+  ...partners.filter(p => p.type === "box") // Duplicate to balance length with row 1
+];
 
 export default function TrustedPartners() {
   return (

@@ -23,7 +23,7 @@ function AnimatedNumber({ value, suffix }: { value: number; suffix: string }) {
   }, [inView, count, value]);
 
   return (
-    <span ref={ref} className="text-6xl md:text-7xl font-bold tracking-tight text-[#154880] font-sans block">
+    <span ref={ref} className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[#154880] font-sans block">
       {display}{suffix}
     </span>
   );
@@ -88,38 +88,38 @@ export default function OurStory() {
           >
             {/* Green Edge Strip */}
             <div className="absolute left-0 top-0 w-2 h-full bg-[#03b364] shadow-[0_0_20px_rgba(3,179,100,0.5)] pointer-events-none" />
-
-            <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#154880] leading-tight font-sans">
-              Born from a passion for creativity and strategic excellence, NexShift was founded with a clear vision: to bridge the gap between powerful storytelling and measurable business results.
+            <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#154880] leading-tight font-sans">Inspired to Create. Built to Grow.</h3>
+              
+              <p className="text-md md:text-lg lg:text-2xl font-bold">Born from a passion for creativity and strategic excellence, NexShift was founded with a clear vision: to bridge the gap between powerful storytelling and measurable business results.
             </p>
             
             <div className="h-px w-full bg-gradient-to-r from-gray-200 via-gray-300 to-transparent" />
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-gray-700 font-medium text-base md:text-lg leading-relaxed font-sans">
-              <p>
-                What started as a small team with big ambitions has grown into one of Nepal&apos;s most trusted creative agencies. We&apos;ve successfully managed 150+ projects, partnered with 50+ organizations, and helped brands reach audiences of over 5 million people.
+              <p className="font-bold">
+                What started as a small team with big ambitions has grown into one of Nepal&apos;s most trusted creative agencies. We&apos;ve successfully managed 35+ projects, partnered with 20+ organizations, and helped brands reach audiences of over 10k people.
               </p>
-              <p>
-                Today, we proudly serve corporate enterprises, ambitious startups, banking institutions, educational organizations, NGOs, and government bodies—always maintaining the same commitment to quality, creativity, and measurable impact.
+              <p className="font-bold">
+                Today, we proudly serve corporate enterprises, ambitious startups, banking institutions, educational organizations, NGOs, and government bodies-always maintaining the same commitment to quality, creativity, and measurable impact.
               </p>
             </div>
           </motion.div>
 
           {/* Stats Column */}
-          <div className="lg:col-span-4 flex flex-col gap-6">
-            <div className="flex-1 bg-white/70 backdrop-blur-2xl border border-white/40 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-3xl p-8 flex flex-col justify-center items-center text-center hover:shadow-lg hover:-translate-y-1 hover:border-[#14A9D6]/30 transition-all duration-300 group">
-              <AnimatedNumber value={150} suffix="+" />
-              <span className="text-gray-500 text-xs md:text-sm font-bold uppercase tracking-widest mt-3 group-hover:text-[#14A9D6] transition-colors">Projects Completed</span>
+          <div className="lg:col-span-4 grid grid-cols-3 lg:flex lg:flex-col gap-3 sm:gap-6">
+            <div className="flex-1 bg-white/70 backdrop-blur-2xl border border-white/40 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-3xl p-3 sm:p-8 flex flex-col justify-center items-center text-center hover:shadow-lg hover:-translate-y-1 hover:border-[#14A9D6]/30 transition-all duration-300 group">
+              <AnimatedNumber value={35} suffix="+" />
+              <span className="text-gray-500 text-[9px] xs:text-[10px] sm:text-xs md:text-sm font-bold uppercase tracking-widest mt-2 sm:mt-3 group-hover:text-[#14A9D6] transition-colors">Projects Completed</span>
             </div>
 
-            <div className="flex-1 bg-white/70 backdrop-blur-2xl border border-white/40 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-3xl p-8 flex flex-col justify-center items-center text-center hover:shadow-lg hover:-translate-y-1 hover:border-[#14A9D6]/30 transition-all duration-300 group">
-              <AnimatedNumber value={50} suffix="+" />
-              <span className="text-gray-500 text-xs md:text-sm font-bold uppercase tracking-widest mt-3 group-hover:text-[#14A9D6] transition-colors">Happy Clients</span>
+            <div className="flex-1 bg-white/70 backdrop-blur-2xl border border-white/40 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-3xl p-4 sm:p-8 flex flex-col justify-center items-center text-center hover:shadow-lg hover:-translate-y-1 hover:border-[#14A9D6]/30 transition-all duration-300 group">
+              <AnimatedNumber value={20} suffix="+" />
+              <span className="text-gray-500 text-[9px] xs:text-[10px] sm:text-xs md:text-sm font-bold uppercase tracking-widest mt-2 sm:mt-3 group-hover:text-[#14A9D6] transition-colors">Happy Clients</span>
             </div>
 
-            <div className="flex-1 bg-white/70 backdrop-blur-2xl border border-white/40 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-3xl p-8 flex flex-col justify-center items-center text-center hover:shadow-lg hover:-translate-y-1 hover:border-[#14A9D6]/30 transition-all duration-300 group">
-              <AnimatedNumber value={5} suffix="M+" />
-              <span className="text-gray-500 text-xs md:text-sm font-bold uppercase tracking-widest mt-3 group-hover:text-[#14A9D6] transition-colors">Audience Reached</span>
+            <div className="flex-1 bg-white/70 backdrop-blur-2xl border border-white/40 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-3xl p-4 sm:p-8 flex flex-col justify-center items-center text-center hover:shadow-lg hover:-translate-y-1 hover:border-[#14A9D6]/30 transition-all duration-300 group">
+              <AnimatedNumber value={10} suffix="k" />
+              <span className="text-gray-500 text-[9px] xs:text-[10px] sm:text-xs md:text-sm font-bold uppercase tracking-widest mt-2 sm:mt-3 group-hover:text-[#14A9D6] transition-colors">Audience Reached</span>
             </div>
           </div>
 

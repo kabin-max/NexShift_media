@@ -26,7 +26,7 @@ function AnimatedNumber({ value, suffix }: { value: number; suffix: string }) {
   }, [inView, count, value]);
 
   return (
-    <span ref={ref} className="text-4xl md:text-5xl font-bold tracking-tight text-white font-sans block drop-shadow-md">
+    <span ref={ref} className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white font-sans block drop-shadow-md">
       {display}{suffix}
     </span>
   );
@@ -40,9 +40,9 @@ export default function AboutSection2() {
       id: 1,
       content: (
         <img
-          src="https://images.unsplash.com/photo-1544198365-f5d60b6d8190?q=80&w=1000"
+          src="/demo/Cafe 02 1.jpg"
           className="w-full h-full object-cover"
-          alt="About 1"
+          alt="Cafe O2 Demo"
         />
       ),
     },
@@ -50,9 +50,9 @@ export default function AboutSection2() {
       id: 2,
       content: (
         <img
-          src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?q=80&w=1000"
+          src="/demo/queens palace.jpg"
           className="w-full h-full object-cover"
-          alt="About 2"
+          alt="Queens Palace Demo"
         />
       ),
     },
@@ -60,9 +60,9 @@ export default function AboutSection2() {
       id: 3,
       content: (
         <img
-          src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1000"
+          src="/demo/Ritz College(1).jpg"
           className="w-full h-full object-cover"
-          alt="About 3"
+          alt="Ritz College Demo"
         />
       ),
     },
@@ -70,9 +70,9 @@ export default function AboutSection2() {
       id: 4,
       content: (
         <img
-          src="https://images.unsplash.com/photo-1433838552652-f9a46b332c40?q=80&w=1000"
+          src="/demo/Milestone school(1).jpg"
           className="w-full h-full object-cover"
-          alt="About 4"
+          alt="Milestone School Demo"
         />
       ),
     },
@@ -80,9 +80,9 @@ export default function AboutSection2() {
       id: 5,
       content: (
         <img
-          src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=2070"
+          src="/demo/Cafe O2 2.jpg"
           className="w-full h-full object-cover"
-          alt="About 5"
+          alt="Cafe O2 Demo 2"
         />
       ),
     }

@@ -37,7 +37,7 @@ export default function TeamSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-10 sm:gap-y-20">
           {team.map((member, i) => {
             const offsetClass =
               i === 1 || i === 4 ? "lg:translate-y-12" :

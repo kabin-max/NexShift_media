@@ -41,7 +41,7 @@ export default function HeroSection() {
       {/* ── Layer 1: Background sky / hills ──────────────────────────── */}
       <motion.div
         className="absolute inset-0 z-0 pointer-events-none origin-bottom"
-        style={{ y: bgY, scale: bgScale }}
+        style={{ y: bgY, scale: bgScale, willChange: "transform" }}
       >
         {/* Slightly oversized so parallax travel never reveals edges */}
         <div className="absolute -inset-[10%] w-[120%] h-[120%]">
@@ -57,10 +57,7 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-white/10" />
       </motion.div>
 
-      {/* ── Layer 2: download.png card ────────────────────────────────
-           z-[60] puts this ABOVE the fixed AnimatedLogo (z-50).
-           Top is calculated per-breakpoint so card top = text_bottom − 5%,
-           making the PNG cover the bottom 5% of the "NexShift" text.        */}
+      {/* ── Layer 2: download.png card (Currently disabled) ──────────── */}
       <motion.div
         className="
           absolute left-1/2 -translate-x-1/2 z-[60] pointer-events-none
@@ -69,7 +66,7 @@ export default function HeroSection() {
           md:top-[calc(50vh+6.3rem)]
           lg:top-[calc(50vh+7.65rem)]
         "
-        style={{ y: midY }}
+        style={{ y: midY, willChange: "transform" }}
       >
         {/* <div className="relative w-[260px] h-[370px] sm:w-[330px] sm:h-[450px] md:w-[400px] md:h-[530px] overflow-hidden rounded-lg shadow-[0_24px_64px_rgba(0,0,0,0.9)] border border-white/5">
           <Image
@@ -86,6 +83,7 @@ export default function HeroSection() {
       {/* ── Layer 3: Foreground mountain silhouette ───────────────────── */}
       <motion.div
         className="absolute inset-0 z-[60] pointer-events-none"
+        style={{ y: fgY, willChange: "transform" }}
       >
 
         <img
@@ -110,7 +108,7 @@ export default function HeroSection() {
 
       {/* Spinning Badge at the very end */}
       <motion.div
-        className="absolute bottom-4 right-12 md:bottom-5 md:right-24 w-[100px] h-[100px] md:w-32 md:h-32 bg-white rounded-full flex items-center justify-center shadow-2xl z-[60]"
+        className="absolute bottom-4 right-4 sm:right-12 md:bottom-5 md:right-24 w-[75px] h-[75px] md:w-32 md:h-32 bg-white rounded-full flex items-center justify-center shadow-2xl z-[60]"
       >
         <svg viewBox="0 0 100 100" className="w-full h-full animate-[spin_14s_linear_infinite]">
 
@@ -120,7 +118,7 @@ export default function HeroSection() {
           </text>
         </svg>
         {/* Logo in the center of the rotating text */}
-        <img src="/nst-logo.png" alt="NST Logo" className="absolute w-16 h-16 md:w-20 md:h-20 rounded-full object-contain z-10 bg-white shadow-inner p-1" />
+        <img src="/nst-logo.png" alt="NST Logo" className="absolute w-12 h-12 md:w-20 md:h-20 rounded-full object-contain z-10 bg-white shadow-inner p-1" />
 
       </motion.div>
     </section>

@@ -5,22 +5,22 @@ import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 const clients = [
-  { name: "Cafe O2", link: "https://www.instagram.com/cafe___o2/", image: "/bg-image.png", logoFont: "sans", logo: "Cafe_O2.png" },
+  { name: "Cafe O2", link: "https://www.instagram.com/cafe___o2/", image: "/projects/co2.jpg", logoFont: "sans", logo: "Cafe_O2.png" },
   { name: "Eg Bag", link: "https://www.tiktok.com/@eg.bags", image: "/bg-image.png", logoFont: "sans", logo: "eg_bag.jpg" },
-  { name: "Ritz College", link: "https://www.tiktok.com/@ritz_college_official", image: "/bg-image.png", logoFont: "sans", logo: "ritz.png" },
-  { name: "Milestone College", link: "https://www.tiktok.com/@infomilestone", image: "/bg-image.png", logoFont: "sans", logo: "Milestone logoo.png" },
+  { name: "Ritz College", link: "https://www.tiktok.com/@ritz_college_official", image: "/projects/Ritz College.jpg", logoFont: "sans", logo: "ritz.png" },
+  { name: "Milestone College", link: "https://www.tiktok.com/@infomilestone", image: "/projects/Milestone School.jpg", logoFont: "sans", logo: "Milestone logoo.png" },
   { name: "Tulsi Veg Restro", link: "https://www.instagram.com/tulsitandoorihouse/", image: "/bg-image.png", logoFont: "sans", logo: "Tulsi.png" },
-  { name: "Smile by Dr.Kareen", link: "https://www.instagram.com/smilebydrkareen_dentalclinic/", image: "/bg-image.png", logoFont: "sans", logo: "smile_dental.png" },
+  { name: "Smile by Dr.Kareen", link: "https://www.instagram.com/smilebydrkareen_dentalclinic/", image: "/projects/Smile by dr. Kareen.png", logoFont: "sans", logo: "smile_dental.png" },
   { name: "Praise Consulting", link: "https://www.instagram.com/praise.consulting/", image: "/bg-image.png", logoFont: "sans", logo: "praise consultancy.jpg" },
-  { name: "New York Cargo", link: "https://www.instagram.com/newyorkcargopvtlt/", image: "/bg-image.png", logoFont: "sans", logo: "new york cargo.png" },
+  { name: "New York Cargo", link: "https://www.instagram.com/newyorkcargopvtlt/", image: "/projects/new york cargo.jpg", logoFont: "sans", logo: "new york cargo.png" },
   { name: "Nisarga Batika", link: "https://www.nisarga.edu.np/", image: "/bg-image.png", logoFont: "sans", logo: "nisarga batika.svg" },
-  { name: "ZENO", link: "https://www.zenoenterprise.tech/", image: "/bg-image.png", logoFont: "sans", logo: "zeno.PNG" },
-  { name: "Queens Palace", link: "https://www.instagram.com/queenspalaceevents/", image: "/bg-image.png", logoFont: "sans", logo: "Queens.png" },
+  { name: "ZENO", link: "https://www.zenoenterprise.tech/", image: "/projects/ZENO.jpg", logoFont: "sans", logo: "zeno.PNG" },
+  { name: "Queens Palace", link: "https://www.instagram.com/queenspalaceevents/", image: "/projects/queens palace(1).jpg", logoFont: "sans", logo: "Queens.png" },
   { name: "Palmos Couture", link: "https://www.instagram.com/palmos_couture/", image: "/bg-image.png", logoFont: "sans", logo: "palmos logo.jpeg" },
   { name: "GrabNews", link: "https://www.instagram.com/grabnewsofficial/", image: "/bg-image.png", logoFont: "sans" },
-  { name: "Mega Lights", link: "https://www.tiktok.com/@megalights", image: "/bg-image.png", logoFont: "sans", logo: "Meg-Lights.jpg" },
+  { name: "Mega Lights", link: "https://www.tiktok.com/@megalights", image: "/projects/Mega Lights.jpg", logoFont: "sans", logo: "Meg-Lights.jpg" },
   { name: "Guru Pashmina", link: "https://www.gurupashmina.com/", image: "/bg-image.png", logoFont: "sans", logo: "guru pashmina.jpg" },
-  { name: "Hotel Royal Airport", link: "https://www.tiktok.com/@hotelroyalairpotnepal", image: "/bg-image.png", logoFont: "sans", logo: "hotel royal.jpg" },
+  { name: "Hotel Royal Airport", link: "https://www.tiktok.com/@hotelroyalairpotnepal", image: "/projects/hotel royal airport.jpg", logoFont: "sans", logo: "hotel royal.jpg" },
   { name: "Hotel Readers Inn", link: "https://www.tiktok.com/@airporthotelreaders", image: "/bg-image.png", logoFont: "sans" },
 ];
 
@@ -77,7 +77,7 @@ export default function ClientsSection() {
                     target="_blank"
                     rel="noopener noreferrer"
                     key={`client-${i}-${idx}`}
-                    className="group relative block w-[280px] h-[380px] md:w-[300px] md:h-[420px] shrink-0 overflow-hidden cursor-pointer"
+                    className="group relative block w-[160px] h-[220px] sm:w-[200px] sm:h-[280px] md:w-[300px] md:h-[420px] shrink-0 overflow-hidden cursor-pointer"
                   >
                     {/* Background Image */}
                     <div className="absolute inset-0 z-0 bg-black">
@@ -94,31 +94,22 @@ export default function ClientsSection() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 z-10 transition-opacity duration-500 group-hover:opacity-60" />
 
                     {/* Content Container */}
-                    <div className="absolute inset-0 z-20 flex flex-col justify-between p-6">
+                    <div className="absolute inset-0 z-20 flex flex-col justify-between p-4 md:p-6">
                       <div /> {/* Spacer for top */}
 
-                      {/* Center Logo/Text */}
-                      <div className="relative flex justify-center items-center min-h-[160px] w-full">
-                        <h3 className={`absolute text-center px-4 text-3xl md:text-4xl font-bold text-white drop-shadow-2xl transition-all duration-500 group-hover:translate-y-[60px] group-hover:scale-90 ${client.logoFont === 'serif' ? 'font-serif' : 'font-sans'}`}>
+                      {/* Center Text */}
+                      <div className="relative flex justify-center items-center min-h-[120px] md:min-h-[160px] w-full">
+                        <h3 className={`absolute text-center px-2 md:px-4 text-xl sm:text-2xl md:text-4xl font-bold text-white drop-shadow-2xl transition-all duration-500 ${client.logoFont === 'serif' ? 'font-serif' : 'font-sans'}`}>
                           {client.name}
                         </h3>
-                        {client.logo && (
-                          <div className="absolute flex justify-center items-center opacity-0 group-hover:opacity-100 transition-all duration-500 group-hover:-translate-y-4 scale-75 group-hover:scale-100">
-                            <img
-                              src={encodeURI(`/trusted partner/${client.logo}`)}
-                              alt={`${client.name} logo`}
-                              className="max-h-[90px] max-w-[180px] object-contain drop-shadow-2xl"
-                            />
-                          </div>
-                        )}
                       </div>
 
                       {/* Bottom Bar */}
                       <div className="flex justify-between items-end w-full transform transition-all duration-500 translate-y-4 opacity-70 group-hover:translate-y-0 group-hover:opacity-100">
-                        <span className="text-[10px] tracking-[0.2em] uppercase font-bold text-white">
+                        <span className="text-[9px] md:text-[10px] tracking-[0.2em] uppercase font-bold text-white">
                           View Work
                         </span>
-                        <ArrowUpRight className="w-4 h-4 text-white" />
+                        <ArrowUpRight className="w-3 h-3 md:w-4 md:h-4 text-white" />
                       </div>
                     </div>
                   </a>
