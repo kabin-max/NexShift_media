@@ -106,15 +106,8 @@ export default function GallerySection() {
       
       <div className="absolute bottom-[20%] right-[6%] w-24 h-24 md:w-40 md:h-40 bg-[#e5e7eb]/10 rounded-full blur-[2px] pointer-events-none z-0" />
       <div className="absolute bottom-[10%] right-[10%] w-12 h-12 md:w-20 md:h-20 bg-[#00a3d0]/10 rounded-full pointer-events-none z-0" />
-      {/* Rotated Background Image */}
-      <div className="absolute inset-0 z-0 flex items-center justify-center opacity-30 pointer-events-none">
-        <Image
-          src="/bubble.jpg"
-          alt="Bubble Background"
-          fill
-          sizes="100vw"
-          className="object-cover scale-[1.2] -rotate-[15deg] max-w-none"
-        />
+      {/* Background Gradient (Replaced Image) */}
+      <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#14A9D6]/10 via-[#0D7A95]/5 to-transparent">
       </div>
 
       {/* Subtle Film Grain (CSS pattern) */}

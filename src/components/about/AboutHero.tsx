@@ -68,7 +68,7 @@ export default function AboutHero() {
   ];
 
   return (
-    <section className="relative w-full min-h-screen bg-transparent flex flex-col justify-start pt-40 pb-20 overflow-hidden px-[5%]">
+    <section className="relative w-full min-h-screen bg-transparent flex flex-col justify-start pt-24 md:pt-40 pb-20 overflow-hidden px-[5%]">
       {/* Ambient globs — top-right cyan, bottom-left navy */}
       <div className="absolute -top-[5%] -right-[5%] w-[45%] h-[55%] bg-[#00a3d0]/10 blur-[140px] rounded-full pointer-events-none z-0" />
       <div className="absolute -bottom-[5%] -left-[5%] w-[50%] h-[50%] bg-[#00a3d0]/40 blur-[160px] rounded-full pointer-events-none z-0" />
@@ -85,7 +85,7 @@ export default function AboutHero() {
         
         {/* Title */}
         <h1 
-          className="text-5xl md:text-6xl lg:text-8xl font-bold font-sans tracking-tight text-[#154880] drop-shadow-sm" 
+          className="text-4xl md:text-6xl lg:text-8xl font-bold font-sans tracking-tight text-[#154880] drop-shadow-sm" 
         >
           ABOUT US
         </h1>

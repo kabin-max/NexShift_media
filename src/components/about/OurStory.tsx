@@ -23,7 +23,7 @@ function AnimatedNumber({ value, suffix }: { value: number; suffix: string }) {
   }, [inView, count, value]);
 
   return (
-    <span ref={ref} className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[#154880] font-sans block">
+    <span ref={ref} className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[#154880] font-sans block">
       {display}{suffix}
     </span>
   );
@@ -106,8 +106,8 @@ export default function OurStory() {
           </motion.div>
 
           {/* Stats Column */}
-          <div className="lg:col-span-4 grid grid-cols-3 lg:flex lg:flex-col gap-4 sm:gap-6">
-            <div className="flex-1 bg-white/70 backdrop-blur-2xl border border-white/40 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-3xl p-4 sm:p-8 flex flex-col justify-center items-center text-center hover:shadow-lg hover:-translate-y-1 hover:border-[#14A9D6]/30 transition-all duration-300 group">
+          <div className="lg:col-span-4 grid grid-cols-3 lg:flex lg:flex-col gap-3 sm:gap-6">
+            <div className="flex-1 bg-white/70 backdrop-blur-2xl border border-white/40 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-3xl p-3 sm:p-8 flex flex-col justify-center items-center text-center hover:shadow-lg hover:-translate-y-1 hover:border-[#14A9D6]/30 transition-all duration-300 group">
               <AnimatedNumber value={35} suffix="+" />
               <span className="text-gray-500 text-[9px] xs:text-[10px] sm:text-xs md:text-sm font-bold uppercase tracking-widest mt-2 sm:mt-3 group-hover:text-[#14A9D6] transition-colors">Projects Completed</span>
             </div>

@@ -26,7 +26,7 @@ function AnimatedNumber({ value, suffix }: { value: number; suffix: string }) {
   }, [inView, count, value]);
 
   return (
-    <span ref={ref} className="text-4xl md:text-5xl font-bold tracking-tight text-white font-sans block drop-shadow-md">
+    <span ref={ref} className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white font-sans block drop-shadow-md">
       {display}{suffix}
     </span>
   );

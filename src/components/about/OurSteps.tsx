@@ -172,10 +172,10 @@ function StepCard({ step, index, progress }: { step: any, index: number, progres
       style={{ opacity, scale, y, x, filter: blur }}
       className={`absolute w-[80%] md:w-full max-w-sm ${positions[index]} z-20 origin-left pointer-events-none`}
     >
-      <div className="relative p-6 md:p-8 mt-12 md:mt-20">
+      <div className="relative p-5 sm:p-6 md:p-8 mt-12 md:mt-20">
         <motion.span
           style={{ opacity: ghostOpacity }}
-          className="absolute bottom-full translate-y-[45%] left-0 md:-left-4 text-[8rem] md:text-[14rem] font-bold font-mono text-[#14A9D6] select-none z-[-1] leading-none tracking-tighter pointer-events-none"
+          className="absolute bottom-full translate-y-[45%] left-0 md:-left-4 text-[6rem] sm:text-[8rem] md:text-[14rem] font-bold font-mono text-[#14A9D6] select-none z-[-1] leading-none tracking-tighter pointer-events-none"
         >
           {step.num}
         </motion.span>
@@ -231,49 +231,7 @@ export default function OurSteps() {
 
   return (
     <>
-      {/* ── Mobile Layout (< md) ─────────────────────────────────────── */}
-      <section className="md:hidden relative w-full bg-transparent border-t border-gray-200 px-6 py-16">
-        <div className="text-center mb-10 flex flex-col items-center">
-          <h2 className="text-3xl font-bold font-sans tracking-tight text-[#154880] drop-shadow-sm flex flex-col items-center">
-            Our Steps
-            <div className="h-1.5 w-24 bg-[#03b364] shadow-[0_0_10px_rgba(3,179,100,0.5)] mx-auto mt-2 rounded-full pointer-events-none" />
-          </h2>
-        </div>
-        <div className="grid grid-cols-2 gap-4 max-w-md mx-auto">
-          {steps.map((step, i) => (
-            <div
-              key={i}
-              className="bg-white/80 backdrop-blur-md border border-gray-200 rounded-2xl p-5 shadow-sm relative overflow-hidden"
-            >
-              <div className="absolute left-0 top-0 w-1 h-full bg-[#03b364] shadow-[0_0_12px_rgba(3,179,100,0.4)] pointer-events-none" />
-              <div className="flex items-center gap-2 mb-3">
-                <span className="p-1.5 rounded-lg bg-gray-100 border border-gray-200">
-                  {step.icon}
-                </span>
-                <span className="text-[#14A9D6] font-mono text-xs font-bold tracking-widest uppercase">
-                  {step.num}
-                </span>
-              </div>
-              <h4 className="text-lg font-bold uppercase tracking-wider text-[#14A9D6] mb-2 font-sans">
-                {step.title}
-              </h4>
-              <p className="text-gray-600 text-xs leading-relaxed font-medium font-sans">
-                {step.desc}
-              </p>
-              <div className="mt-3 flex flex-wrap gap-1">
-                {step.tags.map((tag, tIdx) => (
-                  <span key={tIdx} className="text-[9px] font-bold tracking-wide text-[#0D7A95] uppercase bg-[#0D7A95]/5 rounded-full px-2 py-0.5">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ── Desktop Layout (md+) ─────────────────────────────────────── */}
-      <section ref={containerRef} style={{ height: "200vh" }} className="hidden md:block relative w-full bg-transparent border-t border-gray-200 px-[5%]">
+      <section ref={containerRef} style={{ height: "200vh" }} className="relative w-full bg-transparent border-t border-gray-200 px-[5%]">
         <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
 
           <div className="absolute top-12 md:top-24 w-full text-center z-30 pointer-events-none flex flex-col items-center">
