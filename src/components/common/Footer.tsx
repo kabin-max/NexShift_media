@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import ScrollReveal from "./ScrollReveal";
 
 export default function Footer() {
   return (
@@ -25,21 +26,26 @@ export default function Footer() {
         </div>
 
         <div className="flex gap-8 md:gap-16 flex-wrap">
-          <div className="space-y-4">
-            <h5 className="text-[#154880] text-xs uppercase tracking-widest font-bold">Info</h5>
-            <ul className="space-y-2 text-gray-600 text-sm font-medium">
-              <li><Link href="/" className="hover:text-[#0D7A95] transition">Home</Link></li>
-              <li><Link href="/about" className="hover:text-[#0D7A95] transition">About</Link></li>
-            </ul>
-          </div>
-          <div className="space-y-4">
-            <h5 className="text-[#154880] text-xs uppercase tracking-widest font-bold">Contact</h5>
-            <ul className="space-y-2 text-gray-600 text-sm font-medium">
-              <li>Kathmandu, Nepal</li>
-              <li>info@nexshift.com</li>
-              <li>+977 1 2345678</li>
-            </ul>
-          </div>
+          <ScrollReveal direction="up" delay={0.1}>
+            <div className="space-y-4">
+              <h5 className="text-[#154880] text-xs uppercase tracking-widest font-bold">Info</h5>
+              <ul className="space-y-2 text-gray-600 text-sm font-medium">
+                <li><Link href="/" className="hover:text-[#0D7A95] transition">Home</Link></li>
+                <li><Link href="/about" className="hover:text-[#0D7A95] transition">About</Link></li>
+              </ul>
+            </div>
+          </ScrollReveal>
+          
+          <ScrollReveal direction="up" delay={0.2}>
+            <div className="space-y-4">
+              <h5 className="text-[#154880] text-xs uppercase tracking-widest font-bold">Contact</h5>
+              <ul className="space-y-2 text-gray-600 text-sm font-medium">
+                <li>Kathmandu, Nepal</li>
+                <li>info@nexshift.com</li>
+                <li>+977 1 2345678</li>
+              </ul>
+            </div>
+          </ScrollReveal>
         </div>
       </div>
     </footer>

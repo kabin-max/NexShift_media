@@ -3,6 +3,7 @@
 
 import { useState, useEffect } from "react";
 import { FaInstagram, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
+import Image from "next/image";
 
 interface SocialIconsProps {
   className?: string;
@@ -29,18 +30,21 @@ export default function SocialIcons({ className }: SocialIconsProps) {
       <div className={`${className || "fixed left-0 top-0 h-screen w-[72px] bg-white shadow-[2px_0_20px_rgba(0,0,0,0.05)] border-r border-gray-100 z-[60] hidden md:flex flex-col items-center justify-between py-12 transition-transform duration-500"} ${isVisible ? "translate-x-0" : "-translate-x-full"}`}>
         
         {/* Top: Vertical Brand Text */}
-        <div className="flex flex-row items-stretch justify-center mt-16 gap-2">
-          <span 
-            className="text-[#154880] font-black tracking-[0.4em] text-sm uppercase opacity-50"
-            style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
-          >
-            NexShift
-          </span>
-          <div className="flex flex-col w-[3px] rounded-full overflow-hidden opacity-80 my-1">
-            <div className="flex-1 bg-[#00a3d0]"></div>
-            <div className="flex-1 bg-[#03b364]"></div>
-            <div className="flex-1 bg-[#154880]"></div>
+        <div className="flex flex-col items-center mt-16 gap-2">
+          <div className="flex flex-row items-stretch justify-center gap-2">
+            <span 
+              className="text-[#154880] font-black tracking-[0.4em] text-sm uppercase opacity-50"
+              style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
+            >
+              NexShift
+            </span>
+            <div className="flex flex-col w-[3px] rounded-full overflow-hidden opacity-80 my-1">
+              <div className="flex-1 bg-[#00a3d0]"></div>
+              <div className="flex-1 bg-[#03b364]"></div>
+              <div className="flex-1 bg-[#154880]"></div>
+            </div>
           </div>
+          <Image src="/nst-logo.png?v=3" alt="NexShift Logo" width={48} height={48} className="-rotate-90 w-12 h-12 object-contain opacity-100 drop-shadow-sm" unoptimized />
         </div>
 
         {/* Bottom: Social Icons */}

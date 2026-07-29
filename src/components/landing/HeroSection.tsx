@@ -6,26 +6,18 @@ import Image from "next/image";
 export default function HeroSection() {
   const { scrollY } = useScroll();
 
-  // ── Spring config for fluid parallax feel ──────────────────────────
-  const springCfg = { damping: 30, stiffness: 80, mass: 0.6 };
-
   // Layer 1 – background drifts slowly downward and zooms in
-  const rawBgY = useTransform(scrollY, [0, 1000], [0, 130]);
-  const rawBgScale = useTransform(scrollY, [0, 1000], [1, 1.25]);
-  const bgY = useSpring(rawBgY, springCfg);
-  const bgScale = useSpring(rawBgScale, springCfg);
+  const bgY = useTransform(scrollY, [0, 1000], [0, 130]);
+  const bgScale = useTransform(scrollY, [0, 1000], [1, 1.25]);
 
   // Layer 2 – image card glides gently upward
-  const rawMidY = useTransform(scrollY, [0, 1000], [0, -90]);
-  const midY = useSpring(rawMidY, springCfg);
+  const midY = useTransform(scrollY, [0, 1000], [0, -90]);
 
   // Layer 3 – foreground rises fastest
-  const rawFgY = useTransform(scrollY, [0, 1000], [0, -220]);
-  const fgY = useSpring(rawFgY, springCfg);
+  const fgY = useTransform(scrollY, [0, 1000], [0, -220]);
 
   // Bottom info bar fades out smoothly
-  const rawOpacity = useTransform(scrollY, [0, 450], [1, 0]);
-  const contentOpacity = useSpring(rawOpacity, { damping: 20, stiffness: 80 });
+  const contentOpacity = useTransform(scrollY, [0, 450], [1, 0]);
 
   // ── Card top positioning ───────────────────────────────────────────
   // AnimatedLogo text sizes (leading-none, so height ≈ font-size):
@@ -68,28 +60,18 @@ export default function HeroSection() {
         "
         style={{ y: midY, willChange: "transform" }}
       >
-        {/* <div className="relative w-[260px] h-[370px] sm:w-[330px] sm:h-[450px] md:w-[400px] md:h-[530px] overflow-hidden rounded-lg shadow-[0_24px_64px_rgba(0,0,0,0.9)] border border-white/5">
-          <Image
-            src="/download.png"
-            alt="Scrollable Middle Subject"
-            fill
-            priority
-            className="object-cover object-center"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-black/5" />
-        </div> */}
       </motion.div>
 
       {/* ── Layer 3: Foreground mountain silhouette ───────────────────── */}
       <motion.div
-        className="absolute inset-0 z-[60] pointer-events-none"
+        className="absolute -top-[20%] left-0 right-0 -bottom-[300px] z-[60] pointer-events-none"
         style={{ y: fgY, willChange: "transform" }}
       >
 
         <img
           src="https://andyhardy.co/assets/img/landscape_mountain_small.png"
           alt="Parallax Foreground"
-          className="w-full h-full object-cover object-[center_70%] md:object-[center_50%] lg:object-[center_40%]"
+          className="w-full h-full object-cover object-[center_30%] md:object-[center_35%] lg:object-[center_45%]"
         />
       </motion.div>
 
@@ -104,10 +86,13 @@ export default function HeroSection() {
 
 
       {/* ── Bottom fade into next section ────────────────────────────── */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#FAFAFA] via-[#FAFAFA]/80 to-transparent pointer-events-none z-30" />
+      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-white/70 via-white/50 to-transparent pointer-events-none z-30" />
 
       {/* Spinning Badge at the very end */}
       <motion.div
+        initial={{ scale: 0, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ type: "spring", bounce: 0.4, duration: 0.6, delay: 1.5 }}
         className="absolute bottom-4 right-4 sm:right-12 md:bottom-5 md:right-24 w-[75px] h-[75px] md:w-32 md:h-32 bg-white rounded-full flex items-center justify-center shadow-2xl z-[60]"
       >
         <svg viewBox="0 0 100 100" className="w-full h-full animate-[spin_14s_linear_infinite]">
@@ -118,7 +103,7 @@ export default function HeroSection() {
           </text>
         </svg>
         {/* Logo in the center of the rotating text */}
-        <img src="/nst-logo.png" alt="NST Logo" className="absolute w-12 h-12 md:w-20 md:h-20 rounded-full object-contain z-10 bg-white shadow-inner p-1" />
+        <Image src="/nst-logo.png?v=3" alt="NexShift Logo" width={80} height={80} className="absolute z-10 object-contain w-14 h-14 md:w-20 md:h-20 drop-shadow-sm" unoptimized />
 
       </motion.div>
     </section>

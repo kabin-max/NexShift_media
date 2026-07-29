@@ -9,43 +9,43 @@ const clients = [
   { name: "Eg Bag", link: "https://www.tiktok.com/@eg.bags", image: "/bg-image.png", logoFont: "sans", logo: "eg_bag.jpg" },
   { name: "Ritz College", link: "https://www.tiktok.com/@ritz_college_official", image: "/projects/Ritz College.jpg", logoFont: "sans", logo: "ritz.png" },
   { name: "Milestone College", link: "https://www.tiktok.com/@infomilestone", image: "/projects/Milestone School.jpg", logoFont: "sans", logo: "Milestone logoo.png" },
-  { name: "Tulsi Veg Restro", link: "https://www.instagram.com/tulsitandoorihouse/", image: "/bg-image.png", logoFont: "sans", logo: "Tulsi.png" },
+  { name: "Tulsi Veg Restro", link: "https://www.instagram.com/tulsitandoorihouse/", image: "/projects/tulsi.png", logoFont: "sans", logo: "Tulsi.png" },
   { name: "Smile by Dr.Kareen", link: "https://www.instagram.com/smilebydrkareen_dentalclinic/", image: "/projects/Smile by dr. Kareen.png", logoFont: "sans", logo: "smile_dental.png" },
   { name: "Praise Consulting", link: "https://www.instagram.com/praise.consulting/", image: "/bg-image.png", logoFont: "sans", logo: "praise consultancy.jpg" },
   { name: "New York Cargo", link: "https://www.instagram.com/newyorkcargopvtlt/", image: "/projects/new york cargo.jpg", logoFont: "sans", logo: "new york cargo.png" },
-  { name: "Nisarga Batika", link: "https://www.nisarga.edu.np/", image: "/bg-image.png", logoFont: "sans", logo: "nisarga batika.svg" },
+  { name: "Nisarga Batika", link: "https://www.nisarga.edu.np/", image: "/projects/nisarga batika.jpg", logoFont: "sans", logo: "nisarga batika.svg" },
   { name: "ZENO", link: "https://www.zenoenterprise.tech/", image: "/projects/ZENO.jpg", logoFont: "sans", logo: "zeno.PNG" },
   { name: "Queens Palace", link: "https://www.instagram.com/queenspalaceevents/", image: "/projects/queens palace(1).jpg", logoFont: "sans", logo: "Queens.png" },
   { name: "Palmos Couture", link: "https://www.instagram.com/palmos_couture/", image: "/bg-image.png", logoFont: "sans", logo: "palmos logo.jpeg" },
-  { name: "GrabNews", link: "https://www.instagram.com/grabnewsofficial/", image: "/bg-image.png", logoFont: "sans" },
+  // { name: "GrabNews", link: "https://www.instagram.com/grabnewsofficial/", image: "/bg-image.png", logoFont: "sans" },
   { name: "Mega Lights", link: "https://www.tiktok.com/@megalights", image: "/projects/Mega Lights.jpg", logoFont: "sans", logo: "Meg-Lights.jpg" },
   { name: "Guru Pashmina", link: "https://www.gurupashmina.com/", image: "/bg-image.png", logoFont: "sans", logo: "guru pashmina.jpg" },
   { name: "Hotel Royal Airport", link: "https://www.tiktok.com/@hotelroyalairpotnepal", image: "/projects/hotel royal airport.jpg", logoFont: "sans", logo: "hotel royal.jpg" },
-  { name: "Hotel Readers Inn", link: "https://www.tiktok.com/@airporthotelreaders", image: "/bg-image.png", logoFont: "sans" },
 ];
 
 export default function ClientsSection() {
   return (
     <section id="clients" className="relative w-full bg-transparent py-[5%] text-[#171717] overflow-hidden border-t border-gray-200">
       {/* Ambient globs — top-right cyan, bottom-left navy */}
-      <div className="absolute -top-[5%] -right-[5%] w-[45%] h-[55%] bg-[#00a3d0]/10 blur-[140px] rounded-full pointer-events-none z-0" />
-      <div className="absolute -bottom-[5%] -left-[5%] w-[50%] h-[50%] bg-[#00a3d0]/40 blur-[160px] rounded-full pointer-events-none z-0" />
+      <div className="absolute -top-[5%] -right-[5%] w-[45%] h-[55%] bg-[#00a3d0]/10 blur-[140px] rounded-full pointer-events-none z-0 transform-gpu" />
+      <div className="absolute -bottom-[5%] -left-[5%] w-[50%] h-[50%] bg-[#00a3d0]/40 blur-[160px] rounded-full pointer-events-none z-0 transform-gpu" />
       {/* Large centered radial glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[60%] bg-[#00a3d0]/8 blur-[180px] rounded-full pointer-events-none z-0" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[60%] bg-[#00a3d0]/8 blur-[180px] rounded-full pointer-events-none z-0 transform-gpu" />
 
       {/* Decorative Floating Circles */}
       <div className="absolute top-[15%] left-[8%] w-32 h-32 md:w-56 md:h-56 border border-[#00a3d0]/10 rounded-full pointer-events-none z-0" />
       <div className="absolute top-[20%] left-[4%] w-20 h-20 md:w-32 md:h-32 border-2 border-[#e5e7eb]/20 rounded-full pointer-events-none z-0" />
 
-      <div className="absolute bottom-[20%] right-[6%] w-24 h-24 md:w-40 md:h-40 bg-[#e5e7eb]/10 rounded-full blur-[2px] pointer-events-none z-0" />
+      <div className="absolute bottom-[20%] right-[6%] w-24 h-24 md:w-40 md:h-40 bg-[#e5e7eb]/10 rounded-full blur-[2px] pointer-events-none z-0 transform-gpu" />
       <div className="absolute bottom-[10%] right-[10%] w-12 h-12 md:w-20 md:h-20 bg-[#00a3d0]/10 rounded-full pointer-events-none z-0" />
       <style>{`
         @keyframes scroll-gallery { 
-          0% { transform: translateX(0); } 
-          100% { transform: translateX(-50%); } 
+          0% { transform: translate3d(0, 0, 0); } 
+          100% { transform: translate3d(-50%, 0, 0); } 
         }
         .marquee-gallery { 
           animation: scroll-gallery 40s linear infinite; 
+          will-change: transform;
         }
         .marquee-gallery:hover { 
           animation-play-state: paused; 
