@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, Suspense } from "react";
+import { useState, Suspense, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { AnimatePresence, motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { 
   CheckCircle2, 
@@ -207,7 +208,15 @@ function TiltCard({ service, index }: { service: ServiceItem; index: number }) {
 }
 
 function ServiceGalleryContent() {
+  const searchParams = useSearchParams();
+  const categoryParam = searchParams.get("category");
   const [activeCategory, setActiveCategory] = useState(CATEGORIES[0]);
+
+  useEffect(() => {
+    if (categoryParam && CATEGORIES.includes(categoryParam)) {
+      setActiveCategory(categoryParam);
+    }
+  }, [categoryParam]);
 
   return (
     <div className="w-full max-w-7xl mx-auto px-4 md:px-8 py-12">

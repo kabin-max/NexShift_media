@@ -24,7 +24,7 @@ export default function Footer() {
           </motion.div>
         </div>
 
-        <div className="flex gap-16">
+        <div className="flex gap-8 md:gap-16 flex-wrap">
           <div className="space-y-4">
             <h5 className="text-[#154880] text-xs uppercase tracking-widest font-bold">Info</h5>
             <ul className="space-y-2 text-gray-600 text-sm font-medium">

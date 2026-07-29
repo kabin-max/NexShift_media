@@ -48,14 +48,14 @@ export default function IntroOverlay() {
             className="flex flex-col items-center select-none"
             style={{ fontFamily: 'var(--font-geist-sans)' }}
           >
-            <h1 className="text-5xl md:text-7xl lg:text-[8rem] font-black tracking-tight drop-shadow-sm italic text-transparent bg-clip-text bg-gradient-to-r from-[#0D7A95] via-[#14A9D6] to-[#2E73B8] leading-none">
+            <h1 className="text-4xl xs:text-5xl md:text-7xl lg:text-[8rem] font-black tracking-tight drop-shadow-sm italic text-transparent bg-clip-text bg-gradient-to-r from-[#0D7A95] via-[#14A9D6] to-[#2E73B8] leading-none text-center px-4">
               NexShift .
             </h1>
-            <h2 className="mt-4 text-xl md:text-2xl lg:text-4xl font-black tracking-tight drop-shadow-sm italic text-transparent bg-clip-text bg-gradient-to-r from-[#0D7A95] via-[#14A9D6] to-[#2E73B8] leading-none">
+            <h2 className="mt-4 text-sm xs:text-xl md:text-2xl lg:text-4xl font-black tracking-tight drop-shadow-sm italic text-transparent bg-clip-text bg-gradient-to-r from-[#0D7A95] via-[#14A9D6] to-[#2E73B8] leading-none text-center px-4">
               Media & Event Management
             </h2>
 
-            <p className="mt-4 text-sm md:text-xl text-gray-500 tracking-widest text-center whitespace-nowrap uppercase font-medium">
+            <p className="mt-4 text-xs md:text-xl text-gray-500 tracking-widest text-center uppercase font-medium px-4">
               Where Idea Meet Market
             </p>
             <motion.div

@@ -51,7 +51,7 @@ export default function ExpandableCards({
 
   return (
     <div 
-      className={cn('flex gap-3 sm:gap-4 w-full h-full', className)}
+      className={cn('flex gap-2 sm:gap-4 w-full h-full', className)}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

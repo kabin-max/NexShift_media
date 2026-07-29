@@ -62,7 +62,7 @@ export default function ServicesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="font-sans font-bold text-[#154880] text-center text-4xl md:text-5xl lg:text-6xl tracking-tight drop-shadow-sm mb-16"
+          className="font-sans font-bold text-[#154880] text-center text-3xl md:text-5xl lg:text-6xl tracking-tight drop-shadow-sm mb-10 md:mb-16"
           style={{ fontFamily: "var(--font-geist-sans), sans-serif" }}
         >
           Our Services
@@ -78,7 +78,7 @@ export default function ServicesSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="group flex flex-col md:grid md:grid-cols-12 gap-6 md:gap-4 p-6 md:p-8 bg-white/80 backdrop-blur-md border border-gray-100 rounded-2xl shadow-sm hover:shadow-2xl hover:shadow-[#0D7A95]/10 hover:-translate-y-1.5 transition-all duration-500 items-center relative overflow-hidden cursor-pointer"
+                  className="group flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-4 p-5 md:p-8 bg-white/80 backdrop-blur-md border border-gray-100 rounded-2xl shadow-sm hover:shadow-2xl hover:shadow-[#0D7A95]/10 hover:-translate-y-1.5 transition-all duration-500 items-start md:items-center relative overflow-hidden cursor-pointer"
                 >
                   {/* Hover background slide */}
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#0D7A95]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
@@ -86,19 +86,68 @@ export default function ServicesSection() {
                   {/* Left Edge Glowing Strip */}
                   <div className="absolute left-0 top-0 w-2 h-full bg-[#03b364] shadow-[0_0_20px_rgba(3,179,100,0.5)] pointer-events-none" />
 
+                  {/* Mobile: Top row with number + title + arrow */}
+                  <div className="flex items-center justify-between w-full md:hidden gap-3 pl-2">
+                    <div className="flex items-center gap-3">
+                      <span className="text-xs font-mono text-gray-500 border border-gray-300 px-2 py-1 rounded-md group-hover:text-[#0D7A95] group-hover:border-[#0D7A95] transition-all duration-350 flex-shrink-0">
+                        {service.num}
+                      </span>
+                      <h3
+                        className="text-xl font-bold text-[#154880] tracking-tight font-sans transition-transform duration-350 group-hover:translate-x-1"
+                        style={{ fontFamily: "var(--font-geist-sans), sans-serif" }}
+                      >
+                        {service.title}
+                      </h3>
+                    </div>
+                    <div className="p-2 rounded-full border border-gray-300 text-gray-500 group-hover:text-[#0D7A95] group-hover:border-[#0D7A95] transition-all duration-350 flex-shrink-0">
+                      <ArrowUpRight className="w-4 h-4" />
+                    </div>
+                  </div>
+
+                  {/* Mobile: Tags */}
+                  <div className="flex flex-wrap gap-1.5 md:hidden pl-2">
+                    {service.tags.map((tag, tIdx) => (
+                      <span
+                        key={tIdx}
+                        className="text-[10px] font-bold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-[#0D7A95] via-[#14A9D6] to-[#2E73B8] uppercase font-sans"
+                        style={{ fontFamily: "var(--font-geist-sans), sans-serif" }}
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Mobile: Description + Image row */}
+                  <div className="flex items-start gap-3 w-full md:hidden pl-2">
+                    <p
+                      className="text-gray-700 font-medium text-sm leading-relaxed font-sans flex-1"
+                      style={{ fontFamily: "var(--font-geist-sans), sans-serif" }}
+                    >
+                      {service.description}
+                    </p>
+                    <div className="relative overflow-hidden rounded-lg aspect-[4/3] w-[90px] border border-gray-300 shadow-md flex-shrink-0">
+                      <img
+                        src={service.image}
+                        alt={service.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Desktop layout - all columns */}
                   {/* 1. Index number */}
-                  <div className="col-span-1 flex justify-start items-center">
+                  <div className="col-span-1 hidden md:flex justify-start items-center">
                     <span
-                      className="text-xs md:text-sm font-mono text-gray-500 border border-gray-300 px-2.5 py-1 rounded-md group-hover:text-[#0D7A95] group-hover:border-[#0D7A95] transition-all duration-350"
+                      className="text-sm font-mono text-gray-500 border border-gray-300 px-2.5 py-1 rounded-md group-hover:text-[#0D7A95] group-hover:border-[#0D7A95] transition-all duration-350"
                     >
                       {service.num}
                     </span>
                   </div>
 
                   {/* 2. Title */}
-                  <div className="col-span-3 flex justify-start items-center">
+                  <div className="col-span-3 hidden md:flex justify-start items-center">
                     <h3
-                      className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#154880] tracking-tight font-sans transition-transform duration-350 group-hover:translate-x-2"
+                      className="text-3xl lg:text-4xl font-bold text-[#154880] tracking-tight font-sans transition-transform duration-350 group-hover:translate-x-2"
                       style={{ fontFamily: "var(--font-geist-sans), sans-serif" }}
                     >
                       {service.title}
@@ -106,11 +155,11 @@ export default function ServicesSection() {
                   </div>
 
                   {/* 3. Sub-elements / Tags */}
-                  <div className="col-span-2 flex flex-col items-start gap-1">
+                  <div className="col-span-2 hidden md:flex flex-col items-start gap-1">
                     {service.tags.map((tag, tIdx) => (
                       <span
                         key={tIdx}
-                        className="text-[10px] md:text-xs font-bold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-[#0D7A95] via-[#14A9D6] to-[#2E73B8] uppercase font-sans"
+                        className="text-xs font-bold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-[#0D7A95] via-[#14A9D6] to-[#2E73B8] uppercase font-sans"
                         style={{ fontFamily: "var(--font-geist-sans), sans-serif" }}
                       >
                         {tag}
@@ -119,9 +168,9 @@ export default function ServicesSection() {
                   </div>
 
                   {/* 4. Description */}
-                  <div className="col-span-3 flex items-center">
+                  <div className="col-span-3 hidden md:flex items-center">
                     <p
-                      className="text-gray-700 font-medium text-sm md:text-base leading-relaxed transition-colors duration-350 font-sans"
+                      className="text-gray-700 font-medium text-base leading-relaxed transition-colors duration-350 font-sans"
                       style={{ fontFamily: "var(--font-geist-sans), sans-serif" }}
                     >
                       {service.description}
@@ -129,8 +178,8 @@ export default function ServicesSection() {
                   </div>
 
                   {/* 5. Image preview & Link button */}
-                  <div className="col-span-3 w-full flex justify-between md:justify-end items-center gap-4">
-                    <div className="relative overflow-hidden rounded-xl aspect-[4/3] w-[118px] md:w-[162px] border border-gray-300 shadow-md flex-shrink-0">
+                  <div className="col-span-3 hidden md:flex w-full justify-end items-center gap-4">
+                    <div className="relative overflow-hidden rounded-xl aspect-[4/3] w-[162px] border border-gray-300 shadow-md flex-shrink-0">
                       <img
                         src={service.image}
                         alt={service.title}

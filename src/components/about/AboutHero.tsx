@@ -10,8 +10,8 @@ export default function AboutHero() {
       content: (
         <div className="w-full h-full overflow-hidden rounded-2xl">
           <img
-            src="https://images.unsplash.com/photo-1544198365-f5d60b6d8190?q=80&w=1000"
-            alt="About 1"
+            src="/demo/Cafe 02 1.jpg"
+            alt="Cafe O2 Demo"
             className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
           />
         </div>
@@ -22,8 +22,8 @@ export default function AboutHero() {
       content: (
         <div className="w-full h-full overflow-hidden rounded-2xl">
           <img
-            src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?q=80&w=1000"
-            alt="About 2"
+            src="/demo/queens palace.jpg"
+            alt="Queens Palace Demo"
             className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
           />
         </div>
@@ -34,8 +34,8 @@ export default function AboutHero() {
       content: (
         <div className="w-full h-full overflow-hidden rounded-2xl">
           <img
-            src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1000"
-            alt="About 3"
+            src="/demo/Ritz College(1).jpg"
+            alt="Ritz College Demo"
             className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
           />
         </div>
@@ -46,8 +46,8 @@ export default function AboutHero() {
       content: (
         <div className="w-full h-full overflow-hidden rounded-2xl">
           <img
-            src="https://images.unsplash.com/photo-1433838552652-f9a46b332c40?q=80&w=1000"
-            alt="About 4"
+            src="/demo/Milestone school(1).jpg"
+            alt="Milestone School Demo"
             className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
           />
         </div>
@@ -58,8 +58,8 @@ export default function AboutHero() {
       content: (
         <div className="w-full h-full overflow-hidden rounded-2xl">
           <img
-            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=2070"
-            alt="About 5"
+            src="/demo/Cafe O2 2.jpg"
+            alt="Cafe O2 Demo 2"
             className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
           />
         </div>

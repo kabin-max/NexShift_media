@@ -230,81 +230,125 @@ export default function OurSteps() {
   const dynamicPath = getPath(svgSize.w, svgSize.h);
 
   return (
-    <section ref={containerRef} style={{ height: "200vh" }} className="relative w-full bg-transparent border-t border-gray-200 px-[5%]">
-      <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
-
-        <div className="absolute top-12 md:top-24 w-full text-center z-30 pointer-events-none flex flex-col items-center">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-sans tracking-tight text-[#154880] drop-shadow-sm flex flex-col items-center pointer-events-auto">
+    <>
+      {/* ── Mobile Layout (< md) ─────────────────────────────────────── */}
+      <section className="md:hidden relative w-full bg-transparent border-t border-gray-200 px-6 py-16">
+        <div className="text-center mb-10 flex flex-col items-center">
+          <h2 className="text-3xl font-bold font-sans tracking-tight text-[#154880] drop-shadow-sm flex flex-col items-center">
             Our Steps
             <div className="h-1.5 w-24 bg-[#03b364] shadow-[0_0_10px_rgba(3,179,100,0.5)] mx-auto mt-2 rounded-full pointer-events-none" />
           </h2>
         </div>
-
-        <div ref={svgContainerRef} className="relative w-full max-w-7xl h-[80vh] mx-auto">
-
-          {svgSize.w > 0 && (
-            <svg
-              viewBox={`0 0 ${svgSize.w} ${svgSize.h}`}
-              className="absolute inset-0 w-full h-full z-[-10] pointer-events-none overflow-visible"
-              style={{ willChange: "transform", transform: "translateZ(0)" }}
-            >
-              <defs>
-                <filter id="neon-glow" x="-50%" y="-50%" width="200%" height="200%">
-                  <feGaussianBlur stdDeviation="4" result="coloredBlur" />
-                  <feMerge>
-                    <feMergeNode in="coloredBlur" />
-                    <feMergeNode in="SourceGraphic" />
-                  </feMerge>
-                </filter>
-                <linearGradient id="line-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#154880" />
-                  <stop offset="50%" stopColor="#154880" />
-                  <stop offset="100%" stopColor="#154880" />
-                </linearGradient>
-              </defs>
-
-              <path
-                d={dynamicPath}
-                fill="none"
-                stroke="rgba(0,0,0,0.15)"
-                strokeWidth="2"
-                strokeDasharray="4 8"
-                strokeLinecap="round"
-              />
-
-              {getPoints(svgSize.w, svgSize.h).map((pt, i) => (
-                <StepDot key={`dot-${i}`} point={pt} index={i} progress={smoothProgress} />
-              ))}
-
-              <motion.path
-                d={dynamicPath}
-                fill="none"
-                stroke="url(#line-gradient)"
-                strokeWidth="5"
-                strokeLinecap="round"
-                filter="url(#neon-glow)"
-                style={{ pathLength: smoothProgress }}
-              />
-            </svg>
-          )}
-
-          {/* Step Cards */}
+        <div className="grid grid-cols-2 gap-4 max-w-md mx-auto">
           {steps.map((step, i) => (
-            <StepCard key={i} step={step} index={i} progress={smoothProgress} />
+            <div
+              key={i}
+              className="bg-white/80 backdrop-blur-md border border-gray-200 rounded-2xl p-5 shadow-sm relative overflow-hidden"
+            >
+              <div className="absolute left-0 top-0 w-1 h-full bg-[#03b364] shadow-[0_0_12px_rgba(3,179,100,0.4)] pointer-events-none" />
+              <div className="flex items-center gap-2 mb-3">
+                <span className="p-1.5 rounded-lg bg-gray-100 border border-gray-200">
+                  {step.icon}
+                </span>
+                <span className="text-[#14A9D6] font-mono text-xs font-bold tracking-widest uppercase">
+                  {step.num}
+                </span>
+              </div>
+              <h4 className="text-lg font-bold uppercase tracking-wider text-[#14A9D6] mb-2 font-sans">
+                {step.title}
+              </h4>
+              <p className="text-gray-600 text-xs leading-relaxed font-medium font-sans">
+                {step.desc}
+              </p>
+              <div className="mt-3 flex flex-wrap gap-1">
+                {step.tags.map((tag, tIdx) => (
+                  <span key={tIdx} className="text-[9px] font-bold tracking-wide text-[#0D7A95] uppercase bg-[#0D7A95]/5 rounded-full px-2 py-0.5">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
           ))}
-
-          {/* Detail Panels: Top-Right (Steps 1 & 2) */}
-          {[0, 1].map(i => (
-            <DetailPanel key={`tr-${i}`} index={i} step={steps[i]} zone={activeZones[i]} progress={smoothProgress} side="top-right" />
-          ))}
-
-          {/* Detail Panels: Bottom-Left (Steps 3 & 4) */}
-          {[2, 3].map(i => (
-            <DetailPanel key={`bl-${i}`} index={i} step={steps[i]} zone={activeZones[i]} progress={smoothProgress} side="bottom-left" />
-          ))}
-
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* ── Desktop Layout (md+) ─────────────────────────────────────── */}
+      <section ref={containerRef} style={{ height: "200vh" }} className="hidden md:block relative w-full bg-transparent border-t border-gray-200 px-[5%]">
+        <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
+
+          <div className="absolute top-12 md:top-24 w-full text-center z-30 pointer-events-none flex flex-col items-center">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-sans tracking-tight text-[#154880] drop-shadow-sm flex flex-col items-center pointer-events-auto">
+              Our Steps
+              <div className="h-1.5 w-24 bg-[#03b364] shadow-[0_0_10px_rgba(3,179,100,0.5)] mx-auto mt-2 rounded-full pointer-events-none" />
+            </h2>
+          </div>
+
+          <div ref={svgContainerRef} className="relative w-full max-w-7xl h-[80vh] mx-auto">
+
+            {svgSize.w > 0 && (
+              <svg
+                viewBox={`0 0 ${svgSize.w} ${svgSize.h}`}
+                className="absolute inset-0 w-full h-full z-[-10] pointer-events-none overflow-visible"
+                style={{ willChange: "transform", transform: "translateZ(0)" }}
+              >
+                <defs>
+                  <filter id="neon-glow" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur stdDeviation="4" result="coloredBlur" />
+                    <feMerge>
+                      <feMergeNode in="coloredBlur" />
+                      <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                  </filter>
+                  <linearGradient id="line-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#154880" />
+                    <stop offset="50%" stopColor="#154880" />
+                    <stop offset="100%" stopColor="#154880" />
+                  </linearGradient>
+                </defs>
+
+                <path
+                  d={dynamicPath}
+                  fill="none"
+                  stroke="rgba(0,0,0,0.15)"
+                  strokeWidth="2"
+                  strokeDasharray="4 8"
+                  strokeLinecap="round"
+                />
+
+                {getPoints(svgSize.w, svgSize.h).map((pt, i) => (
+                  <StepDot key={`dot-${i}`} point={pt} index={i} progress={smoothProgress} />
+                ))}
+
+                <motion.path
+                  d={dynamicPath}
+                  fill="none"
+                  stroke="url(#line-gradient)"
+                  strokeWidth="5"
+                  strokeLinecap="round"
+                  filter="url(#neon-glow)"
+                  style={{ pathLength: smoothProgress }}
+                />
+              </svg>
+            )}
+
+            {/* Step Cards */}
+            {steps.map((step, i) => (
+              <StepCard key={i} step={step} index={i} progress={smoothProgress} />
+            ))}
+
+            {/* Detail Panels: Top-Right (Steps 1 & 2) */}
+            {[0, 1].map(i => (
+              <DetailPanel key={`tr-${i}`} index={i} step={steps[i]} zone={activeZones[i]} progress={smoothProgress} side="top-right" />
+            ))}
+
+            {/* Detail Panels: Bottom-Left (Steps 3 & 4) */}
+            {[2, 3].map(i => (
+              <DetailPanel key={`bl-${i}`} index={i} step={steps[i]} zone={activeZones[i]} progress={smoothProgress} side="bottom-left" />
+            ))}
+
+          </div>
+        </div>
+      </section>
+    </>
   );
 }

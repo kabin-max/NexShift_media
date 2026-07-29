@@ -110,7 +110,7 @@ export default function HeroSection() {
 
       {/* Spinning Badge at the very end */}
       <motion.div
-        className="absolute bottom-4 right-12 md:bottom-5 md:right-24 w-[100px] h-[100px] md:w-32 md:h-32 bg-white rounded-full flex items-center justify-center shadow-2xl z-[60]"
+        className="absolute bottom-4 right-4 sm:right-12 md:bottom-5 md:right-24 w-[100px] h-[100px] md:w-32 md:h-32 bg-white rounded-full flex items-center justify-center shadow-2xl z-[60]"
       >
         <svg viewBox="0 0 100 100" className="w-full h-full animate-[spin_14s_linear_infinite]">
 

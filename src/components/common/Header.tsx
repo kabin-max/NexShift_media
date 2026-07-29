@@ -27,18 +27,18 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-[70] flex items-center justify-end w-full px-6 py-3 md:px-12 md:py-4 transition-all duration-300 ${isScrolled ? "bg-white/20 backdrop-blur-md shadow-sm" : "bg-transparent"
+        className={`fixed top-0 left-0 right-0 z-[70] flex items-center justify-between md:justify-end w-full px-4 py-3 md:px-12 md:py-4 transition-all duration-300 ${isScrolled ? "bg-white/20 backdrop-blur-md shadow-sm" : "bg-transparent"
           }`}
       >
 
         <Link
           href="/"
-          className={`absolute left-1/2 -translate-x-1/2 flex items-center justify-center gap-3 transition-opacity duration-300 ${pathname === "/" && !isScrolled ? 'opacity-0 pointer-events-none' : 'opacity-100 pointer-events-auto'
+          className={`flex md:absolute md:left-1/2 md:-translate-x-1/2 items-center justify-center gap-2 md:gap-3 transition-opacity duration-300 ${pathname === "/" && !isScrolled ? 'opacity-0 pointer-events-none' : 'opacity-100 pointer-events-auto'
             }`}
         >
-          <Image src="/nst-logo.png" alt="NexShift Logo" width={32} height={32} className="object-contain" />
+          <Image src="/nst-logo.png" alt="NexShift Logo" width={28} height={28} className="object-contain md:w-8 md:h-8" />
           <span
-            className="text-2xl md:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-[#0D7A95] via-[#14A9D6] to-[#2E73B8] font-black italic tracking-tight drop-shadow-sm whitespace-nowrap leading-none select-none"
+            className="text-xl md:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-[#0D7A95] via-[#14A9D6] to-[#2E73B8] font-black italic tracking-tight drop-shadow-sm whitespace-nowrap leading-none select-none"
             style={{ fontFamily: "var(--font-geist-sans)" }}
           >
             NexShift .
@@ -46,11 +46,11 @@ export default function Header() {
         </Link>
 
         {pathname === "/about" || pathname === "/services" ? (
-          <Link href="/" className="px-6 py-3 bg-[#0D7A95] text-white hover:bg-[#14A9D6] text-sm font-bold rounded-full transition-colors shadow-sm hover:shadow-md cursor-pointer pointer-events-auto">
+          <Link href="/" className="px-4 py-2 md:px-6 md:py-3 bg-[#0D7A95] text-white hover:bg-[#14A9D6] text-xs md:text-sm font-bold rounded-full transition-colors shadow-sm hover:shadow-md cursor-pointer pointer-events-auto whitespace-nowrap">
             Go Back Home
           </Link>
         ) : (
-          <Link href="/about" className="px-6 py-3 bg-[#0D7A95] text-white hover:bg-[#14A9D6] text-sm font-bold rounded-full transition-colors shadow-sm hover:shadow-md cursor-pointer pointer-events-auto">
+          <Link href="/about" className="px-4 py-2 md:px-6 md:py-3 bg-[#0D7A95] text-white hover:bg-[#14A9D6] text-xs md:text-sm font-bold rounded-full transition-colors shadow-sm hover:shadow-md cursor-pointer pointer-events-auto whitespace-nowrap">
             About Us
           </Link>
         )}
