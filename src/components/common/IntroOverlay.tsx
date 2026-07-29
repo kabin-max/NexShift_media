@@ -3,32 +3,36 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Loader2 } from "lucide-react";
-// import { Outfit } from "next/font/google";
 
-// const outfit = Outfit({
-//   weight: "900",
-//   subsets: ["latin"],
-//   display: "swap",
-// });
 
-export default function IntroOverlay() {
+interface IntroOverlayProps {
+  onReady?: () => void;
+}
+
+export default function IntroOverlay({ onReady }: IntroOverlayProps) {
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
     // Lock scroll when the overlay is visible
     document.body.style.overflow = "hidden";
 
-    // Hide the overlay after 5 seconds
+    // Fire onReady at 1.5s — gives components 1s to mount behind the overlay
+    const readyTimer = setTimeout(() => {
+      onReady?.();
+    }, 1500);
+
+    // Start fade-out at 2.5s
     const timer = setTimeout(() => {
       setIsVisible(false);
       document.body.style.overflow = "unset";
     }, 2500);
 
     return () => {
+      clearTimeout(readyTimer);
       clearTimeout(timer);
       document.body.style.overflow = "unset";
     };
-  }, []);
+  }, [onReady]);
 
   return (
     <AnimatePresence>
@@ -52,7 +56,7 @@ export default function IntroOverlay() {
               NexShift .
             </h1>
             <h2 className="mt-4 text-sm xs:text-xl md:text-2xl lg:text-4xl font-black tracking-tight drop-shadow-sm italic text-transparent bg-clip-text bg-gradient-to-r from-[#0D7A95] via-[#14A9D6] to-[#2E73B8] leading-none text-center px-4">
-              Media & Event Management
+              Media & Events
             </h2>
 
             <p className="mt-4 text-xs md:text-xl text-gray-500 tracking-widest text-center uppercase font-medium px-4">

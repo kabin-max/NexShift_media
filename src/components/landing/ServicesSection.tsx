@@ -35,20 +35,20 @@ export default function ServicesSection() {
   return (
     <section className="relative w-full bg-transparent py-[5%] overflow-hidden flex flex-col gap-12 border-t border-gray-200">
       {/* Ambient globs — top-right cyan, bottom-left navy */}
-      <div className="absolute -top-[5%] -right-[5%] w-[45%] h-[55%] bg-[#00a3d0]/10 blur-[140px] rounded-full pointer-events-none z-0" />
-      <div className="absolute -bottom-[5%] -left-[5%] w-[50%] h-[50%] bg-[#00a3d0]/40 blur-[160px] rounded-full pointer-events-none z-0" />
+      <div className="absolute -top-[5%] -right-[5%] w-[45%] h-[55%] bg-[#00a3d0]/10 blur-[140px] rounded-full pointer-events-none z-0 transform-gpu" />
+      <div className="absolute -bottom-[5%] -left-[5%] w-[50%] h-[50%] bg-[#00a3d0]/40 blur-[160px] rounded-full pointer-events-none z-0 transform-gpu" />
       {/* Large centered radial glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[60%] bg-[#00a3d0]/8 blur-[180px] rounded-full pointer-events-none z-0" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[60%] bg-[#00a3d0]/8 blur-[180px] rounded-full pointer-events-none z-0 transform-gpu" />
 
       {/* Decorative Floating Circles */}
       <div className="absolute top-[15%] left-[8%] w-32 h-32 md:w-56 md:h-56 border border-[#00a3d0]/10 rounded-full pointer-events-none z-0" />
       <div className="absolute top-[20%] left-[4%] w-20 h-20 md:w-32 md:h-32 border-2 border-[#e5e7eb]/20 rounded-full pointer-events-none z-0" />
       
-      <div className="absolute bottom-[20%] right-[6%] w-24 h-24 md:w-40 md:h-40 bg-[#e5e7eb]/10 rounded-full blur-[2px] pointer-events-none z-0" />
+      <div className="absolute bottom-[20%] right-[6%] w-24 h-24 md:w-40 md:h-40 bg-[#e5e7eb]/10 rounded-full blur-[2px] pointer-events-none z-0 transform-gpu" />
       <div className="absolute bottom-[10%] right-[10%] w-12 h-12 md:w-20 md:h-20 bg-[#00a3d0]/10 rounded-full pointer-events-none z-0" />
       
-      {/* Massive Vivid Green Diagonal Strip crossing the whole section */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[30vh] md:h-[40vh] bg-gradient-to-r from-transparent via-[#03b364] to-transparent -rotate-[15deg] md:-rotate-[25deg] pointer-events-none opacity-90" />
+      {/* Vivid Green Diagonal Strip */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[30vh] md:h-[40vh] bg-gradient-to-r from-transparent via-[#03b364] to-transparent -rotate-[15deg] md:-rotate-[25deg] pointer-events-none opacity-90 transform-gpu" />
 
       <motion.div 
         className="max-w-7xl mx-auto w-full px-6 md:px-12 relative z-10"
@@ -78,7 +78,7 @@ export default function ServicesSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="group flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-4 p-5 md:p-8 bg-white/80 backdrop-blur-md border border-gray-100 rounded-2xl shadow-sm hover:shadow-2xl hover:shadow-[#0D7A95]/10 hover:-translate-y-1.5 transition-all duration-500 items-start md:items-center relative overflow-hidden cursor-pointer"
+                  className="group flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-4 p-5 md:p-8 bg-white/95 border border-gray-100 rounded-2xl shadow-sm hover:shadow-2xl hover:shadow-[#0D7A95]/10 hover:-translate-y-1.5 transition-all duration-500 items-start md:items-center relative overflow-hidden cursor-pointer"
                 >
                   {/* Hover background slide */}
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#0D7A95]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />

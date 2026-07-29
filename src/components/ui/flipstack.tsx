@@ -127,7 +127,7 @@ export default function FlipStack({
                         variants={variants}
                         transition={{ duration: 0.4, ease: 'easeInOut' }}
                       >
-                        <Card className='w-full h-full shadow-2xl border-none bg-transparent overflow-hidden'>
+                        <Card className='w-full h-full shadow-2xl border-none bg-transparent overflow-hidden p-0'>
                           <CardContent className='p-0 h-full flex items-center justify-center'>
                             {card.content}
                           </CardContent>
@@ -158,7 +158,7 @@ export default function FlipStack({
                         ease: 'easeOut',
                       }}
                     >
-                      <Card className='w-80 h-96 shadow-2xl border-none bg-transparent overflow-hidden'>
+                      <Card className='w-80 h-96 shadow-2xl border-none bg-transparent overflow-hidden p-0'>
                         <CardContent className='p-0 h-full flex items-center justify-center'>
                           {card.content}
                         </CardContent>

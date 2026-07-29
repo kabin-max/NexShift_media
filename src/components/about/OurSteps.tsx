@@ -250,13 +250,7 @@ export default function OurSteps() {
                 style={{ willChange: "transform", transform: "translateZ(0)" }}
               >
                 <defs>
-                  <filter id="neon-glow" x="-50%" y="-50%" width="200%" height="200%">
-                    <feGaussianBlur stdDeviation="4" result="coloredBlur" />
-                    <feMerge>
-                      <feMergeNode in="coloredBlur" />
-                      <feMergeNode in="SourceGraphic" />
-                    </feMerge>
-                  </filter>
+
                   <linearGradient id="line-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
                     <stop offset="0%" stopColor="#154880" />
                     <stop offset="50%" stopColor="#154880" />
@@ -283,8 +277,7 @@ export default function OurSteps() {
                   stroke="url(#line-gradient)"
                   strokeWidth="5"
                   strokeLinecap="round"
-                  filter="url(#neon-glow)"
-                  style={{ pathLength: smoothProgress }}
+                  style={{ pathLength: smoothProgress, filter: "drop-shadow(0px 0px 8px rgba(20,169,214,0.5))" }}
                 />
               </svg>
             )}
