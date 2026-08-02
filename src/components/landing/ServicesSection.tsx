@@ -1,8 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
-import Link from "next/link";
 
 const services = [
   {
@@ -72,36 +70,31 @@ export default function ServicesSection() {
         <div className="flex flex-col gap-6">
           {services.map((service, index) => {
             return (
-              <Link key={service.id} href={`/services?category=${encodeURIComponent(service.title)}`} className="block w-full">
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="group flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-4 p-5 md:p-8 bg-white/95 border border-gray-100 rounded-2xl shadow-sm hover:shadow-2xl hover:shadow-[#0D7A95]/10 hover:-translate-y-1.5 transition-all duration-500 items-start md:items-center relative overflow-hidden cursor-pointer"
-                >
+              <motion.div
+                key={service.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="group flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-4 p-5 md:p-8 bg-white/95 border border-gray-100 rounded-2xl shadow-sm hover:shadow-2xl hover:shadow-[#0D7A95]/10 hover:-translate-y-1.5 transition-all duration-500 items-start md:items-center relative overflow-hidden"
+              >
                   {/* Hover background slide */}
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#0D7A95]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                   
                   {/* Left Edge Glowing Strip */}
                   <div className="absolute left-0 top-0 w-2 h-full bg-[#03b364] shadow-[0_0_20px_rgba(3,179,100,0.5)] pointer-events-none" />
 
-                  {/* Mobile: Top row with number + title + arrow */}
-                  <div className="flex items-center justify-between w-full md:hidden gap-3 pl-2">
-                    <div className="flex items-center gap-3">
-                      <span className="text-xs font-mono text-gray-500 border border-gray-300 px-2 py-1 rounded-md group-hover:text-[#0D7A95] group-hover:border-[#0D7A95] transition-all duration-350 flex-shrink-0">
-                        {service.num}
-                      </span>
-                      <h3
-                        className="text-xl font-bold text-[#154880] tracking-tight font-sans transition-transform duration-350 group-hover:translate-x-1"
-                        style={{ fontFamily: "var(--font-geist-sans), sans-serif" }}
-                      >
-                        {service.title}
-                      </h3>
-                    </div>
-                    <div className="p-2 rounded-full border border-gray-300 text-gray-500 group-hover:text-[#0D7A95] group-hover:border-[#0D7A95] transition-all duration-350 flex-shrink-0">
-                      <ArrowUpRight className="w-4 h-4" />
-                    </div>
+                  {/* Mobile: Top row with number + title */}
+                  <div className="flex items-center w-full md:hidden gap-3 pl-2">
+                    <span className="text-xs font-mono text-gray-500 border border-gray-300 px-2 py-1 rounded-md group-hover:text-[#0D7A95] group-hover:border-[#0D7A95] transition-all duration-350 flex-shrink-0">
+                      {service.num}
+                    </span>
+                    <h3
+                      className="text-xl font-bold text-[#154880] tracking-tight font-sans transition-transform duration-350 group-hover:translate-x-1"
+                      style={{ fontFamily: "var(--font-geist-sans), sans-serif" }}
+                    >
+                      {service.title}
+                    </h3>
                   </div>
 
                   {/* Mobile: Tags */}
@@ -177,7 +170,7 @@ export default function ServicesSection() {
                     </p>
                   </div>
 
-                  {/* 5. Image preview & Link button */}
+                  {/* 5. Image preview */}
                   <div className="col-span-3 hidden md:flex w-full justify-end items-center gap-4">
                     <div className="relative overflow-hidden rounded-xl aspect-[4/3] w-[162px] border border-gray-300 shadow-md flex-shrink-0">
                       <img
@@ -186,13 +179,9 @@ export default function ServicesSection() {
                         className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
                       />
                     </div>
-                    <div className="p-2 rounded-full border border-gray-300 text-gray-500 group-hover:text-[#0D7A95] group-hover:border-[#0D7A95] transition-all duration-350 flex-shrink-0">
-                      <ArrowUpRight className="w-5 h-5 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
-                    </div>
                   </div>
 
                 </motion.div>
-              </Link>
             );
           })}
         </div>
