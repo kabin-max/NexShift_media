@@ -39,9 +39,11 @@ export default function AboutSection2() {
     {
       id: 1,
       content: (
-        <img
+        <Image
           src="/demo/Cafe 02 1.jpg"
-          className="w-full h-full object-cover"
+          fill
+          sizes="(max-width: 768px) 100vw, 50vw"
+          className="object-cover"
           alt="Cafe O2 Demo"
         />
       ),
@@ -49,9 +51,11 @@ export default function AboutSection2() {
     {
       id: 2,
       content: (
-        <img
+        <Image
           src="/demo/queens palace.jpg"
-          className="w-full h-full object-cover"
+          fill
+          sizes="(max-width: 768px) 100vw, 50vw"
+          className="object-cover"
           alt="Queens Palace Demo"
         />
       ),
@@ -59,9 +63,11 @@ export default function AboutSection2() {
     {
       id: 3,
       content: (
-        <img
+        <Image
           src="/demo/Ritz College(1).jpg"
-          className="w-full h-full object-cover"
+          fill
+          sizes="(max-width: 768px) 100vw, 50vw"
+          className="object-cover"
           alt="Ritz College Demo"
         />
       ),
@@ -69,9 +75,11 @@ export default function AboutSection2() {
     {
       id: 4,
       content: (
-        <img
+        <Image
           src="/demo/Milestone school(1).jpg"
-          className="w-full h-full object-cover"
+          fill
+          sizes="(max-width: 768px) 100vw, 50vw"
+          className="object-cover"
           alt="Milestone School Demo"
         />
       ),
@@ -79,9 +87,11 @@ export default function AboutSection2() {
     {
       id: 5,
       content: (
-        <img
+        <Image
           src="/demo/Cafe O2 2.jpg"
-          className="w-full h-full object-cover"
+          fill
+          sizes="(max-width: 768px) 100vw, 50vw"
+          className="object-cover"
           alt="Cafe O2 Demo 2"
         />
       ),
@@ -177,19 +187,19 @@ export default function AboutSection2() {
           {/* Feature Pills */}
           <div className="flex flex-wrap lg:flex-nowrap gap-3 pt-4 justify-center lg:justify-start">
 
-            <div className="group flex items-center gap-3 rounded-full bg-[#e5e7eb] border border-[#4C1D95]/30 backdrop-blur-sm px-5 py-2.5 transition-all duration-300 hover:scale-105 active:scale-95 hover:bg-[#e5e7eb]/80 hover:border-[#4C1D95] hover:shadow-[0_0_15px_rgba(0,255,200,0.2)] cursor-default">
+            <div className="group flex items-center gap-3 rounded-full bg-[#e5e7eb] border border-[#4C1D95]/30 backdrop-blur-sm px-5 py-2.5 transition duration-300 hover:scale-105 active:scale-95 hover:bg-[#e5e7eb]/80 hover:border-[#4C1D95] hover:shadow-[0_0_15px_rgba(0,255,200,0.2)] cursor-default">
               <span className="text-[#171717] text-sm font-medium tracking-wide whitespace-nowrap">
                 Strategy First
               </span>
             </div>
 
-            <div className="group flex items-center gap-3 rounded-full bg-[#e5e7eb] border border-[#4C1D95]/30 backdrop-blur-sm px-5 py-2.5 transition-all duration-300 hover:scale-105 active:scale-95 hover:bg-[#e5e7eb]/80 hover:border-[#4C1D95] hover:shadow-[0_0_15px_rgba(0,255,200,0.2)] cursor-default">
+            <div className="group flex items-center gap-3 rounded-full bg-[#e5e7eb] border border-[#4C1D95]/30 backdrop-blur-sm px-5 py-2.5 transition duration-300 hover:scale-105 active:scale-95 hover:bg-[#e5e7eb]/80 hover:border-[#4C1D95] hover:shadow-[0_0_15px_rgba(0,255,200,0.2)] cursor-default">
               <span className="text-[#171717] text-sm font-medium tracking-wide whitespace-nowrap">
                 Creative Excellence
               </span>
             </div>
 
-            <div className="group flex items-center gap-3 rounded-full bg-[#e5e7eb] border border-[#4C1D95]/30 backdrop-blur-sm px-5 py-2.5 transition-all duration-300 hover:scale-105 active:scale-95 hover:bg-[#e5e7eb]/80 hover:border-[#4C1D95] hover:shadow-[0_0_15px_rgba(0,255,200,0.2)] cursor-default">
+            <div className="group flex items-center gap-3 rounded-full bg-[#e5e7eb] border border-[#4C1D95]/30 backdrop-blur-sm px-5 py-2.5 transition duration-300 hover:scale-105 active:scale-95 hover:bg-[#e5e7eb]/80 hover:border-[#4C1D95] hover:shadow-[0_0_15px_rgba(0,255,200,0.2)] cursor-default">
               <span className="text-[#171717] text-sm font-medium tracking-wide whitespace-nowrap">
                 Measurable Results
               </span>

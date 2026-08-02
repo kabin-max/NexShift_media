@@ -1,6 +1,3 @@
-"use client";
-
-import { useState, useEffect, useCallback } from "react";
 import Background from "../components/common/Background";
 import Header from "../components/common/Header";
 import SocialIcons from "../components/common/SocialIcons";
@@ -15,39 +12,40 @@ import ContactSection from "../components/landing/ContactSection";
 import Footer from "../components/common/Footer";
 import IntroOverlay from "../components/common/IntroOverlay";
 
-// Critical images to prefetch while the intro overlay is playing
-const CRITICAL_IMAGES = [
-  "https://andyhardy.co/assets/img/landscape_mountain_small.png",
-  "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600",
-  "https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=600",
-  "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=600",
-];
-
-// Silently fetch images into browser cache without rendering anything
-function useImagePreloader(urls: string[]) {
-  useEffect(() => {
-    urls.forEach((src) => {
-      const img = new Image();
-      img.src = src;
-    });
-  }, [urls]);
-}
-
 export default function Home() {
-  const [mountContent, setMountContent] = useState(false);
 
-  // Preload critical images immediately (while overlay is visible)
-  useImagePreloader(CRITICAL_IMAGES);
-
-  // Memoize callback so IntroOverlay's useEffect dep doesn't re-fire
-  const handleReady = useCallback(() => setMountContent(true), []);
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": ["Organization", "LocalBusiness"],
+    "name": "NexShift",
+    "url": "https://nexshift.com.np",
+    "logo": "https://nexshift.com.np/nst-logo.png",
+    "description": "NexShift is a premier event management company and digital marketing agency based in Kathmandu, Nepal.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Kathmandu",
+      "addressCountry": "NP"
+    },
+    "sameAs": [
+      "https://www.facebook.com/profile.php?id=61571556053359",
+      "https://www.instagram.com/nex_shift/",
+      "https://www.linkedin.com/company/nexshiftnepal/"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "email": "info@nexshift.com.np"
+    }
+  };
 
   return (
     <main className="relative flex flex-col w-full text-white font-sans bg-black">
-      <IntroOverlay onReady={handleReady} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <IntroOverlay />
 
-      {mountContent && (
-        <>
           <Background />
           <Header />
           <SocialIcons />
@@ -65,8 +63,6 @@ export default function Home() {
               <Footer />
             </div>
           </div>
-        </>
-      )}
     </main>
   );
 }

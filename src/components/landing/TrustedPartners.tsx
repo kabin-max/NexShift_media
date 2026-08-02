@@ -6,14 +6,14 @@ import Image from "next/image";
 const rawPartners = [
   // Simple logos (Row 1)
   { name: "Nisarga Batika", filename: "nisarga batika.svg", type: "simple" },
-  { name: "Milestone Logo", filename: "Milestone logoo.png", type: "simple" },
+  { name: "Milestone Logo", filename: "Milestone logoo.png", type: "simple", scale: 1.44 },
   { name: "New York Cargo", filename: "new york cargo.png", type: "simple" },
-  { name: "Cafe O2", filename: "Cafe_O2.png", type: "simple", scale: 1.2 },
-  { name: "Queens Logo", filename: "Queens.png", type: "simple", scale: 1.2 },
-  { name: "Tulsi Portrait", filename: "Tulsi.png", type: "simple" },
+  { name: "Cafe O2", filename: "Cafe_O2.png", type: "simple", scale: 1.73 },
+  { name: "Queens Logo", filename: "Queens.png", type: "simple", scale: 1.73 },
+  { name: "Tulsi Portrait", filename: "Tulsi.png", type: "simple", scale: 1.44 },
   { name: "Praise Consultancy", filename: "praise consultancy.jpg", type: "simple" },
-  { name: "Ritz College", filename: "ritz.png", type: "simple", scale: 1.2 },
-  { name: "Smile Dental Clinic", filename: "smile_dental.png", type: "simple", scale: 1.2 },
+  { name: "Ritz College", filename: "ritz.png", type: "simple", scale: 1.73 },
+  { name: "Smile Dental Clinic", filename: "smile_dental.png", type: "simple", scale: 1.73 },
 
   // Box / Rectangular logos (Row 2)
   { name: "Guru Pashmina", filename: "guru pashmina.jpg", type: "box" },
@@ -72,7 +72,6 @@ export default function TrustedPartners() {
                     fill
                     sizes="(max-width: 768px) 160px, 160px"
                     className="object-contain pointer-events-none"
-                    loading="eager"
                   />
                 </div>
               ))}
@@ -95,8 +94,7 @@ export default function TrustedPartners() {
                     alt={partner.name}
                     fill
                     sizes="(max-width: 768px) 160px, 160px"
-                    className="object-contain pointer-events-none transition-all duration-300 ease-in-out hover:scale-105"
-                    loading="eager"
+                    className="object-contain pointer-events-none transition-transform duration-300 ease-in-out hover:scale-105"
                   />
                 </div>
               ))}

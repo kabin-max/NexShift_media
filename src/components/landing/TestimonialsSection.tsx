@@ -1,7 +1,58 @@
-
+"use client";
 
 import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
 import { motion } from "framer-motion";
+
+const testimonialsData = [
+  {
+    description:
+      "NexShift completely transformed our digital presence. The strategy they crafted was razor-sharp and the execution was flawless.",
+    image:
+      "https://images.unsplash.com/photo-1611558709798-e009c8fd7706?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
+    name: "Isabelle Carlos",
+    handle: "@isabellecarlos",
+  },
+  {
+    description:
+      "Their event management team handled our product launch with incredible attention to detail. Couldn't have asked for a better partner.",
+    image:
+      "https://plus.unsplash.com/premium_photo-1692340973636-6f2ff926af39?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
+    name: "Lana Akash",
+    handle: "@lanaakash",
+  },
+  {
+    description:
+      "The brand film NexShift produced for us was cinematic, emotional, and exactly on-brand. Highly recommend their videography team.",
+    image:
+      "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
+    name: "Liam O'Connor",
+    handle: "@liamoc",
+  },
+  {
+    description:
+      "Working with NexShift felt like magic — they just got our brand and brought it to life across every channel beautifully.",
+    image:
+      "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
+    name: "Isabella Mendes",
+    handle: "@isamendes",
+  },
+  {
+    description:
+      "NexShift's performance marketing campaigns delivered measurable ROI from week one. They don't just promise results — they deliver them.",
+    image:
+      "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
+    name: "Meera Patel",
+    handle: "@meerapatel",
+  },
+  {
+    description:
+      "I recommend NexShift to any business looking for a creative agency that thinks strategically and executes beautifully.",
+    image:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
+    name: "Emily Chen",
+    handle: "@emchen",
+  },
+];
 
 export default function TestimonialsSection() {
   return (
@@ -36,60 +87,10 @@ export default function TestimonialsSection() {
           </h3>
         </div>
 
-        {/* Wrapper around testimonial component */}
         <div className="bg-[#154880] rounded-3xl p-4 sm:p-6 md:p-8 border border-[#154880]/50 shadow-xl">
           <AnimatedTestimonials
             autoplay={true}
-            data={[
-              {
-                description:
-                  "NexShift completely transformed our digital presence. The strategy they crafted was razor-sharp and the execution was flawless.",
-                image:
-                  "https://images.unsplash.com/photo-1611558709798-e009c8fd7706?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
-                name: "Isabelle Carlos",
-                handle: "@isabellecarlos",
-              },
-              {
-                description:
-                  "Their event management team handled our product launch with incredible attention to detail. Couldn't have asked for a better partner.",
-                image:
-                  "https://plus.unsplash.com/premium_photo-1692340973636-6f2ff926af39?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
-                name: "Lana Akash",
-                handle: "@lanaakash",
-              },
-              {
-                description:
-                  "The brand film NexShift produced for us was cinematic, emotional, and exactly on-brand. Highly recommend their videography team.",
-                image:
-                  "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
-                name: "Liam O'Connor",
-                handle: "@liamoc",
-              },
-              {
-                description:
-                  "Working with NexShift felt like magic — they just got our brand and brought it to life across every channel beautifully.",
-                image:
-                  "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
-                name: "Isabella Mendes",
-                handle: "@isamendes",
-              },
-              {
-                description:
-                  "NexShift's performance marketing campaigns delivered measurable ROI from week one. They don't just promise results — they deliver them.",
-                image:
-                  "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
-                name: "Meera Patel",
-                handle: "@meerapatel",
-              },
-              {
-                description:
-                  "I recommend NexShift to any business looking for a creative agency that thinks strategically and executes beautifully.",
-                image:
-                  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
-                name: "Emily Chen",
-                handle: "@emchen",
-              },
-            ]}
+            data={testimonialsData}
           />
         </div>
       </motion.div>

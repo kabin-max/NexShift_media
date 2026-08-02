@@ -16,7 +16,7 @@ const clients = [
   { name: "Nisarga Batika", link: "https://www.nisarga.edu.np/", image: "/projects/nisarga batika.jpg", logoFont: "sans", logo: "nisarga batika.svg" },
   { name: "ZENO", link: "https://www.zenoenterprise.tech/", image: "/projects/ZENO.jpg", logoFont: "sans", logo: "zeno.PNG" },
   { name: "Queens Palace", link: "https://www.instagram.com/queenspalaceevents/", image: "/projects/queens palace(1).jpg", logoFont: "sans", logo: "Queens.png" },
-  { name: "Palmos Couture", link: "https://www.instagram.com/palmos_couture/", image: "/bg-image.png", logoFont: "sans", logo: "palmos logo.jpeg" },
+  { name: "Palmos Couture", link: "https://www.instagram.com/palmos_couture/", image: "/projects/Palmos.png", logoFont: "sans", logo: "palmos logo.jpeg" },
   // { name: "GrabNews", link: "https://www.instagram.com/grabnewsofficial/", image: "/bg-image.png", logoFont: "sans" },
   { name: "Mega Lights", link: "https://www.tiktok.com/@megalights", image: "/projects/Mega Lights.jpg", logoFont: "sans", logo: "Meg-Lights.jpg" },
   { name: "Guru Pashmina", link: "https://www.gurupashmina.com/", image: "/bg-image.png", logoFont: "sans", logo: "guru pashmina.jpg" },
@@ -99,13 +99,13 @@ export default function ClientsSection() {
 
                       {/* Center Text */}
                       <div className="relative flex justify-center items-center min-h-[120px] md:min-h-[160px] w-full">
-                        <h3 className={`absolute text-center px-2 md:px-4 text-xl sm:text-2xl md:text-4xl font-bold text-white drop-shadow-2xl transition-all duration-500 ${client.logoFont === 'serif' ? 'font-serif' : 'font-sans'}`}>
+                        <h3 className={`absolute text-center px-2 md:px-4 text-xl sm:text-2xl md:text-4xl font-bold text-white drop-shadow-2xl transition-transform duration-500 ${client.logoFont === 'serif' ? 'font-serif' : 'font-sans'}`}>
                           {client.name}
                         </h3>
                       </div>
 
                       {/* Bottom Bar */}
-                      <div className="flex justify-between items-end w-full transform transition-all duration-500 translate-y-4 opacity-70 group-hover:translate-y-0 group-hover:opacity-100">
+                      <div className="flex justify-between items-end w-full transform transition-[opacity,transform] duration-500 translate-y-4 opacity-70 group-hover:translate-y-0 group-hover:opacity-100">
                         <span className="text-[9px] md:text-[10px] tracking-[0.2em] uppercase font-bold text-white">
                           View Work
                         </span>

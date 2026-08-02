@@ -4,22 +4,15 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Loader2 } from "lucide-react";
 
-
-interface IntroOverlayProps {
-  onReady?: () => void;
-}
-
-export default function IntroOverlay({ onReady }: IntroOverlayProps) {
+export default function IntroOverlay() {
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
     // Lock scroll when the overlay is visible
     document.body.style.overflow = "hidden";
 
-    // Fire onReady at 1.5s — gives components 1s to mount behind the overlay
-    const readyTimer = setTimeout(() => {
-      onReady?.();
-    }, 1500);
+    // Lock scroll when the overlay is visible
+    document.body.style.overflow = "hidden";
 
     // Start fade-out at 2.5s
     const timer = setTimeout(() => {
@@ -28,11 +21,10 @@ export default function IntroOverlay({ onReady }: IntroOverlayProps) {
     }, 2500);
 
     return () => {
-      clearTimeout(readyTimer);
       clearTimeout(timer);
       document.body.style.overflow = "unset";
     };
-  }, [onReady]);
+  }, []);
 
   return (
     <AnimatePresence>

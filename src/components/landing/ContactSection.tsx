@@ -115,6 +115,7 @@ export default function ContactSection() {
             {/* Right Side: Map */}
             <div className="w-full min-h-[350px] sm:min-h-[400px] h-full bg-gray-100 rounded-2xl overflow-hidden border border-gray-200 shadow-inner relative">
               <iframe
+                title="Google Maps Location"
                 src="https://maps.google.com/maps?q=27.6856276,85.3377242&t=&z=16&ie=UTF8&iwloc=&output=embed"
                 className="absolute inset-0 w-full h-full"
                 style={{ border: 0 }}

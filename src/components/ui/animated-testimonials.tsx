@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { ArrowLeft, ArrowRight, Star } from "lucide-react";
 
 type Testimonial = {
@@ -82,11 +83,13 @@ export const AnimatedTestimonials = ({
                   }}
                   className="absolute inset-0 origin-bottom"
                 >
-                  <img
+                  <Image
                     src={testimonial.image}
                     alt={testimonial.name}
                     draggable={false}
-                    className="h-full w-full rounded-3xl object-cover object-center"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 500px"
+                    className="rounded-3xl object-cover object-center"
                   />
                 </motion.div>
               ))}
@@ -155,12 +158,14 @@ export const AnimatedTestimonials = ({
           <div className="flex gap-4 pt-12 md:pt-0">
             <button
               onClick={handlePrev}
+              aria-label="Previous Testimonial"
               className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center group/button hover:bg-white/20 transition backdrop-blur-sm"
             >
               <ArrowLeft className="h-5 w-5 text-white group-hover/button:rotate-12 transition-transform duration-300" />
             </button>
             <button
               onClick={handleNext}
+              aria-label="Next Testimonial"
               className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center group/button hover:bg-white/20 transition backdrop-blur-sm"
             >
               <ArrowRight className="h-5 w-5 text-white group-hover/button:-rotate-12 transition-transform duration-300" />

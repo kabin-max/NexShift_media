@@ -4,16 +4,20 @@ import FlipStack from "@/components/ui/flipstack";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
+import Image from "next/image";
+
 export default function AboutHero() {
   const cards = [
     {
       id: 1,
       content: (
-        <div className="w-full h-full overflow-hidden rounded-2xl">
-          <img
+        <div className="relative w-full h-full overflow-hidden rounded-2xl">
+          <Image
             src="/demo/Cafe 02 1.jpg"
             alt="Cafe O2 Demo"
-            className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover transition-transform duration-500 hover:scale-110"
           />
         </div>
       ),
@@ -21,11 +25,13 @@ export default function AboutHero() {
     {
       id: 2,
       content: (
-        <div className="w-full h-full overflow-hidden rounded-2xl">
-          <img
+        <div className="relative w-full h-full overflow-hidden rounded-2xl">
+          <Image
             src="/demo/queens palace.jpg"
             alt="Queens Palace Demo"
-            className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover transition-transform duration-500 hover:scale-110"
           />
         </div>
       ),
@@ -33,11 +39,13 @@ export default function AboutHero() {
     {
       id: 3,
       content: (
-        <div className="w-full h-full overflow-hidden rounded-2xl">
-          <img
+        <div className="relative w-full h-full overflow-hidden rounded-2xl">
+          <Image
             src="/demo/Ritz College(1).jpg"
             alt="Ritz College Demo"
-            className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover transition-transform duration-500 hover:scale-110"
           />
         </div>
       ),
@@ -45,11 +53,13 @@ export default function AboutHero() {
     {
       id: 4,
       content: (
-        <div className="w-full h-full overflow-hidden rounded-2xl">
-          <img
+        <div className="relative w-full h-full overflow-hidden rounded-2xl">
+          <Image
             src="/demo/Milestone school(1).jpg"
             alt="Milestone School Demo"
-            className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover transition-transform duration-500 hover:scale-110"
           />
         </div>
       ),
@@ -57,11 +67,13 @@ export default function AboutHero() {
     {
       id: 5,
       content: (
-        <div className="w-full h-full overflow-hidden rounded-2xl">
-          <img
+        <div className="relative w-full h-full overflow-hidden rounded-2xl">
+          <Image
             src="/demo/Cafe O2 2.jpg"
             alt="Cafe O2 Demo 2"
-            className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover transition-transform duration-500 hover:scale-110"
           />
         </div>
       ),
@@ -104,15 +116,14 @@ export default function AboutHero() {
           <FlipStack cards={cards} />
         </motion.div>
 
-        {/* Bottom Side: Text */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
           className="w-full flex flex-col items-center space-y-6 mt-16"
         >
-          <p className="text-gray-700 font-medium text-lg md:text-xl leading-relaxed max-w-2xl font-sans">
-            We are a creative collective of visual storytellers, directors, and photographers. We build cinematic campaigns that stand out, ensuring your brand&apos;s narrative is captured authentically.
+          <p className="text-gray-700 font-medium text-lg md:text-xl leading-relaxed max-w-3xl font-sans">
+            <strong>NexShift</strong> is a premier digital marketing and event management agency based in Kathmandu, Nepal. We are a creative collective of visual storytellers, directors, and performance marketers specializing in corporate events, SEO, and cinematic brand campaigns that drive real growth.
           </p>
         </motion.div>
 

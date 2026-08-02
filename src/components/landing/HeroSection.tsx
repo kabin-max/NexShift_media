@@ -29,6 +29,7 @@ export default function HeroSection() {
 
   return (
     <section className="relative w-full h-screen bg-transparent overflow-hidden flex items-end pb-12 px-6 md:px-12 select-none">
+      <h1 className="sr-only">NexShift - Event Management Company & Digital Marketing Agency in Kathmandu, Nepal</h1>
 
       {/* ── Layer 1: Background sky / hills ──────────────────────────── */}
       <motion.div
@@ -38,11 +39,12 @@ export default function HeroSection() {
         {/* Slightly oversized so parallax travel never reveals edges */}
         <div className="absolute -inset-[10%] w-[120%] h-[120%]">
           <Image
-            src="https://andyhardy.co/assets/img/landscape_background_small.jpg"
+            src="/images/hero-bg.jpg"
             alt="Parallax Background"
             fill
             sizes="100vw"
             priority
+            fetchPriority="high"
             className="object-cover object-center brightness-[0.7]"
           />
         </div>
@@ -68,10 +70,13 @@ export default function HeroSection() {
         style={{ y: fgY, willChange: "transform" }}
       >
 
-        <img
-          src="https://andyhardy.co/assets/img/landscape_mountain_small.png"
+        <Image
+          src="/images/hero-mountain.png"
           alt="Parallax Foreground"
-          className="w-full h-full object-cover object-[center_30%] md:object-[center_35%] lg:object-[center_45%]"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-[center_30%] md:object-[center_35%] lg:object-[center_45%]"
         />
       </motion.div>
 
@@ -103,7 +108,7 @@ export default function HeroSection() {
           </text>
         </svg>
         {/* Logo in the center of the rotating text */}
-        <Image src="/nst-logo.png?v=3" alt="NexShift Logo" width={80} height={80} className="absolute z-10 object-contain w-14 h-14 md:w-20 md:h-20 drop-shadow-sm" unoptimized />
+        <Image src="/nst-logo.png" alt="NexShift Logo" width={80} height={80} className="absolute z-10 object-contain w-14 h-14 md:w-20 md:h-20 drop-shadow-sm" />
 
       </motion.div>
     </section>

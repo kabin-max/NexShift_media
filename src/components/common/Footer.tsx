@@ -19,7 +19,7 @@ export default function Footer() {
             <h2 className="text-[10vw] italic leading-none font-black tracking-tighter uppercase pointer-events-none drop-shadow-sm font-sans text-transparent bg-clip-text bg-gradient-to-r from-[#0D7A95] via-[#14A9D6] to-[#2E73B8]">
               NEXSHIFT .
             </h2>
-            <p className="text-gray-500 text-lg md:text-xl font-medium tracking-wide mt-4 uppercase">
+            <p className="text-gray-600 text-lg md:text-xl font-medium tracking-wide mt-4 uppercase">
               where idea meet market
             </p>
           </motion.div>
@@ -28,7 +28,7 @@ export default function Footer() {
         <div className="flex gap-8 md:gap-16 flex-wrap">
           <ScrollReveal direction="up" delay={0.1}>
             <div className="space-y-4">
-              <h5 className="text-[#154880] text-xs uppercase tracking-widest font-bold">Info</h5>
+              <h3 className="text-[#154880] text-xs uppercase tracking-widest font-bold">Info</h3>
               <ul className="space-y-2 text-gray-600 text-sm font-medium">
                 <li><Link href="/" className="hover:text-[#0D7A95] transition">Home</Link></li>
                 <li><Link href="/about" className="hover:text-[#0D7A95] transition">About</Link></li>
@@ -38,7 +38,7 @@ export default function Footer() {
           
           <ScrollReveal direction="up" delay={0.2}>
             <div className="space-y-4">
-              <h5 className="text-[#154880] text-xs uppercase tracking-widest font-bold">Contact</h5>
+              <h3 className="text-[#154880] text-xs uppercase tracking-widest font-bold">Contact</h3>
               <ul className="space-y-2 text-gray-600 text-sm font-medium">
                 <li>Kathmandu, Nepal</li>
                 <li>info@nexshift.com</li>
