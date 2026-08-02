@@ -9,48 +9,48 @@ const testimonialsData = [
       "NexShift completely transformed our digital presence. The strategy they crafted was razor-sharp and the execution was flawless.",
     image:
       "https://images.unsplash.com/photo-1611558709798-e009c8fd7706?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
-    name: "Isabelle Carlos",
-    handle: "@isabellecarlos",
+    name: "Aman Shrestha",
+    handle: "Co-Founder, Cafe O2",
   },
   {
     description:
       "Their event management team handled our product launch with incredible attention to detail. Couldn't have asked for a better partner.",
     image:
       "https://plus.unsplash.com/premium_photo-1692340973636-6f2ff926af39?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
-    name: "Lana Akash",
-    handle: "@lanaakash",
+    name: "Dr. Ram Prasad Neupane",
+    handle: "Academic Director, Ritz College",
   },
   {
     description:
       "The brand film NexShift produced for us was cinematic, emotional, and exactly on-brand. Highly recommend their videography team.",
     image:
       "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
-    name: "Liam O'Connor",
-    handle: "@liamoc",
+    name: "Sabin Thapa",
+    handle: "Co-Founder, ZENO",
   },
   {
     description:
       "Working with NexShift felt like magic — they just got our brand and brought it to life across every channel beautifully.",
     image:
       "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
-    name: "Isabella Mendes",
-    handle: "@isamendes",
+    name: "Dr. Kareen Karki",
+    handle: "Founder & Lead Dentist, Smile by Dr.Kareen",
   },
   {
     description:
       "NexShift's performance marketing campaigns delivered measurable ROI from week one. They don't just promise results — they deliver them.",
     image:
       "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
-    name: "Meera Patel",
-    handle: "@meerapatel",
+    name: "Pratiksha Adhikari",
+    handle: "Event Manager, Queens Palace",
   },
   {
     description:
       "I recommend NexShift to any business looking for a creative agency that thinks strategically and executes beautifully.",
     image:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
-    name: "Emily Chen",
-    handle: "@emchen",
+    name: "Kabita Rajbhandari",
+    handle: "Administrative Head, Nisarga Batika",
   },
 ];
 

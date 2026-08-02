@@ -17,7 +17,7 @@ export default function Footer() {
             className="relative w-full text-left overflow-hidden"
           >
             <h2 className="text-[10vw] italic leading-none font-black tracking-tighter uppercase pointer-events-none drop-shadow-sm font-sans text-transparent bg-clip-text bg-gradient-to-r from-[#0D7A95] via-[#14A9D6] to-[#2E73B8]">
-              NEXSHIFT .
+              NEXSHIFT.
             </h2>
             <p className="text-gray-600 text-lg md:text-xl font-medium tracking-wide mt-4 uppercase">
               where idea meet market

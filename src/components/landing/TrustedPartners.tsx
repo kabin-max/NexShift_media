@@ -12,7 +12,7 @@ const rawPartners = [
   { name: "Queens Logo", filename: "Queens.png", type: "simple", scale: 1.73 },
   { name: "Tulsi Portrait", filename: "Tulsi.png", type: "simple", scale: 1.44 },
   { name: "Praise Consultancy", filename: "praise consultancy.jpg", type: "simple" },
-  { name: "Ritz College", filename: "ritz.png", type: "simple", scale: 1.73 },
+  { name: "Ritz College", filename: "ritz.png", type: "simple", scale: 2.5 },
   { name: "Smile Dental Clinic", filename: "smile_dental.png", type: "simple", scale: 1.73 },
 
   // Box / Rectangular logos (Row 2)

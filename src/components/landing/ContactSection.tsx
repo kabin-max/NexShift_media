@@ -23,13 +23,13 @@ export default function ContactSection() {
       {/* Background Image Container */}
       <div className="absolute inset-0 z-0 flex justify-end">
         <div className="relative w-full md:w-[70%] h-full">
-          <Image
+          {/* <Image
             src="/bg-image.png"
             alt="Contact Background"
             fill
             sizes="100vw"
             className="object-cover opacity-60"
-          />
+          /> */}
           {/* Horizontal Gradient: fades more gently toward the right side */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#FAFAFA] from-20% via-[#FAFAFA]/60 to-transparent" />
 
