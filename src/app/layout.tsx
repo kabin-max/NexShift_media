@@ -19,8 +19,29 @@ const permanentMarker = Permanent_Marker({
 });
 
 export const metadata: Metadata = {
-  title: "XYX | Creating amazing experiences",
-  description: "Landing page for XYX company.",
+  metadataBase: new URL("https://nexshift.com.np"),
+  title: "NexShift | Creating amazing experiences",
+  description: "Landing page for NexShift company.",
+  keywords: [
+    "NexShift",
+    "Event Management",
+    "Media Agency",
+    "Creative Agency",
+    "Performance Marketing",
+    "Brand Films",
+    "Videography",
+    "Digital Strategy",
+    "Marketing Agency Nepal",
+    "Kathmandu Events",
+    "best event management company in Kathmandu",
+    "creative media and marketing agency in Nepal",
+    "top performance marketing services Kathmandu",
+    "corporate event planning and execution Nepal",
+    "professional videography and brand films Nepal",
+    "digital strategy and brand transformation agency",
+    "data driven marketing campaigns Nepal",
+    "expert media and event management NexShift",
+  ],
 };
 
 export default function RootLayout({
@@ -33,7 +54,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${permanentMarker.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col overflow-x-hidden">{children}</body>
     </html>
   );
 }
