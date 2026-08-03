@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Loader2 } from "lucide-react";
+import Image from "next/image";
 
 export default function IntroOverlay() {
   const [isVisible, setIsVisible] = useState(true);
@@ -44,6 +45,15 @@ export default function IntroOverlay() {
             className="flex flex-col items-center select-none"
             style={{ fontFamily: 'var(--font-geist-sans)' }}
           >
+            <div className="relative w-36 h-36 md:w-56 md:h-56 mb-6 drop-shadow-md">
+              <Image 
+                src="/nst-logo.png"
+                alt="NexShift Logo"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
             <h1 className="text-4xl xs:text-5xl md:text-7xl lg:text-[8rem] font-black tracking-tight drop-shadow-sm italic text-transparent bg-clip-text bg-gradient-to-r from-[#0D7A95] via-[#14A9D6] to-[#2E73B8] leading-none text-center px-4">
               NexShift .
             </h1>

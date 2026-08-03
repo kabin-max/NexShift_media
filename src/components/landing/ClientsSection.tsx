@@ -99,7 +99,7 @@ export default function ClientsSection() {
 
                       {/* Center Text */}
                       <div className="relative flex justify-center items-center min-h-[120px] md:min-h-[160px] w-full">
-                        <h3 className={`absolute text-center px-2 md:px-4 text-xl sm:text-2xl md:text-4xl font-bold text-white drop-shadow-2xl transition-transform duration-500 ${client.logoFont === 'serif' ? 'font-serif' : 'font-sans'}`}>
+                        <h3 className={`absolute text-center px-2 md:px-4 text-xl sm:text-2xl md:text-4xl font-bold text-white drop-shadow-2xl opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ${client.logoFont === 'serif' ? 'font-serif' : 'font-sans'}`}>
                           {client.name}
                         </h3>
                       </div>
