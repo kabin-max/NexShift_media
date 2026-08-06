@@ -40,12 +40,12 @@ export default function Header() {
           className={`flex md:absolute md:left-1/2 md:-translate-x-1/2 items-center justify-center gap-2 md:gap-3 transition-opacity duration-300 ${pathname === "/" && !isScrolled ? 'opacity-0 pointer-events-none' : 'opacity-100 pointer-events-auto'
             }`}
         >
-          <Image src="/nst-logo.png" alt="NexShift Logo" width={56} height={56} className="object-contain w-12 h-12 md:w-14 md:h-14 drop-shadow-sm" />
+          <Image src="/nst-logo.png" alt="NexShift Logo" width={56} height={56} priority loading="eager" className="object-contain w-12 h-12 md:w-14 md:h-14 drop-shadow-sm" />
           <span
-            className="text-xl md:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-[#0D7A95] via-[#14A9D6] to-[#2E73B8] font-black italic tracking-tight drop-shadow-sm whitespace-nowrap leading-none select-none"
+            className="text-xl md:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-[#0D7A95] via-[#14A9D6] to-[#2E73B8] font-black tracking-tight drop-shadow-sm whitespace-nowrap leading-none select-none"
             style={{ fontFamily: "var(--font-geist-sans)" }}
           >
-            NexShift .
+            NexShift
           </span>
         </Link>
 

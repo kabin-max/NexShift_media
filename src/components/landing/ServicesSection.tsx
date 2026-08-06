@@ -28,6 +28,14 @@ const services = [
     tags: ["Brand Films", "Storytelling"],
     description: "Corporate shoots, brand films, reels, and cinematic content that tells your story.",
     image: "/images/service-photo.jpg",
+  },
+  {
+    id: 4,
+    num: "04",
+    title: "Web Development",
+    tags: ["Custom Websites", "Web Apps"],
+    description: "Modern, responsive, and high-performance websites built with the latest technologies to elevate your digital presence.",
+    image: "/images/image.png",
   }
 ];
 

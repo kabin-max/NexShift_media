@@ -16,8 +16,8 @@ export default function Footer() {
             transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
             className="relative w-full text-left overflow-hidden"
           >
-            <h2 className="text-[10vw] italic leading-none font-black tracking-tighter uppercase pointer-events-none drop-shadow-sm font-sans text-transparent bg-clip-text bg-gradient-to-r from-[#0D7A95] via-[#14A9D6] to-[#2E73B8]">
-              NEXSHIFT.
+            <h2 className="text-[10vw] leading-none font-black tracking-tighter pointer-events-none drop-shadow-sm font-sans text-transparent bg-clip-text bg-gradient-to-r from-[#0D7A95] via-[#14A9D6] to-[#2E73B8]">
+              NexShift
             </h2>
             <p className="text-gray-600 text-lg md:text-xl font-medium tracking-wide mt-4 uppercase">
               where idea meet market

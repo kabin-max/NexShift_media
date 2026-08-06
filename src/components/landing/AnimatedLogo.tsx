@@ -26,7 +26,7 @@ export default function AnimatedLogo() {
       }}
     >
       <motion.h1
-        className="text-5xl text-[4.5rem] sm:text-[10rem] md:text-[14rem] lg:text-[17rem] text-transparent bg-clip-text bg-gradient-to-r from-[#0D7A95] via-[#14A9D6] to-[#2E73B8] font-black italic tracking-tight whitespace-nowrap leading-none select-none"
+        className="text-5xl text-[4.5rem] sm:text-[10rem] md:text-[14rem] lg:text-[17rem] text-transparent bg-clip-text bg-gradient-to-r from-[#0D7A95] via-[#14A9D6] to-[#2E73B8] font-black tracking-tight whitespace-nowrap leading-none select-none"
         style={{
           scale: logoScale,
           transformOrigin: "center center",
@@ -35,7 +35,7 @@ export default function AnimatedLogo() {
         }}
       >
 
-        NexShift .
+        NexShift
       </motion.h1>
     </motion.div>
   );

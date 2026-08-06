@@ -141,18 +141,18 @@ export default function AboutSection2() {
             {/* Grid Content */}
             <div className="relative grid grid-cols-3 w-full text-center z-10 py-10 px-6">
               <div className="flex flex-col items-center">
-                <AnimatedNumber value={150} suffix="+" />
+                <AnimatedNumber value={35} suffix="+" />
                 <span className="text-white/80 text-[10px] md:text-xs font-bold uppercase tracking-widest mt-2 block">Projects Completed</span>
               </div>
 
               {/* Dividers */}
               <div className="flex flex-col items-center border-x border-white/20 px-2">
-                <AnimatedNumber value={50} suffix="+" />
+                <AnimatedNumber value={25} suffix="+" />
                 <span className="text-white/80 text-[10px] md:text-xs font-bold uppercase tracking-widest mt-2 block">Happy Clients</span>
               </div>
 
               <div className="flex flex-col items-center">
-                <AnimatedNumber value={5} suffix="M+" />
+                <AnimatedNumber value={10} suffix="M+" />
                 <span className="text-white/80 text-[10px] md:text-xs font-bold uppercase tracking-widest mt-2 block">Audience Reached</span>
               </div>
             </div>
