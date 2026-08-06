@@ -5,21 +5,21 @@ import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 const clients = [
-  { name: "Cafe O2", link: "https://www.instagram.com/cafe___o2/", image: "/projects/co2.jpg", logoFont: "sans", logo: "Cafe_O2.png" },
-  { name: "Eg Bag", link: "https://www.tiktok.com/@eg.bags", image: "/bg-image.png", logoFont: "sans", logo: "eg_bag.jpg" },
-  { name: "Ritz College", link: "https://www.tiktok.com/@ritz_college_official", image: "/projects/Ritz College.jpg", logoFont: "sans", logo: "ritz.png" },
-  { name: "Milestone College", link: "https://www.tiktok.com/@infomilestone", image: "/projects/Milestone School.jpg", logoFont: "sans", logo: "Milestone logoo.png" },
-  { name: "Tulsi Veg Restro", link: "https://www.instagram.com/tulsitandoorihouse/", image: "/projects/tulsi.png", logoFont: "sans", logo: "Tulsi.png" },
+  { name: "Cafe O2", link: "https://www.instagram.com/cafe___o2/", image: "/new/Cafe O2 post (1).png", logoFont: "sans", logo: "Cafe_O2.png" },
+  { name: "Eg Bag", link: "https://www.tiktok.com/@eg.bags", image: "/new/BAGS.png", logoFont: "sans", logo: "eg_bag.jpg" },
+  { name: "Ritz College", link: "https://www.tiktok.com/@ritz_college_official", image: "/new/Ritz.jpg", logoFont: "sans", logo: "ritz.png" },
+  { name: "Milestone College", link: "https://www.tiktok.com/@infomilestone", image: "/new/milestone.jpg", logoFont: "sans", logo: "Milestone logoo.png" },
+  { name: "Tulsi Veg Restro", link: "https://www.instagram.com/tulsitandoorihouse/", image: "/new/Tulsi Potrait Posts (17).png", logoFont: "sans", logo: "Tulsi.png" },
   { name: "Smile by Dr.Kareen", link: "https://www.instagram.com/smilebydrkareen_dentalclinic/", image: "/projects/Smile by dr. Kareen.png", logoFont: "sans", logo: "smile_dental.png" },
-  { name: "Praise Consulting", link: "https://www.instagram.com/praise.consulting/", image: "/bg-image.png", logoFont: "sans", logo: "praise consultancy.jpg" },
+  { name: "Praise Consulting", link: "https://www.instagram.com/praise.consulting/", image: "/new/Congratulations.png", logoFont: "sans", logo: "praise consultancy.jpg" },
   { name: "New York Cargo", link: "https://www.instagram.com/newyorkcargopvtlt/", image: "/projects/new york cargo.jpg", logoFont: "sans", logo: "new york cargo.png" },
   { name: "Nisarga Batika", link: "https://www.nisarga.edu.np/", image: "/projects/nisarga batika.jpg", logoFont: "sans", logo: "nisarga batika.svg" },
   { name: "ZENO", link: "https://www.zenoenterprise.tech/", image: "/projects/ZENO.jpg", logoFont: "sans", logo: "zeno.PNG" },
-  { name: "Queens Palace", link: "https://www.instagram.com/queenspalaceevents/", image: "/projects/queens palace(1).jpg", logoFont: "sans", logo: "Queens.png" },
+  { name: "Queens Palace", link: "https://www.instagram.com/queenspalaceevents/", image: "/new/Queens Post Design.png", logoFont: "sans", logo: "Queens.png" },
   { name: "Palmos Couture", link: "https://www.instagram.com/palmos_couture/", image: "/projects/Palmos.png", logoFont: "sans", logo: "palmos logo.jpeg" },
-  // { name: "GrabNews", link: "https://www.instagram.com/grabnewsofficial/", image: "/bg-image.png", logoFont: "sans" },
+
   { name: "Mega Lights", link: "https://www.tiktok.com/@megalights", image: "/projects/Mega Lights.jpg", logoFont: "sans", logo: "Meg-Lights.jpg" },
-  { name: "Guru Pashmina", link: "https://www.gurupashmina.com/", image: "/bg-image.png", logoFont: "sans", logo: "guru pashmina.jpg" },
+  { name: "Guru Pashmina", link: "https://www.gurupashmina.com/", image: "/nst-logo.png", logoFont: "sans", logo: "guru pashmina.jpg" },
   { name: "Hotel Royal Airport", link: "https://www.tiktok.com/@hotelroyalairpotnepal", image: "/projects/hotel royal airport.jpg", logoFont: "sans", logo: "hotel royal.jpg" },
 ];
 

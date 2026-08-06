@@ -81,7 +81,7 @@ export default function AboutHero() {
   ];
 
   return (
-    <section className="relative w-full min-h-screen bg-transparent flex flex-col justify-start pt-24 md:pt-40 pb-20 overflow-hidden px-[5%]">
+    <section className="relative w-full min-h-screen bg-transparent flex flex-col justify-start pt-16 md:pt-24 pb-20 overflow-hidden px-[5%]">
       {/* Ambient globs — top-right cyan, bottom-left navy */}
       <div className="absolute -top-[5%] -right-[5%] w-[45%] h-[55%] bg-[#00a3d0]/10 blur-[140px] rounded-full pointer-events-none z-0 transform-gpu" />
       <div className="absolute -bottom-[5%] -left-[5%] w-[50%] h-[50%] bg-[#00a3d0]/40 blur-[160px] rounded-full pointer-events-none z-0 transform-gpu" />
@@ -111,7 +111,7 @@ export default function AboutHero() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="w-full flex items-center justify-center mt-4"
+          className="w-full flex items-center justify-center mt-12 md:mt-16"
         >
           <FlipStack cards={cards} />
         </motion.div>
@@ -120,7 +120,7 @@ export default function AboutHero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-          className="w-full flex flex-col items-center space-y-6 mt-16"
+          className="w-full flex flex-col items-center space-y-6 mt-16 md:mt-20 relative z-20"
         >
           <p className="text-gray-700 font-medium text-lg md:text-xl leading-relaxed max-w-3xl font-sans">
             <strong>NexShift</strong> is a premier digital marketing and event management agency based in Kathmandu, Nepal. We are a creative collective of visual storytellers, directors, and performance marketers specializing in corporate events, SEO, and cinematic brand campaigns that drive real growth.

@@ -108,7 +108,7 @@ export default function HeroSection() {
           </text>
         </svg>
         {/* Logo in the center of the rotating text */}
-        <Image src="/nst-logo.png" alt="NexShift Logo" width={80} height={80} className="absolute z-10 object-contain w-14 h-14 md:w-20 md:h-20 drop-shadow-sm" />
+        <Image src="/nst-logo.png" alt="NexShift Logo" width={80} height={80} priority loading="eager" className="absolute z-10 object-contain w-14 h-14 md:w-20 md:h-20 drop-shadow-sm" />
 
       </motion.div>
     </section>
