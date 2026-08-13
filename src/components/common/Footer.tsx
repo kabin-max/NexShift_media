@@ -25,7 +25,7 @@ export default function Footer() {
           </motion.div>
         </div>
 
-        <div className="flex gap-8 md:gap-16 flex-wrap">
+        <div className="flex gap-8 md:gap-16 flex-wrap md:mt-4">
           <ScrollReveal direction="up" delay={0.1}>
             <div className="space-y-4">
               <h3 className="text-[#154880] text-xs uppercase tracking-widest font-bold">Info</h3>

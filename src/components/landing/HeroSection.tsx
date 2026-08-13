@@ -6,9 +6,9 @@ import Image from "next/image";
 export default function HeroSection() {
   const { scrollY } = useScroll();
 
-  // Layer 1 – background drifts slowly downward and zooms in
+  // Layer 1 – background drifts slowly downward and zooms in slightly
   const bgY = useTransform(scrollY, [0, 1000], [0, 130]);
-  const bgScale = useTransform(scrollY, [0, 1000], [1, 1.25]);
+  const bgScale = useTransform(scrollY, [0, 1000], [1, 1.05]);
 
   // Layer 2 – image card glides gently upward
   const midY = useTransform(scrollY, [0, 1000], [0, -90]);
@@ -36,16 +36,15 @@ export default function HeroSection() {
         className="absolute inset-0 z-0 pointer-events-none origin-bottom"
         style={{ y: bgY, scale: bgScale, willChange: "transform" }}
       >
-        {/* Slightly oversized so parallax travel never reveals edges */}
-        <div className="absolute -inset-[10%] w-[120%] h-[120%]">
+        <div className="absolute inset-0 w-full h-full">
           <Image
-            src="/images/hero-bg.jpg"
+            src="/images/bg of hero.png"
             alt="Parallax Background"
             fill
             sizes="100vw"
             priority
             fetchPriority="high"
-            className="object-cover object-center brightness-[0.7]"
+            className="object-cover object-center"
           />
         </div>
         <div className="absolute inset-0 bg-white/10" />
@@ -64,19 +63,17 @@ export default function HeroSection() {
       >
       </motion.div>
 
-      {/* ── Layer 3: Foreground mountain silhouette ───────────────────── */}
+      {/* ── Layer 3: Foreground camera ───────────────────── */}
       <motion.div
-        className="absolute -top-[20%] left-0 right-0 -bottom-[300px] z-[60] pointer-events-none"
-        style={{ y: fgY, willChange: "transform" }}
+        className="absolute inset-x-0 bottom-0 top-24 z-[60] pointer-events-none"
       >
-
         <Image
-          src="/images/hero-mountain.png"
-          alt="Parallax Foreground"
+          src="/images/camera.png"
+          alt="Parallax Foreground Camera"
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[center_30%] md:object-[center_35%] lg:object-[center_45%]"
+          className="object-contain object-bottom"
         />
       </motion.div>
 
@@ -91,7 +88,7 @@ export default function HeroSection() {
 
 
       {/* ── Bottom fade into next section ────────────────────────────── */}
-      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-white/70 via-white/50 to-transparent pointer-events-none z-30" />
+      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#0D7A95] via-[#0D7A95]/50 to-transparent pointer-events-none z-30" />
 
       {/* Spinning Badge at the very end */}
       <motion.div

@@ -19,7 +19,7 @@ const clients = [
   { name: "Palmos Couture", link: "https://www.instagram.com/palmos_couture/", image: "/projects/Palmos.png", logoFont: "sans", logo: "palmos logo.jpeg" },
 
   { name: "Mega Lights", link: "https://www.tiktok.com/@megalights", image: "/projects/Mega Lights.jpg", logoFont: "sans", logo: "Meg-Lights.jpg" },
-  { name: "Guru Pashmina", link: "https://www.gurupashmina.com/", image: "/nst-logo.png", logoFont: "sans", logo: "guru pashmina.jpg" },
+  { name: "Guru Pashmina", link: "https://www.gurupashmina.com/", image: "/projects/Guru Cashmere.jpg", logoFont: "sans", logo: "guru pashmina.jpg" },
   { name: "Hotel Royal Airport", link: "https://www.tiktok.com/@hotelroyalairpotnepal", image: "/projects/hotel royal airport.jpg", logoFont: "sans", logo: "hotel royal.jpg" },
 ];
 
@@ -32,12 +32,7 @@ export default function ClientsSection() {
       {/* Large centered radial glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[60%] bg-[#00a3d0]/8 blur-[180px] rounded-full pointer-events-none z-0 transform-gpu" />
 
-      {/* Decorative Floating Circles */}
-      <div className="absolute top-[15%] left-[8%] w-32 h-32 md:w-56 md:h-56 border border-[#00a3d0]/10 rounded-full pointer-events-none z-0" />
-      <div className="absolute top-[20%] left-[4%] w-20 h-20 md:w-32 md:h-32 border-2 border-[#e5e7eb]/20 rounded-full pointer-events-none z-0" />
 
-      <div className="absolute bottom-[20%] right-[6%] w-24 h-24 md:w-40 md:h-40 bg-[#e5e7eb]/10 rounded-full blur-[2px] pointer-events-none z-0 transform-gpu" />
-      <div className="absolute bottom-[10%] right-[10%] w-12 h-12 md:w-20 md:h-20 bg-[#00a3d0]/10 rounded-full pointer-events-none z-0" />
       <style>{`
         @keyframes scroll-gallery { 
           0% { transform: translate3d(0, 0, 0); } 
@@ -77,7 +72,7 @@ export default function ClientsSection() {
                     target="_blank"
                     rel="noopener noreferrer"
                     key={`client-${i}-${idx}`}
-                    className="group relative block w-[160px] h-[220px] sm:w-[200px] sm:h-[280px] md:w-[300px] md:h-[420px] shrink-0 overflow-hidden cursor-pointer"
+                    className="group relative block w-[260px] h-[390px] sm:w-[280px] sm:h-[420px] md:w-[300px] md:h-[450px] lg:w-[340px] lg:h-[510px] shrink-0 overflow-hidden cursor-pointer"
                   >
                     {/* Background Image */}
                     <div className="absolute inset-0 z-0 bg-black">
@@ -85,7 +80,7 @@ export default function ClientsSection() {
                         src={client.image}
                         alt={client.name}
                         fill
-                        sizes="(max-width: 768px) 300px, 300px"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         className="object-cover transition-transform duration-700 group-hover:scale-105 group-hover:brightness-110"
                       />
                     </div>

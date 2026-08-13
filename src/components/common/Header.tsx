@@ -51,7 +51,7 @@ export default function Header() {
 
         {pathname === "/about" || pathname === "/services" ? (
           <Link href="/" className="px-4 py-2 md:px-6 md:py-3 bg-[#0D7A95] text-white hover:bg-[#14A9D6] text-xs md:text-sm font-bold rounded-full transition duration-200 hover:scale-105 active:scale-95 shadow-sm hover:shadow-md cursor-pointer pointer-events-auto whitespace-nowrap">
-            Go Back Home
+            Home
           </Link>
         ) : (
           <Link href="/about" className="px-4 py-2 md:px-6 md:py-3 bg-[#0D7A95] text-white hover:bg-[#14A9D6] text-xs md:text-sm font-bold rounded-full transition duration-200 hover:scale-105 active:scale-95 shadow-sm hover:shadow-md cursor-pointer pointer-events-auto whitespace-nowrap">
