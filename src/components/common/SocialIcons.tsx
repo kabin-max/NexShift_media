@@ -49,13 +49,13 @@ export default function SocialIcons({ className }: SocialIconsProps) {
 
         {/* Bottom: Social Icons */}
         <div className="flex flex-col gap-4 items-center mb-16">
-          <a href="https://www.facebook.com/profile.php?id=61565586822619" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-gray-500 hover:text-[#00a3d0] hover:border-[#00a3d0] hover:shadow-md transition bg-white">
+          <a href="https://www.facebook.com/profile.php?id=61565586822619" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-[#1877F2] hover:border-[#1877F2] hover:scale-110 hover:shadow-md transition bg-white">
             <FaFacebookF className="w-4 h-4" />
           </a>
-          <a href="https://www.instagram.com/nexshift.media.and.events/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-gray-500 hover:text-[#00a3d0] hover:border-[#00a3d0] hover:shadow-md transition bg-white">
+          <a href="https://www.instagram.com/nexshift.media.and.events/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-[#E1306C] hover:border-[#E1306C] hover:scale-110 hover:shadow-md transition bg-white">
             <FaInstagram className="w-4 h-4" />
           </a>
-          <a href="#" aria-label="LinkedIn" className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-gray-500 hover:text-[#00a3d0] hover:border-[#00a3d0] hover:shadow-md transition bg-white">
+          <a href="#" aria-label="LinkedIn" className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center text-[#0A66C2] hover:border-[#0A66C2] hover:scale-110 hover:shadow-md transition bg-white">
             <FaLinkedinIn className="w-4 h-4" />
           </a>
         </div>
@@ -63,13 +63,13 @@ export default function SocialIcons({ className }: SocialIconsProps) {
 
       {/* Mobile Bottom Bar */}
       <div className={`fixed bottom-4 left-1/2 -translate-x-1/2 z-[60] md:hidden bg-white/90 backdrop-blur-md px-6 py-3 rounded-full shadow-[0_8px_30px_rgba(0,0,0,0.12)] border border-gray-200 transition-[transform,opacity] duration-500 flex items-center gap-6 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0 pointer-events-none"}`}>
-        <a href="https://www.facebook.com/profile.php?id=61565586822619" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-gray-600 hover:text-[#00a3d0] transition-colors">
+        <a href="https://www.facebook.com/profile.php?id=61565586822619" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-[#1877F2] hover:scale-110 transition-transform">
           <FaFacebookF className="w-5 h-5" />
         </a>
-        <a href="https://www.instagram.com/nexshift.media.and.events/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-gray-600 hover:text-[#00a3d0] transition-colors">
+        <a href="https://www.instagram.com/nexshift.media.and.events/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-[#E1306C] hover:scale-110 transition-transform">
           <FaInstagram className="w-5 h-5" />
         </a>
-        <a href="#" aria-label="LinkedIn" className="text-gray-600 hover:text-[#00a3d0] transition-colors">
+        <a href="#" aria-label="LinkedIn" className="text-[#0A66C2] hover:scale-110 transition-transform">
           <FaLinkedinIn className="w-5 h-5" />
         </a>
       </div>

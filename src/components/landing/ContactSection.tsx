@@ -7,29 +7,14 @@ import ScrollReveal from "../common/ScrollReveal";
 export default function ContactSection() {
   return (
     <section id="contact" className="relative w-full min-h-[90vh] md:min-h-screen bg-transparent flex flex-col items-center justify-between overflow-hidden py-[5%] border-t border-gray-200">
-      {/* Ambient globs — top-right cyan, bottom-left navy */}
-      <div className="absolute -top-[5%] -right-[5%] w-[45%] h-[55%] bg-[#00a3d0]/10 blur-[140px] rounded-full pointer-events-none z-0 transform-gpu" />
-      <div className="absolute -bottom-[5%] -left-[5%] w-[50%] h-[50%] bg-[#00a3d0]/40 blur-[160px] rounded-full pointer-events-none z-0 transform-gpu" />
-      {/* Large centered radial glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[60%] bg-[#00a3d0]/8 blur-[180px] rounded-full pointer-events-none z-0 transform-gpu" />
 
-      {/* Decorative Floating Circles */}
-      <div className="absolute top-[15%] left-[8%] w-32 h-32 md:w-56 md:h-56 border border-[#00a3d0]/10 rounded-full pointer-events-none z-0" />
-      <div className="absolute top-[20%] left-[4%] w-20 h-20 md:w-32 md:h-32 border-2 border-[#e5e7eb]/20 rounded-full pointer-events-none z-0" />
 
-      <div className="absolute bottom-[20%] right-[6%] w-24 h-24 md:w-40 md:h-40 bg-[#e5e7eb]/10 rounded-full blur-[2px] pointer-events-none z-0 transform-gpu" />
-      <div className="absolute bottom-[10%] right-[10%] w-12 h-12 md:w-20 md:h-20 bg-[#00a3d0]/10 rounded-full pointer-events-none z-0" />
+
 
       {/* Background Image Container */}
       <div className="absolute inset-0 z-0 flex justify-end">
         <div className="relative w-full md:w-[70%] h-full">
-          {/* <Image
-            src="/bg-image.png"
-            alt="Contact Background"
-            fill
-            sizes="100vw"
-            className="object-cover opacity-60"
-          /> */}
+
           {/* Horizontal Gradient: fades more gently toward the right side */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#FAFAFA] from-20% via-[#FAFAFA]/60 to-transparent" />
 
@@ -97,7 +82,7 @@ export default function ContactSection() {
                   <div className="flex flex-col items-center lg:items-start space-y-2">
                     <span className="text-xs md:text-sm tracking-[0.2em] uppercase font-bold text-gray-500">Visit Us</span>
                     <p className="text-lg sm:text-xl lg:text-2xl font-bold text-[#154880] tracking-tight text-center lg:text-left">
-                      Naya Baneshwor, Kathmandu, Nepal
+                      New Baneshwor, Kathmandu, Nepal
                     </p>
                   </div>
                 </ScrollReveal>
@@ -105,7 +90,7 @@ export default function ContactSection() {
 
               {/* Small Logo */}
               <div
-                className="text-3xl text-[#00a3d0] font-black italic tracking-tight drop-shadow-sm select-none pt-4"
+                className="text-3xl text-[#00a3d0] font-black tracking-tight drop-shadow-sm select-none pt-4"
                 style={{ fontFamily: "var(--font-geist-sans)" }}
               >
                 NexShift!
@@ -116,7 +101,7 @@ export default function ContactSection() {
             <div className="w-full min-h-[350px] sm:min-h-[400px] h-full bg-gray-100 rounded-2xl overflow-hidden border border-gray-200 shadow-inner relative">
               <iframe
                 title="Google Maps Location"
-                src="https://maps.google.com/maps?q=27.6856276,85.3377242&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                src="https://maps.google.com/maps?q=Nexshift+Media+and+Events&t=k&z=18&ie=UTF8&iwloc=&output=embed"
                 className="absolute inset-0 w-full h-full"
                 style={{ border: 0 }}
                 allowFullScreen={false}

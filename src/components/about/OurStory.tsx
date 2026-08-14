@@ -157,7 +157,7 @@ export default function OurStory() {
 
             <ScrollReveal direction="up" delay={0.4} className="flex-1">
               <div className="h-full bg-white/70 backdrop-blur-2xl border border-white/40 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-3xl p-4 sm:p-8 flex flex-col justify-center items-center text-center hover:shadow-lg hover:-translate-y-1 hover:border-[#14A9D6]/30 transition-all duration-300 group">
-                <AnimatedNumber value={10} suffix="k" />
+                <AnimatedNumber value={10} suffix="M+" />
                 <span className="text-gray-500 text-[9px] xs:text-[10px] sm:text-xs md:text-sm font-bold uppercase tracking-widest mt-2 sm:mt-3 group-hover:text-[#14A9D6] transition-colors">Audience Reached</span>
               </div>
             </ScrollReveal>

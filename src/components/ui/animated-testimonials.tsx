@@ -47,10 +47,10 @@ export const AnimatedTestimonials = ({
   }, [data]);
 
   return (
-    <div className="max-w-sm md:max-w-4xl mx-auto antialiased font-sans px-4 md:px-8 lg:px-12 py-10">
-      <div className="relative grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20">
+    <div className="max-w-sm md:max-w-4xl mx-auto antialiased font-sans px-4 md:px-8 lg:px-12 py-4 md:py-10">
+      <div className="relative grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-20">
         <div>
-          <div className="relative h-80 w-full">
+          <div className="relative h-64 md:h-80 w-full">
             <AnimatePresence>
               {data.map((testimonial, index) => (
                 <motion.div
@@ -96,7 +96,7 @@ export const AnimatedTestimonials = ({
             </AnimatePresence>
           </div>
         </div>
-        <div className="flex justify-between flex-col py-4">
+        <div className="flex justify-between flex-col py-2 md:py-4">
           <AnimatePresence mode="wait">
             <motion.div
               key={active}
@@ -117,18 +117,18 @@ export const AnimatedTestimonials = ({
               ease: "easeInOut",
             }}
           >
-            <h3 className="text-2xl font-bold text-white">
+            <h3 className="text-xl md:text-2xl font-bold text-white">
               {data[active].name}
             </h3>
-            <p className="text-sm text-gray-200">
+            <p className="text-xs md:text-sm text-gray-200">
               {data[active].handle}
             </p>
-            <div className="flex gap-1 mt-6">
+            <div className="flex gap-1 mt-4 md:mt-6">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-5 h-5 fill-yellow-500 text-yellow-500" />
+                <Star key={i} className="w-4 h-4 md:w-5 md:h-5 fill-yellow-500 text-yellow-500" />
               ))}
             </div>
-            <motion.p className="text-lg text-white/90 mt-4 leading-relaxed font-medium">
+            <motion.p className="text-base md:text-lg text-white/90 mt-4 leading-relaxed font-medium">
               {data[active].description.split(" ").map((word, index) => (
                 <motion.span
                   key={index}
@@ -155,7 +155,7 @@ export const AnimatedTestimonials = ({
             </motion.p>
           </motion.div>
           </AnimatePresence>
-          <div className="flex gap-4 pt-12 md:pt-0">
+          <div className="flex gap-4 pt-6 md:pt-0">
             <button
               onClick={handlePrev}
               aria-label="Previous Testimonial"
