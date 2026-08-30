@@ -14,7 +14,7 @@ export default function AboutHero() {
         <div className="relative w-full h-full overflow-hidden rounded-2xl">
           <Image
             src="/demo/Cafe 02 1.jpg"
-            alt="Cafe O2 Demo"
+            alt="Cafe O2 social media marketing campaign by NexShift Nepal"
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover transition-transform duration-500 hover:scale-110"
@@ -28,7 +28,7 @@ export default function AboutHero() {
         <div className="relative w-full h-full overflow-hidden rounded-2xl">
           <Image
             src="/demo/queens palace.jpg"
-            alt="Queens Palace Demo"
+            alt="Queens Palace event management by NexShift"
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover transition-transform duration-500 hover:scale-110"
@@ -42,7 +42,7 @@ export default function AboutHero() {
         <div className="relative w-full h-full overflow-hidden rounded-2xl">
           <Image
             src="/demo/Ritz College(1).jpg"
-            alt="Ritz College Demo"
+            alt="Ritz College digital marketing by NexShift"
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover transition-transform duration-500 hover:scale-110"
@@ -56,7 +56,7 @@ export default function AboutHero() {
         <div className="relative w-full h-full overflow-hidden rounded-2xl">
           <Image
             src="/demo/Milestone school(1).jpg"
-            alt="Milestone School Demo"
+            alt="Milestone School media campaign by NexShift"
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover transition-transform duration-500 hover:scale-110"
@@ -70,7 +70,7 @@ export default function AboutHero() {
         <div className="relative w-full h-full overflow-hidden rounded-2xl">
           <Image
             src="/demo/Cafe O2 2.jpg"
-            alt="Cafe O2 Demo 2"
+            alt="Cafe O2 brand photography by NexShift"
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover transition-transform duration-500 hover:scale-110"

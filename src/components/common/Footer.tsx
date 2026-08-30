@@ -6,8 +6,8 @@ import ScrollReveal from "./ScrollReveal";
 
 export default function Footer() {
   return (
-    <footer className="relative w-full pt-20 pb-6 bg-[#FAFAFA] px-[5%] border-t border-gray-200 overflow-hidden">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12 pb-4">
+    <footer className="relative w-full pt-8 md:pt-16 pb-6 bg-[#FAFAFA] px-[5%] border-t border-gray-200 overflow-hidden">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-8">
         <div className="space-y-4 w-full md:w-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -19,7 +19,7 @@ export default function Footer() {
             <h2 className="text-[10vw] leading-none font-black tracking-tighter pointer-events-none drop-shadow-sm font-sans text-transparent bg-clip-text bg-gradient-to-r from-[#0D7A95] via-[#14A9D6] to-[#2E73B8]">
               NexShift
             </h2>
-            <p className="text-gray-600 text-lg md:text-xl font-medium tracking-wide mt-4 uppercase">
+            <p className="text-gray-600 text-lg md:text-xl font-medium tracking-wide mt-2 uppercase">
               where idea meet market
             </p>
           </motion.div>
@@ -39,14 +39,35 @@ export default function Footer() {
           <ScrollReveal direction="up" delay={0.2}>
             <div className="space-y-4">
               <h3 className="text-[#154880] text-xs uppercase tracking-widest font-bold">Contact</h3>
-              <ul className="space-y-2 text-gray-600 text-sm font-medium">
-                <li>Kathmandu, Nepal</li>
-                <li>info@nexshift.com</li>
-                <li>+977 1 2345678</li>
-              </ul>
+              <address className="space-y-2 text-gray-600 text-sm font-medium not-italic">
+                <div itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
+                  <span itemProp="addressLocality">Kathmandu</span>, <span itemProp="addressCountry">Nepal</span>
+                </div>
+                <div>
+                  <a href="mailto:info@nexshift.com.np" className="hover:text-[#0D7A95] transition">info@nexshift.com.np</a>
+                </div>
+                <div>
+                  <a href="tel:+9779818633814" className="hover:text-[#0D7A95] transition">+977 9818633814</a>
+                </div>
+              </address>
             </div>
           </ScrollReveal>
         </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto pt-4 border-t border-gray-200 mt-4 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium text-gray-500">
+        <p>&copy; {new Date().getFullYear()} NexShift Media & Events. All rights reserved.</p>
+        <p>
+          Technology Partner:{" "}
+          <a
+            href="https://digosolution.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#154880] hover:text-[#0D7A95] font-bold transition-colors"
+          >
+            Digo Solution
+          </a>
+        </p>
       </div>
     </footer>
   );

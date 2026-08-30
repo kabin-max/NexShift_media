@@ -70,8 +70,8 @@ export default function IntroOverlay() {
             {/* Reliable white glowing shadow behind everything */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[140%] bg-white/30 blur-[80px] rounded-full z-[-1] pointer-events-none" />
             
-            <div className="flex flex-row items-center justify-center gap-3 sm:gap-6 mb-6">
-              <div className="relative w-48 h-48 xs:w-56 xs:h-56 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] shrink-0">
+            <div className="flex flex-row items-center justify-center gap-1 sm:gap-6 mb-6 w-full max-w-[100vw] overflow-visible">
+              <div className="relative w-36 h-36 xs:w-48 xs:h-48 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] shrink-0 -ml-4 md:ml-0">
                 <Image 
                   src="/nst-logo.png"
                   alt="NexShift Logo"
@@ -82,8 +82,8 @@ export default function IntroOverlay() {
                   loading="eager"
                 />
               </div>
-              <div className="flex flex-col">
-                <h1 className="relative text-5xl xs:text-6xl md:text-[6rem] lg:text-[10rem] xl:text-[12rem] font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#0D7A95] via-[#14A9D6] to-[#2E73B8] leading-none text-left">
+              <div className="flex flex-col -ml-4 xs:-ml-6 md:ml-0">
+                <h1 className="relative text-[2.75rem] xs:text-6xl md:text-[6rem] lg:text-[10rem] xl:text-[12rem] font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#0D7A95] via-[#14A9D6] to-[#2E73B8] leading-none text-left">
                   {/* The actual text with gradient - some visible, some hidden to keep width */}
                   {text.split("").map((char, index) => (
                     <span key={index} style={{ visibility: index < visibleCount ? "visible" : "hidden" }}>
@@ -92,7 +92,7 @@ export default function IntroOverlay() {
                   ))}
                   
                   {/* The Cursor Overlay */}
-                  <span className="absolute top-0 left-0 h-full flex items-center">
+                  <span className="absolute top-0 left-0 h-full flex items-center w-full">
                     {/* Invisible spacer pushing the cursor exactly to the end of typed text */}
                     <span className="opacity-0">{text.slice(0, visibleCount)}</span>
                     <motion.span
@@ -109,7 +109,7 @@ export default function IntroOverlay() {
                   initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 2.0, duration: 0.6, ease: "easeOut" }}
-                  className="mt-2 md:mt-4 text-2xl xs:text-3xl md:text-5xl lg:text-7xl xl:text-[6rem] font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#0D7A95] via-[#14A9D6] to-[#2E73B8] leading-none text-left"
+                  className="mt-2 md:mt-4 text-xl xs:text-3xl md:text-5xl lg:text-7xl xl:text-[6rem] font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#0D7A95] via-[#14A9D6] to-[#2E73B8] leading-none text-left"
                 >
                   Media & Events
                 </motion.h2>

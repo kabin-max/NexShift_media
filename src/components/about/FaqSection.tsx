@@ -10,20 +10,36 @@ export default function FaqSection() {
 
   const faqs = [
     {
+      q: "What is NexShift and what services do you provide in Nepal?",
+      a: "NexShift is a premier event management company and creative digital marketing agency based in Kathmandu, Nepal. We specialize in corporate event management, brand film production, performance marketing (SEO, Google Ads, Meta Ads), social media strategy, commercial videography, and custom web development."
+    },
+    {
+      q: "Why is NexShift considered a top event management company in Kathmandu?",
+      a: "NexShift brings end-to-end event planning, full-scale staging, sound and lighting production, and seamless corporate event execution. Having successfully managed 35+ major projects for corporate, banking, and NGO clients across Nepal, we are trusted for zero-glitch execution."
+    },
+    {
       q: "What digital marketing services do you offer in Nepal?",
       a: "We provide social media marketing, SEO, Google Ads, Meta Ads, branding, content creation, video production, website development, performance marketing, email marketing, and complete digital growth strategies tailored to your business."
     },
     {
-      q: "How much does digital marketing cost in Nepal?",
-      a: "Pricing depends on your business goals, campaign scope, advertising budget, and required services. We offer flexible packages suitable for startups, SMEs, and large enterprises."
+      q: "How much does digital marketing and event management cost in Nepal?",
+      a: "Pricing depends on your business goals, campaign scope, advertising budget, and required services. We offer flexible packages suitable for startups, SMEs, corporate organizations, and large enterprises."
     },
     {
       q: "How long does it take to see results from digital marketing?",
-      a: "Paid advertising campaigns can generate results within days, while SEO and organic growth typically take 3–6 months. We provide transparent reporting throughout the process."
+      a: "Paid advertising campaigns can generate leads within days, while SEO and organic brand growth typically show substantial compounding results within 3 to 6 months. We provide transparent monthly reporting throughout."
     },
     {
-      q: "Do you work with businesses outside Kathmandu?",
-      a: "Yes. We work with clients across Nepal and internationally through remote collaboration while also providing on-site support whenever required."
+      q: "Do you produce brand films and corporate videos in Nepal?",
+      a: "Yes! Our in-house video production team creates cinematic brand films, corporate documentaries, promotional reels, product commercials, and event highlight videos across Kathmandu and all major cities in Nepal."
+    },
+    {
+      q: "Where is NexShift located and how can I contact them?",
+      a: "NexShift is located in New Baneshwor, Kathmandu, Nepal. You can contact us directly via phone at +977-9818633814, email us at info@nexshift.com.np, or visit our office."
+    },
+    {
+      q: "Do you work with clients outside Kathmandu?",
+      a: "Yes. We work with clients across Nepal and internationally through remote digital collaboration while providing on-site event and media production support whenever required."
     }
   ];
 

@@ -44,7 +44,7 @@ export default function AboutSection2() {
           fill
           sizes="(max-width: 768px) 100vw, 50vw"
           className="object-cover"
-          alt="Cafe O2 Demo"
+          alt="Cafe O2 social media marketing campaign by NexShift Nepal"
         />
       ),
     },
@@ -56,7 +56,7 @@ export default function AboutSection2() {
           fill
           sizes="(max-width: 768px) 100vw, 50vw"
           className="object-cover"
-          alt="Queens Palace Demo"
+          alt="Queens Palace event management by NexShift"
         />
       ),
     },
@@ -68,7 +68,7 @@ export default function AboutSection2() {
           fill
           sizes="(max-width: 768px) 100vw, 50vw"
           className="object-cover"
-          alt="Ritz College Demo"
+          alt="Ritz College digital marketing by NexShift"
         />
       ),
     },
@@ -80,7 +80,7 @@ export default function AboutSection2() {
           fill
           sizes="(max-width: 768px) 100vw, 50vw"
           className="object-cover"
-          alt="Milestone School Demo"
+          alt="Milestone School media campaign by NexShift"
         />
       ),
     },
@@ -92,7 +92,7 @@ export default function AboutSection2() {
           fill
           sizes="(max-width: 768px) 100vw, 50vw"
           className="object-cover"
-          alt="Cafe O2 Demo 2"
+          alt="Cafe O2 brand photography by NexShift"
         />
       ),
     }

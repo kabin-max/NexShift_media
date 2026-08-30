@@ -14,29 +14,104 @@ import IntroOverlay from "../components/common/IntroOverlay";
 
 export default function Home() {
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": ["Organization", "LocalBusiness"],
-    "name": "NexShift",
-    "url": "https://nexshift.com.np",
-    "logo": "https://nexshift.com.np/nst-logo.png",
-    "description": "NexShift is a premier event management company and digital marketing agency based in Kathmandu, Nepal.",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Kathmandu",
-      "addressCountry": "NP"
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": ["Organization", "LocalBusiness"],
+      "@id": "https://nexshift.com.np/#organization",
+      "name": "NexShift Media & Events",
+      "alternateName": ["NexShift", "NexShift Nepal"],
+      "url": "https://nexshift.com.np",
+      "logo": "https://nexshift.com.np/nst-logo.png",
+      "image": "https://nexshift.com.np/nst-logo.png",
+      "description": "NexShift is Nepal's premier event management company and creative digital marketing agency based in Kathmandu. Specialized in corporate events, brand films, performance marketing, SEO, social media management, videography, and custom web development.",
+      "telephone": "+977-9818633814",
+      "email": "info@nexshift.com.np",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "New Baneshwor",
+        "addressLocality": "Kathmandu",
+        "addressRegion": "Bagmati",
+        "postalCode": "44600",
+        "addressCountry": "NP"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "27.6915",
+        "longitude": "85.3420"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Sunday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61571556053359",
+        "https://www.instagram.com/nex_shift/",
+        "https://www.linkedin.com/company/nexshiftnepal/"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "telephone": "+977-9818633814",
+        "email": "info@nexshift.com.np",
+        "availableLanguage": ["English", "Nepali"]
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "6"
+      }
     },
-    "sameAs": [
-      "https://www.facebook.com/profile.php?id=61571556053359",
-      "https://www.instagram.com/nex_shift/",
-      "https://www.linkedin.com/company/nexshiftnepal/"
-    ],
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "contactType": "customer service",
-      "email": "info@nexshift.com.np"
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "@id": "https://nexshift.com.np/#services",
+      "name": "NexShift Core Services",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Digital Marketing",
+          "description": "SEO, Google Ads, Meta Ads, social media management, content strategy, and performance marketing in Nepal."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Event Management",
+          "description": "Corporate events, product launches, brand activations, conferences, and full-scale productions in Kathmandu, Nepal."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Photography & Videography",
+          "description": "Corporate shoots, brand films, promotional video production, reels, and cinematic commercial content."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Web Development",
+          "description": "Custom high-performance websites, Next.js web applications, and digital platform development."
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": "https://nexshift.com.np/#webpage",
+      "url": "https://nexshift.com.np",
+      "name": "NexShift | Event Management & Digital Marketing Agency",
+      "about": {
+        "@id": "https://nexshift.com.np/#organization"
+      },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": ["h1", "h2", ".hero-geo-summary"]
+      }
     }
-  };
+  ];
 
   return (
     <main className="relative flex flex-col w-full text-white font-sans bg-black">

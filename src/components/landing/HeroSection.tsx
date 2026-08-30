@@ -30,6 +30,9 @@ export default function HeroSection() {
   return (
     <section className="relative w-full h-screen bg-transparent overflow-hidden flex items-end pb-12 px-6 md:px-12 select-none">
       <h1 className="sr-only">NexShift - Event Management Company & Digital Marketing Agency in Kathmandu, Nepal</h1>
+      <p className="sr-only hero-geo-summary">
+        NexShift is a premier creative media agency and corporate event management company based in Kathmandu, Nepal. We specialize in end-to-end event production, brand films, performance marketing, social media growth, SEO, and web development.
+      </p>
 
       {/* ── Layer 1: Background sky / hills ──────────────────────────── */}
       <motion.div
@@ -39,7 +42,7 @@ export default function HeroSection() {
         <div className="absolute inset-0 w-full h-full">
           <Image
             src="/images/bg of hero.png"
-            alt="Parallax Background"
+            alt="NexShift creative agency Kathmandu Nepal skyline"
             fill
             sizes="100vw"
             priority
@@ -69,7 +72,7 @@ export default function HeroSection() {
       >
         <Image
           src="/images/camera.png"
-          alt="Parallax Foreground Camera"
+          alt="Professional cinema camera used by NexShift videography team"
           fill
           priority
           sizes="100vw"

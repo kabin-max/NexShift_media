@@ -50,16 +50,17 @@ export default function ContactSection() {
             <div className="flex flex-col items-center lg:items-start space-y-8 text-center lg:text-left justify-center">
 
 
-              <div className="flex flex-col items-center lg:items-start space-y-8 pt-2 pb-2 w-full">
+              <div className="flex flex-col items-center lg:items-start space-y-8 pt-2 pb-2 w-full" itemScope itemType="https://schema.org/LocalBusiness">
                 {/* Email */}
                 <ScrollReveal direction="up" delay={0.1}>
                   <div className="flex flex-col items-center lg:items-start space-y-2">
                     <span className="text-xs md:text-sm tracking-[0.2em] uppercase font-bold text-gray-500">Email Us</span>
                     <a
-                      href="mailto:info@nexshift.com"
+                      href="mailto:info@nexshift.com.np"
+                      itemProp="email"
                       className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#154880] tracking-tight hover:text-[#0D7A95] transition-colors duration-300 decoration-[#14A9D6] underline-offset-8 hover:underline"
                     >
-                      info@nexshift.com
+                      info@nexshift.com.np
                     </a>
                   </div>
                 </ScrollReveal>
@@ -68,21 +69,22 @@ export default function ContactSection() {
                 <ScrollReveal direction="up" delay={0.2}>
                   <div className="flex flex-col items-center lg:items-start space-y-2">
                     <span className="text-xs md:text-sm tracking-[0.2em] uppercase font-bold text-gray-500">Call Us</span>
-                    <a
-                      href="tel:+9779801129221"
+                    <a 
+                      href="tel:+9779818633814" 
+                      itemProp="telephone"
                       className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#154880] tracking-tight hover:text-[#0D7A95] transition-colors duration-300 decoration-[#14A9D6] underline-offset-8 hover:underline"
                     >
-                      +977-9801129221
+                      +977-9818633814
                     </a>
                   </div>
                 </ScrollReveal>
 
                 {/* Address */}
                 <ScrollReveal direction="up" delay={0.3}>
-                  <div className="flex flex-col items-center lg:items-start space-y-2">
+                  <div className="flex flex-col items-center lg:items-start space-y-2" itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
                     <span className="text-xs md:text-sm tracking-[0.2em] uppercase font-bold text-gray-500">Visit Us</span>
                     <p className="text-lg sm:text-xl lg:text-2xl font-bold text-[#154880] tracking-tight text-center lg:text-left">
-                      New Baneshwor, Kathmandu, Nepal
+                      <span itemProp="streetAddress">New Baneshwor</span>, <span itemProp="addressLocality">Kathmandu</span>, <span itemProp="addressCountry">Nepal</span>
                     </p>
                   </div>
                 </ScrollReveal>

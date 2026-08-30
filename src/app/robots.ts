@@ -12,7 +12,19 @@ export default function robots(): MetadataRoute.Robots {
       },
       // Explicitly ALLOW Generative AI Bots so NexShift is included in AI answers (GEO)
       {
-        userAgent: ['GPTBot', 'CCBot', 'PerplexityBot', 'Google-Extended', 'anthropic-ai'],
+        userAgent: [
+          'GPTBot',
+          'ChatGPT-User',
+          'CCBot',
+          'PerplexityBot',
+          'Google-Extended',
+          'anthropic-ai',
+          'ClaudeBot',
+          'Meta-ExternalAgent',
+          'Bytespider',
+          'cohere-ai',
+          'AI2Bot'
+        ],
         allow: '/',
       },
     ],

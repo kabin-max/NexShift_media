@@ -85,6 +85,32 @@ export default function TestimonialsSection() {
           />
         </div>
       </motion.div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            testimonialsData.map((testimonial) => ({
+              "@context": "https://schema.org",
+              "@type": "Review",
+              "itemReviewed": {
+                "@type": "Organization",
+                "name": "NexShift Media & Events",
+                "@id": "https://nexshift.com.np/#organization"
+              },
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5"
+              },
+              "author": {
+                "@type": "Person",
+                "name": testimonial.name
+              },
+              "reviewBody": testimonial.description
+            }))
+          )
+        }}
+      />
     </section>
   );
 }
