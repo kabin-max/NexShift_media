@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://nexshift.com.np'; // Updated to actual production URL
+  const baseUrl = 'https://www.nexshift.com.np';
 
   return [
     {
