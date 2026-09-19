@@ -83,7 +83,7 @@ export default function IntroOverlay() {
                 />
               </div>
               <div className="flex flex-col -ml-4 xs:-ml-6 md:ml-0">
-                <h1 className="relative text-[2.75rem] xs:text-6xl md:text-[6rem] lg:text-[10rem] xl:text-[12rem] font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#0D7A95] via-[#14A9D6] to-[#2E73B8] leading-none text-left">
+                <div role="heading" aria-level={2} className="relative text-[2.75rem] xs:text-6xl md:text-[6rem] lg:text-[10rem] xl:text-[12rem] font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#0D7A95] via-[#14A9D6] to-[#2E73B8] leading-none text-left">
                   {/* The actual text with gradient - some visible, some hidden to keep width */}
                   {text.split("").map((char, index) => (
                     <span key={index} style={{ visibility: index < visibleCount ? "visible" : "hidden" }}>
@@ -104,7 +104,7 @@ export default function IntroOverlay() {
                       |
                     </motion.span>
                   </span>
-                </h1>
+                </div>
                 <motion.h2 
                   initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}

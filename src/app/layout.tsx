@@ -21,10 +21,10 @@ const permanentMarker = Permanent_Marker({
 export const metadata: Metadata = {
   metadataBase: new URL("https://nexshift.com.np"),
   title: {
-    default: "NexShift | Premier Event Management Company & Digital Marketing Agency in Kathmandu, Nepal",
+    default: "NexShift | Premier Event & Digital Marketing Agency Nepal",
     template: "%s | NexShift Nepal",
   },
-  description: "NexShift is Nepal's premier event management company and creative digital marketing agency based in Kathmandu. Specialized in corporate events, brand films, performance marketing, SEO, social media management, videography, and custom web development.",
+  description: "Grow your brand with NexShift, Nepal's premier digital marketing & event management agency. We deliver high-impact corporate events, SEO, and performance marketing.",
   keywords: [
     "NexShift",
     "NexShift Media",

@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import Image from "next/image";
+import SeoHiddenContent from "../common/SeoHiddenContent";
 
 export default function HeroSection() {
   const { scrollY } = useScroll();
@@ -29,10 +30,7 @@ export default function HeroSection() {
 
   return (
     <section className="relative w-full h-screen bg-transparent overflow-hidden flex items-end pb-12 px-6 md:px-12 select-none">
-      <h1 className="sr-only">NexShift - Event Management Company & Digital Marketing Agency in Kathmandu, Nepal</h1>
-      <p className="sr-only hero-geo-summary">
-        NexShift is a premier creative media agency and corporate event management company based in Kathmandu, Nepal. We specialize in end-to-end event production, brand films, performance marketing, social media growth, SEO, and web development.
-      </p>
+      <SeoHiddenContent />
 
       {/* ── Layer 1: Background sky / hills ──────────────────────────── */}
       <motion.div
