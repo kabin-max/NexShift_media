@@ -16,7 +16,7 @@ export default function AboutHero() {
             src="/demo/Cafe 02 1.jpg"
             alt="Cafe O2 social media marketing campaign by NexShift Nepal"
             fill
-            sizes="(max-width: 768px) 100vw, 50vw"
+            sizes="(max-width: 768px) 400px, 320px"
             className="object-cover transition-transform duration-500 hover:scale-110"
           />
         </div>
@@ -30,7 +30,7 @@ export default function AboutHero() {
             src="/demo/queens palace.jpg"
             alt="Queens Palace event management by NexShift"
             fill
-            sizes="(max-width: 768px) 100vw, 50vw"
+            sizes="(max-width: 768px) 400px, 320px"
             className="object-cover transition-transform duration-500 hover:scale-110"
           />
         </div>
@@ -44,7 +44,7 @@ export default function AboutHero() {
             src="/demo/Ritz College(1).jpg"
             alt="Ritz College digital marketing by NexShift"
             fill
-            sizes="(max-width: 768px) 100vw, 50vw"
+            sizes="(max-width: 768px) 400px, 320px"
             className="object-cover transition-transform duration-500 hover:scale-110"
           />
         </div>
@@ -58,7 +58,7 @@ export default function AboutHero() {
             src="/demo/Milestone school(1).jpg"
             alt="Milestone School media campaign by NexShift"
             fill
-            sizes="(max-width: 768px) 100vw, 50vw"
+            sizes="(max-width: 768px) 400px, 320px"
             className="object-cover transition-transform duration-500 hover:scale-110"
           />
         </div>
@@ -72,7 +72,7 @@ export default function AboutHero() {
             src="/demo/Cafe O2 2.jpg"
             alt="Cafe O2 brand photography by NexShift"
             fill
-            sizes="(max-width: 768px) 100vw, 50vw"
+            sizes="(max-width: 768px) 400px, 320px"
             className="object-cover transition-transform duration-500 hover:scale-110"
           />
         </div>

@@ -7,10 +7,11 @@ import OurStory from "../../components/about/OurStory";
 import OurSteps from "../../components/about/OurSteps";
 import FaqSection from "../../components/about/FaqSection";
 import Footer from "../../components/common/Footer";
+import SeoAboutHiddenContent from "../../components/about/SeoAboutHiddenContent";
 
 export const metadata: Metadata = {
   title: "About Us | NexShift Media & Events Nepal",
-  description: "Learn about NexShift - Nepal's premier event management company and creative media agency based in Kathmandu. 35+ projects, 20+ partner organizations, and 10M+ audience reached.",
+  description: "Learn about NexShift, Nepal's premier event management and digital marketing agency in Kathmandu. We deliver expert corporate events, SEO, and creative media.",
   keywords: [
     "About NexShift",
     "NexShift Story",
@@ -27,12 +28,28 @@ export default function About() {
   const jsonLd = [
     {
       "@context": "https://schema.org",
-      "@type": "AboutPage",
+      "@type": "Organization",
+      "@id": "https://nexshift.com.np/#organization",
+      "name": "NexShift Media & Events",
+      "url": "https://nexshift.com.np",
+      "logo": "https://nexshift.com.np/nst-logo.png",
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61571556053359",
+        "https://www.instagram.com/nex_shift/",
+        "https://www.linkedin.com/company/nexshiftnepal/"
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": ["WebPage", "AboutPage"],
       "@id": "https://nexshift.com.np/about/#webpage",
       "url": "https://nexshift.com.np/about",
       "name": "About NexShift Media & Events",
-      "description": "Learn about NexShift - Nepal's premier event management company and creative media agency based in Kathmandu.",
-      "mainEntity": {
+      "description": "Learn about NexShift, Nepal's premier event management and digital marketing agency in Kathmandu. We deliver expert corporate events, SEO, and creative media.",
+      "publisher": {
+        "@id": "https://nexshift.com.np/#organization"
+      },
+      "about": {
         "@id": "https://nexshift.com.np/#organization"
       }
     },
@@ -62,6 +79,7 @@ export default function About() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+            <SeoAboutHiddenContent />
             <Background />
 
             <Header />

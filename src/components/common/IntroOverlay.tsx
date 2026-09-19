@@ -69,14 +69,14 @@ export default function IntroOverlay() {
           >
             {/* Reliable white glowing shadow behind everything */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[140%] bg-white/30 blur-[80px] rounded-full z-[-1] pointer-events-none" />
-            
+
             <div className="flex flex-row items-center justify-center gap-1 sm:gap-6 mb-6 w-full max-w-[100vw] overflow-visible">
               <div className="relative w-36 h-36 xs:w-48 xs:h-48 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] shrink-0 -ml-4 md:ml-0">
-                <Image 
+                <Image
                   src="/nst-logo.png"
                   alt="NexShift Logo"
                   fill
-                  sizes="(max-width: 768px) 50vw, 33vw"
+                  sizes="300px"
                   className="object-contain"
                   priority
                   loading="eager"
@@ -90,7 +90,7 @@ export default function IntroOverlay() {
                       {char}
                     </span>
                   ))}
-                  
+
                   {/* The Cursor Overlay */}
                   <span className="absolute top-0 left-0 h-full flex items-center w-full">
                     {/* Invisible spacer pushing the cursor exactly to the end of typed text */}
@@ -105,7 +105,7 @@ export default function IntroOverlay() {
                     </motion.span>
                   </span>
                 </div>
-                <motion.h2 
+                <motion.h2
                   initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 2.0, duration: 0.6, ease: "easeOut" }}

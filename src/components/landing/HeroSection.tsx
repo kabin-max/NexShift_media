@@ -73,7 +73,8 @@ export default function HeroSection() {
           alt="Professional cinema camera used by NexShift videography team"
           fill
           priority
-          sizes="100vw"
+          sizes="(max-width: 768px) 100vw, 500px"
+          quality={50}
           className="object-contain object-bottom"
         />
       </motion.div>
@@ -106,7 +107,7 @@ export default function HeroSection() {
           </text>
         </svg>
         {/* Logo in the center of the rotating text */}
-        <Image src="/nst-logo.png" alt="NexShift Logo" width={80} height={80} priority loading="eager" className="absolute z-10 object-contain w-14 h-14 md:w-20 md:h-20 drop-shadow-sm" />
+        <Image src="/nst-logo.png" alt="NexShift Logo" width={80} height={80} priority loading="eager" quality={50} className="absolute z-10 object-contain w-14 h-14 md:w-20 md:h-20 drop-shadow-sm" />
 
       </motion.div>
     </section>

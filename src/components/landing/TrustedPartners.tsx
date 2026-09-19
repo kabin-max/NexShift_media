@@ -70,7 +70,8 @@ export default function TrustedPartners() {
                     src={partner.src}
                     alt={partner.name}
                     fill
-                    sizes="(max-width: 768px) 160px, 160px"
+                    sizes="(max-width: 768px) 100px, 100px"
+                    quality={50}
                     className="object-contain pointer-events-none"
                   />
                 </div>
@@ -93,7 +94,8 @@ export default function TrustedPartners() {
                     src={partner.src}
                     alt={partner.name}
                     fill
-                    sizes="(max-width: 768px) 160px, 160px"
+                    sizes="(max-width: 768px) 100px, 100px"
+                    quality={50}
                     className="object-contain pointer-events-none transition-transform duration-300 ease-in-out hover:scale-105"
                   />
                 </div>

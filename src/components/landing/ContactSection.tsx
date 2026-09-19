@@ -95,7 +95,7 @@ export default function ContactSection() {
                 className="text-3xl text-[#00a3d0] font-black tracking-tight drop-shadow-sm select-none pt-4"
                 style={{ fontFamily: "var(--font-geist-sans)" }}
               >
-                NexShift!
+                NexShift
               </div>
             </div>
 
