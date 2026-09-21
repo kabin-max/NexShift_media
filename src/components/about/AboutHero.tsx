@@ -13,8 +13,8 @@ export default function AboutHero() {
       content: (
         <div className="relative w-full h-full overflow-hidden rounded-2xl">
           <Image
-            src="/demo/Cafe 02 1.jpg"
-            alt="Cafe O2 social media marketing campaign by NexShift Nepal"
+            src="/about/event-coverage.png"
+            alt="Event Coverage - NexShift Media"
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover transition-transform duration-500 hover:scale-110"
@@ -27,8 +27,8 @@ export default function AboutHero() {
       content: (
         <div className="relative w-full h-full overflow-hidden rounded-2xl">
           <Image
-            src="/demo/queens palace.jpg"
-            alt="Queens Palace event management by NexShift"
+            src="/about/videography.png"
+            alt="Videography and Editing - NexShift Media"
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover transition-transform duration-500 hover:scale-110"
@@ -41,8 +41,8 @@ export default function AboutHero() {
       content: (
         <div className="relative w-full h-full overflow-hidden rounded-2xl">
           <Image
-            src="/demo/Ritz College(1).jpg"
-            alt="Ritz College digital marketing by NexShift"
+            src="/about/commercial-promo.png"
+            alt="Commercial and Promotional Content - NexShift Media"
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover transition-transform duration-500 hover:scale-110"
@@ -55,8 +55,8 @@ export default function AboutHero() {
       content: (
         <div className="relative w-full h-full overflow-hidden rounded-2xl">
           <Image
-            src="/demo/Milestone school(1).jpg"
-            alt="Milestone School media campaign by NexShift"
+            src="/about/brand-promotion.png"
+            alt="Brand Promotion - NexShift Media"
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover transition-transform duration-500 hover:scale-110"
@@ -69,8 +69,8 @@ export default function AboutHero() {
       content: (
         <div className="relative w-full h-full overflow-hidden rounded-2xl">
           <Image
-            src="/demo/Cafe O2 2.jpg"
-            alt="Cafe O2 brand photography by NexShift"
+            src="/about/professional-photography.png"
+            alt="Professional Photography - NexShift Media"
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover transition-transform duration-500 hover:scale-110"
@@ -81,7 +81,7 @@ export default function AboutHero() {
   ];
 
   return (
-    <section className="relative w-full min-h-screen bg-transparent flex flex-col justify-start pt-16 md:pt-24 pb-20 overflow-hidden px-[5%]">
+    <section className="relative w-full md:min-h-screen bg-transparent flex flex-col justify-start pt-16 md:pt-24 pb-10 md:pb-20 overflow-hidden px-[5%]">
       {/* Ambient globs — top-right cyan, bottom-left navy */}
       <div className="absolute -top-[5%] -right-[5%] w-[45%] h-[55%] bg-[#00a3d0]/10 blur-[140px] rounded-full pointer-events-none z-0 transform-gpu" />
       <div className="absolute -bottom-[5%] -left-[5%] w-[50%] h-[50%] bg-[#00a3d0]/40 blur-[160px] rounded-full pointer-events-none z-0 transform-gpu" />
@@ -111,7 +111,7 @@ export default function AboutHero() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="w-full flex items-center justify-center mt-12 md:mt-16"
+          className="hidden md:flex w-full items-center justify-center mt-12 md:mt-16"
         >
           <FlipStack cards={cards} />
         </motion.div>
@@ -120,7 +120,7 @@ export default function AboutHero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-          className="w-full flex flex-col items-center space-y-6 mt-16 md:mt-20 relative z-20"
+          className="w-full flex flex-col items-center space-y-6 mt-4 md:mt-20 relative z-20"
         >
           <p className="text-gray-700 font-medium text-lg md:text-xl leading-relaxed max-w-3xl font-sans">
             <strong>NexShift</strong> is a premier digital marketing and event management agency based in Kathmandu, Nepal. We are a creative collective of visual storytellers, directors, and performance marketers specializing in corporate events, SEO, and cinematic brand campaigns that drive real growth.

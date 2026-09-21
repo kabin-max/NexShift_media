@@ -5,22 +5,21 @@ import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 const clients = [
-  { name: "Cafe O2", link: "https://www.instagram.com/cafe___o2/", image: "/new/Cafe O2 post (1).png", logoFont: "sans", logo: "Cafe_O2.png" },
-  { name: "Eg Bag", link: "https://www.tiktok.com/@eg.bags", image: "/new/BAGS.png", logoFont: "sans", logo: "eg_bag.jpg" },
-  { name: "Ritz College", link: "https://www.tiktok.com/@ritz_college_official", image: "/new/Ritz.jpg", logoFont: "sans", logo: "ritz.png" },
-  { name: "Milestone College", link: "https://www.tiktok.com/@infomilestone", image: "/new/milestone.jpg", logoFont: "sans", logo: "Milestone logoo.png" },
-  { name: "Tulsi Veg Restro", link: "https://www.instagram.com/tulsitandoorihouse/", image: "/new/Tulsi Potrait Posts (17).png", logoFont: "sans", logo: "Tulsi.png" },
-  { name: "Smile by Dr.Kareen", link: "https://www.instagram.com/smilebydrkareen_dentalclinic/", image: "/projects/Smile by dr. Kareen.png", logoFont: "sans", logo: "smile_dental.png" },
-  { name: "Praise Consulting", link: "https://www.instagram.com/praise.consulting/", image: "/new/Congratulations.png", logoFont: "sans", logo: "praise consultancy.jpg" },
-  { name: "New York Cargo", link: "https://www.instagram.com/newyorkcargopvtlt/", image: "/projects/new york cargo.jpg", logoFont: "sans", logo: "new york cargo.png" },
-  { name: "Nisarga Batika", link: "https://www.nisarga.edu.np/", image: "/projects/nisarga batika.jpg", logoFont: "sans", logo: "nisarga batika.svg" },
-  { name: "ZENO", link: "https://www.zenoenterprise.tech/", image: "/projects/ZENO.jpg", logoFont: "sans", logo: "zeno.PNG" },
-  { name: "Queens Palace", link: "https://www.instagram.com/queenspalaceevents/", image: "/new/Queens Post Design.png", logoFont: "sans", logo: "Queens.png" },
-  { name: "Palmos Couture", link: "https://www.instagram.com/palmos_couture/", image: "/projects/Palmos.png", logoFont: "sans", logo: "palmos logo.jpeg" },
+  { name: "Cafe O2", link: "https://www.instagram.com/cafe___o2/", image: "/projects/cafe-o2.png", logoFont: "sans", logo: "cafe-o2.png" },
+  { name: "Eg Bag", link: "https://www.tiktok.com/@eg.bags", image: "/projects/eg-bag.png", logoFont: "sans", logo: "eg-bag.jpg" },
+  { name: "Ritz College", link: "https://www.tiktok.com/@ritz_college_official", image: "/projects/ritz-college.jpg", logoFont: "sans", logo: "ritz.png" },
+  { name: "Milestone College", link: "https://www.tiktok.com/@infomilestone", image: "/projects/milestone-college.jpg", logoFont: "sans", logo: "milestone.png" },
+  { name: "Tulsi Veg Restro", link: "https://www.instagram.com/tulsitandoorihouse/", image: "/projects/tulsi-restro.png", logoFont: "sans", logo: "tulsi.png" },
+  { name: "Smile by Dr.Kareen", link: "https://www.instagram.com/smilebydrkareen_dentalclinic/", image: "/projects/smile-dental.png", logoFont: "sans", logo: "smile-dental.png" },
+  { name: "Praise Consulting", link: "https://www.instagram.com/praise.consulting/", image: "/projects/praise-consulting.png", logoFont: "sans", logo: "praise-consultancy.jpg" },
+  { name: "Nisarga Batika", link: "https://www.nisarga.edu.np/", image: "/projects/nisarga-batika.jpg", logoFont: "sans", logo: "nisarga-batika.svg" },
+  { name: "ZENO", link: "https://www.zenoenterprise.tech/", image: "/projects/zeno.jpg", logoFont: "sans", logo: "zeno.png" },
+  { name: "Queens Palace", link: "https://www.instagram.com/queenspalaceevents/", image: "/projects/queens-palace.png", logoFont: "sans", logo: "queens.png" },
+  { name: "Palmos Couture", link: "https://www.instagram.com/palmos_couture/", image: "/projects/palmos-couture.png", logoFont: "sans", logo: "palmos.jpeg" },
 
-  { name: "Mega Lights", link: "https://www.tiktok.com/@megalights", image: "/projects/Mega Lights.jpg", logoFont: "sans", logo: "Meg-Lights.jpg" },
-  { name: "Guru Pashmina", link: "https://www.gurupashmina.com/", image: "/projects/Guru Cashmere.jpg", logoFont: "sans", logo: "guru pashmina.jpg" },
-  { name: "Hotel Royal Airport", link: "https://www.tiktok.com/@hotelroyalairpotnepal", image: "/projects/hotel royal airport.jpg", logoFont: "sans", logo: "hotel royal.jpg" },
+  { name: "Mega Lights", link: "https://www.tiktok.com/@megalights", image: "/projects/mega-lights.jpg", logoFont: "sans", logo: "meg-lights.jpg" },
+  { name: "Guru Pashmina", link: "https://www.gurupashmina.com/", image: "/projects/guru-pashmina.jpg", logoFont: "sans", logo: "guru-pashmina.jpg" },
+  { name: "Hotel Royal Airport", link: "https://www.tiktok.com/@hotelroyalairpotnepal", image: "/projects/hotel-royal-airport.jpg", logoFont: "sans", logo: "hotel-royal.jpg" },
 ];
 
 export default function ClientsSection() {

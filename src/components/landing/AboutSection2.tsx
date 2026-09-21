@@ -40,11 +40,11 @@ export default function AboutSection2() {
       id: 1,
       content: (
         <Image
-          src="/demo/Cafe 02 1.jpg"
+          src="/about/event-coverage.png"
           fill
           sizes="(max-width: 768px) 100vw, 50vw"
           className="object-cover"
-          alt="Cafe O2 social media marketing campaign by NexShift Nepal"
+          alt="Event Coverage - NexShift Media"
         />
       ),
     },
@@ -52,11 +52,11 @@ export default function AboutSection2() {
       id: 2,
       content: (
         <Image
-          src="/demo/queens palace.jpg"
+          src="/about/videography.png"
           fill
           sizes="(max-width: 768px) 100vw, 50vw"
           className="object-cover"
-          alt="Queens Palace event management by NexShift"
+          alt="Videography and Editing - NexShift Media"
         />
       ),
     },
@@ -64,11 +64,11 @@ export default function AboutSection2() {
       id: 3,
       content: (
         <Image
-          src="/demo/Ritz College(1).jpg"
+          src="/about/commercial-promo.png"
           fill
           sizes="(max-width: 768px) 100vw, 50vw"
           className="object-cover"
-          alt="Ritz College digital marketing by NexShift"
+          alt="Commercial and Promotional Content - NexShift Media"
         />
       ),
     },
@@ -76,11 +76,11 @@ export default function AboutSection2() {
       id: 4,
       content: (
         <Image
-          src="/demo/Milestone school(1).jpg"
+          src="/about/brand-promotion.png"
           fill
           sizes="(max-width: 768px) 100vw, 50vw"
           className="object-cover"
-          alt="Milestone School media campaign by NexShift"
+          alt="Brand Promotion - NexShift Media"
         />
       ),
     },
@@ -88,11 +88,11 @@ export default function AboutSection2() {
       id: 5,
       content: (
         <Image
-          src="/demo/Cafe O2 2.jpg"
+          src="/about/professional-photography.png"
           fill
           sizes="(max-width: 768px) 100vw, 50vw"
           className="object-cover"
-          alt="Cafe O2 brand photography by NexShift"
+          alt="Professional Photography - NexShift Media"
         />
       ),
     }
@@ -118,12 +118,12 @@ export default function AboutSection2() {
       >
         {/* Left Side: Expandable Cards and Stats */}
         <div className="w-full lg:w-1/2 flex flex-col items-center justify-center gap-8 select-none">
-          <div className="w-full h-[300px] md:h-[400px] lg:h-[450px] flex items-center justify-center">
+          <div className="hidden md:flex w-full h-[300px] md:h-[400px] lg:h-[450px] items-center justify-center">
             <ExpandableCards cards={cards} defaultExpanded={3} autoPlay interval={1500} />
           </div>
 
           {/* Stats Grid wrapped with the Leaf Shape Banner */}
-          <div className="relative w-full mt-10 bg-[#03b364] text-white overflow-hidden rounded-tl-[80px] rounded-br-[80px] shadow-[0_10px_30px_rgba(3,179,100,0.3)]">
+          <div className="relative w-full mt-0 md:mt-10 bg-[#03b364] text-white overflow-hidden rounded-tl-[80px] rounded-br-[80px] shadow-[0_10px_30px_rgba(3,179,100,0.3)]">
 
             {/* Decorative corner dots */}
             <span className="absolute top-3 left-4 w-1.5 h-1.5 rounded-full bg-white/30 z-10" />
