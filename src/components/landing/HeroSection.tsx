@@ -39,7 +39,7 @@ export default function HeroSection() {
       >
         <div className="absolute inset-0 w-full h-full">
           <Image
-            src="/images/bg of hero.png"
+            src="/images/bg-hero.png"
             alt="NexShift creative agency Kathmandu Nepal skyline"
             fill
             sizes="100vw"

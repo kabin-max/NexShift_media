@@ -6,11 +6,27 @@ import { Loader2 } from "lucide-react";
 import Image from "next/image";
 
 export default function IntroOverlay() {
+  // null = unknown (SSR safe), true = show, false = skip
+  const [shouldShow, setShouldShow] = useState<boolean | null>(null);
   const [isVisible, setIsVisible] = useState(true);
   const [visibleCount, setVisibleCount] = useState(0);
   const text = "NexShift";
 
+  // Determine on mount whether this is a hard refresh or client-side navigation
   useEffect(() => {
+    const alreadyShown = sessionStorage.getItem("nexshift_intro_shown");
+    if (alreadyShown) {
+      // Client-side navigation — skip loader entirely
+      setShouldShow(false);
+    } else {
+      // Hard refresh / first visit — show loader and mark as shown
+      sessionStorage.setItem("nexshift_intro_shown", "1");
+      setShouldShow(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!shouldShow) return;
     let timer: NodeJS.Timeout;
     if (visibleCount < text.length) {
       // Add initial delay for the first letter
@@ -20,9 +36,10 @@ export default function IntroOverlay() {
       }, delay);
     }
     return () => clearTimeout(timer);
-  }, [visibleCount]);
+  }, [visibleCount, shouldShow]);
 
   useEffect(() => {
+    if (!shouldShow) return;
     // Lock scroll when the overlay is visible
     document.body.style.overflow = "hidden";
 
@@ -36,7 +53,11 @@ export default function IntroOverlay() {
       clearTimeout(timer);
       document.body.style.overflow = "unset";
     };
-  }, []);
+  }, [shouldShow]);
+
+  // Don't render anything until we know whether to show (avoids SSR mismatch)
+  // Also skip entirely if the session flag is already set (client-side nav)
+  if (shouldShow === false || shouldShow === null) return null;
 
   return (
     <AnimatePresence>

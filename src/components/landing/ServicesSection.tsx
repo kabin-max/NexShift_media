@@ -35,7 +35,7 @@ const services = [
     title: "Web Development",
     tags: ["Custom Websites", "Web Apps"],
     description: "Modern, responsive, and high-performance websites built with the latest technologies to elevate your digital presence.",
-    image: "/images/image.png",
+    image: "/images/service-web.png",
   }
 ];
 
@@ -80,22 +80,22 @@ export default function ServicesSection() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-4 p-5 md:p-8 bg-white/95 border border-gray-100 rounded-2xl shadow-sm hover:shadow-2xl hover:shadow-[#0D7A95]/10 hover:-translate-y-1.5 transition-all duration-500 items-start md:items-center relative overflow-hidden"
+                transition={{ duration: 0.5, delay: index * 0.08 }}
+                className="group flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-4 p-5 md:p-8 bg-white/95 border border-gray-100 rounded-2xl shadow-sm hover:shadow-xl hover:shadow-[#0D7A95]/8 hover:-translate-y-1 transition-[transform,box-shadow] duration-300 ease-out items-start md:items-center relative overflow-hidden will-change-transform transform-gpu"
               >
                   {/* Hover background slide */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#0D7A95]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#0D7A95]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
                   
                   {/* Left Edge Glowing Strip */}
                   <div className="absolute left-0 top-0 w-2 h-full bg-[#03b364] shadow-[0_0_20px_rgba(3,179,100,0.5)] pointer-events-none" />
 
                   {/* Mobile: Top row with number + title */}
                   <div className="flex items-center w-full md:hidden gap-3 pl-2">
-                    <span className="text-xs font-mono text-gray-500 border border-gray-300 px-2 py-1 rounded-md group-hover:text-[#0D7A95] group-hover:border-[#0D7A95] transition-all duration-350 flex-shrink-0">
+                    <span className="text-xs font-mono text-gray-500 border border-gray-300 px-2 py-1 rounded-md group-hover:text-[#0D7A95] group-hover:border-[#0D7A95] transition-[color,border-color] duration-200 flex-shrink-0">
                       {service.num}
                     </span>
                     <h3
-                      className="text-xl font-bold text-[#154880] tracking-tight font-sans transition-transform duration-350 group-hover:translate-x-1"
+                      className="text-xl font-bold text-[#154880] tracking-tight font-sans transition-transform duration-200 ease-out group-hover:translate-x-1 will-change-transform"
                       style={{ fontFamily: "var(--font-geist-sans), sans-serif" }}
                     >
                       {service.title}
@@ -123,13 +123,13 @@ export default function ServicesSection() {
                     >
                       {service.description}
                     </p>
-                    <div className="relative overflow-hidden rounded-lg aspect-[4/3] w-[90px] border border-gray-300 shadow-md flex-shrink-0">
+                    <div className="relative overflow-hidden rounded-lg aspect-[4/3] w-[90px] border border-gray-300 shadow-md flex-shrink-0 transform-gpu">
                       <Image
                         src={service.image}
                         alt={service.title}
                         fill
                         sizes="(max-width: 768px) 100px, 200px"
-                        className="object-cover group-hover:scale-105 transition-transform duration-700"
+                        className="object-cover group-hover:scale-105 transition-transform duration-400 ease-out will-change-transform"
                       />
                     </div>
                   </div>
@@ -138,7 +138,7 @@ export default function ServicesSection() {
                   {/* 1. Index number */}
                   <div className="col-span-1 hidden md:flex justify-start items-center">
                     <span
-                      className="text-sm font-mono text-gray-500 border border-gray-300 px-2.5 py-1 rounded-md group-hover:text-[#0D7A95] group-hover:border-[#0D7A95] transition-colors duration-350"
+                      className="text-sm font-mono text-gray-500 border border-gray-300 px-2.5 py-1 rounded-md group-hover:text-[#0D7A95] group-hover:border-[#0D7A95] transition-[color,border-color] duration-200"
                     >
                       {service.num}
                     </span>
@@ -147,7 +147,7 @@ export default function ServicesSection() {
                   {/* 2. Title */}
                   <div className="col-span-3 hidden md:flex justify-start items-center">
                     <h3
-                      className="text-3xl lg:text-4xl font-bold text-[#154880] tracking-tight font-sans transition-transform duration-350 group-hover:translate-x-2"
+                      className="text-3xl lg:text-4xl font-bold text-[#154880] tracking-tight font-sans transition-transform duration-200 ease-out group-hover:translate-x-2 will-change-transform"
                       style={{ fontFamily: "var(--font-geist-sans), sans-serif" }}
                     >
                       {service.title}
@@ -170,7 +170,7 @@ export default function ServicesSection() {
                   {/* 4. Description */}
                   <div className="col-span-3 hidden md:flex items-center">
                     <p
-                      className="text-gray-700 font-medium text-base leading-relaxed transition-colors duration-350 font-sans"
+                      className="text-gray-700 font-medium text-base leading-relaxed font-sans"
                       style={{ fontFamily: "var(--font-geist-sans), sans-serif" }}
                     >
                       {service.description}
@@ -179,13 +179,13 @@ export default function ServicesSection() {
 
                   {/* 5. Image preview */}
                   <div className="col-span-3 hidden md:flex w-full justify-end items-center gap-4">
-                    <div className="relative overflow-hidden rounded-xl aspect-[4/3] w-[162px] border border-gray-300 shadow-md flex-shrink-0">
+                    <div className="relative overflow-hidden rounded-xl aspect-[4/3] w-[162px] border border-gray-300 shadow-md flex-shrink-0 transform-gpu">
                       <Image
                         src={service.image}
                         alt={service.title}
                         fill
                         sizes="(max-width: 768px) 100px, 200px"
-                        className="object-cover group-hover:scale-105 transition-transform duration-700"
+                        className="object-cover group-hover:scale-105 transition-transform duration-400 ease-out will-change-transform"
                       />
                     </div>
                   </div>

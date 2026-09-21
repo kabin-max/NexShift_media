@@ -44,7 +44,7 @@ export default function Footer() {
                   <span itemProp="addressLocality">Kathmandu</span>, <span itemProp="addressCountry">Nepal</span>
                 </div>
                 <div>
-                  <a href="mailto:info@nexshift.com.np" className="hover:text-[#0D7A95] transition">info@nexshift.com.np</a>
+                  <a href="mailto:media.nexshift@gmail.com" className="hover:text-[#0D7A95] transition">media.nexshift@gmail.com</a>
                 </div>
                 <div>
                   <a href="tel:+9779818633814" className="hover:text-[#0D7A95] transition">+977 9818633814</a>
@@ -56,7 +56,7 @@ export default function Footer() {
       </div>
 
       <div className="max-w-7xl mx-auto pt-4 border-t border-gray-200 mt-4 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium text-gray-500">
-        <p>&copy; {new Date().getFullYear()} NexShift Media & Events. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} NexShift Technologies. All rights reserved.</p>
         <p>
           Technology Partner:{" "}
           <a

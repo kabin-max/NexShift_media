@@ -48,7 +48,7 @@ export default function Home() {
         "closes": "18:00"
       },
       "sameAs": [
-        "https://www.facebook.com/profile.php?id=61571556053359",
+        "https://www.facebook.com/profile.php?id=61577277295076",
         "https://www.instagram.com/nex_shift/",
         "https://www.linkedin.com/company/nexshiftnepal/"
       ],
