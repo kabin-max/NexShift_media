@@ -66,7 +66,7 @@ export default function HeroSection() {
 
       {/* ── Layer 3: Foreground camera ───────────────────── */}
       <motion.div
-        className="absolute inset-x-0 bottom-0 top-24 z-[60] pointer-events-none"
+        className="absolute inset-x-0 bottom-0 h-[45%] md:h-auto md:top-24 z-[60] pointer-events-none"
       >
         <Image
           src="/images/camera.png"
