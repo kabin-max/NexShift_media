@@ -202,9 +202,6 @@ export default function TestimonialsSection() {
             In Their Words
             <div className="h-1.5 w-20 md:w-24 bg-[#03b364] shadow-[0_0_10px_rgba(3,179,100,0.5)] mx-auto mt-3 rounded-full pointer-events-none" />
           </h2>
-          <p className="text-lg md:text-xl text-transparent bg-clip-text bg-gradient-to-r from-[#0D7A95] via-[#14A9D6] to-[#2E73B8] font-medium tracking-wide drop-shadow-sm">
-            Here&apos;s what our clients have to say about working with NexShift.
-          </p>
         </motion.div>
 
         {/* Scrolling columns container */}

@@ -1,11 +1,20 @@
 "use client";
 
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import SeoHiddenContent from "../common/SeoHiddenContent";
 
 export default function HeroSection() {
   const { scrollY } = useScroll();
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   // Layer 1 – background drifts slowly downward and zooms in slightly
   const bgY = useTransform(scrollY, [0, 1000], [0, 130]);
@@ -35,9 +44,13 @@ export default function HeroSection() {
       {/* ── Layer 1: Background sky / hills ──────────────────────────── */}
       <motion.div
         className="absolute inset-0 z-0 pointer-events-none origin-bottom"
-        style={{ y: bgY, scale: bgScale, willChange: "transform" }}
+        style={{ 
+          y: bgY, 
+          ...(isMobile ? {} : { scale: bgScale }), 
+          willChange: "transform" 
+        }}
       >
-        <div className="absolute inset-0 w-full h-full">
+        <div className="absolute inset-0 w-full h-full scale-[1.5] origin-top md:scale-100 md:origin-center">
           <Image
             src="/images/bg-hero.png"
             alt="NexShift creative agency Kathmandu Nepal skyline"
@@ -45,7 +58,7 @@ export default function HeroSection() {
             sizes="100vw"
             priority
             fetchPriority="high"
-            className="object-cover object-center"
+            className="object-cover object-[center_top] md:object-center"
           />
         </div>
         <div className="absolute inset-0 bg-white/10" />
@@ -66,7 +79,7 @@ export default function HeroSection() {
 
       {/* ── Layer 3: Foreground camera ───────────────────── */}
       <motion.div
-        className="absolute inset-x-0 bottom-0 h-[45%] md:h-auto md:top-24 z-[60] pointer-events-none"
+        className="absolute inset-x-0 bottom-0 h-[60%] md:h-auto md:top-24 z-[60] pointer-events-none"
       >
         <Image
           src="/images/camera.png"
@@ -75,7 +88,7 @@ export default function HeroSection() {
           priority
           sizes="(max-width: 768px) 100vw, 500px"
           quality={50}
-          className="object-contain object-bottom"
+          className="object-contain object-bottom scale-[2] origin-bottom md:scale-100 md:origin-center"
         />
       </motion.div>
 
