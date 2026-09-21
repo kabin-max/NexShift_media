@@ -205,10 +205,13 @@ export default function TestimonialsSection() {
         </motion.div>
 
         {/* Scrolling columns container */}
-        <div className="relative">
-          {/* Top & bottom fade masks */}
-          <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-[#FAFAFA] to-transparent z-20 pointer-events-none" />
-          <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-[#FAFAFA] to-transparent z-20 pointer-events-none" />
+        <div 
+          className="relative"
+          style={{
+            maskImage: "linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)",
+            WebkitMaskImage: "linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)"
+          }}
+        >
 
           {/* Mobile: single column scrolling down */}
           <div className="sm:hidden h-[560px] overflow-hidden">
