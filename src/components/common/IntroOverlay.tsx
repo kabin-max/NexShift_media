@@ -5,23 +5,19 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 
 export default function IntroOverlay() {
-  // null = unknown (SSR safe), true = show, false = skip
-  const [shouldShow, setShouldShow] = useState<boolean | null>(null);
+  // Show the intro immediately (on the server too) so it is present in the very
+  // first paint and covers the hero from the start — instead of popping in only
+  // after hydration, which caused the hero to flash first.
+  //
+  // This component only mounts on a full document load (first visit, typed URL,
+  // external link, or a browser reload). Next.js client-side route changes do
+  // not reload the document, so they never remount this overlay — giving us
+  // "replay on every hard refresh" without any navigation-type detection.
   const [isVisible, setIsVisible] = useState(true);
   const [visibleCount, setVisibleCount] = useState(0);
   const text = "NexShift";
 
-  // This component only mounts on a full document load (first visit, typed URL,
-  // external link, or a browser reload). Next.js client-side route changes do
-  // not reload the document, so they never remount this overlay. That means we
-  // can simply always play the intro on mount — which gives us "replay on every
-  // hard refresh" without any fragile navigation-type detection.
   useEffect(() => {
-    setShouldShow(true);
-  }, []);
-
-  useEffect(() => {
-    if (!shouldShow) return;
     let timer: NodeJS.Timeout;
     if (visibleCount < text.length) {
       // Add initial delay for the first letter
@@ -31,10 +27,9 @@ export default function IntroOverlay() {
       }, delay);
     }
     return () => clearTimeout(timer);
-  }, [visibleCount, shouldShow]);
+  }, [visibleCount]);
 
   useEffect(() => {
-    if (!shouldShow) return;
     // Lock scroll when the overlay is visible
     document.body.style.overflow = "hidden";
 
@@ -48,11 +43,7 @@ export default function IntroOverlay() {
       clearTimeout(timer);
       document.body.style.overflow = "unset";
     };
-  }, [shouldShow]);
-
-  // Don't render anything until we know whether to show (avoids SSR mismatch)
-  // and skip entirely for non-load navigations (e.g. bfcache restore).
-  if (shouldShow === false || shouldShow === null) return null;
+  }, []);
 
   return (
     <AnimatePresence>

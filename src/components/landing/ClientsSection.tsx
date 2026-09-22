@@ -6,20 +6,19 @@ import { motion } from "framer-motion";
 
 const clients = [
   { name: "Cafe O2", link: "https://www.instagram.com/cafe___o2/", image: "/Projects/Cafeo2.png", logoFont: "sans", logo: "cafe-o2.png" },
-  { name: "Eg Bag", link: "https://www.tiktok.com/@eg.bags", image: "/projects/eg-bag.png", logoFont: "sans", logo: "eg-bag.jpg" },
+  { name: "Eg Bag", link: "https://www.tiktok.com/@eg.bags", image: "/Projects/eg-bag.png", logoFont: "sans", logo: "eg-bag.png" },
   { name: "Ritz College", link: "https://www.tiktok.com/@ritz_college_official", image: "/Projects/Ritz.png", logoFont: "sans", logo: "ritz.png" },
   { name: "Milestone College", link: "https://www.tiktok.com/@infomilestone", image: "/Projects/Milestone_College.png", logoFont: "sans", logo: "milestone.png" },
   { name: "Tulsi Veg Restro", link: "https://www.instagram.com/tulsitandoorihouse/", image: "/Projects/Tulsi.png", logoFont: "sans", logo: "tulsi.png" },
-  { name: "Smile by Dr.Kareen", link: "https://www.instagram.com/smilebydrkareen_dentalclinic/", image: "/projects/smile-dental.png", logoFont: "sans", logo: "smile-dental.png" },
-  { name: "Praise Consulting", link: "https://www.instagram.com/praise.consulting/", image: "/projects/praise-consulting.png", logoFont: "sans", logo: "praise-consultancy.jpg" },
-  { name: "Nisarga Batika", link: "https://www.nisarga.edu.np/", image: "/projects/nisarga-batika.jpg", logoFont: "sans", logo: "nisarga-batika.svg" },
+  { name: "Smile by Dr.Kareen", link: "https://www.instagram.com/smilebydrkareen_dentalclinic/", image: "/Projects/smile-dental.png", logoFont: "sans", logo: "smile-dental.png" },
+  { name: "Praise Consulting", link: "https://www.instagram.com/praise.consulting/", image: "/Projects/praise-consulting.png", logoFont: "sans", logo: "praise-consultancy.jpg" },
   { name: "ZENO", link: "https://www.zenoenterprise.tech/", image: "/Projects/zeno.png", logoFont: "sans", logo: "zeno.png" },
   { name: "Queens Palace", link: "https://www.instagram.com/queenspalaceevents/", image: "/Projects/Queens_palace.png", logoFont: "sans", logo: "queens.png" },
   { name: "Palmos Couture", link: "https://www.instagram.com/palmos_couture/", image: "/Projects/Palmos.png", logoFont: "sans", logo: "palmos.jpeg" },
   { name: "NewYork Cargo", link: "https://www.cargo-nepal.com/", image: "/Projects/NewYork_Cargo.png", logoFont: "sans", logo: "NewYork_Cargo.png" },
   { name: "Mega Lights", link: "https://www.tiktok.com/@megalights", image: "/Projects/Mega_light.png", logoFont: "sans", logo: "meg-lights.jpg" },
   { name: "Guru Pashmina", link: "https://www.gurupashmina.com/", image: "/Projects/Guru_Pashmina.png", logoFont: "sans", logo: "guru-pashmina.jpg" },
-  { name: "Hotel Royal Airport", link: "https://www.tiktok.com/@hotelroyalairpotnepal", image: "/projects/hotel-royal-airport.jpg", logoFont: "sans", logo: "hotel-royal.jpg" },
+  { name: "Hotel Royal Airport", link: "https://www.tiktok.com/@hotelroyalairpotnepal", image: "/projects/hotel_airport.png", logoFont: "sans", logo: "hotel-royal.png" },
 ];
 
 export default function ClientsSection() {
