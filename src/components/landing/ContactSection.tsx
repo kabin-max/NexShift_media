@@ -53,11 +53,11 @@ export default function ContactSection() {
                   <div className="flex flex-col items-center lg:items-start space-y-2">
                     <span className="text-xs md:text-sm tracking-[0.2em] uppercase font-bold text-gray-500">Email Us</span>
                     <a
-                      href="mailto:info@nexshift.com.np"
+                      href="mailto:media.nexshift@gmail.com"
                       itemProp="email"
                       className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#154880] tracking-tight hover:text-[#0D7A95] transition-colors duration-300 decoration-[#14A9D6] underline-offset-8 hover:underline"
                     >
-                      info@nexshift.com.np
+                      media.nexshift@gmail.com
                     </a>
                   </div>
                 </ScrollReveal>
