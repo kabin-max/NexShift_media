@@ -167,17 +167,25 @@ export default function AboutSection2() {
             </h3>
           </div>
 
-          <p className="text-gray-700 text-lg md:text-xl leading-relaxed text-center lg:text-left font-medium">
-            NexShift Media & Events is a full-service creative agency
-            specializing in digital marketing, event management, and visual
-            production. We work with corporate clients, SMEs, startups, banks,
-            and institutions across Nepal.
-          </p>
+          <div className="flex flex-col gap-5 border-l-[3px] border-[#14A9D6]/40 pl-5 md:pl-7">
+            <p className="text-gray-700 text-lg md:text-xl leading-relaxed text-center lg:text-left font-medium">
+              <span className="font-bold text-[#154880]">NexShift Media &amp; Events</span> is a full-service creative agency
+              specializing in digital marketing, event management, and visual
+              production. We work with corporate clients, SMEs, startups, banks,
+              and institutions across Nepal.
+            </p>
 
-          <p className="text-gray-700 text-lg md:text-xl leading-relaxed text-center lg:text-left font-medium">
-            Our approach is simple: strategy drives creativity, creativity
-            drives execution, and execution drives measurable results. We don't
-            chase trends - we set them.
+            <p className="text-gray-700 text-lg md:text-xl leading-relaxed text-center lg:text-left font-medium">
+              Strategy drives creativity, creativity drives execution, and execution drives measurable results. We don&apos;t simply follow trends. We understand them, challenge them, and create what&apos;s next.
+            </p>
+          </div>
+
+          <div className="flex items-center gap-4 py-1">
+            <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#14A9D6]/30 to-transparent" />
+          </div>
+
+          <p className="text-xl md:text-2xl font-bold italic tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-[#0D7A95] via-[#14A9D6] to-[#2E73B8] text-center lg:text-left drop-shadow-sm">
+            NexShift — Where Ideas Move Forward.
           </p>
 
           {/* Feature Pills */}

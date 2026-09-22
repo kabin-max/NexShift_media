@@ -99,8 +99,8 @@ export default function ContactSection() {
             {/* Right Side: Map */}
             <div className="w-full min-h-[350px] sm:min-h-[400px] h-full bg-gray-100 rounded-2xl overflow-hidden border border-gray-200 shadow-inner relative">
               <iframe
-                title="Google Maps Location"
-                src="https://maps.google.com/maps?q=Nexshift+Media+and+Events&t=k&z=18&ie=UTF8&iwloc=&output=embed"
+                title="NexShift Media & Events location — New Baneshwor, Kathmandu"
+                                src="https://maps.google.com/maps?q=Nexshift+Media+and+Events&t=k&z=18&ie=UTF8&iwloc=&output=embed"
                 className="absolute inset-0 w-full h-full"
                 style={{ border: 0 }}
                 allowFullScreen={false}

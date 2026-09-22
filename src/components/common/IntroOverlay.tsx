@@ -2,7 +2,6 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
-import { Loader2 } from "lucide-react";
 import Image from "next/image";
 
 export default function IntroOverlay() {
@@ -12,17 +11,13 @@ export default function IntroOverlay() {
   const [visibleCount, setVisibleCount] = useState(0);
   const text = "NexShift";
 
-  // Determine on mount whether this is a hard refresh or client-side navigation
+  // This component only mounts on a full document load (first visit, typed URL,
+  // external link, or a browser reload). Next.js client-side route changes do
+  // not reload the document, so they never remount this overlay. That means we
+  // can simply always play the intro on mount — which gives us "replay on every
+  // hard refresh" without any fragile navigation-type detection.
   useEffect(() => {
-    const alreadyShown = sessionStorage.getItem("nexshift_intro_shown");
-    if (alreadyShown) {
-      // Client-side navigation — skip loader entirely
-      setShouldShow(false);
-    } else {
-      // Hard refresh / first visit — show loader and mark as shown
-      sessionStorage.setItem("nexshift_intro_shown", "1");
-      setShouldShow(true);
-    }
+    setShouldShow(true);
   }, []);
 
   useEffect(() => {
@@ -43,11 +38,11 @@ export default function IntroOverlay() {
     // Lock scroll when the overlay is visible
     document.body.style.overflow = "hidden";
 
-    // Start fade-out at 6s for a balanced experience
+    // Start fade-out at 4s
     const timer = setTimeout(() => {
       setIsVisible(false);
       document.body.style.overflow = "unset";
-    }, 6000);
+    }, 4000);
 
     return () => {
       clearTimeout(timer);
@@ -56,7 +51,7 @@ export default function IntroOverlay() {
   }, [shouldShow]);
 
   // Don't render anything until we know whether to show (avoids SSR mismatch)
-  // Also skip entirely if the session flag is already set (client-side nav)
+  // and skip entirely for non-load navigations (e.g. bfcache restore).
   if (shouldShow === false || shouldShow === null) return null;
 
   return (
@@ -65,6 +60,7 @@ export default function IntroOverlay() {
         <motion.div
           key="intro-overlay"
           initial={{ opacity: 1 }}
+          animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
           className="fixed inset-0 z-[100] w-screen h-screen bg-black flex items-center justify-center pointer-events-auto overflow-hidden"
@@ -91,8 +87,8 @@ export default function IntroOverlay() {
             {/* Reliable white glowing shadow behind everything */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[140%] bg-white/30 blur-[80px] rounded-full z-[-1] pointer-events-none" />
 
-            <div className="flex flex-row items-center justify-center gap-1 sm:gap-6 mb-6 w-full max-w-[100vw] overflow-visible">
-              <div className="relative w-36 h-36 xs:w-48 xs:h-48 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] shrink-0 -ml-4 md:ml-0">
+            <div className="flex flex-row items-center justify-center gap-1 sm:gap-4 mb-6 w-full max-w-full px-4 sm:px-8 overflow-hidden">
+              <div className="relative w-28 h-28 xs:w-40 xs:h-40 md:w-72 md:h-72 lg:w-80 lg:h-80 shrink-0 -ml-2 md:ml-0">
                 <Image
                   src="/nst-logo.png"
                   alt="NexShift Logo"
@@ -103,8 +99,8 @@ export default function IntroOverlay() {
                   loading="eager"
                 />
               </div>
-              <div className="flex flex-col -ml-4 xs:-ml-6 md:ml-0">
-                <div role="heading" aria-level={2} className="relative text-[2.75rem] xs:text-6xl md:text-[6rem] lg:text-[10rem] xl:text-[12rem] font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#0D7A95] via-[#14A9D6] to-[#2E73B8] leading-none text-left">
+              <div className="flex flex-col min-w-0 -ml-2 xs:-ml-4 md:ml-0">
+                <div role="heading" aria-level={2} className="relative text-[2.75rem] xs:text-[3.3rem] md:text-[5.5rem] lg:text-[7.7rem] xl:text-[8.8rem] font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#0D7A95] via-[#14A9D6] to-[#2E73B8] leading-none text-left pr-[0.15em]">
                   {/* The actual text with gradient - some visible, some hidden to keep width */}
                   {text.split("").map((char, index) => (
                     <span key={index} style={{ visibility: index < visibleCount ? "visible" : "hidden" }}>
@@ -130,7 +126,7 @@ export default function IntroOverlay() {
                   initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 2.0, duration: 0.6, ease: "easeOut" }}
-                  className="mt-2 md:mt-4 text-xl xs:text-3xl md:text-5xl lg:text-7xl xl:text-[6rem] font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#0D7A95] via-[#14A9D6] to-[#2E73B8] leading-none text-left"
+                  className="mt-2 md:mt-4 text-xl xs:text-[1.65rem] md:text-[2.5rem] lg:text-[3.3rem] xl:text-[4.4rem] font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#0D7A95] via-[#14A9D6] to-[#2E73B8] leading-none text-left"
                 >
                   Media & Events
                 </motion.h2>

@@ -5,20 +5,20 @@ import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 const clients = [
-  { name: "Cafe O2", link: "https://www.instagram.com/cafe___o2/", image: "/projects/cafe-o2.png", logoFont: "sans", logo: "cafe-o2.png" },
+  { name: "Cafe O2", link: "https://www.instagram.com/cafe___o2/", image: "/Updated/Cafeo2.png", logoFont: "sans", logo: "cafe-o2.png" },
   { name: "Eg Bag", link: "https://www.tiktok.com/@eg.bags", image: "/projects/eg-bag.png", logoFont: "sans", logo: "eg-bag.jpg" },
-  { name: "Ritz College", link: "https://www.tiktok.com/@ritz_college_official", image: "/projects/ritz-college.jpg", logoFont: "sans", logo: "ritz.png" },
-  { name: "Milestone College", link: "https://www.tiktok.com/@infomilestone", image: "/projects/milestone-college.jpg", logoFont: "sans", logo: "milestone.png" },
-  { name: "Tulsi Veg Restro", link: "https://www.instagram.com/tulsitandoorihouse/", image: "/projects/tulsi-restro.png", logoFont: "sans", logo: "tulsi.png" },
+  { name: "Ritz College", link: "https://www.tiktok.com/@ritz_college_official", image: "/Updated/Ritz.png", logoFont: "sans", logo: "ritz.png" },
+  { name: "Milestone College", link: "https://www.tiktok.com/@infomilestone", image: "/Updated/Milestone_College.png", logoFont: "sans", logo: "milestone.png" },
+  { name: "Tulsi Veg Restro", link: "https://www.instagram.com/tulsitandoorihouse/", image: "/Updated/Tulsi.png", logoFont: "sans", logo: "tulsi.png" },
   { name: "Smile by Dr.Kareen", link: "https://www.instagram.com/smilebydrkareen_dentalclinic/", image: "/projects/smile-dental.png", logoFont: "sans", logo: "smile-dental.png" },
   { name: "Praise Consulting", link: "https://www.instagram.com/praise.consulting/", image: "/projects/praise-consulting.png", logoFont: "sans", logo: "praise-consultancy.jpg" },
   { name: "Nisarga Batika", link: "https://www.nisarga.edu.np/", image: "/projects/nisarga-batika.jpg", logoFont: "sans", logo: "nisarga-batika.svg" },
-  { name: "ZENO", link: "https://www.zenoenterprise.tech/", image: "/projects/zeno.jpg", logoFont: "sans", logo: "zeno.png" },
-  { name: "Queens Palace", link: "https://www.instagram.com/queenspalaceevents/", image: "/projects/queens-palace.png", logoFont: "sans", logo: "queens.png" },
-  { name: "Palmos Couture", link: "https://www.instagram.com/palmos_couture/", image: "/projects/palmos-couture.png", logoFont: "sans", logo: "palmos.jpeg" },
-
-  { name: "Mega Lights", link: "https://www.tiktok.com/@megalights", image: "/projects/mega-lights.jpg", logoFont: "sans", logo: "meg-lights.jpg" },
-  { name: "Guru Pashmina", link: "https://www.gurupashmina.com/", image: "/projects/guru-pashmina.jpg", logoFont: "sans", logo: "guru-pashmina.jpg" },
+  { name: "ZENO", link: "https://www.zenoenterprise.tech/", image: "/Updated/zeno.png", logoFont: "sans", logo: "zeno.png" },
+  { name: "Queens Palace", link: "https://www.instagram.com/queenspalaceevents/", image: "/Updated/Queens_palace.png", logoFont: "sans", logo: "queens.png" },
+  { name: "Palmos Couture", link: "https://www.instagram.com/palmos_couture/", image: "/Updated/Palmos.png", logoFont: "sans", logo: "palmos.jpeg" },
+  { name: "NewYork Cargo", link: "https://www.cargo-nepal.com/", image: "/Updated/NewYork_Cargo.png", logoFont: "sans", logo: "NewYork_Cargo.png" },
+  { name: "Mega Lights", link: "https://www.tiktok.com/@megalights", image: "/Updated/Mega_light.png", logoFont: "sans", logo: "meg-lights.jpg" },
+  { name: "Guru Pashmina", link: "https://www.gurupashmina.com/", image: "/Updated/Guru_Pashmina.png", logoFont: "sans", logo: "guru-pashmina.jpg" },
   { name: "Hotel Royal Airport", link: "https://www.tiktok.com/@hotelroyalairpotnepal", image: "/projects/hotel-royal-airport.jpg", logoFont: "sans", logo: "hotel-royal.jpg" },
 ];
 
@@ -71,7 +71,7 @@ export default function ClientsSection() {
                     target="_blank"
                     rel="noopener noreferrer"
                     key={`client-${i}-${idx}`}
-                    className="group relative block w-[260px] h-[390px] sm:w-[280px] sm:h-[420px] md:w-[300px] md:h-[450px] lg:w-[340px] lg:h-[510px] shrink-0 overflow-hidden cursor-pointer"
+                    className="group relative block w-[260px] sm:w-[280px] md:w-[300px] lg:w-[340px] aspect-[4/5] shrink-0 overflow-hidden rounded-2xl cursor-pointer shadow-sm hover:shadow-xl transition-shadow duration-500"
                   >
                     {/* Background Image */}
                     <div className="absolute inset-0 z-0 bg-black">
@@ -80,7 +80,7 @@ export default function ClientsSection() {
                         alt={client.name}
                         fill
                         sizes="(max-width: 768px) 260px, 340px"
-                        className="object-cover transition-transform duration-700 group-hover:scale-105 group-hover:brightness-110"
+                        className="object-contain transition-transform duration-700 group-hover:scale-105 group-hover:brightness-110"
                       />
                     </div>
 

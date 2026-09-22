@@ -11,7 +11,6 @@ const testimonialsData = [
       "NexShift completely transformed our digital presence. The strategy they crafted was razor-sharp and the execution was flawless.",
     logo: "/partners/cafe-o2.png",
     name: "Aman Shrestha",
-    handle: "Co-Founder at",
     company: "Cafe O2",
     rating: 5,
     source: "Google",
@@ -22,9 +21,8 @@ const testimonialsData = [
       "Their event management team handled our product launch with incredible attention to detail. Couldn't have asked for a better partner.",
     logo: "/partners/ritz.png",
     name: "Dr. Ram Prasad Neupane",
-    handle: "Academic Director at",
     company: "Ritz College",
-    rating: 5,
+    rating: 4.5,
     source: "Google",
   },
   {
@@ -33,7 +31,6 @@ const testimonialsData = [
       "The brand film NexShift produced for us was cinematic, emotional, and exactly on-brand. Highly recommend their videography team.",
     logo: "/partners/zeno.png",
     name: "Deepraj Karki",
-    handle: "Co-Founder at",
     company: "ZENO",
     rating: 5,
     source: "Google",
@@ -44,9 +41,8 @@ const testimonialsData = [
       "Working with NexShift felt like magic — they just got our brand and brought it to life across every channel beautifully.",
     logo: "/partners/smile-dental.png",
     name: "Dr. Kareen Karki",
-    handle: "Founder & Lead Dentist at",
     company: "Smile by Dr.Kareen",
-    rating: 5,
+    rating: 4,
     source: "Google",
   },
   {
@@ -55,7 +51,6 @@ const testimonialsData = [
       "NexShift's performance marketing campaigns delivered measurable ROI from week one. They don't just promise results — they deliver them.",
     logo: "/partners/queens.png",
     name: "Pratiksha Adhikari",
-    handle: "Event Manager at",
     company: "Queens Palace",
     rating: 5,
     source: "Google",
@@ -66,9 +61,8 @@ const testimonialsData = [
       "I recommend NexShift to any business looking for a creative agency that thinks strategically and executes beautifully.",
     logo: "/partners/nisarga-batika.svg",
     name: "Kabita Rajbhandari",
-    handle: "Administrative Head at",
     company: "Nisarga Batika",
-    rating: 5,
+    rating: 4.5,
     source: "Google",
   },
 ];
@@ -102,13 +96,23 @@ function SourceBadge({ source }: { source: string }) {
 
 function StarRating({ rating }: { rating: number }) {
   return (
-    <div className="flex items-center gap-0.5">
-      {[1, 2, 3, 4, 5].map((star) => (
-        <Star
-          key={star}
-          className={`w-4 h-4 ${star <= rating ? "fill-amber-400 text-amber-400" : "fill-gray-200 text-gray-200"}`}
-        />
-      ))}
+    <div className="flex items-center gap-0.5" aria-label={`${rating} out of 5 stars`}>
+      {[1, 2, 3, 4, 5].map((star) => {
+        const fillPercent = Math.max(0, Math.min(1, rating - (star - 1))) * 100;
+        return (
+          <span key={star} className="relative inline-block w-4 h-4">
+            {/* Empty base star */}
+            <Star className="absolute inset-0 w-4 h-4 fill-gray-200 text-gray-200" />
+            {/* Filled overlay clipped to the fill percentage (supports half stars) */}
+            <span
+              className="absolute inset-0 overflow-hidden"
+              style={{ width: `${fillPercent}%` }}
+            >
+              <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
+            </span>
+          </span>
+        );
+      })}
     </div>
   );
 }
@@ -123,17 +127,14 @@ function TestimonialCard({ t }: { t: typeof testimonialsData[0] }) {
       <h3 className="text-[#154880] font-bold text-[15px] leading-snug font-sans">{t.title}</h3>
       <p className="text-gray-500 text-sm leading-relaxed font-medium font-sans">{t.description}</p>
       <div className="h-px bg-gray-100 w-full" />
-      <div className="flex items-center gap-2.5">
-        {/* Company logo as avatar */}
-        <div className="relative w-9 h-9 rounded-full overflow-hidden border border-gray-200 bg-white shrink-0">
-          <Image src={t.logo} alt={t.company} fill sizes="36px" className="object-contain p-0.5" />
+      <div className="flex items-center gap-3">
+        {/* Company logo */}
+        <div className="relative w-14 h-14 rounded-full overflow-hidden border border-gray-200 bg-white shrink-0">
+          <Image src={t.logo} alt={t.company} fill sizes="56px" className="object-contain p-1" />
         </div>
         <div className="flex flex-col min-w-0">
-          <span className="text-[#154880] font-bold text-xs leading-tight truncate font-sans">{t.name}</span>
-          <span className="text-gray-400 text-[11px] leading-tight font-sans truncate">
-            {t.handle}{" "}
-            <span className="font-semibold text-[#0D7A95]">{t.company}</span>
-          </span>
+          <span className="text-[#154880] font-bold text-sm leading-tight truncate font-sans">{t.name}</span>
+          <span className="text-[#0D7A95] font-semibold text-xs leading-tight font-sans truncate">{t.company}</span>
         </div>
       </div>
     </div>
@@ -242,7 +243,7 @@ export default function TestimonialsSection() {
               },
               "reviewRating": {
                 "@type": "Rating",
-                "ratingValue": "5",
+                "ratingValue": String(testimonial.rating),
                 "bestRating": "5",
               },
               "author": {
