@@ -20,7 +20,7 @@ export default function Home() {
       "image": "https://nexshift.com.np/nst-logo.png",
       "description": "NexShift is Nepal's premier event management company and creative digital marketing agency based in Kathmandu. Specialized in corporate events, brand films, performance marketing, SEO, social media management, videography, and custom web development.",
       "telephone": "+977-9818633814",
-      "email": "info@nexshift.com.np",
+      "email": "media.nexshift@gmail.com",
       "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
@@ -50,7 +50,7 @@ export default function Home() {
         "@type": "ContactPoint",
         "contactType": "customer service",
         "telephone": "+977-9818633814",
-        "email": "info@nexshift.com.np",
+        "email": "media.nexshift@gmail.com",
         "availableLanguage": ["English", "Nepali"]
       },
       "aggregateRating": {

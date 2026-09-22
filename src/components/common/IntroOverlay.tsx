@@ -62,6 +62,7 @@ export default function IntroOverlay() {
             muted
             playsInline
             loop
+            preload="auto"
             className="absolute inset-0 w-full h-full object-cover pointer-events-none"
           >
             <source src="/video-cut.mp4" type="video/mp4" />

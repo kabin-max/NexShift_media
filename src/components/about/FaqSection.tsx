@@ -35,7 +35,7 @@ export default function FaqSection() {
     },
     {
       q: "Where is NexShift located and how can I contact them?",
-      a: "NexShift is located in New Baneshwor, Kathmandu, Nepal. You can contact us directly via phone at +977-9818633814, email us at info@nexshift.com.np, or visit our office."
+      a: "NexShift is located in New Baneshwor, Kathmandu, Nepal. You can contact us directly via phone at +977-9818633814, email us at media.nexshift@gmail.com, or visit our office."
     },
     {
       q: "Do you work with clients outside Kathmandu?",
