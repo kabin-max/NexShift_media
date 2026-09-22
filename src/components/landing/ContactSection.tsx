@@ -36,9 +36,6 @@ export default function ContactSection() {
             Get in Touch
             <div className="h-1.5 w-24 bg-[#03b364] shadow-[0_0_10px_rgba(3,179,100,0.5)] mx-auto mt-2 rounded-full pointer-events-none" />
           </h2>
-          <h3 className="text-xl md:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-[#0D7A95] via-[#14A9D6] to-[#2E73B8] font-medium tracking-wide drop-shadow-sm">
-            Ready to start your next project? We&apos;d love to hear from you.<br /> Reach out directly or visit our office.
-          </h3>
         </div>
 
         {/* Contact Content Grid */}
@@ -69,8 +66,8 @@ export default function ContactSection() {
                 <ScrollReveal direction="up" delay={0.2}>
                   <div className="flex flex-col items-center lg:items-start space-y-2">
                     <span className="text-xs md:text-sm tracking-[0.2em] uppercase font-bold text-gray-500">Call Us</span>
-                    <a 
-                      href="tel:+9779818633814" 
+                    <a
+                      href="tel:+9779818633814"
                       itemProp="telephone"
                       className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#154880] tracking-tight hover:text-[#0D7A95] transition-colors duration-300 decoration-[#14A9D6] underline-offset-8 hover:underline"
                     >
@@ -95,15 +92,15 @@ export default function ContactSection() {
                 className="text-3xl text-[#00a3d0] font-black tracking-tight drop-shadow-sm select-none pt-4"
                 style={{ fontFamily: "var(--font-geist-sans)" }}
               >
-                NexShift!
+                NexShift
               </div>
             </div>
 
             {/* Right Side: Map */}
             <div className="w-full min-h-[350px] sm:min-h-[400px] h-full bg-gray-100 rounded-2xl overflow-hidden border border-gray-200 shadow-inner relative">
               <iframe
-                title="Google Maps Location"
-                src="https://maps.google.com/maps?q=Nexshift+Media+and+Events&t=k&z=18&ie=UTF8&iwloc=&output=embed"
+                title="NexShift Media & Events location — New Baneshwor, Kathmandu"
+                                src="https://maps.google.com/maps?q=Nexshift+Media+and+Events&t=k&z=18&ie=UTF8&iwloc=&output=embed"
                 className="absolute inset-0 w-full h-full"
                 style={{ border: 0 }}
                 allowFullScreen={false}

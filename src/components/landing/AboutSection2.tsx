@@ -40,11 +40,12 @@ export default function AboutSection2() {
       id: 1,
       content: (
         <Image
-          src="/demo/Cafe 02 1.jpg"
+          src="/about/event-coverage.png"
           fill
-          sizes="(max-width: 768px) 100vw, 50vw"
+          sizes="(max-width: 768px) 100vw, 400px"
+          quality={50}
           className="object-cover"
-          alt="Cafe O2 social media marketing campaign by NexShift Nepal"
+          alt="Event Coverage - NexShift Media"
         />
       ),
     },
@@ -52,11 +53,12 @@ export default function AboutSection2() {
       id: 2,
       content: (
         <Image
-          src="/demo/queens palace.jpg"
+          src="/about/videography.png"
           fill
-          sizes="(max-width: 768px) 100vw, 50vw"
+          sizes="(max-width: 768px) 100vw, 400px"
+          quality={50}
           className="object-cover"
-          alt="Queens Palace event management by NexShift"
+          alt="Videography and Editing - NexShift Media"
         />
       ),
     },
@@ -64,11 +66,12 @@ export default function AboutSection2() {
       id: 3,
       content: (
         <Image
-          src="/demo/Ritz College(1).jpg"
+          src="/about/commercial-promo.png"
           fill
-          sizes="(max-width: 768px) 100vw, 50vw"
+          sizes="(max-width: 768px) 100vw, 400px"
+          quality={50}
           className="object-cover"
-          alt="Ritz College digital marketing by NexShift"
+          alt="Commercial and Promotional Content - NexShift Media"
         />
       ),
     },
@@ -76,11 +79,12 @@ export default function AboutSection2() {
       id: 4,
       content: (
         <Image
-          src="/demo/Milestone school(1).jpg"
+          src="/about/brand-promotion.png"
           fill
-          sizes="(max-width: 768px) 100vw, 50vw"
+          sizes="(max-width: 768px) 100vw, 400px"
+          quality={50}
           className="object-cover"
-          alt="Milestone School media campaign by NexShift"
+          alt="Brand Promotion - NexShift Media"
         />
       ),
     },
@@ -88,11 +92,12 @@ export default function AboutSection2() {
       id: 5,
       content: (
         <Image
-          src="/demo/Cafe O2 2.jpg"
+          src="/about/professional-photography.png"
           fill
-          sizes="(max-width: 768px) 100vw, 50vw"
+          sizes="(max-width: 768px) 100vw, 400px"
+          quality={50}
           className="object-cover"
-          alt="Cafe O2 brand photography by NexShift"
+          alt="Professional Photography - NexShift Media"
         />
       ),
     }
@@ -118,12 +123,12 @@ export default function AboutSection2() {
       >
         {/* Left Side: Expandable Cards and Stats */}
         <div className="w-full lg:w-1/2 flex flex-col items-center justify-center gap-8 select-none">
-          <div className="w-full h-[300px] md:h-[400px] lg:h-[450px] flex items-center justify-center">
+          <div className="hidden md:flex w-full h-[300px] md:h-[400px] lg:h-[450px] items-center justify-center">
             <ExpandableCards cards={cards} defaultExpanded={3} autoPlay interval={1500} />
           </div>
 
           {/* Stats Grid wrapped with the Leaf Shape Banner */}
-          <div className="relative w-full mt-10 bg-[#03b364] text-white overflow-hidden rounded-tl-[80px] rounded-br-[80px] shadow-[0_10px_30px_rgba(3,179,100,0.3)]">
+          <div className="relative w-full mt-0 md:mt-10 bg-[#03b364] text-white overflow-hidden rounded-tl-[80px] rounded-br-[80px] shadow-[0_10px_30px_rgba(3,179,100,0.3)]">
 
             {/* Decorative corner dots */}
             <span className="absolute top-3 left-4 w-1.5 h-1.5 rounded-full bg-white/30 z-10" />
@@ -162,17 +167,25 @@ export default function AboutSection2() {
             </h3>
           </div>
 
-          <p className="text-gray-700 text-lg md:text-xl leading-relaxed text-center lg:text-left font-medium">
-            NexShift Media & Events is a full-service creative agency
-            specializing in digital marketing, event management, and visual
-            production. We work with corporate clients, SMEs, startups, banks,
-            and institutions across Nepal.
-          </p>
+          <div className="flex flex-col gap-5 border-l-[3px] border-[#14A9D6]/40 pl-5 md:pl-7">
+            <p className="text-gray-700 text-lg md:text-xl leading-relaxed text-center lg:text-left font-medium">
+              <span className="font-bold text-[#154880]">NexShift Media &amp; Events</span> is a full-service creative agency
+              specializing in digital marketing, event management, and visual
+              production. We work with corporate clients, SMEs, startups, banks,
+              and institutions across Nepal.
+            </p>
 
-          <p className="text-gray-700 text-lg md:text-xl leading-relaxed text-center lg:text-left font-medium">
-            Our approach is simple: strategy drives creativity, creativity
-            drives execution, and execution drives measurable results. We don't
-            chase trends - we set them.
+            <p className="text-gray-700 text-lg md:text-xl leading-relaxed text-center lg:text-left font-medium">
+              Strategy drives creativity, creativity drives execution, and execution drives measurable results. We don&apos;t simply follow trends. We understand them, challenge them, and create what&apos;s next.
+            </p>
+          </div>
+
+          <div className="flex items-center gap-4 py-1">
+            <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#14A9D6]/30 to-transparent" />
+          </div>
+
+          <p className="text-xl md:text-2xl font-bold italic tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-[#0D7A95] via-[#14A9D6] to-[#2E73B8] text-center lg:text-left drop-shadow-sm">
+            NexShift — Where Ideas Move Forward.
           </p>
 
           {/* Feature Pills */}

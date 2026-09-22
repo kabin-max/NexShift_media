@@ -1,10 +1,20 @@
 "use client";
 
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import { useState, useEffect } from "react";
 import Image from "next/image";
+import SeoHiddenContent from "../common/SeoHiddenContent";
 
 export default function HeroSection() {
   const { scrollY } = useScroll();
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   // Layer 1 – background drifts slowly downward and zooms in slightly
   const bgY = useTransform(scrollY, [0, 1000], [0, 130]);
@@ -29,25 +39,26 @@ export default function HeroSection() {
 
   return (
     <section className="relative w-full h-screen bg-transparent overflow-hidden flex items-end pb-12 px-6 md:px-12 select-none">
-      <h1 className="sr-only">NexShift - Event Management Company & Digital Marketing Agency in Kathmandu, Nepal</h1>
-      <p className="sr-only hero-geo-summary">
-        NexShift is a premier creative media agency and corporate event management company based in Kathmandu, Nepal. We specialize in end-to-end event production, brand films, performance marketing, social media growth, SEO, and web development.
-      </p>
+      <SeoHiddenContent />
 
       {/* ── Layer 1: Background sky / hills ──────────────────────────── */}
       <motion.div
         className="absolute inset-0 z-0 pointer-events-none origin-bottom"
-        style={{ y: bgY, scale: bgScale, willChange: "transform" }}
+        style={{ 
+          y: bgY, 
+          ...(isMobile ? {} : { scale: bgScale }), 
+          willChange: "transform" 
+        }}
       >
-        <div className="absolute inset-0 w-full h-full">
+        <div className="absolute inset-0 w-full h-full scale-[1.5] origin-top md:scale-100 md:origin-center">
           <Image
-            src="/images/bg of hero.png"
+            src="/images/bg-hero.png"
             alt="NexShift creative agency Kathmandu Nepal skyline"
             fill
             sizes="100vw"
             priority
             fetchPriority="high"
-            className="object-cover object-center"
+            className="object-cover object-[center_top] md:object-center"
           />
         </div>
         <div className="absolute inset-0 bg-white/10" />
@@ -68,15 +79,16 @@ export default function HeroSection() {
 
       {/* ── Layer 3: Foreground camera ───────────────────── */}
       <motion.div
-        className="absolute inset-x-0 bottom-0 top-24 z-[60] pointer-events-none"
+        className="absolute inset-x-0 bottom-0 h-[60%] md:h-auto md:top-24 z-[60] pointer-events-none"
       >
         <Image
           src="/images/camera.png"
           alt="Professional cinema camera used by NexShift videography team"
           fill
           priority
-          sizes="100vw"
-          className="object-contain object-bottom"
+          sizes="(max-width: 768px) 100vw, 500px"
+          quality={50}
+          className="object-contain object-bottom scale-[2] origin-bottom md:scale-100 md:origin-center"
         />
       </motion.div>
 
@@ -108,7 +120,7 @@ export default function HeroSection() {
           </text>
         </svg>
         {/* Logo in the center of the rotating text */}
-        <Image src="/nst-logo.png" alt="NexShift Logo" width={80} height={80} priority loading="eager" className="absolute z-10 object-contain w-14 h-14 md:w-20 md:h-20 drop-shadow-sm" />
+        <Image src="/nst-logo.png" alt="NexShift Logo" width={80} height={80} priority loading="eager" quality={50} className="absolute z-10 object-contain w-14 h-14 md:w-20 md:h-20 drop-shadow-sm" />
 
       </motion.div>
     </section>

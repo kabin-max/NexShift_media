@@ -1,30 +1,26 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Permanent_Marker } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
-});
-
-const permanentMarker = Permanent_Marker({
-  variable: "--font-permanent-marker",
-  weight: "400",
-  subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://nexshift.com.np"),
   title: {
-    default: "NexShift | Premier Event Management Company & Digital Marketing Agency in Kathmandu, Nepal",
+    default: "NexShift | Premier Event & Digital Marketing Agency Nepal",
     template: "%s | NexShift Nepal",
   },
-  description: "NexShift is Nepal's premier event management company and creative digital marketing agency based in Kathmandu. Specialized in corporate events, brand films, performance marketing, SEO, social media management, videography, and custom web development.",
+  description: "Grow your brand with NexShift, Nepal's premier digital marketing & event management agency. We deliver high-impact corporate events, SEO, and performance marketing.",
   keywords: [
     "NexShift",
     "NexShift Media",
@@ -106,7 +102,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${permanentMarker.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col overflow-x-hidden">{children}</body>
     </html>

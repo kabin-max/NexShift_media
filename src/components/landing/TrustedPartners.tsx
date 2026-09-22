@@ -5,28 +5,27 @@ import Image from "next/image";
 
 const rawPartners = [
   // Simple logos (Row 1)
-  { name: "Nisarga Batika", filename: "nisarga batika.svg", type: "simple" },
-  { name: "Milestone Logo", filename: "Milestone logoo.png", type: "simple", scale: 1.44 },
-  { name: "New York Cargo", filename: "new york cargo.png", type: "simple" },
-  { name: "Cafe O2", filename: "Cafe_O2.png", type: "simple", scale: 1.73 },
-  { name: "Queens Logo", filename: "Queens.png", type: "simple", scale: 1.73 },
-  { name: "Tulsi Portrait", filename: "Tulsi.png", type: "simple", scale: 1.44 },
-  { name: "Praise Consultancy", filename: "praise consultancy.jpg", type: "simple" },
+  { name: "Nisarga Batika", filename: "nisarga-batika.svg", type: "simple" },
+  { name: "Milestone Logo", filename: "milestone.png", type: "simple", scale: 1.44 },
+  { name: "Cafe O2", filename: "cafe-o2.png", type: "simple", scale: 1.73 },
+  { name: "Queens Logo", filename: "queens.png", type: "simple", scale: 1.73 },
+  { name: "Tulsi Portrait", filename: "tulsi.png", type: "simple", scale: 1.44 },
+  { name: "Praise Consultancy", filename: "praise-consultancy.jpg", type: "simple" },
   { name: "Ritz College", filename: "ritz.png", type: "simple", scale: 2.5 },
-  { name: "Smile Dental Clinic", filename: "smile_dental.png", type: "simple", scale: 1.73 },
+  { name: "Smile Dental Clinic", filename: "smile-dental.png", type: "simple", scale: 1.73 },
 
   // Box / Rectangular logos (Row 2)
-  { name: "Guru Pashmina", filename: "guru pashmina.jpg", type: "box" },
-  { name: "Palmos", filename: "palmos logo.jpeg", type: "box" },
-  { name: "EG Bag", filename: "eg_bag.jpg", type: "box" },
-  { name: "Hotel Royal Airport", filename: "hotel royal.jpg", type: "box" },
-  { name: "Mega Lights", filename: "Meg-Lights.jpg", type: "box", scale: 1.2 },
-  { name: "Zeno", filename: "zeno.PNG", type: "box" },
+  { name: "Guru Pashmina", filename: "guru-pashmina.jpg", type: "box" },
+  { name: "Palmos", filename: "palmos.jpeg", type: "box" },
+  { name: "EG Bag", filename: "eg-bag.jpg", type: "box" },
+  { name: "Hotel Royal Airport", filename: "hotel-royal.jpg", type: "box" },
+  { name: "Mega Lights", filename: "meg-lights.jpg", type: "box", scale: 1.2 },
+  { name: "Zeno", filename: "zeno.png", type: "box" },
 ];
 
 const partners = rawPartners.map(p => ({
   name: p.name,
-  src: `/trusted partner/${p.filename}`,
+  src: `/partners/${p.filename}`,
   scale: p.scale || null,
   type: p.type
 }));
@@ -70,7 +69,8 @@ export default function TrustedPartners() {
                     src={partner.src}
                     alt={partner.name}
                     fill
-                    sizes="(max-width: 768px) 160px, 160px"
+                    sizes="(max-width: 768px) 100px, 100px"
+                    quality={50}
                     className="object-contain pointer-events-none"
                   />
                 </div>
@@ -93,7 +93,8 @@ export default function TrustedPartners() {
                     src={partner.src}
                     alt={partner.name}
                     fill
-                    sizes="(max-width: 768px) 160px, 160px"
+                    sizes="(max-width: 768px) 100px, 100px"
+                    quality={50}
                     className="object-contain pointer-events-none transition-transform duration-300 ease-in-out hover:scale-105"
                   />
                 </div>

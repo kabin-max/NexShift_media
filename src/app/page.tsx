@@ -3,13 +3,7 @@ import Header from "../components/common/Header";
 import SocialIcons from "../components/common/SocialIcons";
 import AnimatedLogo from "../components/landing/AnimatedLogo";
 import HeroSection from "../components/landing/HeroSection";
-import AboutSection2 from "../components/landing/AboutSection2";
-import ServicesSection from "../components/landing/ServicesSection";
-import TrustedPartners from "../components/landing/TrustedPartners";
-import ClientsSection from "../components/landing/ClientsSection";
-import TestimonialsSection from "../components/landing/TestimonialsSection";
-import ContactSection from "../components/landing/ContactSection";
-import Footer from "../components/common/Footer";
+import BelowFoldSections from "../components/landing/BelowFoldSections";
 import IntroOverlay from "../components/common/IntroOverlay";
 
 export default function Home() {
@@ -48,7 +42,7 @@ export default function Home() {
         "closes": "18:00"
       },
       "sameAs": [
-        "https://www.facebook.com/profile.php?id=61571556053359",
+        "https://www.facebook.com/profile.php?id=61577277295076",
         "https://www.instagram.com/nex_shift/",
         "https://www.linkedin.com/company/nexshiftnepal/"
       ],
@@ -108,8 +102,50 @@ export default function Home() {
       },
       "speakable": {
         "@type": "SpeakableSpecification",
-        "cssSelector": ["h1", "h2", ".hero-geo-summary"]
+        "cssSelector": ["h1", "h2", "h3", "p"]
       }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://nexshift.com.np/"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What services does NexShift offer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NexShift specializes in corporate event management, digital marketing (including SEO, Google Ads, and Meta Ads), professional photography and videography, and custom web development in Nepal."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How to choose the best event management company in Kathmandu?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "When selecting an event planner, evaluate their portfolio, industry experience, and client testimonials. NexShift stands out by combining creative event production with digital marketing strategies to maximize your event's reach and impact."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I hire a digital marketing agency for my business?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, hiring a specialized agency ensures data-driven results. NexShift uses targeted performance marketing, social media management, and SEO to connect your brand with the right audience and increase your ROI."
+          }
+        }
+      ]
     }
   ];
 
@@ -128,15 +164,7 @@ export default function Home() {
 
           <div className="relative w-full flex flex-col">
             <HeroSection />
-            <div className="w-full flex flex-col md:pl-[72px]">
-              <AboutSection2 />
-              <ServicesSection />
-              <TrustedPartners />
-              <ClientsSection />
-              <TestimonialsSection />
-              <ContactSection />
-              <Footer />
-            </div>
+            <BelowFoldSections />
           </div>
     </main>
   );

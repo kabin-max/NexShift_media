@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 
 interface FlipStackCard {
@@ -105,7 +105,7 @@ export default function FlipStack({
         <div className='flex justify-center items-center'>
           <div
             ref={containerRef}
-            className='relative h-96 w-full max-w-md mx-auto'
+            className='relative aspect-[2/3] w-full max-w-[320px] mx-auto'
           >
             {isMobile ? (
               <div className='relative h-full w-full'>
@@ -147,7 +147,7 @@ export default function FlipStack({
                   return (
                     <motion.div
                       key={card.id}
-                      className='absolute origin-bottom'
+                      className='absolute inset-0 origin-bottom'
                       initial='initial'
                       animate={isInView ? 'animate' : 'initial'}
                       whileHover={{ scale: 1.1, zIndex: 100, y: -20, rotate: 0 }}
@@ -158,7 +158,7 @@ export default function FlipStack({
                         ease: 'easeOut',
                       }}
                     >
-                      <Card className='w-80 h-96 shadow-2xl border-none bg-transparent overflow-hidden p-0'>
+                      <Card className='w-full h-full shadow-2xl border-none bg-transparent overflow-hidden p-0'>
                         <CardContent className='p-0 h-full flex items-center justify-center'>
                           {card.content}
                         </CardContent>
